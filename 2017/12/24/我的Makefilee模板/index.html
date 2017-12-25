@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Dock" />
+  <meta name="keywords" content="Makefile," />
 
 
 
@@ -79,17 +79,20 @@
 
 
 
-<meta name="description" content="一直在努力的去做一个更好的程序员，为了父母、为了小鑫鑫，更为了自己">
+<meta name="description" content="&amp;emsp;&amp;emsp;在Linux下开发，使用Makefile组织源码工程师基本功。在本篇文章中会介绍Makefile的基础知识以及Dock经常使用的Makefile函数及模板。">
+<meta name="keywords" content="Makefile">
 <meta property="og:type" content="article">
 <meta property="og:title" content="我的Makefilee模板">
 <meta property="og:url" content="http://coderdock.com/2017/12/24/我的Makefilee模板/index.html">
 <meta property="og:site_name" content="CoderDock">
-<meta property="og:description" content="一直在努力的去做一个更好的程序员，为了父母、为了小鑫鑫，更为了自己">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;在Linux下开发，使用Makefile组织源码工程师基本功。在本篇文章中会介绍Makefile的基础知识以及Dock经常使用的Makefile函数及模板。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-24T07:52:42.613Z">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7774609-84480fd03d362420.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-12-25T21:39:51.925Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我的Makefilee模板">
-<meta name="twitter:description" content="一直在努力的去做一个更好的程序员，为了父母、为了小鑫鑫，更为了自己">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;在Linux下开发，使用Makefile组织源码工程师基本功。在本篇文章中会介绍Makefile的基础知识以及Dock经常使用的Makefile函数及模板。">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/7774609-84480fd03d362420.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -292,6 +295,39 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/基础知识/" itemprop="url" rel="index">
+                    <span itemprop="name">基础知识</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/基础知识/Makefile/" itemprop="url" rel="index">
+                    <span itemprop="name">Makefile</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -319,7 +355,18 @@
       
 
       
-        
+        <p>&emsp;&emsp;在Linux下开发，使用Makefile组织源码工程师基本功。在本篇文章中会介绍Makefile的基础知识以及Dock经常使用的Makefile函数及模板。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7774609-84480fd03d362420.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Makefile.jpg"></p>
+<a id="more"></a>
+<h1 id="1-基本概念"><a href="#1-基本概念" class="headerlink" title="1.基本概念"></a>1.基本概念</h1><p>&emsp;&emsp;每一个Makefile选项都是由 <code>Target</code>、<code>Prerequisite</code>、<code>Function</code>三部分组成，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">target: prerequisites</div><div class="line">          command</div></pre></td></tr></table></figure></p>
+<p>一个实例如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hello: hello.c</div><div class="line">    gcc hello.c -o hello</div></pre></td></tr></table></figure></p>
+<p>这样在我们使用 <code>make hello</code>的时候,就会调用 <code>gcc hello.c -o hello</code>命令。</p>
+<h1 id="2-常用函数"><a href="#2-常用函数" class="headerlink" title="2.常用函数"></a>2.常用函数</h1><p>&emsp;&emsp;通配函数，下面这个会通配所有以 <code>.cpp</code>结尾的文件。如当前文件夹下有a.cpp &emsp;b.c &emsp;c.cpp,那么 SRC_CPP的值就会是 a.cpp &emsp;c.cpp<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SRC_CPP = $(wildcard *.cpp)</div></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;替换函数。我们在实际开发中常用到的一点就是讲.cpp .c转换为.o文件，但是总不能一个一个去敲吧。那么替换函数就派上用场了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">OBJS += $(patsubst %c, %o, $(SRC_C))</div></pre></td></tr></table></figure></p>
+<p>上面这条就是把 $SRC_C中每一项的<code>c</code>换为 <code>o</code>。</p>
+<h1 id="3-Makefile模板"><a href="#3-Makefile模板" class="headerlink" title="3.Makefile模板"></a>3.Makefile模板</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">#CXX = g++</div><div class="line">#CC	= gcc</div><div class="line">CXX = arm-linux-gnu-g++</div><div class="line">CC = arm-linux-gnu-gcc</div><div class="line"></div><div class="line">CXXFLAGS = -pthread -Wall -std=c++11</div><div class="line">INCLUDE_PATH = -I./inc</div><div class="line"></div><div class="line">SRC_CPP = $(wildcard *.cpp)</div><div class="line">SRC_C	+= $(wildcard ./*.c)</div><div class="line"></div><div class="line">OBJS += $(patsubst %c, %o, $(SRC_C))</div><div class="line">OBJS += $(patsubst %cpp, %o, $(SRC_CPP))</div><div class="line"></div><div class="line">TARGET=Hello        #自定义自己的目标文件</div><div class="line"></div><div class="line">$(TARGET):$(OBJS)</div><div class="line">	$(CXX)  $^ $(CXXFLAGS) -o $@ -L./ -lsxtl</div><div class="line"></div><div class="line">.cpp.o:         #cpp 编译成 o</div><div class="line">	$(CXX) -c $(CXXFLAGS) $(INCLUDE_PATH) $&lt; -o $@</div><div class="line"></div><div class="line">.c.o:           # c 编译成 o</div><div class="line">	$(CXX) -c $(CXXFLAGS) $(INCLUDE_PATH) $&lt; -o $@</div><div class="line"></div><div class="line">clean:</div><div class="line">    rm $(OBJS)</div><div class="line">    rm $(TARGET)</div></pre></td></tr></table></figure>
+<p>每次Dock需要重新配置一个Makefile的时候就会将上边这个Makefile修改一下，适配新工程。</p>
+
       
     </div>
     
@@ -341,6 +388,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Makefile/" rel="tag"># Makefile</a>
+          
+        </div>
       
 
       
@@ -415,8 +468,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -446,7 +508,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -457,7 +519,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -482,6 +544,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-基本概念"><span class="nav-number">1.</span> <span class="nav-text">1.基本概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-常用函数"><span class="nav-number">2.</span> <span class="nav-text">2.常用函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Makefile模板"><span class="nav-number">3.</span> <span class="nav-text">3.Makefile模板</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
