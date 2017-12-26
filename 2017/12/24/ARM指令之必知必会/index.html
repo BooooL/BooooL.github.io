@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="&amp;emsp;&amp;emsp;作为一个嵌入式开发者，ARM汇编指令虽然用的不多。但也是一个必须要掌握的项目。  跳转指令b bl这两条指令都是跳转到相应的标号处，所不同的是bl还会将返回地址保存在lr返回寄存器中。 内存传送指令mov会是我们经常要用到的一条指令。有寄存器转移mov r1, r0和立即数转移两种方式mov r1, #1224 地址读取伪指令 ldr也有两种方式ldr r1, =1234">
+<meta name="description" content="&amp;emsp;&amp;emsp;作为一个嵌入式开发者，ARM汇编指令虽然用的不多。但也是一个必须要掌握的项目。">
 <meta name="keywords" content="ARM指令">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ARM指令之必知必会">
 <meta property="og:url" content="http://coderdock.com/2017/12/24/ARM指令之必知必会/index.html">
 <meta property="og:site_name" content="CoderDock">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;作为一个嵌入式开发者，ARM汇编指令虽然用的不多。但也是一个必须要掌握的项目。  跳转指令b bl这两条指令都是跳转到相应的标号处，所不同的是bl还会将返回地址保存在lr返回寄存器中。 内存传送指令mov会是我们经常要用到的一条指令。有寄存器转移mov r1, r0和立即数转移两种方式mov r1, #1224 地址读取伪指令 ldr也有两种方式ldr r1, =1234">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;作为一个嵌入式开发者，ARM汇编指令虽然用的不多。但也是一个必须要掌握的项目。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://img.blog.csdn.net/20171226140842368?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzk4OTI4NA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2017-12-26T06:56:56.111Z">
+<meta property="og:updated_time" content="2017-12-26T07:32:56.975Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ARM指令之必知必会">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;作为一个嵌入式开发者，ARM汇编指令虽然用的不多。但也是一个必须要掌握的项目。  跳转指令b bl这两条指令都是跳转到相应的标号处，所不同的是bl还会将返回地址保存在lr返回寄存器中。 内存传送指令mov会是我们经常要用到的一条指令。有寄存器转移mov r1, r0和立即数转移两种方式mov r1, #1224 地址读取伪指令 ldr也有两种方式ldr r1, =1234">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;作为一个嵌入式开发者，ARM汇编指令虽然用的不多。但也是一个必须要掌握的项目。">
 <meta name="twitter:image" content="http://img.blog.csdn.net/20171226140842368?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzk4OTI4NA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 
 
@@ -356,6 +356,7 @@
 
       
         <p>&emsp;&emsp;作为一个嵌入式开发者，ARM汇编指令虽然用的不多。但也是一个必须要掌握的项目。<br><img src="http://img.blog.csdn.net/20171226140842368?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzk4OTI4NA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="ARM汇编"></p>
+<a id="more"></a>
 <ul>
 <li>跳转指令<br><code>b</code> <code>bl</code>这两条指令都是跳转到相应的标号处，所不同的是<code>bl</code>还会将返回地址保存在<code>lr</code>返回寄存器中。</li>
 <li>内存传送指令<br><code>mov</code>会是我们经常要用到的一条指令。有寄存器转移<code>mov r1, r0</code>和立即数转移两种方式<code>mov r1, #1224</code></li>
