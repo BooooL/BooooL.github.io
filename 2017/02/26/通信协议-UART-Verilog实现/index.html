@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="UART,Verilog实现," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="&amp;emsp;&amp;emsp;本篇通过使用Verilog实现UART的读写。">
+<meta name="keywords" content="UART,Verilog实现">
+<meta property="og:type" content="article">
+<meta property="og:title" content="通信协议-UART-Verilog实现">
+<meta property="og:url" content="http://coderdock.com/2017/02/26/通信协议-UART-Verilog实现/index.html">
+<meta property="og:site_name" content="CoderDock">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;本篇通过使用Verilog实现UART的读写。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-03T00:06:56.403Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="通信协议-UART-Verilog实现">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;本篇通过使用Verilog实现UART的读写。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://coderdock.com/2017/02/26/通信协议-UART-Verilog实现/"/>
+
+
+
+
+
+  <title>通信协议-UART-Verilog实现 | CoderDock</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">CoderDock</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Try Hard to be a Better Programmer</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2017/02/26/通信协议-UART-Verilog实现/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dock">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CoderDock">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">通信协议-UART-Verilog实现</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-26T05:03:34+08:00">
+                2017-02-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/基础知识/" itemprop="url" rel="index">
+                    <span itemprop="name">基础知识</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/基础知识/UART/" itemprop="url" rel="index">
+                    <span itemprop="name">UART</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&emsp;&emsp;本篇通过使用Verilog实现UART的读写。</p>
+<a id="more"></a>
+<ul>
+<li><p>RX模块</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div></pre></td><td class="code"><pre><div class="line">module my_uart_rx(</div><div class="line">				clk,rst_n,</div><div class="line">				rs232_rx,rx_data,rx_int,</div><div class="line">				clk_bps,bps_start</div><div class="line">			);</div><div class="line"></div><div class="line">input clk;		// 50MHz主时钟</div><div class="line">input rst_n;	//低电平复位信号</div><div class="line">input rs232_rx;	// RS232接收数据信号</div><div class="line">input clk_bps;	// clk_bps的高电平为接收或者发送数据位的中间采样点</div><div class="line">output bps_start;		//接收到数据后，波特率时钟启动信号置位</div><div class="line">output[7:0] rx_data;	//接收数据寄存器，保存直至下一个数据来到</div><div class="line">output rx_int;	//接收数据中断信号,接收到数据期间始终为高电平</div><div class="line"></div><div class="line">//----------------------------------------------------------------</div><div class="line">reg rs232_rx0,rs232_rx1,rs232_rx2,rs232_rx3;	//接收数据寄存器，滤波用</div><div class="line">wire neg_rs232_rx;	//表示数据线接收到下降沿</div><div class="line"></div><div class="line">always @ (posedge clk or negedge rst_n) begin</div><div class="line">	if(!rst_n) begin</div><div class="line">			rs232_rx0 &lt;= 1&apos;b0;</div><div class="line">			rs232_rx1 &lt;= 1&apos;b0;</div><div class="line">			rs232_rx2 &lt;= 1&apos;b0;</div><div class="line">			rs232_rx3 &lt;= 1&apos;b0;</div><div class="line">		end</div><div class="line">	else begin</div><div class="line">			rs232_rx0 &lt;= rs232_rx;</div><div class="line">			rs232_rx1 &lt;= rs232_rx0;</div><div class="line">			rs232_rx2 &lt;= rs232_rx1;</div><div class="line">			rs232_rx3 &lt;= rs232_rx2;</div><div class="line">		end</div><div class="line">end</div><div class="line">	//下面的下降沿检测可以滤掉&lt;20ns-40ns的毛刺(包括高脉冲和低脉冲毛刺)，</div><div class="line">	//这里就是用资源换稳定（前提是我们对时间要求不是那么苛刻，因为输入信号打了好几拍）</div><div class="line">	//（当然我们的有效低脉冲信号肯定是远远大于40ns的）</div><div class="line">assign neg_rs232_rx = rs232_rx3 &amp; rs232_rx2 &amp; ~rs232_rx1 &amp; ~rs232_rx0;	//接收到下降沿后neg_rs232_rx置高一个时钟周期</div><div class="line"></div><div class="line">//----------------------------------------------------------------</div><div class="line">reg bps_start_r;</div><div class="line">reg[3:0] num;	//移位次数</div><div class="line">reg rx_int;		//接收数据中断信号,接收到数据期间始终为高电平</div><div class="line"></div><div class="line">always @ (posedge clk or negedge rst_n)</div><div class="line">	if(!rst_n) begin</div><div class="line">			bps_start_r &lt;= 1&apos;bz;</div><div class="line">			rx_int &lt;= 1&apos;b0;</div><div class="line">		end</div><div class="line">	else if(neg_rs232_rx) begin		//接收到串口接收线rs232_rx的下降沿标志信号</div><div class="line">			bps_start_r &lt;= 1&apos;b1;	//启动串口准备数据接收</div><div class="line">			rx_int &lt;= 1&apos;b1;			//接收数据中断信号使能</div><div class="line">		end</div><div class="line">	else if(num==4&apos;d12) begin		//接收完有用数据信息</div><div class="line">			bps_start_r &lt;= 1&apos;b0;	//数据接收完毕，释放波特率启动信号</div><div class="line">			rx_int &lt;= 1&apos;b0;			//接收数据中断信号关闭</div><div class="line">		end</div><div class="line"></div><div class="line">assign bps_start = bps_start_r;</div><div class="line"></div><div class="line">//----------------------------------------------------------------</div><div class="line">reg[7:0] rx_data_r;		//串口接收数据寄存器，保存直至下一个数据来到</div><div class="line">//----------------------------------------------------------------</div><div class="line"></div><div class="line">reg[7:0] rx_temp_data;	//当前接收数据寄存器</div><div class="line"></div><div class="line">always @ (posedge clk or negedge rst_n)</div><div class="line">	if(!rst_n) begin</div><div class="line">			rx_temp_data &lt;= 8&apos;d0;</div><div class="line">			num &lt;= 4&apos;d0;</div><div class="line">			rx_data_r &lt;= 8&apos;d0;</div><div class="line">		end</div><div class="line">	else if(rx_int) begin	//接收数据处理</div><div class="line">		if(clk_bps) begin	//读取并保存数据,接收数据为一个起始位，8bit数据，1或2个结束位</div><div class="line">				num &lt;= num+1&apos;b1;</div><div class="line">				case (num)</div><div class="line">						4&apos;d1: rx_temp_data[0] &lt;= rs232_rx;	//锁存第0bit</div><div class="line">						4&apos;d2: rx_temp_data[1] &lt;= rs232_rx;	//锁存第1bit</div><div class="line">						4&apos;d3: rx_temp_data[2] &lt;= rs232_rx;	//锁存第2bit</div><div class="line">						4&apos;d4: rx_temp_data[3] &lt;= rs232_rx;	//锁存第3bit</div><div class="line">						4&apos;d5: rx_temp_data[4] &lt;= rs232_rx;	//锁存第4bit</div><div class="line">						4&apos;d6: rx_temp_data[5] &lt;= rs232_rx;	//锁存第5bit</div><div class="line">						4&apos;d7: rx_temp_data[6] &lt;= rs232_rx;	//锁存第6bit</div><div class="line">						4&apos;d8: rx_temp_data[7] &lt;= rs232_rx;	//锁存第7bit</div><div class="line">						default: ;</div><div class="line">					endcase</div><div class="line">			end</div><div class="line">		else if(num == 4&apos;d12) begin		//我们的标准接收模式下只有1+8+1(2)=11bit的有效数据</div><div class="line">				num &lt;= 4&apos;d0;			//接收到STOP位后结束,num清零</div><div class="line">				rx_data_r &lt;= rx_temp_data;	//把数据锁存到数据寄存器rx_data中</div><div class="line">			end</div><div class="line">		end</div><div class="line"></div><div class="line">assign rx_data = rx_data_r;</div><div class="line"></div><div class="line">endmodule</div></pre></td></tr></table></figure>
+</li>
+<li><p>TX模块</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div></pre></td><td class="code"><pre><div class="line">module my_uart_tx(</div><div class="line">				clk,rst_n,</div><div class="line">				rx_data,rx_int,rs232_tx,</div><div class="line">				clk_bps,bps_start</div><div class="line">			);</div><div class="line"></div><div class="line">input clk;			// 50MHz主时钟</div><div class="line">input rst_n;		//低电平复位信号</div><div class="line">input clk_bps;		// clk_bps_r高电平为接收数据位的中间采样点,同时也作为发送数据的数据改变点</div><div class="line">input[7:0] rx_data;	//接收数据寄存器</div><div class="line">input rx_int;		//接收数据中断信号,接收到数据期间始终为高电平,在该模块中利用它的下降沿来启动串口发送数据</div><div class="line">output rs232_tx;	// RS232发送数据信号</div><div class="line">output bps_start;	//接收或者要发送数据，波特率时钟启动信号置位</div><div class="line"></div><div class="line">//---------------------------------------------------------</div><div class="line">reg rx_int0,rx_int1,rx_int2;	//rx_int信号寄存器，捕捉下降沿滤波用</div><div class="line">wire neg_rx_int;	// rx_int下降沿标志位</div><div class="line"></div><div class="line">always @ (posedge clk or negedge rst_n) begin</div><div class="line">	if(!rst_n) begin</div><div class="line">			rx_int0 &lt;= 1&apos;b0;</div><div class="line">			rx_int1 &lt;= 1&apos;b0;</div><div class="line">			rx_int2 &lt;= 1&apos;b0;</div><div class="line">		end</div><div class="line">	else begin</div><div class="line">			rx_int0 &lt;= rx_int;</div><div class="line">			rx_int1 &lt;= rx_int0;</div><div class="line">			rx_int2 &lt;= rx_int1;</div><div class="line">		end</div><div class="line">end</div><div class="line"></div><div class="line">assign neg_rx_int =  ~rx_int1 &amp; rx_int2;	//捕捉到下降沿后，neg_rx_int拉高保持一个主时钟周期</div><div class="line"></div><div class="line">//---------------------------------------------------------</div><div class="line">reg[7:0] tx_data;	//待发送数据的寄存器</div><div class="line">//---------------------------------------------------------</div><div class="line">reg bps_start_r;</div><div class="line">reg tx_en;	//发送数据使能信号，高有效</div><div class="line">reg[3:0] num;</div><div class="line"></div><div class="line">always @ (posedge clk or negedge rst_n) begin</div><div class="line">	if(!rst_n) begin</div><div class="line">			bps_start_r &lt;= 1&apos;bz;</div><div class="line">			tx_en &lt;= 1&apos;b0;</div><div class="line">			tx_data &lt;= 8&apos;d0;</div><div class="line">		end</div><div class="line">	else if(neg_rx_int) begin	//接收数据完毕，准备把接收到的数据发回去</div><div class="line">			bps_start_r &lt;= 1&apos;b1;</div><div class="line">			tx_data &lt;= rx_data;	//把接收到的数据存入发送数据寄存器</div><div class="line">			tx_en &lt;= 1&apos;b1;		//进入发送数据状态中</div><div class="line">		end</div><div class="line">	else if(num==4&apos;d11) begin	//数据发送完成，复位</div><div class="line">			bps_start_r &lt;= 1&apos;b0;</div><div class="line">			tx_en &lt;= 1&apos;b0;</div><div class="line">		end</div><div class="line">end</div><div class="line"></div><div class="line">assign bps_start = bps_start_r;</div><div class="line"></div><div class="line">//---------------------------------------------------------</div><div class="line">reg rs232_tx_r;</div><div class="line"></div><div class="line">always @ (posedge clk or negedge rst_n) begin</div><div class="line">	if(!rst_n) begin</div><div class="line">			num &lt;= 4&apos;d0;</div><div class="line">			rs232_tx_r &lt;= 1&apos;b1;</div><div class="line">		end</div><div class="line">	else if(tx_en) begin</div><div class="line">			if(clk_bps)	begin</div><div class="line">					num &lt;= num+1&apos;b1;</div><div class="line">					case (num)</div><div class="line">						4&apos;d0: rs232_tx_r &lt;= 1&apos;b0; 	//发送起始位</div><div class="line">						4&apos;d1: rs232_tx_r &lt;= tx_data[0];	//发送bit0</div><div class="line">						4&apos;d2: rs232_tx_r &lt;= tx_data[1];	//发送bit1</div><div class="line">						4&apos;d3: rs232_tx_r &lt;= tx_data[2];	//发送bit2</div><div class="line">						4&apos;d4: rs232_tx_r &lt;= tx_data[3];	//发送bit3</div><div class="line">						4&apos;d5: rs232_tx_r &lt;= tx_data[4];	//发送bit4</div><div class="line">						4&apos;d6: rs232_tx_r &lt;= tx_data[5];	//发送bit5</div><div class="line">						4&apos;d7: rs232_tx_r &lt;= tx_data[6];	//发送bit6</div><div class="line">						4&apos;d8: rs232_tx_r &lt;= tx_data[7];	//发送bit7</div><div class="line">						4&apos;d9: rs232_tx_r &lt;= 1&apos;b1;	//发送结束位</div><div class="line">					 	default: rs232_tx_r &lt;= 1&apos;b1;</div><div class="line">						endcase</div><div class="line">				end</div><div class="line">			else if(num==4&apos;d11) num &lt;= 4&apos;d0;	//复位</div><div class="line">		end</div><div class="line">end</div><div class="line"></div><div class="line">assign rs232_tx = rs232_tx_r;</div><div class="line"></div><div class="line">endmodule</div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/avatar.jpg" alt="Dock wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/UART/" rel="tag"># UART</a>
+          
+            <a href="/tags/Verilog实现/" rel="tag"># Verilog实现</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/25/Dock工具-打造自己的VIM编辑器/" rel="next" title="打造自己的VIM编辑器">
+                <i class="fa fa-chevron-left"></i> 打造自己的VIM编辑器
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/27/MMU理解要点/" rel="prev" title="MMU理解要点">
+                MMU理解要点 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Dock" />
+            
+              <p class="site-author-name" itemprop="name">Dock</p>
+              <p class="site-description motion-element" itemprop="description">一直在努力的去做一个更好的程序员，为了父母、为了小鑫鑫，更为了自己</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dock</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
