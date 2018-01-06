@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Linux,平台设备," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="本章介绍Linux平台设备的基础知识。12345678_______  _        _______ _________ _______  _______  _______  _______(  ____ )( \      (  ___  )\__   __/(  ____ \(  ___  )(  ____ )(       )| (    )|| (      | (   ) |   )">
+<meta name="keywords" content="Linux,平台设备">
+<meta property="og:type" content="article">
+<meta property="og:title" content="平台设备驱动之我见一">
+<meta property="og:url" content="http://coderdock.com/2017/02/03/LinuxSource/平台设备驱动之我见一/index.html">
+<meta property="og:site_name" content="CoderDock">
+<meta property="og:description" content="本章介绍Linux平台设备的基础知识。12345678_______  _        _______ _________ _______  _______  _______  _______(  ____ )( \      (  ___  )\__   __/(  ____ \(  ___  )(  ____ )(       )| (    )|| (      | (   ) |   )">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-03T00:09:13.747Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="平台设备驱动之我见一">
+<meta name="twitter:description" content="本章介绍Linux平台设备的基础知识。12345678_______  _        _______ _________ _______  _______  _______  _______(  ____ )( \      (  ___  )\__   __/(  ____ \(  ___  )(  ____ )(       )| (    )|| (      | (   ) |   )">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://coderdock.com/2017/02/03/LinuxSource/平台设备驱动之我见一/"/>
+
+
+
+
+
+  <title>平台设备驱动之我见一 | CoderDock</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">CoderDock</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Try Hard to be a Better Programmer</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2017/02/03/LinuxSource/平台设备驱动之我见一/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dock">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CoderDock">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">平台设备驱动之我见一</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-03T07:52:56+08:00">
+                2017-02-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/基础知识/" itemprop="url" rel="index">
+                    <span itemprop="name">基础知识</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/03/LinuxSource/平台设备驱动之我见一/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2017/02/03/LinuxSource/平台设备驱动之我见一/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本章介绍Linux平台设备的基础知识。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">_______  _        _______ _________ _______  _______  _______  _______</div><div class="line">(  ____ )( \      (  ___  )\__   __/(  ____ \(  ___  )(  ____ )(       )</div><div class="line">| (    )|| (      | (   ) |   ) (   | (    \/| (   ) || (    )|| () () |</div><div class="line">| (____)|| |      | (___) |   | |   | (__    | |   | || (____)|| || || |</div><div class="line">|  _____)| |      |  ___  |   | |   |  __)   | |   | ||     __)| |(_)| |</div><div class="line">| (      | |      | (   ) |   | |   | (      | |   | || (\ (   | |   | |</div><div class="line">| )      | (____/\| )   ( |   | |   | )      | (___) || ) \ \__| )   ( |</div><div class="line">|/       (_______/|/     \|   )_(   |/       (_______)|/   \__/|/     \|</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h1 id="1-platform-bus-type"><a href="#1-platform-bus-type" class="headerlink" title="1.platform_bus_type"></a>1.platform_bus_type</h1><p>在<code>总线</code>、<code>驱动</code>、<code>设备</code>三个基本要素中，总线居于中心位置，通过其中的<code>match</code>函数，将驱动和设备建立联系。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">struct bus_type platform_bus_type = &#123;</div><div class="line">    .name       = &quot;platform&quot;,</div><div class="line">    .dev_attrs  = platform_dev_attrs,</div><div class="line">    .match      = platform_match,</div><div class="line">    .uevent     = platform_uevent,</div><div class="line">    .pm     = &amp;platform_dev_pm_ops,</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>由<code>platform_match</code>源码可知，如果存在<code>id</code>则使用id进行匹配，否则使用name进行字符串匹配。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">static int platform_match(struct device *dev, struct device_driver *drv)</div><div class="line">&#123;</div><div class="line">    struct platform_device *pdev = to_platform_device(dev);</div><div class="line">    struct platform_driver *pdrv = to_platform_driver(drv);</div><div class="line"></div><div class="line">    /* match against the id table first */</div><div class="line">    if (pdrv-&gt;id_table)</div><div class="line">        return platform_match_id(pdrv-&gt;id_table, pdev) != NULL;</div><div class="line"></div><div class="line">    /* fall-back to driver name match */</div><div class="line">    return (strcmp(pdev-&gt;name, drv-&gt;name) == 0);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>所以就能够理解驱动源码中的<code>id_tables</code>的含义了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">static struct platform_device_id s3c24xx_driver_ids[] = &#123;</div><div class="line">    &#123;</div><div class="line">        .name       = &quot;s3c2410-i2c&quot;,</div><div class="line">        .driver_data    = TYPE_S3C2410,</div><div class="line">    &#125;, &#123;</div><div class="line">        .name       = &quot;s3c2440-i2c&quot;,</div><div class="line">        .driver_data    = TYPE_S3C2440,</div><div class="line">    &#125;, &#123; &#125;,</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>每一项表征能够支持一款设备。</p>
+<h1 id="2-platform-device"><a href="#2-platform-device" class="headerlink" title="2.platform_device"></a>2.platform_device</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">struct platform_device &#123;</div><div class="line">    const char  * name;</div><div class="line">    int     id;</div><div class="line">    struct device   dev;</div><div class="line">    u32     num_resources;</div><div class="line">    struct resource * resource;</div><div class="line">    struct platform_device_id   *id_entry;</div><div class="line">    /* arch specific additions */</div><div class="line">    struct pdev_archdata    archdata;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>在该结构体中定义了ID以及name,在想平台总线注册设备的时候就会依据name或ID进行匹配。<br> dev，真正的设备，通过 <code>container_of</code> ,就能找到整个platform_device。</p>
+<h1 id="3-platform-device-dirver"><a href="#3-platform-device-dirver" class="headerlink" title="3.platform_device_dirver"></a>3.platform_device_dirver</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">struct platform_driver &#123;</div><div class="line">    int (*probe)(struct platform_device *);</div><div class="line">    int (*remove)(struct platform_device *);</div><div class="line">    void (*shutdown)(struct platform_device *);</div><div class="line">    int (*suspend)(struct platform_device *, pm_message_t state);</div><div class="line">    int (*resume)(struct platform_device *);</div><div class="line">    struct device_driver driver;</div><div class="line">    struct platform_device_id *id_table;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>在driver中主要要实现probe函数，这是平台匹配到设备时第一个要调用的函数，同时设置好<code>id_tables</code>这样平台驱动才能够进行匹配。</p>
+<h1 id="4-接口"><a href="#4-接口" class="headerlink" title="4.接口"></a>4.接口</h1><h2 id="4-1设备接口"><a href="#4-1设备接口" class="headerlink" title="4.1设备接口"></a>4.1设备接口</h2><p>对于设备平台提供了如下接口，这也就是说我们在编写设备文件时能够调用这些接口：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">/* include/linux/platform_device.h */</div><div class="line">//Platform设备的注册/注销接口</div><div class="line">extern int platform_device_register(struct platform_device *);</div><div class="line">extern void platform_device_unregister(struct platform_device *);</div><div class="line"></div><div class="line">//arch_setup_pdev_archdata，设置platform_device变量中的archdata指针。</div><div class="line">extern void arch_setup_pdev_archdata(struct platform_device *);</div><div class="line"></div><div class="line">//以下这些接口，可以获取platform_device变量中的resource信息，以及直接获取IRQ的number等等。</div><div class="line">extern struct resource *platform_get_resource(struct platform_device *, unsigned int, unsigned int);</div><div class="line">extern int platform_get_irq(struct platform_device *, unsigned int);</div><div class="line">extern struct resource *platform_get_resource_byname(struct platform_device *, unsigned int, const char *);</div><div class="line">extern int platform_get_irq_byname(struct platform_device *, const char *);</div><div class="line">extern int platform_add_devices(struct platform_device **, int);</div><div class="line"></div><div class="line">extern struct platform_device *platform_device_register_full(const struct platform_device_info *pdevinfo);</div><div class="line"></div><div class="line">static inline struct platform_device *platform_device_register_resndata(</div><div class="line">                struct device *parent, const char *name, int id,</div><div class="line">                const struct resource *res, unsigned int num,</div><div class="line">                const void *data, size_t size)</div><div class="line"></div><div class="line">static inline struct platform_device *platform_device_register_simple(</div><div class="line">                const char *name, int id,</div><div class="line">                const struct resource *res, unsigned int num)</div><div class="line"></div><div class="line">static inline struct platform_device *platform_device_register_data(</div><div class="line">                struct device *parent, const char *name, int id,</div><div class="line">                const void *data, size_t size)</div><div class="line"></div><div class="line">extern struct platform_device *platform_device_alloc(const char *name, int id);</div><div class="line">extern int platform_device_add_resources(struct platform_device *pdev,</div><div class="line">                                         const struct resource *res,</div><div class="line">                                         unsigned int num);</div><div class="line">extern int platform_device_add_data(struct platform_device *pdev,</div><div class="line">                                    const void *data, size_t size);</div><div class="line">extern int platform_device_add(struct platform_device *pdev);</div><div class="line">extern void platform_device_del(struct platform_device *pdev);</div><div class="line">extern void platform_device_put(struct platform_device *pdev);</div></pre></td></tr></table></figure></p>
+<h2 id="4-2驱动接口"><a href="#4-2驱动接口" class="headerlink" title="4.2驱动接口"></a>4.2驱动接口</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">platform_driver_registe、platform_driver_unregister，platform driver的注册、注销接口。</div><div class="line">platform_driver_probe，主动执行probe动作。</div><div class="line">platform_set_drvdata、platform_get_drvdata，设置或者获取driver保存在device变量中的私有数据。</div></pre></td></tr></table></figure>
+<h1 id="5-简单示例"><a href="#5-简单示例" class="headerlink" title="5.简单示例"></a>5.简单示例</h1><p>设备文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line">#include &lt;linux/module.h&gt;</div><div class="line">#include &lt;linux/kernel.h&gt;</div><div class="line">#include &lt;linux/fs.h&gt;</div><div class="line">#include &lt;linux/init.h&gt;</div><div class="line">#include &lt;linux/device.h&gt;</div><div class="line">#include &lt;linux/interrupt.h&gt;</div><div class="line">#include &lt;linux/sched.h&gt;</div><div class="line">#include &lt;linux/irq.h&gt;</div><div class="line">#include &lt;asm/uaccess.h&gt;</div><div class="line">#include &lt;linux/input.h&gt;</div><div class="line">#include &lt;linux/platform_device.h&gt;</div><div class="line">// 设备资源</div><div class="line">static struct resource led_resource[] = &#123;   //jz2440的参数，驱动未测试</div><div class="line">    [0] = &#123;</div><div class="line">        .start = 0x56000010,</div><div class="line">        .end   = 0x56000010 + 8 - 1,</div><div class="line">        .flags = IORESOURCE_MEM,</div><div class="line">    &#125;,</div><div class="line">    [1] = &#123;</div><div class="line">        .start = 5,</div><div class="line">        .end   = 5,</div><div class="line">        .flags = IORESOURCE_IRQ,</div><div class="line">    &#125;,</div><div class="line">&#125;;</div><div class="line"></div><div class="line">static void led_release(struct device *dev)&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">// 创建一个设备</div><div class="line">static struct platform_device led_dev = &#123;</div><div class="line">    .name = &quot;myled&quot;,    //设备名字 与 驱动相匹配</div><div class="line">    .id   = -1,</div><div class="line">    .num_resources = ARRAY_SIZE(led_resource),</div><div class="line">    .resource = led_resource,</div><div class="line"></div><div class="line">    .dev = &#123;</div><div class="line">        .release = led_release,</div><div class="line">        //.devt = MKDEV(252, 1),</div><div class="line">    &#125;,</div><div class="line">&#125;;</div><div class="line"></div><div class="line">static int led_dev_init(void)&#123;</div><div class="line"></div><div class="line">    //向bus注册led_dev match drv链表进行配对</div><div class="line">    platform_device_register(&amp;led_dev);</div><div class="line">    return 0;</div><div class="line">&#125;</div><div class="line"></div><div class="line">static void led_dev_exit(void)&#123;</div><div class="line">    platform_device_unregister(&amp;led_dev);</div><div class="line">&#125;</div><div class="line">module_init(led_dev_init);</div><div class="line">module_exit(led_dev_exit);</div><div class="line">MODULE_LICENSE(&quot;GPL&quot;);</div></pre></td></tr></table></figure></p>
+<p>驱动文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div></pre></td><td class="code"><pre><div class="line">#include &lt;linux/module.h&gt;</div><div class="line">#include &lt;linux/kernel.h&gt;</div><div class="line">#include &lt;linux/fs.h&gt;</div><div class="line">#include &lt;linux/init.h&gt;</div><div class="line">#include &lt;linux/device.h&gt;</div><div class="line">#include &lt;linux/interrupt.h&gt;</div><div class="line">#include &lt;linux/sched.h&gt;</div><div class="line">#include &lt;linux/irq.h&gt;</div><div class="line">#include &lt;asm/uaccess.h&gt;</div><div class="line"></div><div class="line">#include &lt;linux/platform_device.h&gt;</div><div class="line">#include &lt;linux/io.h&gt;</div><div class="line"></div><div class="line">static int major;</div><div class="line"></div><div class="line">static struct class *cls;</div><div class="line">static struct device *dev;</div><div class="line"></div><div class="line">static volatile unsigned long *gpio_con;</div><div class="line">static volatile unsigned long *gpio_dat;</div><div class="line">static int pin;</div><div class="line"></div><div class="line">static int led_open(struct inode *inode, struct file *file)&#123;</div><div class="line"></div><div class="line">    *gpio_con &amp;= ~(0x03 &lt;&lt; (pin*2));</div><div class="line">    *gpio_con |=  (0x01 &lt;&lt; (pin*2));</div><div class="line">    return 0;</div><div class="line">&#125;</div><div class="line"></div><div class="line">static ssize_t led_write(struct file *file, const char __user *buf,</div><div class="line">    size_t count, loff_t *ppos)&#123;</div><div class="line"></div><div class="line">    int val;</div><div class="line">    copy_from_user(&amp;val, buf, count);</div><div class="line"></div><div class="line">    if(val == 1)&#123;</div><div class="line"></div><div class="line">        *gpio_dat &amp;= ~(1&lt;&lt;pin);</div><div class="line">    &#125;else&#123;</div><div class="line"></div><div class="line">        *gpio_dat &amp;=  (1&lt;&lt;pin);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    return 0;</div><div class="line">&#125;</div><div class="line"></div><div class="line">static struct file_operations led_fops = &#123;</div><div class="line"></div><div class="line">    .owner = THIS_MODULE,</div><div class="line">    .open  = led_open,</div><div class="line">    .write = led_write,</div><div class="line">&#125;;</div><div class="line"></div><div class="line">static int led_probe(struct platform_device *pdev)&#123;</div><div class="line"></div><div class="line">    struct resource *res;</div><div class="line">    // 最后一个参数 0 表示第1个该类型的资源</div><div class="line">    res = platform_get_resource(pdev, IORESOURCE_MEM, 0);</div><div class="line">    gpio_con = ioremap(res-&gt;start, res-&gt;end - res-&gt;start + 1);</div><div class="line">    gpio_dat = gpio_con + 1;</div><div class="line"></div><div class="line">    res = platform_get_resource(pdev, IORESOURCE_IRQ, 0);</div><div class="line">    pin = res-&gt;start;</div><div class="line"></div><div class="line">    printk(&quot;led_probe, found led\n&quot;);</div><div class="line"></div><div class="line">    // 注册设备驱动 创建设备节点</div><div class="line">    major = register_chrdev(0, &quot;myled&quot;, &amp;led_fops);</div><div class="line">    // 创建类</div><div class="line">    cls = class_create(THIS_MODULE, &quot;myled&quot;);</div><div class="line">    // 创建设备节点</div><div class="line">    dev = device_create(cls, NULL, MKDEV(major, 0), NULL, &quot;led&quot;);</div><div class="line"></div><div class="line">    return 0;</div><div class="line">&#125;</div><div class="line"></div><div class="line">static int led_remove(struct platform_device *pdev)&#123;</div><div class="line"></div><div class="line">    printk(&quot;led_remove, remove led\n&quot;);</div><div class="line">    // 删除设备节点</div><div class="line">    device_unregister(dev);</div><div class="line">    // 销毁类</div><div class="line">    class_destroy(cls);</div><div class="line">    // 取消注册设备驱动</div><div class="line">    unregister_chrdev(major, &quot;myled&quot;);</div><div class="line">    // 取消内存映射</div><div class="line">    iounmap(gpio_con);</div><div class="line"></div><div class="line">    return 0;</div><div class="line">&#125;</div><div class="line"></div><div class="line">struct platform_driver led_drv = &#123;</div><div class="line"></div><div class="line">    .probe  = led_probe,    //匹配到dev之后调用probe</div><div class="line">    .remove = led_remove,</div><div class="line">    .driver = &#123;</div><div class="line">        .name = &quot;myled&quot;,</div><div class="line">    &#125;,</div><div class="line">&#125;;</div><div class="line"></div><div class="line">static int led_drv_init(void)&#123;</div><div class="line"></div><div class="line">    platform_driver_register(&amp;led_drv);</div><div class="line">    return 0;</div><div class="line">&#125;</div><div class="line"></div><div class="line">static void led_drv_exit(void)&#123;</div><div class="line"></div><div class="line">    platform_driver_unregister(&amp;led_drv);</div><div class="line">&#125;</div><div class="line"></div><div class="line">module_init(led_drv_init);</div><div class="line">module_exit(led_drv_exit);</div><div class="line">MODULE_LICENSE(&quot;GPL&quot;);</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/avatar.jpg" alt="Dock wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+            <a href="/tags/平台设备/" rel="tag"># 平台设备</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/27/Basic/ARM指令之必知必会/" rel="next" title="ARM指令之必知必会">
+                <i class="fa fa-chevron-left"></i> ARM指令之必知必会
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/24/Protocal/通信协议-SPI/" rel="prev" title="通信协议-SPI">
+                通信协议-SPI <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Dock" />
+            
+              <p class="site-author-name" itemprop="name">Dock</p>
+              <p class="site-description motion-element" itemprop="description">一直在努力的去做一个更好的程序员，为了父母、为了小鑫鑫，更为了自己</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-platform-bus-type"><span class="nav-number">1.</span> <span class="nav-text">1.platform_bus_type</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-platform-device"><span class="nav-number">2.</span> <span class="nav-text">2.platform_device</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-platform-device-dirver"><span class="nav-number">3.</span> <span class="nav-text">3.platform_device_dirver</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-接口"><span class="nav-number">4.</span> <span class="nav-text">4.接口</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1设备接口"><span class="nav-number">4.1.</span> <span class="nav-text">4.1设备接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2驱动接口"><span class="nav-number">4.2.</span> <span class="nav-text">4.2驱动接口</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-简单示例"><span class="nav-number">5.</span> <span class="nav-text">5.简单示例</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dock</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.3</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1272012975&web_id=1272012975" language="JavaScript"></script>
+  </div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+      <style>
+        a.gitment-editor-footer-tip { display: none; }
+        .gitment-container.gitment-footer-container { display: none; }
+      </style>
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'BooooL',
+            repo: 'BooooL.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '316f45fdef859ea4bb5768080bfae1e312ab5802',
+            
+                client_id: 'cf9b9b4e932c5d772d85'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
