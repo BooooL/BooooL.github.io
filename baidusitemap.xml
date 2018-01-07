@@ -4,6 +4,31 @@
 
     
   <url>
+    <loc>http://coderdock.com/2018/08/27/Linux-MTD%E6%9E%B6%E6%9E%84%E5%88%86%E6%9E%90/</loc>
+    <lastmod>2018-01-07T08:00:46.927Z</lastmod>
+    <data>
+        <display>
+        <title>Linux MTD架构分析</title>
+        <pubTime>2018-08-27T07:51:06.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+        <tag>MTD</tag>
+         
+         
+           
+             
+              <breadCrumb title="Linux" url="http://coderdock.com/categories/Linux/"/>
+          
+             
+              <breadCrumb title="MTD" url="http://coderdock.com/categories/Linux/MTD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://coderdock.com/2017/08/09/USB/USB%E7%B3%BB%E5%88%97-1-%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84%E4%BD%93/</loc>
     <lastmod>2018-01-07T07:53:21.070Z</lastmod>
     <data>
@@ -41,31 +66,6 @@
            
              
               <breadCrumb title="USB系列" url="http://coderdock.com/categories/USB%E7%B3%BB%E5%88%97/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2018/08/27/Linux-MTD%E6%9E%B6%E6%9E%84%E5%88%86%E6%9E%90/</loc>
-    <lastmod>2018-01-07T07:52:05.644Z</lastmod>
-    <data>
-        <display>
-        <title>Linux MTD架构分析</title>
-        <pubTime>2018-08-27T07:51:06.000Z</pubTime>
-        
-        <tag>Linux</tag>
-         
-        <tag>MTD</tag>
-         
-         
-           
-             
-              <breadCrumb title="Linux" url="http://coderdock.com/categories/Linux/"/>
-          
-             
-              <breadCrumb title="MTD" url="http://coderdock.com/categories/Linux/MTD/"/>
           
         </display>
     </data>

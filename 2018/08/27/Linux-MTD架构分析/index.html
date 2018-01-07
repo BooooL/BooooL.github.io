@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="一直在努力的去做一个更好的程序员，为了父母、为了小鑫鑫，更为了自己">
+<meta name="description" content="介绍Linux MTD子系统架构划分。">
 <meta name="keywords" content="Linux,MTD">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux MTD架构分析">
 <meta property="og:url" content="http://coderdock.com/2018/08/27/Linux-MTD架构分析/index.html">
 <meta property="og:site_name" content="CoderDock">
-<meta property="og:description" content="一直在努力的去做一个更好的程序员，为了父母、为了小鑫鑫，更为了自己">
+<meta property="og:description" content="介绍Linux MTD子系统架构划分。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-07T07:52:05.644Z">
+<meta property="og:image" content="http://img.blog.csdn.net/20140319203528000?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbHdqMTAzODYyMDk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:updated_time" content="2018-01-07T08:00:46.927Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux MTD架构分析">
-<meta name="twitter:description" content="一直在努力的去做一个更好的程序员，为了父母、为了小鑫鑫，更为了自己">
+<meta name="twitter:description" content="介绍Linux MTD子系统架构划分。">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20140319203528000?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbHdqMTAzODYyMDk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
 
 
 
@@ -368,7 +370,12 @@
       
 
       
-        
+        <p>介绍Linux MTD子系统架构划分。<br><a id="more"></a><br>MTD，Memory Technology Device即内存技术设备，在Linux内核中，引入MTD层为NOR FLASH和NAND FLASH设备提供统一接口。MTD将文件系统与底层FLASH存储器进行了隔离。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">字符设备节点					块设备节点</div><div class="line">	|							|</div><div class="line">MTD字符设备					MTD块设备驱动</div><div class="line">		\                  /</div><div class="line">		 \				  /</div><div class="line">			MTD原始设备</div><div class="line">				|</div><div class="line">			Flash驱动程序</div><div class="line">				|	</div><div class="line">			   硬件</div></pre></td></tr></table></figure></p>
+<p><strong>Flash硬件驱动层</strong>：Flash硬件驱动层负责对Flash硬件的读、写和擦除操作。MTD设备的Nand Flash芯片的驱动则drivers/mtd/nand/子目录下,Nor Flash芯片驱动位于drivers/mtd/chips/子目录下。</p>
+<p><strong>MTD原始设备层：</strong>用于描述MTD原始设备的数据结构是mtd_info，它定义了大量的关于MTD的数据和操作函数。其中<strong>mtdcore.c</strong>:  MTD原始设备接口相关实现<strong>，mtdpart.c</strong> :  MTD分区接口相关实现。</p>
+<p><strong>MTD设备层：</strong>基于MTD原始设备，linux系统可以定义出MTD的<strong>块设备（主设备号31）</strong>和<strong>字符设备（设备号90）</strong>。其中<strong>mtdchar.c</strong> :  MTD字符设备接口相关实现，<strong>mtdblock.c</strong> : MTD块设备接口相关实现。</p>
+<p><strong>设备节点：</strong>通过mknod在/dev子目录下建立<strong>MTD块设备节点（主设备号为31）</strong>和<strong>MTD字符设备节点（主设备号为90）</strong>。通过访问此设备节点即可访问MTD字符设备和块设备。<br><img src="http://img.blog.csdn.net/20140319203528000?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbHdqMTAzODYyMDk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="MTD分层"></p>
+
       
     </div>
     
