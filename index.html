@@ -574,7 +574,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/09/USB/USB系列-1-基本结构体/" itemprop="url">USB系列--1-基本结构体</a></h1>
+                <a class="post-title-link" href="/2017/08/09/USB/USB系列-1-基本结构体/" itemprop="url">USB系列-1-基本结构体</a></h1>
         
 
         <div class="post-meta">
@@ -939,31 +939,14 @@
 
       
         
-          
-            <h1 id="1-图像处理流程"><a href="#1-图像处理流程" class="headerlink" title="1.图像处理流程"></a>1.图像处理流程</h1><ul>
-<li>图像采集，这是进行图像处理的第一步。其中<code>采样频率</code>直接影响到采集图像的质量。</li>
-<li>图像量化，是将采集到的数据进行量化处理，如一个像素点是使用MONO还是RGB进行表征。</li>
-<li>图像处理, 得到图像后，需要尽快的进行处理，现在进行的图像处理主要有以下几点：<ul>
-<li>图像变换，有时进行较大图像处理时，会耗费很大的资源，那么往往采取将空间域的图像转换到转换域进行处理，不仅可以减少计算量，而且能够得到更有效的处理。（傅里叶变换、沃尔什变换、离散余弦变换）</li>
-<li>图像编码压缩，目的是在尽量不失真的情况下减少图像的体积。常用的压缩</li>
-<li>图像增强和复原，其目的是为了提高图像的质量，例如去除噪声、提高清晰度</li>
-<li>图像分割，图像分割是将图像中有意义的部分提取出来，如提取边缘、区域等，这是进一步进行图像识别、分析和理解的基础。<h1 id="2-图像处理算法"><a href="#2-图像处理算法" class="headerlink" title="2.图像处理算法"></a>2.图像处理算法</h1><h2 id="2-1傅里叶转换"><a href="#2-1傅里叶转换" class="headerlink" title="2.1傅里叶转换"></a>2.1傅里叶转换</h2>任何周期函数，都可以看作是不同振幅，不同相位正弦波的叠加。</li>
-</ul>
-</li>
-</ul>
-<p><iframe height="260" width="300" src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Fourier_series_and_transform.gif">&lt;/&gt;</iframe></p>
-<ul>
-<li>连续傅里叶转换</li>
-</ul>
-<p><img src="http://coderdock-1251264493.picsh.myqcloud.com/FFT_Convert.jpg" alt="img"></p>
-<ul>
-<li>连续傅里叶逆转换</li>
-</ul>
-<p><img src="http://coderdock-1251264493.picsh.myqcloud.com/FFT_Anti_Convert.jpg" alt="img"></p>
-<h2 id="2-2卷积"><a href="#2-2卷积" class="headerlink" title="2.2卷积"></a>2.2卷积</h2><p>卷积（Convolution）是一个常用的图像处理技术，可以改变像素强度，从而影响周围其他像素的强度。卷积的常用技术是创建滤镜，使用卷积技术，你可以获取一些流行的图像效果，比如模糊（blur）、锐化（sharpen）及边缘检测（edge detection），这些效果在Photo Booth、iPhoto和Aperture都有广泛使用。</p>
-<p><img src="http://img.blog.csdn.net/20151012211045222?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="卷积"></p>
-
-          
+          <p>图像处理的一些基础知识。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/01/ImagePro/图像处理基础/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

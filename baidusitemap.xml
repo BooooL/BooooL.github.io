@@ -4,6 +4,50 @@
 
     
   <url>
+    <loc>http://coderdock.com/2017/08/09/USB/USB%E7%B3%BB%E5%88%97-1-%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84%E4%BD%93/</loc>
+    <lastmod>2018-01-07T14:10:35.923Z</lastmod>
+    <data>
+        <display>
+        <title>USB系列-1-基本结构体</title>
+        <pubTime>2017-08-09T01:09:53.000Z</pubTime>
+        
+        <tag>USB</tag>
+         
+        <tag>基本结构体</tag>
+         
+         
+           
+             
+              <breadCrumb title="USB系列" url="http://coderdock.com/categories/USB%E7%B3%BB%E5%88%97/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/08/01/ImagePro/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2018-01-07T12:00:48.480Z</lastmod>
+    <data>
+        <display>
+        <title>图像处理基础</title>
+        <pubTime>2017-08-01T06:27:05.000Z</pubTime>
+        
+        <tag>图像处理</tag>
+         
+        <tag>基础概念</tag>
+         
+         
+           
+             
+              <breadCrumb title="图像处理" url="http://coderdock.com/categories/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://coderdock.com/2018/08/27/Linux-MTD%E6%9E%B6%E6%9E%84%E5%88%86%E6%9E%90/</loc>
     <lastmod>2018-01-07T08:00:46.927Z</lastmod>
     <data>
@@ -22,28 +66,6 @@
           
              
               <breadCrumb title="MTD" url="http://coderdock.com/categories/Linux/MTD/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/08/09/USB/USB%E7%B3%BB%E5%88%97-1-%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84%E4%BD%93/</loc>
-    <lastmod>2018-01-07T07:53:21.070Z</lastmod>
-    <data>
-        <display>
-        <title>USB系列--1-基本结构体</title>
-        <pubTime>2017-08-09T01:09:53.000Z</pubTime>
-        
-        <tag>USB</tag>
-         
-        <tag>基本结构体</tag>
-         
-         
-           
-             
-              <breadCrumb title="USB系列" url="http://coderdock.com/categories/USB%E7%B3%BB%E5%88%97/"/>
           
         </display>
     </data>
@@ -88,28 +110,6 @@
            
              
               <breadCrumb title="USB系列" url="http://coderdock.com/categories/USB%E7%B3%BB%E5%88%97/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/08/01/ImagePro/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2018-01-07T05:46:23.836Z</lastmod>
-    <data>
-        <display>
-        <title>图像处理基础</title>
-        <pubTime>2017-08-01T06:27:05.000Z</pubTime>
-        
-        <tag>图像处理</tag>
-         
-        <tag>基础概念</tag>
-         
-         
-           
-             
-              <breadCrumb title="图像处理" url="http://coderdock.com/categories/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
           
         </display>
     </data>
