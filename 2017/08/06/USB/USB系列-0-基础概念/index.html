@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="一直在努力的去做一个更好的程序员，为了父母、为了小鑫鑫，更为了自己">
+<meta name="description" content="12345678_______  ______|\     /|(  ____ \(  ___ \| )   ( || (    \/| (   ) )| |   | || (_____ | (__/ /| |   | |(_____  )|  __ (| |   | |      ) || (  \ \| (___) |/\____) || )___) )(_______)\_______)|/">
 <meta name="keywords" content="USB,基础概念">
 <meta property="og:type" content="article">
 <meta property="og:title" content="USB系列-0-基础概念">
 <meta property="og:url" content="http://coderdock.com/2017/08/06/USB/USB系列-0-基础概念/index.html">
 <meta property="og:site_name" content="CoderDock">
-<meta property="og:description" content="一直在努力的去做一个更好的程序员，为了父母、为了小鑫鑫，更为了自己">
+<meta property="og:description" content="12345678_______  ______|\     /|(  ____ \(  ___ \| )   ( || (    \/| (   ) )| |   | || (_____ | (__/ /| |   | |(_____  )|  __ (| |   | |      ) || (  \ \| (___) |/\____) || )___) )(_______)\_______)|/">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-06T12:16:47.922Z">
+<meta property="og:updated_time" content="2018-01-07T03:24:06.109Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="USB系列-0-基础概念">
-<meta name="twitter:description" content="一直在努力的去做一个更好的程序员，为了父母、为了小鑫鑫，更为了自己">
+<meta name="twitter:description" content="12345678_______  ______|\     /|(  ____ \(  ___ \| )   ( || (    \/| (   ) )| |   | || (_____ | (__/ /| |   | |(_____  )|  __ (| |   | |      ) || (  \ \| (___) |/\____) || )___) )(_______)\_______)|/">
 
 
 
@@ -357,7 +357,47 @@
       
 
       
-        
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">_______  ______</div><div class="line">|\     /|(  ____ \(  ___ \</div><div class="line">| )   ( || (    \/| (   ) )</div><div class="line">| |   | || (_____ | (__/ /</div><div class="line">| |   | |(_____  )|  __ (</div><div class="line">| |   | |      ) || (  \ \</div><div class="line">| (___) |/\____) || )___) )</div><div class="line">(_______)\_______)|/ \___/</div></pre></td></tr></table></figure>
+<h1 id="1-USB特性"><a href="#1-USB特性" class="headerlink" title="1.USB特性"></a>1.USB特性</h1><ul>
+<li>不同设备类型，统一接口</li>
+<li>支持热插拔</li>
+<li>灵活的供电方式</li>
+<li>多级速率支持</li>
+</ul>
+<h1 id="2-分类"><a href="#2-分类" class="headerlink" title="2.分类"></a>2.分类</h1><ul>
+<li>OHCI主要为非PC系统上以及带有SiShe ALi芯片组的PC主板上的USB芯片</li>
+<li>UHCI大多为Intel和Via主板上的USB控制器芯片。UHCI的硬件电路比OHCI简单，成本第，但驱动复杂。但他们都是由USB1.1规格的。</li>
+<li>EHCI是有Intel等几个厂商研发，兼容OHCI UHCI 遵循USB2.0规范</li>
+</ul>
+<h1 id="3-层次"><a href="#3-层次" class="headerlink" title="3.层次"></a>3.层次</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">设备  ：设备即我们所理解的设备，如一个键盘是一个设备，一个U盘是一个设备</div><div class="line">配置  ：配置是功能的集合，如一个USB耳麦能录音和播放，那么就可以存在三种配置</div><div class="line">接口  ：如上，就分为录音接口，播放接口</div><div class="line">端点  ：比如播放接口会存在两个端点，一个是左声道，一个是右声道</div></pre></td></tr></table></figure>
+<ul>
+<li>端点是通信的基本单位，并且方向是确定的</li>
+<li>管道代表着端点与端点之间通信的能力<h1 id="4-传输单位"><a href="#4-传输单位" class="headerlink" title="4.传输单位"></a>4.传输单位</h1>*事务：事务一般由令牌包、数据包（可选）、握手包组成。<ul>
+<li>令牌包：用来启动一个事务，总是由主机发送。</li>
+<li>数据包：可以从主机到设备，也可以由设备到主机，方向由令牌包决定。</li>
+<li>握手包：通常情况，数据的接收者发送握手包（ACK或者NAK）。</li>
+</ul>
+</li>
+</ul>
+<p>事务一般由令牌包、数据包（可选）、握手包组成。</p>
+<ul>
+<li>USB协议规定了四种传输类型：控制传输、批量传输、同步传输、中断传输<ul>
+<li>控制传输：控制传输事负责向USB设置一些控制信息，传送这种事务的管道是控制管道。控制管道在USB设备中是必须的。控制传送也分为三个阶段，即令牌阶段、数据传送阶段、握手阶段。</li>
+<li>中断传输：中断事物的数据量很小，一般用于通知Host某个事件的来临，例如USB鼠标，鼠标移动或者鼠标单击等操作都会通过中断管道来向Host传送事件。也分3个阶段，令牌阶段、数据传输阶段、握手阶段。</li>
+<li>同步传输：这是种能保证传输的同步性的事务。如在USB摄像头中传输视频数据的时候会采用这种事务，这种事务能保证每秒有固定的传输量，与Bulk传输不同的是他允许有一定的误码率。同步传输事务只有两个阶段，令牌阶段、数据阶段，因为不关心数据的正确性，所以没有握手阶段。</li>
+<li>批量传输：用来传输大量数据，确保没有数据丢失，但不保证在特定时间内完场，U盘使用的就是批量传输。<h1 id="5-命名"><a href="#5-命名" class="headerlink" title="5.命名"></a>5.命名</h1></li>
+</ul>
+</li>
+<li>sysfs USB命名</li>
+</ul>
+<p>2-1:1.0 设备-端口：配置.接口</p>
+<p>第二个设备的第一个端口，使用配置0 的接口1</p>
+<h1 id="6-驱动架构"><a href="#6-驱动架构" class="headerlink" title="6.驱动架构"></a>6.驱动架构</h1><p>USB Core</p>
+<p>USB Core提供一些核心算法，为别的设备驱动程序提供服务，提供一个用于访问和控制USB硬件的接口，而不用考虑系统当前是那种主机控制器，</p>
+<p>USB Core、USB主机控制器 USB设备驱动三者的关系如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">Block层 ： Net层 ： Char层 ： ---</div><div class="line">-------------------------------</div><div class="line">  USB设备驱动程序</div><div class="line">-------------------------------</div><div class="line">  USB Core</div><div class="line">-------------------------------</div><div class="line">  USB主机控制器(HCD)</div><div class="line">-------------------------------</div><div class="line">  硬件</div></pre></td></tr></table></figure></p>
+<p>HCD提供主机控制器硬件的抽象，隐藏硬件的细节，HCD只对 USB Core负责。这也就意味着我们写USB驱动，是在调用USB Core接口的基础上进行的。</p>
+<p>我们接下来的源码分析就从HCD开始。</p>
+
       
     </div>
     
@@ -407,8 +447,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/09/USB/USB系列-1-基本结构体/" rel="prev" title="USB系列--1-基本结构体">
-                USB系列--1-基本结构体 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/09/USB系列-1-基本结构体/" rel="prev" title="USB系列-1-基本结构体">
+                USB系列-1-基本结构体 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -468,8 +508,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -488,7 +537,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">33</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -499,7 +548,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -510,7 +559,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -535,6 +584,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-USB特性"><span class="nav-number">1.</span> <span class="nav-text">1.USB特性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-分类"><span class="nav-number">2.</span> <span class="nav-text">2.分类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-层次"><span class="nav-number">3.</span> <span class="nav-text">3.层次</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-传输单位"><span class="nav-number">4.</span> <span class="nav-text">4.传输单位</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-命名"><span class="nav-number">5.</span> <span class="nav-text">5.命名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-驱动架构"><span class="nav-number">6.</span> <span class="nav-text">6.驱动架构</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
