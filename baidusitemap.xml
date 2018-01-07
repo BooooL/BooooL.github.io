@@ -4,6 +4,31 @@
 
     
   <url>
+    <loc>http://coderdock.com/2017/09/07/ImagePro/FPGA%E7%AE%97%E6%B3%95%E6%98%A0%E5%B0%84%E8%A6%81%E7%82%B9/</loc>
+    <lastmod>2018-01-07T14:16:41.681Z</lastmod>
+    <data>
+        <display>
+        <title>FPGA算法映射思考</title>
+        <pubTime>2017-09-07T12:07:08.000Z</pubTime>
+        
+        <tag>FPGA</tag>
+         
+        <tag>算法映射</tag>
+         
+         
+           
+             
+              <breadCrumb title="FPGA" url="http://coderdock.com/categories/FPGA/"/>
+          
+             
+              <breadCrumb title="算法" url="http://coderdock.com/categories/FPGA/%E7%AE%97%E6%B3%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://coderdock.com/2017/08/09/USB/USB%E7%B3%BB%E5%88%97-1-%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84%E4%BD%93/</loc>
     <lastmod>2018-01-07T14:10:35.923Z</lastmod>
     <data>
@@ -645,9 +670,9 @@
         <title>通信协议-UART</title>
         <pubTime>2017-02-27T07:57:25.000Z</pubTime>
         
-        <tag>UART</tag>
-         
         <tag>通信协议</tag>
+         
+        <tag>UART</tag>
          
          
            
