@@ -252,6 +252,158 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2018/08/27/Linux-MTD架构分析/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dock">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CoderDock">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/27/Linux-MTD架构分析/" itemprop="url">Linux MTD架构分析</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-27T15:51:06+08:00">
+                2018-08-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/MTD/" itemprop="url" rel="index">
+                    <span itemprop="name">MTD</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://coderdock.com/2017/08/17/USB/USB系列-2-DNW源码/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -344,10 +496,14 @@
 
       
         
-          
-            <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div></pre></td><td class="code"><pre><div class="line">#include &lt;linux/kernel.h&gt;</div><div class="line">#include &lt;linux/module.h&gt;</div><div class="line">#include &lt;linux/usb.h&gt;</div><div class="line">#include &lt;linux/fs.h&gt;</div><div class="line">#include &lt;linux/mutex.h&gt;</div><div class="line">#include &lt;linux/slab.h&gt;</div><div class="line">#include &lt;linux/uaccess.h&gt;</div><div class="line"></div><div class="line">#define SECBULK_MAJOR	102</div><div class="line">#define SECBULK_MINOR	0</div><div class="line">#define DRIVER_NAME	&quot;secbulk&quot;</div><div class="line"></div><div class="line">#define BULKOUT_BUFFER_SIZE	512</div><div class="line"></div><div class="line">struct secbulk_dev</div><div class="line">&#123;</div><div class="line">	struct usb_device *udev;</div><div class="line">	struct mutex io_mutex;</div><div class="line">	char*	bulkout_buffer;</div><div class="line">	__u8	bulk_out_endpointAddr;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">static struct usb_class_driver secbulk_class;</div><div class="line"></div><div class="line">static struct usb_device_id secbulk_table[]= &#123;</div><div class="line">	&#123; USB_DEVICE(0x04e8, 0x1234)&#125;,		//c</div><div class="line">	&#123; &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">static struct usb_driver secbulk_driver;</div><div class="line">static void secbulk_disconnect(struct usb_interface *interface)</div><div class="line">&#123;</div><div class="line">	struct secbulk_dev *dev = NULL;</div><div class="line">	printk(KERN_INFO &quot;secbulk:secbulk disconnected!\n&quot;);</div><div class="line">	dev = usb_get_intfdata(interface);</div><div class="line">	if( NULL != dev )</div><div class="line">		kfree(dev);</div><div class="line">	usb_deregister_dev(interface, &amp;secbulk_class);</div><div class="line">	return;</div><div class="line">&#125;</div><div class="line"></div><div class="line">static ssize_t secbulk_read(struct file *file, char __user *buf, size_t len, loff_t *loff)</div><div class="line">&#123;</div><div class="line">	return -EPERM;</div><div class="line">&#125;</div><div class="line"></div><div class="line">static ssize_t secbulk_write(struct file *file, const char __user *buf, size_t len, loff_t *loff)</div><div class="line">&#123;</div><div class="line">	size_t to_write;</div><div class="line">	struct secbulk_dev *dev = file-&gt;private_data;</div><div class="line">	int ret;</div><div class="line">	int actual_length;</div><div class="line">	size_t total_writed;</div><div class="line"></div><div class="line">	total_writed = 0;</div><div class="line">	while(len &gt; 0)</div><div class="line">	&#123;</div><div class="line">		to_write = min(len, BULKOUT_BUFFER_SIZE);</div><div class="line"></div><div class="line">		if(copy_from_user(dev-&gt;bulkout_buffer, buf+total_writed, to_write))	//得到用户空间数据</div><div class="line">		&#123;</div><div class="line">			printk(KERN_ERR &quot;secbulk:copy_from_user failed!\n&quot;);</div><div class="line">			return -EFAULT;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		ret = usb_bulk_msg(dev-&gt;udev, usb_sndbulkpipe(dev-&gt;udev, dev-&gt;bulk_out_endpointAddr),	//构造批量传输信息，传输给usbCore处理</div><div class="line">				dev-&gt;bulkout_buffer,</div><div class="line">				to_write,</div><div class="line">				&amp;actual_length,</div><div class="line">				3*HZ);</div><div class="line">		if(ret || actual_length!=to_write)</div><div class="line">		&#123;</div><div class="line">			printk(KERN_ERR &quot;secbulk:usb_bulk_msg failed!\n&quot;);</div><div class="line">			return -EFAULT;</div><div class="line">		&#125;</div><div class="line">		len -= to_write;</div><div class="line">		total_writed += to_write;</div><div class="line">	&#125;</div><div class="line">	return total_writed;</div><div class="line">&#125;</div><div class="line"></div><div class="line">static int secbulk_open(struct inode *node, struct file *file)</div><div class="line">&#123;</div><div class="line">	struct usb_interface *interface;</div><div class="line">	struct secbulk_dev *dev;</div><div class="line"></div><div class="line">	interface = usb_find_interface(&amp;secbulk_driver, iminor(node));</div><div class="line">	if(!interface)</div><div class="line">		return -ENODEV;</div><div class="line"></div><div class="line">	dev = usb_get_intfdata(interface);</div><div class="line">	dev-&gt;bulkout_buffer = kzalloc(BULKOUT_BUFFER_SIZE, GFP_KERNEL);</div><div class="line">	if(!(dev-&gt;bulkout_buffer))</div><div class="line">		return -ENOMEM;</div><div class="line">	if(!mutex_trylock(&amp;dev-&gt;io_mutex))</div><div class="line">		return -EBUSY;</div><div class="line">	file-&gt;private_data = dev;</div><div class="line">	return 0;</div><div class="line">&#125;</div><div class="line"></div><div class="line">static int secbulk_release(struct inode *node, struct file *file)</div><div class="line">&#123;</div><div class="line">	struct secbulk_dev *dev;</div><div class="line"></div><div class="line">	dev = (struct secbulk_dev*)(file-&gt;private_data);</div><div class="line">	kfree(dev-&gt;bulkout_buffer);</div><div class="line">	mutex_unlock(&amp;dev-&gt;io_mutex);</div><div class="line">	return 0;</div><div class="line">&#125;</div><div class="line"></div><div class="line">static struct file_operations secbulk_fops = &#123;</div><div class="line">	.owner 	=	THIS_MODULE,</div><div class="line">	.read 	=	secbulk_read,</div><div class="line">	.write	=	secbulk_write,</div><div class="line">	.open   =	secbulk_open,</div><div class="line">	.release=	secbulk_release,</div><div class="line">&#125;;</div><div class="line"></div><div class="line">static struct usb_class_driver secbulk_class = &#123;</div><div class="line">	.name = 	&quot;secbulk%d&quot;,</div><div class="line">	.fops =		&amp;secbulk_fops,</div><div class="line">	.minor_base=	100,</div><div class="line">&#125;;</div><div class="line"></div><div class="line">static int secbulk_probe(struct usb_interface *interface, const struct usb_device_id *id)</div><div class="line">&#123;</div><div class="line">	int ret;</div><div class="line">	struct secbulk_dev *dev;</div><div class="line">	struct usb_host_interface *iface_desc;</div><div class="line">	struct usb_endpoint_descriptor *endpoint;</div><div class="line">	int i;</div><div class="line"></div><div class="line">	printk(KERN_INFO &quot;secbulk:secbulk probing...\n&quot;);</div><div class="line"></div><div class="line">	dev = kzalloc(sizeof(*dev), GFP_KERNEL);		//分配一个指针空间，只是为了索引内核的空间</div><div class="line">	if(!dev)</div><div class="line">	&#123;</div><div class="line">		ret = -ENOMEM;</div><div class="line">		goto error;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	iface_desc = interface-&gt;cur_altsetting;</div><div class="line">	for(i=0; i &lt; iface_desc-&gt;desc.bNumEndpoints; i++) //从USBCore传入的借口中得到得到输出端点</div><div class="line">	&#123;</div><div class="line">		endpoint = &amp;(iface_desc-&gt;endpoint[i].desc);</div><div class="line">		if(!dev-&gt;bulk_out_endpointAddr</div><div class="line">		&amp;&amp; usb_endpoint_is_bulk_out(endpoint))</div><div class="line">		&#123;</div><div class="line">			printk(KERN_INFO &quot;secbulk:bulk out endpoint found!\n&quot;);</div><div class="line">			dev-&gt;bulk_out_endpointAddr = endpoint-&gt;bEndpointAddress;</div><div class="line">			break;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	if(!(dev-&gt;bulk_out_endpointAddr))</div><div class="line">	&#123;</div><div class="line">		ret = -EBUSY;</div><div class="line">		goto error;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	ret = usb_register_dev(interface, &amp;secbulk_class);	//将usb驱动注册成字符设备驱动提供给用户程序</div><div class="line">	if(ret)</div><div class="line">	&#123;</div><div class="line">		printk(KERN_ERR &quot;secbulk: usb_register_dev failed!\n&quot;);</div><div class="line">		return ret;</div><div class="line">	&#125;</div><div class="line">	dev-&gt;udev = usb_get_dev(interface_to_usbdev(interface));</div><div class="line"></div><div class="line">	usb_set_intfdata(interface, dev);</div><div class="line"></div><div class="line">	mutex_init(&amp;dev-&gt;io_mutex);</div><div class="line">	return 0;</div><div class="line">error:</div><div class="line">	if(!dev)</div><div class="line">		kfree(dev);</div><div class="line">	return ret;</div><div class="line">&#125;</div><div class="line"></div><div class="line">static struct usb_driver secbulk_driver= &#123;</div><div class="line">	.name=		&quot;secbulk&quot;,</div><div class="line">	.probe=		secbulk_probe,</div><div class="line">	.disconnect=	secbulk_disconnect,</div><div class="line">	.id_table=	secbulk_table,</div><div class="line">	.supports_autosuspend=0,</div><div class="line">&#125;;</div><div class="line">static int __init secbulk_init(void)</div><div class="line">&#123;</div><div class="line">	int result;</div><div class="line">	printk(KERN_INFO &quot;secbulk:secbulk loaded\n&quot;);</div><div class="line">	result = usb_register(&amp;secbulk_driver);		//1 注册 secbulk_driver, 此处我们就注册了usb_driver，当插入USB后，</div><div class="line">												//会调用add_dev,然后将ID号与驱动支持的id进行对比，如果对比通过，就会调用probe</div><div class="line">	if(result)</div><div class="line">	&#123;	printk(KERN_ERR &quot;secbulk:usb_register failed: %d&quot;, result);</div><div class="line">		return result;</div><div class="line">	&#125;</div><div class="line">	return 0;</div><div class="line">&#125;</div><div class="line"></div><div class="line">static void __exit secbulk_exit(void)</div><div class="line">&#123;</div><div class="line">	usb_deregister(&amp;secbulk_driver);</div><div class="line">	printk(KERN_INFO &quot;secbulk:secbulk unloaded\n&quot;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">module_init(secbulk_init);</div><div class="line">module_exit(secbulk_exit);</div><div class="line">MODULE_LICENSE(&quot;GPL&quot;);</div></pre></td></tr></table></figure>
-          
+          <p>对DNW驱动源码进行简要分析。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/17/USB/USB系列-2-DNW源码/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -486,12 +642,14 @@
 
       
         
-          
-            <a id="more"></a>
-<h1 id="1-USB设备结构体"><a href="#1-USB设备结构体" class="headerlink" title="1.USB设备结构体"></a>1.USB设备结构体</h1><p>usb_device位于<code>/linux/include/usb.h</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * struct usb_device - kernel&apos;s representation of a USB device</div><div class="line"> * @devnum: device number; address on a USB bus</div><div class="line"> * @devpath: device ID string for use in messages (e.g., /port/...)</div><div class="line"> * @route: tree topology hex string for use with xHCI</div><div class="line"> * @state: device state: configured, not attached, etc.</div><div class="line"> * @speed: device speed: high/full/low (or error)</div><div class="line"> * @tt: Transaction Translator info; used with low/full speed dev, highspeed hub</div><div class="line"> * @ttport: device port on that tt hub</div><div class="line"> * @toggle: one bit for each endpoint, with ([0] = IN, [1] = OUT) endpoints</div><div class="line"> * @parent: our hub, unless we&apos;re the root</div><div class="line"> * @bus: bus we&apos;re part of</div><div class="line"> * @ep0: endpoint 0 data (default control pipe)</div><div class="line"> * @dev: generic device interface</div><div class="line"> * @descriptor: USB device descriptor</div><div class="line"> * @bos: USB device BOS descriptor set</div><div class="line"> * @config: all of the device&apos;s configs</div><div class="line"> * @actconfig: the active configuration</div><div class="line"> * @ep_in: array of IN endpoints</div><div class="line"> * @ep_out: array of OUT endpoints</div><div class="line"> * @rawdescriptors: raw descriptors for each config</div><div class="line"> * @bus_mA: Current available from the bus</div><div class="line"> * @portnum: parent port number (origin 1)</div><div class="line"> * @level: number of USB hub ancestors</div><div class="line"> * @can_submit: URBs may be submitted</div><div class="line"> * @persist_enabled:  USB_PERSIST enabled for this device</div><div class="line"> * @have_langid: whether string_langid is valid</div><div class="line"> * @authorized: policy has said we can use it;</div><div class="line"> *	(user space) policy determines if we authorize this device to be</div><div class="line"> *	used or not. By default, wired USB devices are authorized.</div><div class="line"> *	WUSB devices are not, until we authorize them from user space.</div><div class="line"> *	FIXME -- complete doc</div><div class="line"> * @authenticated: Crypto authentication passed</div><div class="line"> * @wusb: device is Wireless USB</div><div class="line"> * @lpm_capable: device supports LPM</div><div class="line"> * @usb2_hw_lpm_capable: device can perform USB2 hardware LPM</div><div class="line"> * @usb2_hw_lpm_besl_capable: device can perform USB2 hardware BESL LPM</div><div class="line"> * @usb2_hw_lpm_enabled: USB2 hardware LPM is enabled</div><div class="line"> * @usb2_hw_lpm_allowed: Userspace allows USB 2.0 LPM to be enabled</div><div class="line"> * @usb3_lpm_u1_enabled: USB3 hardware U1 LPM enabled</div><div class="line"> * @usb3_lpm_u2_enabled: USB3 hardware U2 LPM enabled</div><div class="line"> * @string_langid: language ID for strings</div><div class="line"> * @product: iProduct string, if present (static)</div><div class="line"> * @manufacturer: iManufacturer string, if present (static)</div><div class="line"> * @serial: iSerialNumber string, if present (static)</div><div class="line"> * @filelist: usbfs files that are open to this device</div><div class="line"> * @maxchild: number of ports if hub</div><div class="line"> * @quirks: quirks of the whole device</div><div class="line"> * @urbnum: number of URBs submitted for the whole device</div><div class="line"> * @active_duration: total time device is not suspended</div><div class="line"> * @connect_time: time device was first connected</div><div class="line"> * @do_remote_wakeup:  remote wakeup should be enabled</div><div class="line"> * @reset_resume: needs reset instead of resume</div><div class="line"> * @port_is_suspended: the upstream port is suspended (L2 or U3)</div><div class="line"> * @wusb_dev: if this is a Wireless USB device, link to the WUSB</div><div class="line"> *	specific data for the device.</div><div class="line"> * @slot_id: Slot ID assigned by xHCI</div><div class="line"> * @removable: Device can be physically removed from this port</div><div class="line"> * @l1_params: best effor service latency for USB2 L1 LPM state, and L1 timeout.</div><div class="line"> * @u1_params: exit latencies for USB3 U1 LPM state, and hub-initiated timeout.</div><div class="line"> * @u2_params: exit latencies for USB3 U2 LPM state, and hub-initiated timeout.</div><div class="line"> * @lpm_disable_count: Ref count used by usb_disable_lpm() and usb_enable_lpm()</div><div class="line"> *	to keep track of the number of functions that require USB 3.0 Link Power</div><div class="line"> *	Management to be disabled for this usb_device.  This count should only</div><div class="line"> *	be manipulated by those functions, with the bandwidth_mutex is held.</div><div class="line"> *</div><div class="line"> * Notes:</div><div class="line"> * Usbcore drivers should not set usbdev-&gt;state directly.  Instead use</div><div class="line"> * usb_set_device_state().</div><div class="line"> */</div><div class="line">struct usb_device &#123;</div><div class="line">	int		devnum;			//设备号，还记得上一篇USB命名&quot;设备号-端口号：配置.接口&quot;命名方式，每插入一个新设备，USBCore会为其设置一个设备号</div><div class="line">	char	devpath[16]; //该设备在SysFS中的路径，一般为&quot;/sys/devices/pci0000:00/0000:00:12.2/_usb_1&quot;</div><div class="line">	u32		route;</div><div class="line">	enum usb_device_state	state;	//该设备的状态，如刚插上时为Attached</div><div class="line">	enum usb_device_speed	speed;	//速度级别 high full low</div><div class="line"></div><div class="line">	struct usb_tt	*tt;			//我们知道高速USB之前还存在全速和低速USB,那么高速USB设备怎么兼容其他</div><div class="line">	int		ttport;					//低速设备，通过使用TT(Transaction Translator)--高速USB中的转换电路</div><div class="line"></div><div class="line">	unsigned int toggle[2];			//对于中断传输、批量传输、和控制传输，传输数据时，需要DATA0和DATA1交</div><div class="line">									//替进行，toggle就是标识0端点的IN 和 OUT的DATAx的状态</div><div class="line">	struct usb_device *parent;		//父hub,如果是roothub，就是NULL</div><div class="line">	struct usb_bus *bus;			//设备所在的总线</div><div class="line">	struct usb_host_endpoint ep0;	//端点0被特殊对待，在结构体中静态存在</div><div class="line"></div><div class="line">	struct device dev;				//嵌入到usb_device中的device</div><div class="line"></div><div class="line">	struct usb_device_descriptor descriptor;	//设备描述符，描述该设备信息，后面会分析</div><div class="line">	struct usb_host_bos *bos;</div><div class="line">	struct usb_host_config *config;				//所有的配置信息列表</div><div class="line"></div><div class="line">	struct usb_host_config *actconfig;			//当前活跃的信息</div><div class="line">	struct usb_host_endpoint *ep_in[16];		//该设备的输入端点</div><div class="line">	struct usb_host_endpoint *ep_out[16];		//输出端点</div><div class="line"></div><div class="line">	char **rawdescriptors;</div><div class="line"></div><div class="line">	unsigned short bus_mA;						//能够从总线得到的电流值</div><div class="line">	u8 portnum;</div><div class="line">	u8 level;</div><div class="line"></div><div class="line">	unsigned can_submit:1;</div><div class="line">	unsigned persist_enabled:1;</div><div class="line">	unsigned have_langid:1;</div><div class="line">	unsigned authorized:1;</div><div class="line">	unsigned authenticated:1;</div><div class="line">	unsigned wusb:1;</div><div class="line">	unsigned lpm_capable:1;</div><div class="line">	unsigned usb2_hw_lpm_capable:1;</div><div class="line">	unsigned usb2_hw_lpm_besl_capable:1;</div><div class="line">	unsigned usb2_hw_lpm_enabled:1;</div><div class="line">	unsigned usb2_hw_lpm_allowed:1;</div><div class="line">	unsigned usb3_lpm_u1_enabled:1;</div><div class="line">	unsigned usb3_lpm_u2_enabled:1;</div><div class="line">	int string_langid;</div><div class="line"></div><div class="line">	/* static strings from the device */</div><div class="line">	char *product;</div><div class="line">	char *manufacturer;</div><div class="line">	char *serial;</div><div class="line"></div><div class="line">	struct list_head filelist;</div><div class="line"></div><div class="line">	int maxchild;</div><div class="line"></div><div class="line">	u32 quirks;</div><div class="line">	atomic_t urbnum;</div><div class="line"></div><div class="line">	unsigned long active_duration;</div><div class="line"></div><div class="line">#ifdef CONFIG_PM</div><div class="line">	unsigned long connect_time;</div><div class="line"></div><div class="line">	unsigned do_remote_wakeup:1;</div><div class="line">	unsigned reset_resume:1;</div><div class="line">	unsigned port_is_suspended:1;</div><div class="line">#endif</div><div class="line">	struct wusb_dev *wusb_dev;</div><div class="line">	int slot_id;</div><div class="line">	enum usb_device_removable removable;</div><div class="line">	struct usb2_lpm_parameters l1_params;</div><div class="line">	struct usb3_lpm_parameters u1_params;</div><div class="line">	struct usb3_lpm_parameters u2_params;</div><div class="line">	unsigned lpm_disable_count;</div><div class="line">&#125;;</div><div class="line">#define	to_usb_device(d) container_of(d, struct usb_device, dev)</div></pre></td></tr></table></figure></p>
-<h1 id="2-USB设备描述符结构体"><a href="#2-USB设备描述符结构体" class="headerlink" title="2 USB设备描述符结构体"></a>2 USB设备描述符结构体</h1><p>usb_device_descriptor位于``<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">/* USB_DT_DEVICE: Device descriptor */</div><div class="line">struct usb_device_descriptor &#123;</div><div class="line">	__u8  bLength;			//该设备描述符的长度</div><div class="line">	__u8  bDescriptorType;	// USB_DT_DEVICE = 0x01</div><div class="line"></div><div class="line">	__le16 bcdUSB;			//版本号</div><div class="line">	__u8  bDeviceClass;		//</div><div class="line">	__u8  bDeviceSubClass;</div><div class="line">	__u8  bDeviceProtocol;</div><div class="line">	__u8  bMaxPacketSize0;	//端点0一次可以处理的最大字节数</div><div class="line">	__le16 idVendor;		//厂商号</div><div class="line">	__le16 idProduct;		//产品号</div><div class="line">	__le16 bcdDevice;		//版本号</div><div class="line">	__u8  iManufacturer;	//分别对应上面的索引值 index</div><div class="line">	__u8  iProduct;</div><div class="line">	__u8  iSerialNumber;</div><div class="line">	__u8  bNumConfigurations;	//设备在当前速度级别下支持的配置数量</div><div class="line">&#125; __attribute__ ((packed));</div></pre></td></tr></table></figure></p>
-
-          
+          <p>介绍USB设备结构体和设备描述符结构体。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/09/USB/USB系列-1-基本结构体/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1566,163 +1724,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2017/06/13/LinuxSource/list-head之必知必会/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Dock">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CoderDock">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/13/LinuxSource/list-head之必知必会/" itemprop="url">list_head之必知必会</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-13T07:54:05+08:00">
-                2017-06-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/输入子系统/" itemprop="url" rel="index">
-                    <span itemprop="name">输入子系统</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>本章介绍list_head的相关知识。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"> _       _________ _______ _________            _______  _______  ______</div><div class="line">( \      \__   __/(  ____ \\__   __/  |\     /|(  ____ \(  ___  )(  __  \</div><div class="line">| (         ) (   | (    \/   ) (     | )   ( || (    \/| (   ) || (  \  )</div><div class="line">| |         | |   | (_____    | |     | (___) || (__    | (___) || |   ) |</div><div class="line">| |         | |   (_____  )   | |     |  ___  ||  __)   |  ___  || |   | |</div><div class="line">| |         | |         ) |   | |     | (   ) || (      | (   ) || |   ) |</div><div class="line">| (____/\___) (___/\____) |   | |     | )   ( || (____/\| )   ( || (__/  )</div><div class="line">(_______/\_______/\_______)   )_(     |/     \|(_______/|/     \|(______/</div></pre></td></tr></table></figure></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/13/LinuxSource/list-head之必知必会/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1777,7 +1778,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1788,7 +1789,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1799,7 +1800,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-count">45</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
