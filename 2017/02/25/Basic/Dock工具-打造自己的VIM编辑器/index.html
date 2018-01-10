@@ -89,7 +89,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7774609-8bcbc88a48fcc65e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7774609-9b58618ebfbb8067.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-12-24T04:23:16.245Z">
+<meta property="og:updated_time" content="2018-01-10T03:59:03.805Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="打造自己的VIM编辑器">
 <meta name="twitter:description" content="作为一个经常在Linux下开发的程序员，怎么能没有自己高逼格的VIM编辑器呢？在这片教程中会一步步的搭建起自己的高逼格VIM！">
@@ -413,10 +413,12 @@
 <p>此时，我们已经具有定义跳转的功能了。有两组快捷键是最常用的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Ctrl-]    跳转到光标所在符号的定义。</div><div class="line">Ctrl-t    回到上次跳转前的位置。</div></pre></td></tr></table></figure></p>
 <p>更多功能通过命令man ctags或在Vim命令行下运行help ctags查询。</p>
 <h3 id="4-2-安装Taglist"><a href="#4-2-安装Taglist" class="headerlink" title="4.2 安装Taglist"></a>4.2 安装Taglist</h3><p>从下方网址下载talist包，解压打<code>~/.vim</code>，注意的是如果之前已经存在了<code>doc</code>或者<code>plugin</code>文件夹，我们只需要将对应文件放置到对应文件夹即可。</p>
-<p>然后在 <code>.vimrc</code>中添加如下两句：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">let Tlist_Show_One_File=1  </div><div class="line">let Tlist_Exit_OnlyWindow=1</div></pre></td></tr></table></figure></p>
+<p>然后在 <code>.vimrc</code>中添加如下两句：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">let Tlist_Show_One_File=1</div><div class="line">let Tlist_Exit_OnlyWindow=1</div></pre></td></tr></table></figure></p>
 <h2 id="5-安装NERDTree"><a href="#5-安装NERDTree" class="headerlink" title="5 安装NERDTree"></a>5 安装NERDTree</h2><p>&emsp;&emsp;我们使用VIM进行大型源码编程的时候总是无法看到目录结构，这是一件比较苦恼的事情，那么我们就可以使用NERDTree来解决。方法很简单：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/scrooloose/nerdtree.git ~/</div></pre></td></tr></table></figure></p>
 <p>然后将目录中的文件放置到对应的文件夹即可。进入 vims使用命令 <code>NERDTreeToggle</code>看看目录结构出来了没有。我们也可以在<code>.vimrc</code>中设置快捷键<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">map &lt;F6&gt; :NERDTreeToggle&lt;CR&gt;</div></pre></td></tr></table></figure></p>
 <p>这样就可以使用 <code>F6</code>打开或者关闭目录结构了。</p>
+<p>版权声明：本文为博主原创文章，转载需声明为转载内容并添加原文地址。</p>
+<p>原文地址：<a href="http://coderdock.com">http://coderdock.com</a></p>
 
       
     </div>

@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="CoderDock">
 <meta property="og:description" content="12345678_______  ______|\     /|(  ____ \(  ___ \| )   ( || (    \/| (   ) )| |   | || (_____ | (__/ /| |   | |(_____  )|  __ (| |   | |      ) || (  \ \| (___) |/\____) || )___) )(_______)\_______)|/">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-07T06:59:30.799Z">
+<meta property="og:updated_time" content="2018-01-10T04:03:36.296Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="USB系列-0-基础概念">
 <meta name="twitter:description" content="12345678_______  ______|\     /|(  ____ \(  ___ \| )   ( || (    \/| (   ) )| |   | || (_____ | (__/ /| |   | |(_____  )|  __ (| |   | |      ) || (  \ \| (___) |/\____) || )___) )(_______)\_______)|/">
@@ -398,6 +398,8 @@
 <p>USB Core、USB主机控制器 USB设备驱动三者的关系如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">Block层 ： Net层 ： Char层 ： ---</div><div class="line">-------------------------------</div><div class="line">  USB设备驱动程序</div><div class="line">-------------------------------</div><div class="line">  USB Core</div><div class="line">-------------------------------</div><div class="line">  USB主机控制器(HCD)</div><div class="line">-------------------------------</div><div class="line">  硬件</div></pre></td></tr></table></figure></p>
 <p>HCD提供主机控制器硬件的抽象，隐藏硬件的细节，HCD只对 USB Core负责。这也就意味着我们写USB驱动，是在调用USB Core接口的基础上进行的。</p>
 <p>我们接下来的源码分析就从HCD开始。</p>
+<p>版权声明：本文为博主原创文章，转载需声明为转载内容并添加原文地址。</p>
+<p>原文地址：<a href="http://coderdock.com">http://coderdock.com</a></p>
 
       
     </div>
