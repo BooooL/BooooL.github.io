@@ -4,16 +4,41 @@
 
     
   <url>
+    <loc>http://coderdock.com/2017/06/20/Qt/%E5%B5%8C%E5%85%A5%E5%BC%8FQt5-8%E7%A7%BB%E6%A4%8D-%E7%BC%96%E8%AF%91-%E6%94%AF%E6%8C%81VNC/</loc>
+    <lastmod>2018-01-10T03:50:58.332Z</lastmod>
+    <data>
+        <display>
+        <title>嵌入式Qt5.8移植-编译-支持VNC</title>
+        <pubTime>2017-06-20T14:20:25.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+        <tag>Qt</tag>
+         
+         
+           
+             
+              <breadCrumb title="Qt" url="http://coderdock.com/categories/Qt/"/>
+          
+             
+              <breadCrumb title="QT移植" url="http://coderdock.com/categories/Qt/QT%E7%A7%BB%E6%A4%8D/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://coderdock.com/2017/06/23/Qt/%E5%B5%8C%E5%85%A5%E5%BC%8FQt5-8%E7%A7%BB%E6%A4%8D-%E4%BD%BF%E7%94%A8-%E4%B8%80%E9%94%AE%E8%B0%83%E8%AF%95%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2018-01-10T03:47:02.770Z</lastmod>
+    <lastmod>2018-01-10T03:50:51.205Z</lastmod>
     <data>
         <display>
         <title>嵌入式Qt5.8移植-使用-一键调试配置</title>
         <pubTime>2017-06-23T14:20:25.000Z</pubTime>
         
-        <tag>Qt</tag>
-         
         <tag>Linux</tag>
+         
+        <tag>Qt</tag>
          
          
            
@@ -30,40 +55,15 @@
     
   <url>
     <loc>http://coderdock.com/2017/06/22/Qt/%E5%B5%8C%E5%85%A5%E5%BC%8FQt5-8%E7%A7%BB%E6%A4%8D-%E5%AE%89%E8%A3%85-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2018-01-10T03:42:15.181Z</lastmod>
+    <lastmod>2018-01-10T03:50:51.143Z</lastmod>
     <data>
         <display>
         <title>嵌入式Qt5.8移植-安装-环境配置</title>
         <pubTime>2017-06-22T14:20:25.000Z</pubTime>
         
-        <tag>Qt</tag>
-         
         <tag>Linux</tag>
          
-         
-           
-             
-              <breadCrumb title="Qt" url="http://coderdock.com/categories/Qt/"/>
-          
-             
-              <breadCrumb title="QT移植" url="http://coderdock.com/categories/Qt/QT%E7%A7%BB%E6%A4%8D/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/06/20/Qt/%E5%B5%8C%E5%85%A5%E5%BC%8FQt5-8%E7%A7%BB%E6%A4%8D-%E7%BC%96%E8%AF%91-%E6%94%AF%E6%8C%81VNC/</loc>
-    <lastmod>2018-01-09T13:23:07.762Z</lastmod>
-    <data>
-        <display>
-        <title>嵌入式Qt5.8移植-编译-支持VNC</title>
-        <pubTime>2017-06-20T14:20:25.000Z</pubTime>
-        
         <tag>Qt</tag>
-         
-        <tag>Linux</tag>
          
          
            
@@ -80,15 +80,15 @@
     
   <url>
     <loc>http://coderdock.com/2017/06/15/Qt/%E5%B5%8C%E5%85%A5%E5%BC%8FQt5-8%E7%A7%BB%E6%A4%8D-%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2018-01-09T11:47:10.585Z</lastmod>
+    <lastmod>2018-01-10T03:50:50.698Z</lastmod>
     <data>
         <display>
         <title>嵌入式Qt5.8移植-基础</title>
         <pubTime>2017-06-15T14:20:25.000Z</pubTime>
         
-        <tag>Qt</tag>
-         
         <tag>Linux</tag>
+         
+        <tag>Qt</tag>
          
          
            
@@ -799,9 +799,9 @@
         <title>虚拟开发板-uboot添加实现命令</title>
         <pubTime>2017-04-29T04:00:09.000Z</pubTime>
         
-        <tag>虚拟开发板</tag>
-         
         <tag>uboot</tag>
+         
+        <tag>虚拟开发板</tag>
          
         <tag>命令</tag>
          
@@ -823,9 +823,9 @@
         <title>虚拟开发板-uboot环境搭建</title>
         <pubTime>2017-04-27T08:30:14.000Z</pubTime>
         
-        <tag>虚拟开发板</tag>
-         
         <tag>uboot</tag>
+         
+        <tag>虚拟开发板</tag>
          
         <tag>环境搭建</tag>
          
@@ -850,9 +850,9 @@
         <title>虚拟开发板-Qemu调试uboot</title>
         <pubTime>2017-04-29T03:59:51.000Z</pubTime>
         
-        <tag>虚拟开发板</tag>
-         
         <tag>uboot</tag>
+         
+        <tag>虚拟开发板</tag>
          
         <tag>qemu</tag>
          

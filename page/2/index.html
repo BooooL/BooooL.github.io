@@ -1119,15 +1119,14 @@
 
       
         
-          
-            <a id="more"></a>
-<p><img src="http://coderdock-1251264493.picsh.myqcloud.com/set.png" alt="Kit"><br>出现以下输出说明配置成功。<br><img src="http://coderdock-1251264493.picsh.myqcloud.com/test.png" alt="Kit"><br>QT Creator调试时需要在目标机执行命令和部署文件，进行这些可信操作是基于SSH加密，因此我们在使用PassWord连接成功后，需要向目标机部署公钥，以取得执行可信操作的能力。</p>
-<ul>
-<li>进入用户家目录下，执行<code>ssh-keygen –t rsa – C</code>命令，在 .ssh目录下生成两个秘钥–id_rsa(私钥)、id_rsa.pub（公钥）。</li>
-<li>按下图进行秘钥的部署和测试。<br><img src="http://coderdock-1251264493.picsh.myqcloud.com/onekey.png" alt="Kit"><br>之后点击Test,如果输出成功，就可以进行一键调试了。</li>
-</ul>
-
-          
+          <p>本节介绍片一键上传并配置程序。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/23/Qt/嵌入式Qt5-8移植-使用-一键调试配置/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1277,14 +1276,14 @@
 
       
         
-          
-            <a id="more"></a>
-<h1 id="1-添加构建套件"><a href="#1-添加构建套件" class="headerlink" title="1.添加构建套件"></a>1.添加构建套件</h1><p>打开QT Creator，进入 Tools-&gt;Options-&gt;Build&amp;Run</p>
-<ul>
-<li>点击 Compilers选项单，添加交叉编译工具链的g++，同理加入gcc<br><img src="http://coderdock-1251264493.picsh.myqcloud.com/kit.png" alt="Kit"><br><img src="http://coderdock-1251264493.picsh.myqcloud.com/kit2.png" alt="Kit"><br><img src="http://coderdock-1251264493.picsh.myqcloud.com/kit3.png" alt="Kit"><br>设置完这三步以后，就可以使用交叉编译的构建套件，和开发桌面程序是一样的。</li>
-</ul>
-
-          
+          <p>本节介绍配置交叉编译套件的安装配置。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/22/Qt/嵌入式Qt5-8移植-安装-环境配置/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1434,29 +1433,14 @@
 
       
         
-          
-            <a id="more"></a>
-<h1 id="1-下载源码"><a href="#1-下载源码" class="headerlink" title="1.下载源码"></a>1.下载源码</h1><ul>
-<li>去上一篇文章中的下载地址 下载qt-everywhere-opensource-src-5.8.0.tar.gz </li>
-<li><p>使用命令 tar xvzf qt-everywhere-opensource-src-5.8.0.tar.gz 进行解压</p>
-<h1 id="1-VNC说明"><a href="#1-VNC说明" class="headerlink" title="1.VNC说明"></a>1.VNC说明</h1><p>&emsp;&emsp;在QT5之后，QT不再支持QWS机制，即-qt-gfx-vnc配置项在QT5之后不再支持，QT5使用QPA(Qt Platform Abstraction Qt平台抽象)进行取代，当QT需要支持新平台时，需要为其编译一个新插件，在qtbase/src/plugins/platforms目录下存在着该版本QT支持的插件工程，包括Android，linuxfb，directfb，以及我们需要的vnc，想要使用VNC，需要在配置时使用选项 –qpa vnc进行指定。</p>
-</li>
-<li><p>进入上一步已经解压好的源码目录，将 /qtbase/mkspecs/ 目录下的linux-arm-gnueabi-g++ 进行如下修改，主要是将文件中的所有 linux-arm-gnueabi- 替换为了 arm-linux-(根据实际情况替换前缀)。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">#</div><div class="line"># qmake configuration for building with aarch64-linux-gnu-g++</div><div class="line">#</div><div class="line">MAKEFILE_GENERATOR = UNIX</div><div class="line">CONFIG += incremental</div><div class="line">QMAKE_INCREMENTAL_STYLE = sublib</div><div class="line">include(../common/linux.conf)</div><div class="line">include(./common/gcc-base-unix.conf)</div><div class="line">include(../common/g++-unix.conf)</div><div class="line"># modifications to g++.conf</div><div class="line">QMAKE_CC = arm-linux-gnu-gcc</div><div class="line">QMAKE_CXX = arm-linux-gnu-g++</div><div class="line">QMAKE_LINK = arm-linux-gnu-g++</div><div class="line">QMAKE_LINK_SHLIB = arm-linux-gnu-g++</div><div class="line"># modifications to linux.conf</div><div class="line">QMAKE_AR = arm-linux-gnu-ar cqs</div><div class="line">QMAKE_OBJCOPY = arm-linux-gnu-objcopy</div><div class="line">QMAKE_NM = arm-linux-gnu-nm -P</div><div class="line">QMAKE_STRIP = arm-linux-gnu-strip</div><div class="line">load(qt_config)</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>具体配置选项帮助见配置选项，我们需要的注意点有：</p>
-<p>a) –prefix：在目标机上的安装目录，这是在目标机上执行程序时寻找链接库的位置。</p>
-<p>b) –extprefix在宿主机上的安装目录，这个位置是我们使用Qt Creator进行交叉编译时寻找链接库的位置。</p>
-<p>c) –qpa vn  -qt-gfx-vnc在QT5之后不再支持qws机制，需要在配置时使用选项 –qpa vnc进行指定。</p>
-<p>d)一般情况下我们不使用系统的png，jpeg等库，需要指定 –no-libpng,同理，我们配置-qt-libpng使用qt自带的png等库。</p>
-<ul>
-<li>使用如下命令进行编译之后等待完成即可<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"> ./configure -prefix /usr/arm/qt5.8 -extprefix /usr/arm/qt5.8 -opensource -xplatform linux-arm-gnueabi-g++ -no-glib -no-cups -no-accessibility -no-openssl -no-libpng -no-libjpeg -qt-zlib -no-dbus -no-pkg-config -optimized-qmake -nomake examples -qtlibinfix DhSc -qpa vnc -debug -no-opengl -qt-libpng</div><div class="line"></div><div class="line">make -j4</div><div class="line"></div><div class="line">make install</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>安装完成后，就可以在 <code>/usr/arm</code>发现输出文件</p>
-
-          
+          <p>本章介绍Qt交叉编译的过程<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/20/Qt/嵌入式Qt5-8移植-编译-支持VNC/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1752,34 +1736,14 @@
 
       
         
-          
-            <a id="more"></a>
-<h1 id="1-QT介绍"><a href="#1-QT介绍" class="headerlink" title="1. QT介绍"></a>1. QT介绍</h1><p>&emsp;&emsp;Qt 是一个跨平台的C++应用程序框架，支持Windows、Linux、Mac OS X、Android、iOS、Windows Phone、嵌入式系统等。也就是说，Qt 可以同时支持桌面应用程序开发、嵌入式开发和移动开发，覆盖了现有的所有主流平台。你只需要编写一次代码，发布到不同平台前重新编译即可。</p>
-<p>&emsp;&emsp;Qt 不仅仅是一个GUI库，它除了可以创建漂亮的界面，还有很多其他组件，例如，你不再需要研究STL，不再需要C++的<string>头文件，不再需要去找解析XML、连接数据库、Socket 的各种第三方库，这些 Qt 都已经内置了。</string></p>
-<p>&emsp;&emsp;由于Qt具有封装性好、简单易学、跨平台的特性，已经被用来开发许多著名软件，如WPS、YY语音、Skype、VirtualBox、Opera、Google地图、Adobe Photoshop Album 等。</p>
-<h1 id="2-QT安装"><a href="#2-QT安装" class="headerlink" title="2. QT安装"></a>2. QT安装</h1><p>&emsp;&emsp;本系列文章会分为三个四个部分进行讲解，<code>Qt Creator 安装</code>，<code>交叉编译QT并支持VNC</code>,<code>嵌入式QT开发环境配置</code>,<code>一键调试配置</code>。<br>在本节将会详细介绍Qt的下载、安装、配置等操作。本节所指的QT为QT安装包，其包括了两部分：</p>
-<ul>
-<li>QT框架 – 用于支持生成应用程序</li>
-<li>QT Creator – 进行QT开发的官方推荐IDE（集成开发环境</li>
-</ul>
-<h2 id="2-1-QT下载"><a href="#2-1-QT下载" class="headerlink" title="2.1  QT下载"></a>2.1  QT下载</h2><ul>
-<li>使用浏览器打开 <a href="http://download.qt.io/archive/qt/" target="_blank" rel="external">http://download.qt.io/archive/qt/</a> ，该网址包含着QT的所有历史版本，本次安装使用 5.8 版本，点击进入5.8目录。</li>
-<li>本次平台使用Linux系统，所以选择 qt-opensource-linux-x64-5.8.0.run进行下载</li>
-<li>打开 Ubuntu终端，创建安装目录，推荐在 /opt 下安装，步骤如下：<ul>
-<li>进入 /opt 目录： cd /opt</li>
-<li>创建 Qt 目录 ： sudo mkdir Qt (之后需要输入root密码)<h2 id="2-2-Qt-Creator安装"><a href="#2-2-Qt-Creator安装" class="headerlink" title="2.2 Qt Creator安装"></a>2.2 Qt Creator安装</h2></li>
-</ul>
-</li>
-<li>进入上一节Qt的下载目录，更改安装文件权限为 777 并运行安装，步骤如下：<ul>
-<li>更改权限: sudo chmod 777 qt-opensource-linux-x64-5.8.0.run</li>
-<li>执行安装：sudo ./qt-opensource-linux-x64-5.8.0.run</li>
-</ul>
-</li>
-<li>之后会让我们选择安装位置，我们选择前面创建的Qt目录，然后一路Next下去就好了。</li>
-</ul>
-<h1 id="3-交叉编译工具"><a href="#3-交叉编译工具" class="headerlink" title="3.交叉编译工具"></a>3.交叉编译工具</h1><p>&emsp;&emsp;在进行交叉编译前，我们需要安装与目标机相适用的交叉编译工具链，参照我之前的文章去下载合适的编译工具或者从商家获取合适的交叉编译工具。使用 which aarch64-linux-gnu-gcc 命令可以查看工具链安装位置。</p>
-
-          
+          <p>本章介绍Qt的基础知识。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/15/Qt/嵌入式Qt5-8移植-基础/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
