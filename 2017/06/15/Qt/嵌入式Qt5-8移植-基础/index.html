@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Linux,Qt," />
+  <meta name="keywords" content="Qt,Linux," />
 
 
 
@@ -79,15 +79,18 @@
 
 
 
-<meta name="keywords" content="Linux,Qt">
+<meta name="description" content="1. QT介绍&amp;emsp;&amp;emsp;Qt 是一个跨平台的C++应用程序框架，支持Windows、Linux、Mac OS X、Android、iOS、Windows Phone、嵌入式系统等。也就是说，Qt 可以同时支持桌面应用程序开发、嵌入式开发和移动开发，覆盖了现有的所有主流平台。你只需要编写一次代码，发布到不同平台前重新编译即可。 &amp;emsp;&amp;emsp;Qt 不仅仅是一个GUI库，它除">
+<meta name="keywords" content="Qt,Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="嵌入式Qt5.8移植-基础">
 <meta property="og:url" content="http://coderdock.com/2017/06/15/Qt/嵌入式Qt5-8移植-基础/index.html">
 <meta property="og:site_name" content="CoderDock">
+<meta property="og:description" content="1. QT介绍&amp;emsp;&amp;emsp;Qt 是一个跨平台的C++应用程序框架，支持Windows、Linux、Mac OS X、Android、iOS、Windows Phone、嵌入式系统等。也就是说，Qt 可以同时支持桌面应用程序开发、嵌入式开发和移动开发，覆盖了现有的所有主流平台。你只需要编写一次代码，发布到不同平台前重新编译即可。 &amp;emsp;&amp;emsp;Qt 不仅仅是一个GUI库，它除">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-07T14:25:00.729Z">
+<meta property="og:updated_time" content="2018-01-09T11:47:10.585Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="嵌入式Qt5.8移植-基础">
+<meta name="twitter:description" content="1. QT介绍&amp;emsp;&amp;emsp;Qt 是一个跨平台的C++应用程序框架，支持Windows、Linux、Mac OS X、Android、iOS、Windows Phone、嵌入式系统等。也就是说，Qt 可以同时支持桌面应用程序开发、嵌入式开发和移动开发，覆盖了现有的所有主流平台。你只需要编写一次代码，发布到不同平台前重新编译即可。 &amp;emsp;&amp;emsp;Qt 不仅仅是一个GUI库，它除">
 
 
 
@@ -366,6 +369,30 @@
 
       
         <a id="more"></a>
+<h1 id="1-QT介绍"><a href="#1-QT介绍" class="headerlink" title="1. QT介绍"></a>1. QT介绍</h1><p>&emsp;&emsp;Qt 是一个跨平台的C++应用程序框架，支持Windows、Linux、Mac OS X、Android、iOS、Windows Phone、嵌入式系统等。也就是说，Qt 可以同时支持桌面应用程序开发、嵌入式开发和移动开发，覆盖了现有的所有主流平台。你只需要编写一次代码，发布到不同平台前重新编译即可。</p>
+<p>&emsp;&emsp;Qt 不仅仅是一个GUI库，它除了可以创建漂亮的界面，还有很多其他组件，例如，你不再需要研究STL，不再需要C++的<string>头文件，不再需要去找解析XML、连接数据库、Socket 的各种第三方库，这些 Qt 都已经内置了。</string></p>
+<p>&emsp;&emsp;由于Qt具有封装性好、简单易学、跨平台的特性，已经被用来开发许多著名软件，如WPS、YY语音、Skype、VirtualBox、Opera、Google地图、Adobe Photoshop Album 等。</p>
+<h1 id="2-QT安装"><a href="#2-QT安装" class="headerlink" title="2. QT安装"></a>2. QT安装</h1><p>&emsp;&emsp;本系列文章会分为三个四个部分进行讲解，<code>Qt Creator 安装</code>，<code>交叉编译QT并支持VNC</code>,<code>嵌入式QT开发环境配置</code>,<code>一键调试配置</code>。<br>在本节将会详细介绍Qt的下载、安装、配置等操作。本节所指的QT为QT安装包，其包括了两部分：</p>
+<ul>
+<li>QT框架 – 用于支持生成应用程序</li>
+<li>QT Creator – 进行QT开发的官方推荐IDE（集成开发环境</li>
+</ul>
+<h2 id="2-1-QT下载"><a href="#2-1-QT下载" class="headerlink" title="2.1  QT下载"></a>2.1  QT下载</h2><ul>
+<li>使用浏览器打开 <a href="http://download.qt.io/archive/qt/" target="_blank" rel="external">http://download.qt.io/archive/qt/</a> ，该网址包含着QT的所有历史版本，本次安装使用 5.8 版本，点击进入5.8目录。</li>
+<li>本次平台使用Linux系统，所以选择 qt-opensource-linux-x64-5.8.0.run进行下载</li>
+<li>打开 Ubuntu终端，创建安装目录，推荐在 /opt 下安装，步骤如下：<ul>
+<li>进入 /opt 目录： cd /opt</li>
+<li>创建 Qt 目录 ： sudo mkdir Qt (之后需要输入root密码)<h2 id="2-2-Qt-Creator安装"><a href="#2-2-Qt-Creator安装" class="headerlink" title="2.2 Qt Creator安装"></a>2.2 Qt Creator安装</h2></li>
+</ul>
+</li>
+<li>进入上一节Qt的下载目录，更改安装文件权限为 777 并运行安装，步骤如下：<ul>
+<li>更改权限: sudo chmod 777 qt-opensource-linux-x64-5.8.0.run</li>
+<li>执行安装：sudo ./qt-opensource-linux-x64-5.8.0.run</li>
+</ul>
+</li>
+<li>之后会让我们选择安装位置，我们选择前面创建的Qt目录，然后一路Next下去就好了。</li>
+</ul>
+<h1 id="3-交叉编译工具"><a href="#3-交叉编译工具" class="headerlink" title="3.交叉编译工具"></a>3.交叉编译工具</h1><p>&emsp;&emsp;在进行交叉编译前，我们需要安装与目标机相适用的交叉编译工具链，参照我之前的文章去下载合适的编译工具或者从商家获取合适的交叉编译工具。使用 which aarch64-linux-gnu-gcc 命令可以查看工具链安装位置。</p>
 
       
     </div>
@@ -391,9 +418,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Linux/" rel="tag"># Linux</a>
-          
             <a href="/tags/Qt/" rel="tag"># Qt</a>
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
           
         </div>
       
@@ -477,8 +504,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -497,7 +533,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">45</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -508,7 +544,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -519,7 +555,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-count">54</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -544,6 +580,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-QT介绍"><span class="nav-number">1.</span> <span class="nav-text">1. QT介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-QT安装"><span class="nav-number">2.</span> <span class="nav-text">2. QT安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-QT下载"><span class="nav-number">2.1.</span> <span class="nav-text">2.1  QT下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Qt-Creator安装"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 Qt Creator安装</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-交叉编译工具"><span class="nav-number">3.</span> <span class="nav-text">3.交叉编译工具</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="FPGA,图像处理， 缓存处理," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="在FPGA进行图像处理的过程中，存储单元往往是比较宝贵的，如果使用外部存储，又会存在读取速度较慢的掣肘。">
+<meta name="keywords" content="FPGA,图像处理， 缓存处理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FPGA图像处理缓存处理方式">
+<meta property="og:url" content="http://coderdock.com/2018/01/08/ImagePro/FPGA图像处理缓存处理方式/index.html">
+<meta property="og:site_name" content="CoderDock">
+<meta property="og:description" content="在FPGA进行图像处理的过程中，存储单元往往是比较宝贵的，如果使用外部存储，又会存在读取速度较慢的掣肘。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://coderdock-1251264493.picsh.myqcloud.com/图形缓存.png">
+<meta property="og:image" content="http://coderdock-1251264493.picsh.myqcloud.com/行缓存.png">
+<meta property="og:updated_time" content="2018-01-09T07:45:59.845Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FPGA图像处理缓存处理方式">
+<meta name="twitter:description" content="在FPGA进行图像处理的过程中，存储单元往往是比较宝贵的，如果使用外部存储，又会存在读取速度较慢的掣肘。">
+<meta name="twitter:image" content="http://coderdock-1251264493.picsh.myqcloud.com/图形缓存.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://coderdock.com/2018/01/08/ImagePro/FPGA图像处理缓存处理方式/"/>
+
+
+
+
+
+  <title>FPGA图像处理缓存处理方式 | CoderDock</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">CoderDock</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Try Hard to be a Better Programmer</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2018/01/08/ImagePro/FPGA图像处理缓存处理方式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dock">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CoderDock">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">FPGA图像处理缓存处理方式</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-08T13:35:04+08:00">
+                2018-01-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/FPGA/" itemprop="url" rel="index">
+                    <span itemprop="name">FPGA</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/FPGA/图像处理/" itemprop="url" rel="index">
+                    <span itemprop="name">图像处理</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/01/08/ImagePro/FPGA图像处理缓存处理方式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/01/08/ImagePro/FPGA图像处理缓存处理方式/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在FPGA进行图像处理的过程中，存储单元往往是比较宝贵的，如果使用外部存储，又会存在读取速度较慢的掣肘。<br><img src="http://coderdock-1251264493.picsh.myqcloud.com/图形缓存.png" alt="图像缓存"><br><a id="more"></a></p>
+<h1 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h1><p>一般情况下，在FPGA中进行处理图像时，我们总是希望能够处理更大的图像，但是FPGFA中的存储单元往往是较为宝贵的资源，尤其是图像尺寸很大的时候，就变得更加不现实，那么此时，对于整幅图像的处理根据其大小就分为两种方式， 帧缓存或者行缓存。</p>
+<h1 id="2-帧缓存"><a href="#2-帧缓存" class="headerlink" title="2.帧缓存"></a>2.帧缓存</h1><p>假如我们在图像处理过程中，我们需要对 <code>n-2 、n-1、 n</code>s三帧图像进行求平均值处理，那么我们就需要至少缓存三帧图像以供处理。<br>如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">din-----------&gt;FB1 -----------&gt; FB2 ---------&gt;|	 |  </div><div class="line">		|				|				|	  |	 |       </div><div class="line">		|				|				-----&gt;|+ |-----&gt;dout   </div><div class="line">		|				---------------------&gt;|	 |    </div><div class="line">		-------------------------------------&gt;|	 |</div></pre></td></tr></table></figure></p>
+<p>在此种处理方式下，如果图像尺寸较大，就需要将图像存储在外部存储器中 :SRAM或DDR:</p>
+<ul>
+<li>SRAM，如果对成本不太敏感，那么最好使用SRAM，相比于DDR来说，接口较为简单、速度较快、功耗比较低。</li>
+<li>DDR，如果使用DDR作为外部存储的话，那么我们需要设计读地址发生器，写地址发生器以及读写时序控制，使用DDR适用于对读取速度没有太高要求的情景。</li>
+</ul>
+<h1 id="3-行缓存"><a href="#3-行缓存" class="headerlink" title="3.行缓存"></a>3.行缓存</h1><p>如果对读取速度很敏感并且图片较大的情况下，那我们只能转换策略，用<code>时间换空间</code>,换言之，我们在读取图像的时候以行为单位进行处理。比如进行二维 3*3图像卷积处理，那么依据卷积的处理方法，我们需要使用三行帧缓存进行处理进行处理，如下所示：<br><img src="http://coderdock-1251264493.picsh.myqcloud.com/行缓存.png" alt="行缓存"><br>正如前面所示，行缓存会放在片内，每一个行缓存有效地将输入延迟了一行，那么在我们我们在进行卷积计算时就可以使用蓝色区域内的寄存器进行卷积计算。下面使用一个FIFO实现一个行缓存实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div></pre></td><td class="code"><pre><div class="line">module line_buffer&#123;</div><div class="line">	rst,</div><div class="line">	clk,</div><div class="line">	din,</div><div class="line">	dout,</div><div class="line">	wr_en,</div><div class="line">	rd_en,</div><div class="line">	empty,</div><div class="line">	full,</div><div class="line">	count</div><div class="line">&#125;;</div><div class="line"></div><div class="line">parameter DW = 14;					//数据位宽为14</div><div class="line">paremeter IW = 640;					//</div><div class="line">parameter DEPTH = 1024;				//宽度为1024</div><div class="line">parameter DW_DEPTH = 10;			//需要Depth = 10 , 2^10 = 1024，即是下方count的计数</div><div class="line">localparam DW_PER_FIFO = 8;			//假设FIFO的位宽为8，那么对于位宽大于8的数据，我们需要&quot;并联&quot;数据使用</div><div class="line">localparam DW_PER_FIFO_LOG2 =3;		//log为3，2^3=8,下面使用移位进行，而不是除法运算</div><div class="line">localparam FIFO_NUM = ((DW + DW_PER_FIFO -1) &gt;&gt; DW_PER_FIFO_LOG2 );</div><div class="line">//计算FIFO的数目(数据位宽为14，所以FIFO数目为 (14+8-1)/8 = 2)</div><div class="line"></div><div class="line">input rst;</div><div class="line">input clk;</div><div class="line">input [DW-1:0] din;</div><div class="line">output [DW-1:0] dout;</div><div class="line">input wr_en;</div><div class="line">input rd_en;</div><div class="line">output empty;</div><div class="line">output full;</div><div class="line">output [DW_DEPTH-1:0] count;	//2^10 = 1024</div><div class="line"></div><div class="line">wire [DW_PER_FIFO-1:0] din_tmp[0:FIFO_NUM-1];		//定义输入暂存</div><div class="line">wire [DW_PER_FIFO*FIFO_NUM-1:0] dout_tmp;			//输出暂存</div><div class="line"></div><div class="line">assign din_tmp[0] = din[DW_PER_FIFO-1-:DW_PER_FIFO]; </div><div class="line"></div><div class="line">altera_fifo_640 #(DW_PER_FIFO, DEPTH, DW_DEPTH)</div><div class="line">	buf_lsb(</div><div class="line">	.aclr(rst),</div><div class="line">	.clock(clk),</div><div class="line">	.data(din_tmp[0]),</div><div class="line">	.rdreg(rd_en),</div><div class="line">	.wrreg(wr_en),</div><div class="line">	.q(dout_temp[DW_PER_FIFO-1:0]),</div><div class="line">	.usedev(count),</div><div class="line">	.empty(empty),</div><div class="line">	.full(full)</div><div class="line">);</div><div class="line"></div><div class="line">assign dout = dout_tmp[DW-1:0];</div><div class="line"></div><div class="line">generate </div><div class="line">	begin: fifo_generate</div><div class="line">			genvar i;</div><div class="line">			genvar j;</div><div class="line">			</div><div class="line">		for(j=1; j&lt;FIFO_NUM-2; j= j+1)</div><div class="line">		begin :xhdll</div><div class="line">			assign din_temp[j] = din[DW_PER_FIFO*(j+1)-1-:DW_PER_FIFO];</div><div class="line">		end</div><div class="line"></div><div class="line">	if(FIFO_NUM &gt; 1)</div><div class="line">	assign din_temp[FIFO_NUM-1] = &#123;&#123;DW_PER_FIFO*FIFO_NUM-DW&#123;1&apos;b0&#125;&#125;, din[DW_PER_FIFO*(FIFO_NUM-1)]&#125;;</div><div class="line"></div><div class="line">	for(i = 1; i&lt;= FIFO_NUM - 1; i = i + 1)</div><div class="line">	begin :xhd12</div><div class="line">		altera_fifo_640 #(DW_PER_FIFO,DEPTH, DW_DEPTH)</div><div class="line">			buf_others(</div><div class="line">				.aclr(rst),</div><div class="line">				.clock(clk),</div><div class="line">				.data(din_temp[i]),</div><div class="line">				.rdreg(rd_en),</div><div class="line">				.wrreg(wr_en),</div><div class="line">				.q(dout_tmp[DW_PER_FIFO*(i+1) -1-:DW_PER_FIFO])</div><div class="line">		);</div><div class="line"></div><div class="line">	end</div><div class="line">	emd</div><div class="line">endgenerate</div><div class="line"></div><div class="line">endmodule</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/avatar.jpg" alt="Dock wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/FPGA/" rel="tag"># FPGA</a>
+          
+            <a href="/tags/图像处理，-缓存处理/" rel="tag"># 图像处理， 缓存处理</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/08/libevent/libevent安装使用/" rel="next" title="libevent安装使用">
+                <i class="fa fa-chevron-left"></i> libevent安装使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/09/Python/Python面向对象编程/" rel="prev" title="Python面向对象编程">
+                Python面向对象编程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Dock" />
+            
+              <p class="site-author-name" itemprop="name">Dock</p>
+              <p class="site-description motion-element" itemprop="description">一直在努力的去做一个更好的程序员，为了父母、为了小鑫鑫，更为了自己</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">45</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-前言"><span class="nav-number">1.</span> <span class="nav-text">1.前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-帧缓存"><span class="nav-number">2.</span> <span class="nav-text">2.帧缓存</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-行缓存"><span class="nav-number">3.</span> <span class="nav-text">3.行缓存</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dock</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.3</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1272012975&web_id=1272012975" language="JavaScript"></script>
+  </div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+      <style>
+        a.gitment-editor-footer-tip { display: none; }
+        .gitment-container.gitment-footer-container { display: none; }
+      </style>
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'BooooL',
+            repo: 'BooooL.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '316f45fdef859ea4bb5768080bfae1e312ab5802',
+            
+                client_id: 'cf9b9b4e932c5d772d85'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

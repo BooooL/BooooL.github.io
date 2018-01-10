@@ -4,6 +4,215 @@
 
     
   <url>
+    <loc>http://coderdock.com/2017/06/23/Qt/%E5%B5%8C%E5%85%A5%E5%BC%8FQt5-8%E7%A7%BB%E6%A4%8D-%E4%BD%BF%E7%94%A8-%E4%B8%80%E9%94%AE%E8%B0%83%E8%AF%95%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2018-01-10T03:47:02.770Z</lastmod>
+    <data>
+        <display>
+        <title>嵌入式Qt5.8移植-使用-一键调试配置</title>
+        <pubTime>2017-06-23T14:20:25.000Z</pubTime>
+        
+        <tag>Qt</tag>
+         
+        <tag>Linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="Qt" url="http://coderdock.com/categories/Qt/"/>
+          
+             
+              <breadCrumb title="QT移植" url="http://coderdock.com/categories/Qt/QT%E7%A7%BB%E6%A4%8D/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/06/22/Qt/%E5%B5%8C%E5%85%A5%E5%BC%8FQt5-8%E7%A7%BB%E6%A4%8D-%E5%AE%89%E8%A3%85-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2018-01-10T03:42:15.181Z</lastmod>
+    <data>
+        <display>
+        <title>嵌入式Qt5.8移植-安装-环境配置</title>
+        <pubTime>2017-06-22T14:20:25.000Z</pubTime>
+        
+        <tag>Qt</tag>
+         
+        <tag>Linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="Qt" url="http://coderdock.com/categories/Qt/"/>
+          
+             
+              <breadCrumb title="QT移植" url="http://coderdock.com/categories/Qt/QT%E7%A7%BB%E6%A4%8D/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/06/20/Qt/%E5%B5%8C%E5%85%A5%E5%BC%8FQt5-8%E7%A7%BB%E6%A4%8D-%E7%BC%96%E8%AF%91-%E6%94%AF%E6%8C%81VNC/</loc>
+    <lastmod>2018-01-09T13:23:07.762Z</lastmod>
+    <data>
+        <display>
+        <title>嵌入式Qt5.8移植-编译-支持VNC</title>
+        <pubTime>2017-06-20T14:20:25.000Z</pubTime>
+        
+        <tag>Qt</tag>
+         
+        <tag>Linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="Qt" url="http://coderdock.com/categories/Qt/"/>
+          
+             
+              <breadCrumb title="QT移植" url="http://coderdock.com/categories/Qt/QT%E7%A7%BB%E6%A4%8D/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/06/15/Qt/%E5%B5%8C%E5%85%A5%E5%BC%8FQt5-8%E7%A7%BB%E6%A4%8D-%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2018-01-09T11:47:10.585Z</lastmod>
+    <data>
+        <display>
+        <title>嵌入式Qt5.8移植-基础</title>
+        <pubTime>2017-06-15T14:20:25.000Z</pubTime>
+        
+        <tag>Qt</tag>
+         
+        <tag>Linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="Qt" url="http://coderdock.com/categories/Qt/"/>
+          
+             
+              <breadCrumb title="QT移植" url="http://coderdock.com/categories/Qt/QT%E7%A7%BB%E6%A4%8D/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2018/01/09/Python/Python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/</loc>
+    <lastmod>2018-01-09T08:48:11.012Z</lastmod>
+    <data>
+        <display>
+        <title>Python面向对象编程</title>
+        <pubTime>2018-01-09T08:26:09.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>面向对象</tag>
+         
+         
+           
+             
+              <breadCrumb title="Python" url="http://coderdock.com/categories/Python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2018/01/08/ImagePro/FPGA%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%BC%93%E5%AD%98%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F/</loc>
+    <lastmod>2018-01-09T07:45:59.845Z</lastmod>
+    <data>
+        <display>
+        <title>FPGA图像处理缓存处理方式</title>
+        <pubTime>2018-01-08T05:35:04.000Z</pubTime>
+        
+        <tag>FPGA</tag>
+         
+        <tag>图像处理， 缓存处理</tag>
+         
+         
+           
+             
+              <breadCrumb title="FPGA" url="http://coderdock.com/categories/FPGA/"/>
+          
+             
+              <breadCrumb title="图像处理" url="http://coderdock.com/categories/FPGA/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/11/07/Vivado/Vivado-HLS-%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B/</loc>
+    <lastmod>2018-01-08T05:23:24.330Z</lastmod>
+    <data>
+        <display>
+        <title>Vivado-HLS--操作流程</title>
+        <pubTime>2017-11-07T15:00:35.000Z</pubTime>
+        
+        <tag>vivado</tag>
+         
+        <tag>hls</tag>
+         
+         
+           
+             
+              <breadCrumb title="vivado" url="http://coderdock.com/categories/vivado/"/>
+          
+             
+              <breadCrumb title="hls" url="http://coderdock.com/categories/vivado/hls/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2018/01/08/libevent/libevent%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2018-01-08T05:14:43.017Z</lastmod>
+    <data>
+        <display>
+        <title>libevent安装使用</title>
+        <pubTime>2018-01-08T05:14:42.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/06/17/libevent/libevent%E7%B3%BB%E5%88%97-%E5%9F%BA%E6%9C%AC%E4%BA%86%E8%A7%A3/</loc>
+    <lastmod>2018-01-08T03:21:14.385Z</lastmod>
+    <data>
+        <display>
+        <title>libevent系列-基本了解</title>
+        <pubTime>2017-06-17T12:11:38.000Z</pubTime>
+        
+        <tag>libevent</tag>
+         
+        <tag>基础了解</tag>
+         
+         
+           
+             
+              <breadCrumb title="libevent系列" url="http://coderdock.com/categories/libevent%E7%B3%BB%E5%88%97/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://coderdock.com/2017/09/05/Yocto/Yocto-Project-%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2018-01-07T14:26:26.055Z</lastmod>
     <data>
@@ -41,106 +250,6 @@
            
              
               <breadCrumb title="yocto" url="http://coderdock.com/categories/yocto/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/06/22/Qt/%E5%B5%8C%E5%85%A5%E5%BC%8FQt5-8%E7%A7%BB%E6%A4%8D-%E5%AE%89%E8%A3%85-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2018-01-07T14:25:23.421Z</lastmod>
-    <data>
-        <display>
-        <title>嵌入式Qt5.8移植-安装-环境配置</title>
-        <pubTime>2017-06-22T14:20:25.000Z</pubTime>
-        
-        <tag>Linux</tag>
-         
-        <tag>Qt</tag>
-         
-         
-           
-             
-              <breadCrumb title="Qt" url="http://coderdock.com/categories/Qt/"/>
-          
-             
-              <breadCrumb title="QT移植" url="http://coderdock.com/categories/Qt/QT%E7%A7%BB%E6%A4%8D/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/06/23/Qt/%E5%B5%8C%E5%85%A5%E5%BC%8FQt5-8%E7%A7%BB%E6%A4%8D-%E4%BD%BF%E7%94%A8-%E4%B8%80%E9%94%AE%E8%B0%83%E8%AF%95%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2018-01-07T14:25:07.727Z</lastmod>
-    <data>
-        <display>
-        <title>嵌入式Qt5.8移植-使用-一键调试配置</title>
-        <pubTime>2017-06-23T14:20:25.000Z</pubTime>
-        
-        <tag>Linux</tag>
-         
-        <tag>Qt</tag>
-         
-         
-           
-             
-              <breadCrumb title="Qt" url="http://coderdock.com/categories/Qt/"/>
-          
-             
-              <breadCrumb title="QT移植" url="http://coderdock.com/categories/Qt/QT%E7%A7%BB%E6%A4%8D/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/06/15/Qt/%E5%B5%8C%E5%85%A5%E5%BC%8FQt5-8%E7%A7%BB%E6%A4%8D-%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2018-01-07T14:25:00.729Z</lastmod>
-    <data>
-        <display>
-        <title>嵌入式Qt5.8移植-基础</title>
-        <pubTime>2017-06-15T14:20:25.000Z</pubTime>
-        
-        <tag>Linux</tag>
-         
-        <tag>Qt</tag>
-         
-         
-           
-             
-              <breadCrumb title="Qt" url="http://coderdock.com/categories/Qt/"/>
-          
-             
-              <breadCrumb title="QT移植" url="http://coderdock.com/categories/Qt/QT%E7%A7%BB%E6%A4%8D/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/06/20/Qt/%E5%B5%8C%E5%85%A5%E5%BC%8FQt5-8%E7%A7%BB%E6%A4%8D-%E7%BC%96%E8%AF%91-%E6%94%AF%E6%8C%81VNC/</loc>
-    <lastmod>2018-01-07T14:24:53.538Z</lastmod>
-    <data>
-        <display>
-        <title>嵌入式Qt5.8移植-编译-支持VNC</title>
-        <pubTime>2017-06-20T14:20:25.000Z</pubTime>
-        
-        <tag>Linux</tag>
-         
-        <tag>Qt</tag>
-         
-         
-           
-             
-              <breadCrumb title="Qt" url="http://coderdock.com/categories/Qt/"/>
-          
-             
-              <breadCrumb title="QT移植" url="http://coderdock.com/categories/Qt/QT%E7%A7%BB%E6%A4%8D/"/>
           
         </display>
     </data>
@@ -279,28 +388,6 @@
            
              
               <breadCrumb title="USB系列" url="http://coderdock.com/categories/USB%E7%B3%BB%E5%88%97/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/06/17/libevent/libevent%E7%B3%BB%E5%88%97-%E5%9F%BA%E6%9C%AC%E4%BA%86%E8%A7%A3/</loc>
-    <lastmod>2018-01-06T12:16:21.687Z</lastmod>
-    <data>
-        <display>
-        <title>libevent系列-基本了解</title>
-        <pubTime>2017-06-17T12:11:38.000Z</pubTime>
-        
-        <tag>libevent</tag>
-         
-        <tag>基础了解</tag>
-         
-         
-           
-             
-              <breadCrumb title="libevent系列" url="http://coderdock.com/categories/libevent%E7%B3%BB%E5%88%97/"/>
           
         </display>
     </data>
@@ -712,9 +799,9 @@
         <title>虚拟开发板-uboot添加实现命令</title>
         <pubTime>2017-04-29T04:00:09.000Z</pubTime>
         
-        <tag>uboot</tag>
-         
         <tag>虚拟开发板</tag>
+         
+        <tag>uboot</tag>
          
         <tag>命令</tag>
          
@@ -736,9 +823,9 @@
         <title>虚拟开发板-uboot环境搭建</title>
         <pubTime>2017-04-27T08:30:14.000Z</pubTime>
         
-        <tag>uboot</tag>
-         
         <tag>虚拟开发板</tag>
+         
+        <tag>uboot</tag>
          
         <tag>环境搭建</tag>
          
@@ -763,9 +850,9 @@
         <title>虚拟开发板-Qemu调试uboot</title>
         <pubTime>2017-04-29T03:59:51.000Z</pubTime>
         
-        <tag>uboot</tag>
-         
         <tag>虚拟开发板</tag>
+         
+        <tag>uboot</tag>
          
         <tag>qemu</tag>
          
@@ -814,9 +901,9 @@
         <title>通信协议-UART</title>
         <pubTime>2017-02-27T07:57:25.000Z</pubTime>
         
-        <tag>UART</tag>
-         
         <tag>通信协议</tag>
+         
+        <tag>UART</tag>
          
          
            
