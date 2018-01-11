@@ -498,35 +498,14 @@
 
       
         
-          
-            <a id="more"></a>
-<ul>
-<li>bitbake -b 直接执行一个 .bb文件</li>
-<li>-k 尽可能的继续执行在出现一个错误以后</li>
-<li>-f force</li>
-<li>-c CMD</li>
-<li>-C INVALIDATE_STAM 禁止一项功能，如某个任务中禁止 compile任务</li>
-<li>-r PREFILE –read=PREFILE 在进行某一项任务时读取天特定的文件 时机是在读取 bitbake.conf 之前</li>
-<li>-R POSTFILE 在之后</li>
-<li>-v verbose 终端显示而不是写入log文件</li>
-<li>-D debug</li>
-<li>-q quite</li>
-<li>-n –dry-run 不执行</li>
-<li>-s show version</li>
-<li>-e show environment</li>
-<li>–no-setsence 不执行setsence任务， sstate会被忽略，所有的会被重新build</li>
-<li>–setsence-only</li>
-</ul>
-<ul>
-<li>确定一个包的名字 ： bitbake -s | grep something</li>
-<li>bitbake -e ： 显示到终端</li>
-<li>确定一个包所执行的task ： bitbake package -c listtasks</li>
-<li>确定下载地址： bitbake -e linux-imx | grep ^SRC_URI=</li>
-</ul>
-<p>版权声明：本文为博主原创文章，转载需声明为转载内容并添加原文地址。</p>
-<p>原文地址：<a href="http://coderdock.com">http://coderdock.com</a></p>
-
-          
+          <p>Yocto是一个开源的构建自己的Linux发行版本的工具。笔者在使用PetaLinx过程中发现能够掌握一些底层的BitBake很有帮助。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/07/Yocto/Yocto-Project-使用技巧/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

@@ -73,6 +73,28 @@
 
     
   <url>
+    <loc>http://coderdock.com/2017/09/07/Yocto/Yocto-Project-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</loc>
+    <lastmod>2018-01-11T06:30:26.120Z</lastmod>
+    <data>
+        <display>
+        <title>Yocto-Project-使用技巧</title>
+        <pubTime>2017-09-07T14:20:25.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+        <tag>yocto</tag>
+         
+         
+           
+             
+              <breadCrumb title="yocto" url="http://coderdock.com/categories/yocto/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://coderdock.com/2017/08/28/OpenCL/OpenCL-1-%E5%9B%9B%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BB%8B%E7%BB%8D/</loc>
     <lastmod>2018-01-11T06:09:46.247Z</lastmod>
     <data>
@@ -215,28 +237,6 @@
            
              
               <breadCrumb title="日常记录" url="http://coderdock.com/categories/%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/09/07/Yocto/Yocto-Project-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</loc>
-    <lastmod>2018-01-10T04:14:13.357Z</lastmod>
-    <data>
-        <display>
-        <title>Yocto-Project-使用技巧</title>
-        <pubTime>2017-09-07T14:20:25.000Z</pubTime>
-        
-        <tag>Linux</tag>
-         
-        <tag>yocto</tag>
-         
-         
-           
-             
-              <breadCrumb title="yocto" url="http://coderdock.com/categories/yocto/"/>
           
         </display>
     </data>
@@ -447,9 +447,9 @@
         <title>通信协议-UART</title>
         <pubTime>2017-02-27T07:57:25.000Z</pubTime>
         
-        <tag>通信协议</tag>
-         
         <tag>UART</tag>
+         
+        <tag>通信协议</tag>
          
          
            
