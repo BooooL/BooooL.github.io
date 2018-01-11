@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="版权声明：本文为博主原创文章，转载需声明为转载内容并添加原文地址。 原文地址：http://coderdock.com">
+<meta name="description" content="bitbake -b 直接执行一个 .bb文件 -k 尽可能的继续执行在出现一个错误以后 -f force -c CMD -C INVALIDATE_STAM 禁止一项功能，如某个任务中禁止 compile任务 -r PREFILE –read=PREFILE 在进行某一项任务时读取天特定的文件 时机是在读取 bitbake.conf 之前 -R POSTFILE 在之后 -v verbose">
 <meta name="keywords" content="Linux,yocto">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Yocto-Project-使用技巧">
 <meta property="og:url" content="http://coderdock.com/2017/09/07/Yocto/Yocto-Project-使用技巧/index.html">
 <meta property="og:site_name" content="CoderDock">
-<meta property="og:description" content="版权声明：本文为博主原创文章，转载需声明为转载内容并添加原文地址。 原文地址：http://coderdock.com">
+<meta property="og:description" content="bitbake -b 直接执行一个 .bb文件 -k 尽可能的继续执行在出现一个错误以后 -f force -c CMD -C INVALIDATE_STAM 禁止一项功能，如某个任务中禁止 compile任务 -r PREFILE –read=PREFILE 在进行某一项任务时读取天特定的文件 时机是在读取 bitbake.conf 之前 -R POSTFILE 在之后 -v verbose">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-10T04:03:36.372Z">
+<meta property="og:updated_time" content="2018-01-10T04:14:13.357Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Yocto-Project-使用技巧">
-<meta name="twitter:description" content="版权声明：本文为博主原创文章，转载需声明为转载内容并添加原文地址。 原文地址：http://coderdock.com">
+<meta name="twitter:description" content="bitbake -b 直接执行一个 .bb文件 -k 尽可能的继续执行在出现一个错误以后 -f force -c CMD -C INVALIDATE_STAM 禁止一项功能，如某个任务中禁止 compile任务 -r PREFILE –read=PREFILE 在进行某一项任务时读取天特定的文件 时机是在读取 bitbake.conf 之前 -R POSTFILE 在之后 -v verbose">
 
 
 
@@ -358,6 +358,29 @@
 
       
         <a id="more"></a>
+<ul>
+<li>bitbake -b 直接执行一个 .bb文件</li>
+<li>-k 尽可能的继续执行在出现一个错误以后</li>
+<li>-f force</li>
+<li>-c CMD</li>
+<li>-C INVALIDATE_STAM 禁止一项功能，如某个任务中禁止 compile任务</li>
+<li>-r PREFILE –read=PREFILE 在进行某一项任务时读取天特定的文件 时机是在读取 bitbake.conf 之前</li>
+<li>-R POSTFILE 在之后</li>
+<li>-v verbose 终端显示而不是写入log文件</li>
+<li>-D debug</li>
+<li>-q quite</li>
+<li>-n –dry-run 不执行</li>
+<li>-s show version</li>
+<li>-e show environment</li>
+<li>–no-setsence 不执行setsence任务， sstate会被忽略，所有的会被重新build</li>
+<li>–setsence-only</li>
+</ul>
+<ul>
+<li>确定一个包的名字 ： bitbake -s | grep something</li>
+<li>bitbake -e ： 显示到终端</li>
+<li>确定一个包所执行的task ： bitbake package -c listtasks</li>
+<li>确定下载地址： bitbake -e linux-imx | grep ^SRC_URI=</li>
+</ul>
 <p>版权声明：本文为博主原创文章，转载需声明为转载内容并添加原文地址。</p>
 <p>原文地址：<a href="http://coderdock.com">http://coderdock.com</a></p>
 
@@ -491,7 +514,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">45</span>
+                  <span class="site-state-item-count">48</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -502,7 +525,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -513,7 +536,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-count">58</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
