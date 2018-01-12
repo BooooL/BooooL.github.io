@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://coderdock.com/2016/01/01/Code-is-Cold-ind-is-Kind/</loc>
+    
+    <lastmod>2018-01-12T07:37:00.858Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://coderdock.com/2017/09/06/OpenCL/OpenCL-3-%E5%90%8C%E6%AD%A5%E6%9C%BA%E5%88%B6/</loc>
     
     <lastmod>2018-01-11T13:35:34.577Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://coderdock.com/2017/09/02/OpenCL/OpenCL-2-OpenCL%E4%BA%8B%E4%BB%B6/</loc>
     
     <lastmod>2018-01-11T09:19:12.775Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://coderdock.com/2016/01/01/Code-is-Cold-ind-is-Kind/</loc>
-    
-    <lastmod>2018-01-11T07:55:20.713Z</lastmod>
     
   </url>
   
