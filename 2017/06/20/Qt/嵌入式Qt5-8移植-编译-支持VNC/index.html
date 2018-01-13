@@ -370,7 +370,7 @@
 <h1 id="1-VNC说明"><a href="#1-VNC说明" class="headerlink" title="1.VNC说明"></a>1.VNC说明</h1><p>&emsp;&emsp;在QT5之后，QT不再支持QWS机制，即-qt-gfx-vnc配置项在QT5之后不再支持，QT5使用QPA(Qt Platform Abstraction Qt平台抽象)进行取代，当QT需要支持新平台时，需要为其编译一个新插件，在qtbase/src/plugins/platforms目录下存在着该版本QT支持的插件工程，包括Android，linuxfb，directfb，以及我们需要的vnc，想要使用VNC，需要在配置时使用选项 –qpa vnc进行指定。</p>
 </li>
 <li><p>进入上一步已经解压好的源码目录，将 /qtbase/mkspecs/ 目录下的linux-arm-gnueabi-g++ 进行如下修改，主要是将文件中的所有 linux-arm-gnueabi- 替换为了 arm-linux-(根据实际情况替换前缀)。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">#</div><div class="line"># qmake configuration for building with aarch64-linux-gnu-g++</div><div class="line">#</div><div class="line">MAKEFILE_GENERATOR = UNIX</div><div class="line">CONFIG += incremental</div><div class="line">QMAKE_INCREMENTAL_STYLE = sublib</div><div class="line">include(../common/linux.conf)</div><div class="line">include(./common/gcc-base-unix.conf)</div><div class="line">include(../common/g++-unix.conf)</div><div class="line"># modifications to g++.conf</div><div class="line">QMAKE_CC = arm-linux-gnu-gcc</div><div class="line">QMAKE_CXX = arm-linux-gnu-g++</div><div class="line">QMAKE_LINK = arm-linux-gnu-g++</div><div class="line">QMAKE_LINK_SHLIB = arm-linux-gnu-g++</div><div class="line"># modifications to linux.conf</div><div class="line">QMAKE_AR = arm-linux-gnu-ar cqs</div><div class="line">QMAKE_OBJCOPY = arm-linux-gnu-objcopy</div><div class="line">QMAKE_NM = arm-linux-gnu-nm -P</div><div class="line">QMAKE_STRIP = arm-linux-gnu-strip</div><div class="line">load(qt_config)</div></pre></td></tr></table></figure>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># qmake configuration for building with aarch64-linux-gnu-g++</span></div><div class="line"><span class="comment">#</span></div><div class="line">MAKEFILE_GENERATOR = UNIX</div><div class="line">CONFIG += incremental</div><div class="line">QMAKE_INCREMENTAL_STYLE = sublib</div><div class="line"><span class="keyword">include</span>(../common/linux.conf)</div><div class="line"><span class="keyword">include</span>(./common/gcc-base-unix.conf)</div><div class="line"><span class="keyword">include</span>(../common/g++-unix.conf)</div><div class="line"><span class="comment"># modifications to g++.conf</span></div><div class="line">QMAKE_CC = arm-linux-gnu-gcc</div><div class="line">QMAKE_CXX = arm-linux-gnu-g++</div><div class="line">QMAKE_LINK = arm-linux-gnu-g++</div><div class="line">QMAKE_LINK_SHLIB = arm-linux-gnu-g++</div><div class="line"><span class="comment"># modifications to linux.conf</span></div><div class="line">QMAKE_AR = arm-linux-gnu-ar cqs</div><div class="line">QMAKE_OBJCOPY = arm-linux-gnu-objcopy</div><div class="line">QMAKE_NM = arm-linux-gnu-nm -P</div><div class="line">QMAKE_STRIP = arm-linux-gnu-strip</div><div class="line">load(qt_config)</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>具体配置选项帮助见配置选项，我们需要的注意点有：</p>
@@ -379,7 +379,7 @@
 <p>c) –qpa vn  -qt-gfx-vnc在QT5之后不再支持qws机制，需要在配置时使用选项 –qpa vnc进行指定。</p>
 <p>d)一般情况下我们不使用系统的png，jpeg等库，需要指定 –no-libpng,同理，我们配置-qt-libpng使用qt自带的png等库。</p>
 <ul>
-<li>使用如下命令进行编译之后等待完成即可<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"> ./configure -prefix /usr/arm/qt5.8 -extprefix /usr/arm/qt5.8 -opensource -xplatform linux-arm-gnueabi-g++ -no-glib -no-cups -no-accessibility -no-openssl -no-libpng -no-libjpeg -qt-zlib -no-dbus -no-pkg-config -optimized-qmake -nomake examples -qtlibinfix DhSc -qpa vnc -debug -no-opengl -qt-libpng</div><div class="line"></div><div class="line">make -j4</div><div class="line"></div><div class="line">make install</div></pre></td></tr></table></figure>
+<li>使用如下命令进行编译之后等待完成即可<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"> ./configure -prefix /usr/arm/qt5.<span class="number">8</span> -extprefix /usr/arm/qt5.<span class="number">8</span> -opensource -xplatform linux-arm-gnueabi-g++ -<span class="keyword">no</span>-glib -<span class="keyword">no</span>-cups -<span class="keyword">no</span>-accessibility -<span class="keyword">no</span>-openssl -<span class="keyword">no</span>-libpng -<span class="keyword">no</span>-libjpeg -qt-zlib -<span class="keyword">no</span>-dbus -<span class="keyword">no</span>-pkg-config -optimized-qmake -nomake examples -qtlibinfix DhSc -qpa vnc -<span class="keyword">debug</span> -<span class="keyword">no</span>-opengl -qt-libpng</div><div class="line"></div><div class="line"><span class="keyword">make</span> -j4</div><div class="line"></div><div class="line"><span class="keyword">make</span> install</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>安装完成后，就可以在 <code>/usr/arm</code>发现输出文件。</p>
@@ -536,7 +536,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -845,6 +845,8 @@
   
 
   
+  
+
 
   
 

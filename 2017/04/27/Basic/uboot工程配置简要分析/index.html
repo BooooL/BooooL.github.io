@@ -398,7 +398,7 @@
 <li>aotoconf.h其内容也来自.config ，由源码进行调用，其中的定义则都是 XXX_CONFIG = 1</li>
 </ul>
 <h1 id="3-Kconfig内容解析"><a href="#3-Kconfig内容解析" class="headerlink" title="3.Kconfig内容解析"></a>3.Kconfig内容解析</h1><p>以常见的DM9000网卡驱动的Kconfig为例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"># Network device configuration</div><div class="line">menuconfig NETDEVICES</div><div class="line">        default y if UML</div><div class="line">        depends on NET</div><div class="line">        bool &quot;Network device support&quot;</div><div class="line">        ---help---</div><div class="line">          You can say N here if you don&apos;t intend to connect your Linux box to any other computer at all.</div><div class="line">……</div><div class="line">config DM9000</div><div class="line">        tristate &quot;DM9000 support&quot;</div><div class="line">        depends on ARM || BLACKFIN || MIPS</div><div class="line">        select CRC32</div><div class="line">        select MII</div><div class="line">        ---help---</div><div class="line">          Support for DM9000 chipset.</div><div class="line"></div><div class="line">          To compile this driver as a module, choose M here.  The module will be called dm9000.</div><div class="line">……</div><div class="line">source &quot;drivers/net/arcnet/Kconfig&quot;</div><div class="line">source &quot;drivers/net/phy/Kconfig&quot;</div></pre></td></tr></table></figure>
+<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"># Network device <span class="keyword">configuration</span></div><div class="line">menuconfig NETDEVICES</div><div class="line">        <span class="keyword">default</span> y <span class="keyword">if</span> UML</div><div class="line">        depends <span class="keyword">on</span> NET</div><div class="line">        bool <span class="string">"Network device support"</span></div><div class="line">        <span class="comment">---help---</span></div><div class="line">          You can say N here <span class="keyword">if</span> you don<span class="symbol">'t</span> intend <span class="keyword">to</span> connect your Linux box <span class="keyword">to</span> any other computer at <span class="keyword">all</span>.</div><div class="line">……</div><div class="line">config DM9000</div><div class="line">        tristate <span class="string">"DM9000 support"</span></div><div class="line">        depends <span class="keyword">on</span> ARM || BLACKFIN || MIPS</div><div class="line">        <span class="keyword">select</span> CRC32</div><div class="line">        <span class="keyword">select</span> MII</div><div class="line">        <span class="comment">---help---</span></div><div class="line">          Support <span class="keyword">for</span> DM9000 chipset.</div><div class="line"></div><div class="line">          <span class="keyword">To</span> compile this driver as a module, choose M here.  The module will be called dm9000.</div><div class="line">……</div><div class="line">source <span class="string">"drivers/net/arcnet/Kconfig"</span></div><div class="line">source <span class="string">"drivers/net/phy/Kconfig"</span></div></pre></td></tr></table></figure>
 <ul>
 <li>menuconfig : 表示菜单，本身属于一个菜单中的项目，但是他又有子菜单项目。</li>
 <li>config表示菜单中的一个配置项（本身并没有子菜单下的项目）。一个menuconfig后面跟着的所有config项就是这个menuconfig的子菜单。这就是Kconfig中表示的目录关系。</li>
@@ -564,7 +564,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -873,6 +873,8 @@
   
 
   
+  
+
 
   
 

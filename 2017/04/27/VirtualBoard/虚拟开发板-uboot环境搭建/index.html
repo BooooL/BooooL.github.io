@@ -373,8 +373,8 @@
 <li>qemu : sudo apt-get install qemu</li>
 <li>arm-linux-gcc : sudo apt-get install gcc-arm-linux-gnueabi 或 <a href="https://www.linaro.org/" target="_blank" rel="external">https://www.linaro.org/</a></li>
 </ul>
-<h1 id="2-编译uboot"><a href="#2-编译uboot" class="headerlink" title="2. 编译uboot"></a>2. 编译uboot</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">export ARCH=arm</div><div class="line">export CROSS_COMPILE=arm-linux-gnueabi-</div><div class="line">make vexpress_ca9x4_config</div><div class="line">make -j4</div></pre></td></tr></table></figure>
-<h1 id="3-qemu启动uboot"><a href="#3-qemu启动uboot" class="headerlink" title="3. qemu启动uboot"></a>3. qemu启动uboot</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">qemu-system-arm -M vexpress-a9 -m 256M -nographic -kernel u-boot</div></pre></td></tr></table></figure>
+<h1 id="2-编译uboot"><a href="#2-编译uboot" class="headerlink" title="2. 编译uboot"></a>2. 编译uboot</h1><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="builtin-name">export</span> <span class="attribute">ARCH</span>=arm</div><div class="line"><span class="builtin-name">export</span> <span class="attribute">CROSS_COMPILE</span>=arm-linux-gnueabi-</div><div class="line">make vexpress_ca9x4_config</div><div class="line">make -j4</div></pre></td></tr></table></figure>
+<h1 id="3-qemu启动uboot"><a href="#3-qemu启动uboot" class="headerlink" title="3. qemu启动uboot"></a>3. qemu启动uboot</h1><figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">qemu</span>-system-<span class="meta">arm</span> -M vexpress-a9 -m <span class="number">256</span>M -nographic -kernel u-<span class="keyword">boot</span></div></pre></td></tr></table></figure>
 <p><img src="http://img.blog.csdn.net/20171227173636412?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzk4OTI4NA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="uboot"></p>
 <p>版权声明：本文为博主原创文章，转载需声明为转载内容并添加原文地址。</p>
 <p>原文地址：<a href="http://coderdock.com">http://coderdock.com</a></p>
@@ -531,7 +531,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -840,6 +840,8 @@
   
 
   
+  
+
 
   
 

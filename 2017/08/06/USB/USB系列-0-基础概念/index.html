@@ -352,7 +352,7 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">_______  ______</div><div class="line">|\     /|(  ____ \(  ___ \</div><div class="line">| )   ( || (    \/| (   ) )</div><div class="line">| |   | || (_____ | (__/ /</div><div class="line">| |   | |(_____  )|  __ (</div><div class="line">| |   | |      ) || (  \ \</div><div class="line">| (___) |/\____) || )___) )</div><div class="line">(_______)\_______)|/ \___/</div></pre></td></tr></table></figure>
+        <figure class="highlight gherkin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">_______  ______</div><div class="line">|<span class="string">\     /</span>|<span class="string">(  ____ \(  ___ \</span></div><div class="line">|<span class="string"> )   ( </span>||<span class="string"> (    \/</span>|<span class="string"> (   ) )</span></div><div class="line">|<span class="string"> </span>|<span class="string">   </span>|<span class="string"> </span>||<span class="string"> (_____ </span>|<span class="string"> (__/ /</span></div><div class="line">|<span class="string"> </span>|<span class="string">   </span>|<span class="string"> </span>|<span class="string">(_____  )</span>|<span class="string">  __ (</span></div><div class="line">|<span class="string"> </span>|<span class="string">   </span>|<span class="string"> </span>|<span class="string">      ) </span>||<span class="string"> (  \ \</span></div><div class="line">|<span class="string"> (___) </span>|<span class="string">/\____) </span>||<span class="string"> )___) )</span></div><div class="line"><span class="string">(_______)\_______)</span>|<span class="string">/ \___/</span></div></pre></td></tr></table></figure>
 <a id="more"></a>
 <h1 id="1-USB特性"><a href="#1-USB特性" class="headerlink" title="1.USB特性"></a>1.USB特性</h1><ul>
 <li>不同设备类型，统一接口</li>
@@ -390,7 +390,7 @@
 <p>第二个设备的第一个端口，使用配置0 的接口1</p>
 <h1 id="6-驱动架构"><a href="#6-驱动架构" class="headerlink" title="6.驱动架构"></a>6.驱动架构</h1><p>USB Core</p>
 <p>USB Core提供一些核心算法，为别的设备驱动程序提供服务，提供一个用于访问和控制USB硬件的接口，而不用考虑系统当前是那种主机控制器，</p>
-<p>USB Core、USB主机控制器 USB设备驱动三者的关系如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">Block层 ： Net层 ： Char层 ： ---</div><div class="line">-------------------------------</div><div class="line">  USB设备驱动程序</div><div class="line">-------------------------------</div><div class="line">  USB Core</div><div class="line">-------------------------------</div><div class="line">  USB主机控制器(HCD)</div><div class="line">-------------------------------</div><div class="line">  硬件</div></pre></td></tr></table></figure></p>
+<p>USB Core、USB主机控制器 USB设备驱动三者的关系如下：<br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">Block层 ： Net层 ： Char层 ： ---</div><div class="line">-------------------------------</div><div class="line"><span class="code">  USB设备驱动程序</span></div><div class="line">-------------------------------</div><div class="line"><span class="code">  USB Core</span></div><div class="line">-------------------------------</div><div class="line"><span class="code">  USB主机控制器(HCD)</span></div><div class="line">-------------------------------</div><div class="line"><span class="code">  硬件</span></div></pre></td></tr></table></figure></p>
 <p>HCD提供主机控制器硬件的抽象，隐藏硬件的细节，HCD只对 USB Core负责。这也就意味着我们写USB驱动，是在调用USB Core接口的基础上进行的。</p>
 <p>我们接下来的源码分析就从HCD开始。</p>
 <p>版权声明：本文为博主原创文章，转载需声明为转载内容并添加原文地址。</p>
@@ -546,7 +546,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -855,6 +855,8 @@
   
 
   
+  
+
 
   
 

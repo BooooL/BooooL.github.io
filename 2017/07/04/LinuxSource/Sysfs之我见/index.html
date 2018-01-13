@@ -363,7 +363,7 @@
       
 
       
-        <p>sysfs虚拟文件系统提供了一种比proc更理想的访问内核数据的途径。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">_______           _______  _______  _______</div><div class="line">(  ____ \|\     /|(  ____ \(  ____ \(  ____ \</div><div class="line">| (    \/( \   / )| (    \/| (    \/| (    \/</div><div class="line">| (_____  \ (_) / | (_____ | (__    | (_____</div><div class="line">(_____  )  \   /  (_____  )|  __)   (_____  )</div><div class="line">     ) |   ) (         ) || (            ) |</div><div class="line">/\____) |   | |   /\____) || )      /\____) |</div><div class="line">\_______)   \_/   \_______)|/       \_______)</div></pre></td></tr></table></figure></p>
+        <p>sysfs虚拟文件系统提供了一种比proc更理想的访问内核数据的途径。<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">_______           _______  _______  _______</div><div class="line">(  <span class="name">____</span> \|\     /|(  <span class="name">____</span> \(  <span class="name">____</span> \(  <span class="name">____</span> \</div><div class="line">| (    \/( \   / )| (    \/| (    \/| (    \/</div><div class="line">| (_____  \ (_) / | (<span class="name">_____</span> | (__    | (<span class="name">_____</span></div><div class="line">(<span class="name">_____</span>  )  \   /  (<span class="name">_____</span>  )|  __)   (<span class="name">_____</span>  )</div><div class="line">     ) |   ) (         ) || (            ) |</div><div class="line">/\____) |   | |   /\____) || )      /\____) |</div><div class="line">\_______)   \_/   \_______)|/       \_______)</div></pre></td></tr></table></figure></p>
 <a id="more"></a>
 <h1 id="1-sysfs的目录结构"><a href="#1-sysfs的目录结构" class="headerlink" title="1.sysfs的目录结构"></a>1.sysfs的目录结构</h1><p>sysfs总是挂载在/sys文件夹上。<br>在/sys目录下一般有block、bus、class、dev、devices、firmware、fs、kernel、module、power等目录。</p>
 <ul>
@@ -420,9 +420,9 @@
 <li>%%：　　　　　　　　　　　　  符号 % 本身。</li>
 <li>$$：　　　　　　　　　　　　　符号 $ 本身。</li>
 </ul>
-<h2 id="2-3-udev使用"><a href="#2-3-udev使用" class="headerlink" title="2.3 udev使用"></a>2.3 udev使用</h2><p>假设一个USB扫描仪每次插入Linux设备名称都会变，那么就可以使用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">SYSFS&#123;idVendor&#125;==&quot;0686&quot;, \</div><div class="line">SYSFS&#123;idProduct&#125;==&quot;400e&quot;, \</div><div class="line">SYMLINK+=&quot;scanner&quot;, MODE=&quot;0664&quot;, \</div><div class="line">group=&quot;scanner&quot;</div></pre></td></tr></table></figure></p>
+<h2 id="2-3-udev使用"><a href="#2-3-udev使用" class="headerlink" title="2.3 udev使用"></a>2.3 udev使用</h2><p>假设一个USB扫描仪每次插入Linux设备名称都会变，那么就可以使用：<br><figure class="highlight makefile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">SYSFS&#123;idVendor&#125;==<span class="string">"0686"</span>, \</div><div class="line">SYSFS&#123;idProduct&#125;==<span class="string">"400e"</span>, \</div><div class="line">SYMLINK+=<span class="string">"scanner"</span>, MODE=<span class="string">"0664"</span>, \</div><div class="line">group=<span class="string">"scanner"</span></div></pre></td></tr></table></figure></p>
 <p>前两行，确定了扫描仪的生产商和产品号，那么在每次重新插入的时候，都会创建一个/dev/scanner的符号连接，访问权限设置为0664。</p>
-<p>修改U盘名称：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">KERNEL==&quot;sdc4&quot;,SUBSYSTEMS==&quot;block&quot;, NAME+=&quot;kinstonusb&quot;,SYMLINK+=&quot;kinstonusb_link&quot;</div></pre></td></tr></table></figure></p>
+<p>修改U盘名称：<br><figure class="highlight ini"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attr">KERNEL</span>==<span class="string">"sdc4"</span>,SUBSYSTEMS==<span class="string">"block"</span>, NAME+=<span class="string">"kinstonusb"</span>,SYMLINK+=<span class="string">"kinstonusb_link"</span></div></pre></td></tr></table></figure></p>
 <p>比如你的sdc的优盘为金士顿的，但系统会识别成sdc4不易于识别，那么就可以对sdc建立一个<code>kinstonusb_link</code>链接。</p>
 <p>版权声明：本文为博主原创文章，转载需声明为转载内容并添加原文地址。</p>
 <p>原文地址：<a href="http://coderdock.com">http://coderdock.com</a></p>
@@ -577,7 +577,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -886,6 +886,8 @@
   
 
   
+  
+
 
   
 

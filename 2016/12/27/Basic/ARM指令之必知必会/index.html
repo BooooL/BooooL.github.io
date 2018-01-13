@@ -372,13 +372,13 @@
 <li>内存传送指令<br><code>mov</code>会是我们经常要用到的一条指令。有寄存器转移<code>mov r1, r0</code>和立即数转移两种方式<code>mov r1, #1224</code></li>
 <li>地址读取伪指令 <code>ldr</code>也有两种方式<code>ldr r1, =1234</code> 和取标号地址<code>ldr r1, =label</code></li>
 <li><p>内存访问指令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ldr r1, [r2, #3]    //将r2+3地址处的内容读取到r1中</div><div class="line">ldr r1, [r2], #4    //将r2地址处的内容读取到r1，然后r2=r2+4</div><div class="line">str r1, [r2, #4]    //将r1中的内容保存到 r2+4 地址处</div><div class="line">str r1, [r2], #4    //将r1中的数据保存到r2地址处，然后r2=r2+4</div></pre></td></tr></table></figure>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">ldr </span><span class="built_in">r1</span>, [<span class="built_in">r2</span>, <span class="number">#3</span>]    //将<span class="built_in">r2</span>+<span class="number">3</span>地址处的内容读取到<span class="built_in">r1</span>中</div><div class="line"><span class="keyword">ldr </span><span class="built_in">r1</span>, [<span class="built_in">r2</span>], <span class="number">#4</span>    //将<span class="built_in">r2</span>地址处的内容读取到<span class="built_in">r1</span>，然后<span class="built_in">r2</span><span class="symbol">=r2</span>+<span class="number">4</span></div><div class="line"><span class="keyword">str </span><span class="built_in">r1</span>, [<span class="built_in">r2</span>, <span class="number">#4</span>]    //将<span class="built_in">r1</span>中的内容保存到 <span class="built_in">r2</span>+<span class="number">4</span> 地址处</div><div class="line"><span class="keyword">str </span><span class="built_in">r1</span>, [<span class="built_in">r2</span>], <span class="number">#4</span>    //将<span class="built_in">r1</span>中的数据保存到<span class="built_in">r2</span>地址处，然后<span class="built_in">r2</span><span class="symbol">=r2</span>+<span class="number">4</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>加减指令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">add r1, r2, #1      // r1 = r2 + 1</div><div class="line">sub r1, r2, #1      // r1 = r2 - 1</div></pre></td></tr></table></figure>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">add </span><span class="built_in">r1</span>, <span class="built_in">r2</span>, <span class="number">#1</span>      // <span class="built_in">r1</span> = <span class="built_in">r2</span> + <span class="number">1</span></div><div class="line"><span class="keyword">sub </span><span class="built_in">r1</span>, <span class="built_in">r2</span>, <span class="number">#1</span>      // <span class="built_in">r1</span> = <span class="built_in">r2</span> - <span class="number">1</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>状态寄存器访问指令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">msr cpsr, r0    //cpsp = r0</div><div class="line">mrs r0, cpsr    //r0 = cpsr</div></pre></td></tr></table></figure>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">msr </span><span class="keyword">cpsr, </span><span class="built_in">r0</span>    //<span class="keyword">cpsp </span>= <span class="built_in">r0</span></div><div class="line"><span class="keyword">mrs </span><span class="built_in">r0</span>, <span class="keyword">cpsr </span>   //<span class="built_in">r0</span> = <span class="keyword">cpsr</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>版权声明：本文为博主原创文章，转载需声明为转载内容并添加原文地址。</p>
@@ -523,7 +523,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -816,6 +816,8 @@
   
 
   
+  
+
 
   
 

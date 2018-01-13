@@ -360,7 +360,7 @@
 <h2 id="2-1组内同步"><a href="#2-1组内同步" class="headerlink" title="2.1组内同步"></a>2.1组内同步</h2><p>&emsp;&emsp;OpenCL采用宽松的同步模型和内存一致性模型。通常来说，采用硬件实现能够最好的实现同步，但是作为一个跨平台的API,并不能完全实现这些特性。所以OpenCL的解决方案是让程序员明确的知道当前系统的状态，添加同步点，从而可以依据这些信息获取预期行为。</p>
 <p>&emsp;&emsp;在x86(CPU)平台上，我们使用同步机制如果条件还未满足，我们可以使系统进入休眠等待条件满足。但是GPU上的线程与系统层级的线程不是一个概念，GPU的线程所占用的资源是固定的，不能释放的，这也就导致了如果不同的不同work group不能为同一个资源做同步，因为没有释放的概念，所以必然存在死锁的状态。所以只能组内同步。</p>
 <p>&emsp;&emsp;组内同步的机制是<code>barrier</code>,即屏障，在组内所有的item没有到达这个barrier之前，所有的item是不想下执行的。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">  item1</div><div class="line">    |       item2</div><div class="line">    |         |       item3</div><div class="line">    |         |         |</div><div class="line">    | 5s      |4s       | 3s</div><div class="line">    |         |         |</div><div class="line">------------------------------ 所有达到 barrier之后，同时出发</div><div class="line">    |         |         |</div><div class="line">    |         |         |</div></pre></td></tr></table></figure>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">  item1</div><div class="line">    |<span class="string">       item2</span></div><div class="line"><span class="string">    </span>|<span class="string">         </span>|<span class="string">       item3</span></div><div class="line"><span class="string">    </span>|<span class="string">         </span>|<span class="string">         </span>|</div><div class="line">    |<span class="string"> 5s      </span>|<span class="string">4s       </span>|<span class="string"> 3s</span></div><div class="line"><span class="string">    </span>|<span class="string">         </span>|<span class="string">         </span>|</div><div class="line">------------------------------ 所有达到 barrier之后，同时出发</div><div class="line">    |<span class="string">         </span>|<span class="string">         </span>|</div><div class="line">    |<span class="string">         </span>|<span class="string">         </span>|</div></pre></td></tr></table></figure>
 <h2 id="2-2全局同步"><a href="#2-2全局同步" class="headerlink" title="2.2全局同步"></a>2.2全局同步</h2><p>&emsp;&emsp;目前OpenCL不支持与组内同步类似的全局同步方式（原因上方已经介绍）。可以通过<code>global fence</code>以及原子操作来达到目的。</p>
 <h1 id="3-宿主机端同步"><a href="#3-宿主机端同步" class="headerlink" title="3.宿主机端同步"></a>3.宿主机端同步</h1><p>&emsp;&emsp;OpenCL是基于任务并行，主机控制的模型，其中每一项任务都是数据并行的，具体通过使用和设备关联的线程安全的命令队列来实现。当然，内核、数据以及其他操作并不是简单调用来进行的，而是通过异步加入指定的队列中。</p>
 <p>&emsp;&emsp;从宿主机角度来看，保证宿主机同步的要点有一下三条：</p>
@@ -370,10 +370,10 @@
 <li>执行一个阻塞操作</li>
 </ul>
 <p>当然，根据所需要同步的计算设备的个数，可以分为<code>单设备同步</code>和<code>多设备同步</code>。</p>
-<h2 id="3-1单设备同步"><a href="#3-1单设备同步" class="headerlink" title="3.1单设备同步"></a>3.1单设备同步</h2><h3 id="3-1-1设置barrier"><a href="#3-1-1设置barrier" class="headerlink" title="3.1.1设置barrier"></a>3.1.1设置barrier</h3><p>clFinish可以阻塞程序的执行直到命令队列中的所有命令都执行完成。但是这只是相当于在末尾加上了一个barrier。在中间加入barrier需要调用如下函数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cl_int clEnqueueBarrier(</div><div class="line">  cl_command_queue command_queue</div><div class="line">  )</div></pre></td></tr></table></figure></p>
-<h3 id="3-1-2等待事件"><a href="#3-1-2等待事件" class="headerlink" title="3.1.2等待事件"></a>3.1.2等待事件</h3><p>&emsp;&emsp;等待事件，即将一个等待事件加入命令队列，只有这个等待事件满足以后，才能执行之后加入的命令，使用的命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">cl_int clEnqueueWaitForEvents(</div><div class="line">  cl_command_queue command_queue,</div><div class="line">  cl_uint num_events,</div><div class="line">  const cl_event* event_list</div><div class="line">  )</div></pre></td></tr></table></figure></p>
+<h2 id="3-1单设备同步"><a href="#3-1单设备同步" class="headerlink" title="3.1单设备同步"></a>3.1单设备同步</h2><h3 id="3-1-1设置barrier"><a href="#3-1-1设置barrier" class="headerlink" title="3.1.1设置barrier"></a>3.1.1设置barrier</h3><p>clFinish可以阻塞程序的执行直到命令队列中的所有命令都执行完成。但是这只是相当于在末尾加上了一个barrier。在中间加入barrier需要调用如下函数：<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cl_int clEnqueueBarrier(</div><div class="line">  cl_command_queue command_queue</div><div class="line">  )</div></pre></td></tr></table></figure></p>
+<h3 id="3-1-2等待事件"><a href="#3-1-2等待事件" class="headerlink" title="3.1.2等待事件"></a>3.1.2等待事件</h3><p>&emsp;&emsp;等待事件，即将一个等待事件加入命令队列，只有这个等待事件满足以后，才能执行之后加入的命令，使用的命令如下：<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">cl_int clEnqueueWaitForEvents(</div><div class="line">  cl_command_queue command_queue,</div><div class="line">  cl_uint num_events,</div><div class="line">  const cl_event* event_list</div><div class="line">  )</div></pre></td></tr></table></figure></p>
 <p>从变量定义上很好理解，不再赘述。</p>
-<h3 id="3-1-3阻塞访问"><a href="#3-1-3阻塞访问" class="headerlink" title="3.1.3阻塞访问"></a>3.1.3阻塞访问</h3><p>&emsp;&emsp;我们在进行网络访问或者进行IO读取的时候是如何进行阻塞与非阻塞的区分的呢，没错，往往是传入一个标志。对于OpenCL也是一样的，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">clEnqueReadBuffer(que, CL_TRUEm....)</div></pre></td></tr></table></figure></p>
+<h3 id="3-1-3阻塞访问"><a href="#3-1-3阻塞访问" class="headerlink" title="3.1.3阻塞访问"></a>3.1.3阻塞访问</h3><p>&emsp;&emsp;我们在进行网络访问或者进行IO读取的时候是如何进行阻塞与非阻塞的区分的呢，没错，往往是传入一个标志。对于OpenCL也是一样的，如：<br><figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">clEnqueReadBuffer</span>(<span class="params">que, CL_TRUEm....</span>)</span></div></pre></td></tr></table></figure></p>
 <p>上面这个示例的第二个参数就是指定这个函数是否是同步操作，如果为TRUE，那么就会阻塞直至拷贝完成，如果为FALSE，在设置完后不等拷贝完成，就会返回。</p>
 <h2 id="3-2多设备同步"><a href="#3-2多设备同步" class="headerlink" title="3.2多设备同步"></a>3.2多设备同步</h2><p>&emsp;&emsp;在之前我们已经了解到，使用事件只能在同一个上下文中实现同步。那么在不同的设备不同的上下文中如何实现同步呢，只剩下了一种方法，cFinish,等待另一个命令队列执行完成，之后的命令才能继续执行。如一个CPU一个GPU，两者需要互相访问彼此的数据，那么如何实现同步呢，如果CPU要访问CPU的数据，必须等待CPU当前的命令队列执行完成，不再占用内存，GPU才能进行访问。<br><img src="https://coderdock-1251264493.cos.ap-shanghai.myqcloud.com/sync.png" alt="同步"></p>
 <p>版权声明：本文为博主原创文章，转载需声明为转载内容并添加原文地址。</p>
@@ -529,7 +529,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -838,6 +838,8 @@
   
 
   
+  
+
 
   
 

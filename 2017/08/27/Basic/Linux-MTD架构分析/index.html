@@ -365,7 +365,7 @@
       
 
       
-        <p>介绍Linux MTD子系统架构划分。<br><a id="more"></a><br>MTD，Memory Technology Device即内存技术设备，在Linux内核中，引入MTD层为NOR FLASH和NAND FLASH设备提供统一接口。MTD将文件系统与底层FLASH存储器进行了隔离。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">字符设备节点					块设备节点</div><div class="line">	|							|</div><div class="line">MTD字符设备					MTD块设备驱动</div><div class="line">		\                  /</div><div class="line">		 \				  /</div><div class="line">			MTD原始设备</div><div class="line">				|</div><div class="line">			Flash驱动程序</div><div class="line">				|</div><div class="line">			   硬件</div></pre></td></tr></table></figure></p>
+        <p>介绍Linux MTD子系统架构划分。<br><a id="more"></a><br>MTD，Memory Technology Device即内存技术设备，在Linux内核中，引入MTD层为NOR FLASH和NAND FLASH设备提供统一接口。MTD将文件系统与底层FLASH存储器进行了隔离。<br><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">字符设备节点					块设备节点</div><div class="line">	|<span class="string">							</span>|</div><div class="line">MTD字符设备					MTD块设备驱动</div><div class="line">		\                  /</div><div class="line">		 \				  /</div><div class="line">			MTD原始设备</div><div class="line">				|</div><div class="line"><span class="string">			Flash驱动程序</span></div><div class="line"><span class="string">				</span>|</div><div class="line">			   硬件</div></pre></td></tr></table></figure></p>
 <p><strong>Flash硬件驱动层</strong>：Flash硬件驱动层负责对Flash硬件的读、写和擦除操作。MTD设备的Nand Flash芯片的驱动则drivers/mtd/nand/子目录下,Nor Flash芯片驱动位于drivers/mtd/chips/子目录下。</p>
 <p><strong>MTD原始设备层：</strong>用于描述MTD原始设备的数据结构是mtd_info，它定义了大量的关于MTD的数据和操作函数。其中<strong>mtdcore.c</strong>:  MTD原始设备接口相关实现<strong>，mtdpart.c</strong> :  MTD分区接口相关实现。</p>
 <p><strong>MTD设备层：</strong>基于MTD原始设备，linux系统可以定义出MTD的<strong>块设备（主设备号31）</strong>和<strong>字符设备（设备号90）</strong>。其中<strong>mtdchar.c</strong> :  MTD字符设备接口相关实现，<strong>mtdblock.c</strong> : MTD块设备接口相关实现。</p>
@@ -514,7 +514,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -807,6 +807,8 @@
   
 
   
+  
+
 
   
 
