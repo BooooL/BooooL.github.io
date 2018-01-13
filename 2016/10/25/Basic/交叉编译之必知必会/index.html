@@ -377,16 +377,16 @@
 <h1 id="2-交叉编译器选项"><a href="#2-交叉编译器选项" class="headerlink" title="2.交叉编译器选项"></a>2.交叉编译器选项</h1><h2 id="2-1-编译步骤"><a href="#2-1-编译步骤" class="headerlink" title="2.1 编译步骤"></a>2.1 编译步骤</h2><p>&emsp;&emsp;编译程序分为4个步骤：</p>
 <ul>
 <li><p>1.预处理，生成预编译文件（.文件）：</p>
-<pre><code>Gcc –E hello.c –o hello.i
+<pre><code>  Gcc –E hello.c –o hello.i
 </code></pre></li>
 <li><p>2.编译，生成汇编代码（.s文件）：</p>
-<pre><code>Gcc –S hello.i –o hello.s
+<pre><code>  Gcc –S hello.i –o hello.s
 </code></pre></li>
 <li><p>3.汇编，生成目标文件（.o文件）：</p>
-<pre><code>Gcc –c hello.s –o hello.o
+<pre><code>  Gcc –c hello.s –o hello.o
 </code></pre></li>
 <li><p>4.链接，生成可执行文件：</p>
-<pre><code>Gcc hello.o –o hello
+<pre><code>  Gcc hello.o –o hello
 </code></pre><p><strong>记住这三个选项只要记住键盘左上角的按键 <code>ESC</code>即可，是不是很简单</strong></p>
 </li>
 </ul>

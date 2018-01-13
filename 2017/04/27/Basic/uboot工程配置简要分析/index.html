@@ -393,7 +393,7 @@
 </ul>
 <h2 id="2-2-配置联系"><a href="#2-2-配置联系" class="headerlink" title="2.2 配置联系"></a>2.2 配置联系</h2><ul>
 <li>顶层的Makefile是顶层入口。</li>
-<li>在调用<code>make menuconfig</code>的时候，会使用到各个子目录的Kconfig进行显示，最后将结果汇总到 .config – XXX_CONFIG = y 或者 XXX_CONFIG = m</li>
+<li>在调用<code>make menuconfig</code>的时候，会使用到各个子目录的Kconfig进行显示，最后将结果汇总到 .config — XXX_CONFIG = y 或者 XXX_CONFIG = m</li>
 <li>auto.conf，其内容来自 .config 用于子目录的Makefile编译，其形式为 obj-$(XXX_CONFIG) += xxx.o,当 XXX_CONFIG = y时就会编译近启动文件，m则为驱动方式，uboot没有驱动，所以全部都是在二进制文件中。</li>
 <li>aotoconf.h其内容也来自.config ，由源码进行调用，其中的定义则都是 XXX_CONFIG = 1</li>
 </ul>
