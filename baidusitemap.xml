@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://coderdock.com/2017/09/29/TensorFlow/TensorFlow-2-%E6%A6%82%E5%BF%B5/</loc>
-    <lastmod>2018-01-13T15:14:05.889Z</lastmod>
+    <lastmod>2018-01-13T15:40:52.034Z</lastmod>
     <data>
         <display>
         <title>TensorFlow-2-概念</title>
@@ -541,9 +541,9 @@
         <title>通信协议-UART</title>
         <pubTime>2017-02-27T07:57:25.000Z</pubTime>
         
-        <tag>通信协议</tag>
-         
         <tag>UART</tag>
+         
+        <tag>通信协议</tag>
          
          
            

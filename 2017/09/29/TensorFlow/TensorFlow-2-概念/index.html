@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="CoderDock">
 <meta property="og:description" content="一些机器学习的基础概念。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-13T15:14:05.889Z">
+<meta property="og:updated_time" content="2018-01-13T15:40:52.034Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TensorFlow-2-概念">
 <meta name="twitter:description" content="一些机器学习的基础概念。">
@@ -366,9 +366,12 @@
 <script type="math/tex; mode=display">
 h(\theta)=\theta_1x+\theta_0</script><p>那么其代价函数函数(Cost Function)就为：</p>
 <script type="math/tex; mode=display">
-J(\theta_0,\theta_1)={\frac{1}{2m}}=\sum_{i=1}^m(h_{\theta}(\theta^i)-y^i)^2</script><h1 id="3-梯度下降"><a href="#3-梯度下降" class="headerlink" title="3.梯度下降"></a>3.梯度下降</h1><p>定义:<br>repeat until convergence {</p>
+J(\theta_0,\theta_1)={\frac{1}{2m}}=\sum_{i=1}^m(h_{\theta}(\theta^i)-y^i)^2</script><h1 id="3-梯度下降"><a href="#3-梯度下降" class="headerlink" title="3.梯度下降"></a>3.梯度下降</h1><p>定义:<br>求参数的偏微分<br>repeat until convergence {</p>
 <script type="math/tex; mode=display">
-\theta_j:=\theta_j-\alpha\frac{\partial}{\partial\theta_j}J(\theta_0,\theta_1)</script><p>（for j = 0 and j =1）<br>}</p>
+\theta_j:=\theta_j-\alpha\frac{\partial}{\partial\theta_j}J(\theta_0,\theta_1)</script><p>}</p>
+<p>注意事项：<br>$\theta<em>j$应该是在同时更新的，不能用上一周期的$\theta_j$来计算当前周期的 $\theta</em>{j-n}$ </p>
+<p>正确方式：<br>temp0 =$=\theta_0-\alpha\frac{\partial}{\partial\theta_0}J(\theta_0,\theta_1)$<br>temp1 =$=\theta_1-\alpha\frac{\partial}{\partial\theta_1}J(\theta_0,\theta_1)$<br>$\theta_0$=temp0<br>$\theta_1$=temp1</p>
+<p>错误方式：<br>temp0 =$=\theta_0-\alpha\frac{\partial}{\partial\theta_0}J(\theta_0,\theta_1)$<br>$\theta_0$=temp0<br>temp1 =$=\theta_1-\alpha\frac{\partial}{\partial\theta_1}J(\theta_0,\theta_1)$<br>$\theta_1$=temp1</p>
 <p>版权声明：本文为博主原创文章，转载需声明为转载内容并添加原文地址。</p>
 <p>原文地址：<a href="http://coderdock.com">http://coderdock.com</a></p>
 
