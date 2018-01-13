@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="CoderDock">
 <meta property="og:description" content="一些机器学习的基础概念。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-13T14:42:44.330Z">
+<meta property="og:updated_time" content="2018-01-13T15:14:05.889Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TensorFlow-2-概念">
 <meta name="twitter:description" content="一些机器学习的基础概念。">
@@ -352,7 +352,8 @@
       
 
       
-        <p>一些机器学习的基础概念。<br><a id="more"></a></p>
+        <p>一些机器学习的基础概念。</p>
+<a id="more"></a>
 <h1 id="1-监督学习-VS-无监督学习"><a href="#1-监督学习-VS-无监督学习" class="headerlink" title="1.监督学习 VS 无监督学习"></a>1.监督学习 VS 无监督学习</h1><ul>
 <li>监督学习不仅给出了输入，还给出了输出，用处是，给出一个新的输入，预测出新的输入<ul>
 <li>回归：对于预测模型是线性的，称之为回归</li>
@@ -365,7 +366,10 @@
 <script type="math/tex; mode=display">
 h(\theta)=\theta_1x+\theta_0</script><p>那么其代价函数函数(Cost Function)就为：</p>
 <script type="math/tex; mode=display">
-J(\theta_0,\theta_1)={\frac{1}{2m}}=\sum_{i=1}^m(h_{\theta}(\theta^i)-y^i)^2</script><p>版权声明：本文为博主原创文章，转载需声明为转载内容并添加原文地址。</p>
+J(\theta_0,\theta_1)={\frac{1}{2m}}=\sum_{i=1}^m(h_{\theta}(\theta^i)-y^i)^2</script><h1 id="3-梯度下降"><a href="#3-梯度下降" class="headerlink" title="3.梯度下降"></a>3.梯度下降</h1><p>定义:<br>repeat until convergence {</p>
+<script type="math/tex; mode=display">
+\theta_j:=\theta_j-\alpha\frac{\partial}{\partial\theta_j}J(\theta_0,\theta_1)</script><p>（for j = 0 and j =1）<br>}</p>
+<p>版权声明：本文为博主原创文章，转载需声明为转载内容并添加原文地址。</p>
 <p>原文地址：<a href="http://coderdock.com">http://coderdock.com</a></p>
 
       
@@ -562,7 +566,7 @@ J(\theta_0,\theta_1)={\frac{1}{2m}}=\sum_{i=1}^m(h_{\theta}(\theta^i)-y^i)^2</sc
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-监督学习-VS-无监督学习"><span class="nav-number">1.</span> <span class="nav-text">1.监督学习 VS 无监督学习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-线性回归"><span class="nav-number">2.</span> <span class="nav-text">2.线性回归</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-监督学习-VS-无监督学习"><span class="nav-number">1.</span> <span class="nav-text">1.监督学习 VS 无监督学习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-线性回归"><span class="nav-number">2.</span> <span class="nav-text">2.线性回归</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-梯度下降"><span class="nav-number">3.</span> <span class="nav-text">3.梯度下降</span></a></li></ol></div>
             
 
           </div>
