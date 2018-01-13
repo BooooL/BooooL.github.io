@@ -4,25 +4,8 @@
 
     
   <url>
-    <loc>http://coderdock.com/2012/01/13/Blog-Build-Recordd/</loc>
-    <lastmod>2018-01-13T14:39:38.498Z</lastmod>
-    <data>
-        <display>
-        <title>Blog Build Record</title>
-        <pubTime>2012-01-13T14:38:23.000Z</pubTime>
-        
-        <tag>Blog</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://coderdock.com/2017/09/29/TensorFlow/TensorFlow-2-%E6%A6%82%E5%BF%B5/</loc>
-    <lastmod>2018-01-13T14:34:10.277Z</lastmod>
+    <lastmod>2018-01-13T14:42:44.330Z</lastmod>
     <data>
         <display>
         <title>TensorFlow-2-概念</title>
@@ -35,6 +18,23 @@
              
               <breadCrumb title="TensorFlow" url="http://coderdock.com/categories/TensorFlow/"/>
           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2012/01/13/Blog-Build-Recordd/</loc>
+    <lastmod>2018-01-13T14:39:38.498Z</lastmod>
+    <data>
+        <display>
+        <title>Blog Build Record</title>
+        <pubTime>2012-01-13T14:38:23.000Z</pubTime>
+        
+        <tag>Blog</tag>
+         
+         
+           
         </display>
     </data>
     </url>
