@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>http://coderdock.com/2016/01/01/Code-is-Cold-ind-is-Kind/</loc>
+    <lastmod>2018-01-14T13:32:30.185Z</lastmod>
+    <data>
+        <display>
+        <title>Code is Cold, Mind is Kind</title>
+        <pubTime>2016-01-01T07:47:03.000Z</pubTime>
+        
+        <tag>自传</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://coderdock.com/2017/10/02/TensorFlow/TensorFlow-2-%E6%A6%82%E5%BF%B51/</loc>
     <lastmod>2018-01-14T13:23:19.029Z</lastmod>
     <data>
@@ -38,23 +55,6 @@
              
               <breadCrumb title="TensorFlow" url="http://coderdock.com/categories/TensorFlow/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2016/01/01/Code-is-Cold-ind-is-Kind/</loc>
-    <lastmod>2018-01-14T03:04:52.161Z</lastmod>
-    <data>
-        <display>
-        <title>Code is Cold, Mind is Kind</title>
-        <pubTime>2016-01-01T07:47:03.000Z</pubTime>
-        
-        <tag>自传</tag>
-         
-         
-           
         </display>
     </data>
     </url>
@@ -561,9 +561,9 @@
         <title>通信协议-UART</title>
         <pubTime>2017-02-27T07:57:25.000Z</pubTime>
         
-        <tag>UART</tag>
-         
         <tag>通信协议</tag>
+         
+        <tag>UART</tag>
          
          
            
