@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://coderdock.com/2018/01/24/YUYV%E8%BD%ACRGB-C-Cuda%E5%AE%9E%E7%8E%B0/</loc>
+    
+    <lastmod>2018-01-24T12:03:41.564Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://coderdock.com/2018/01/24/ROS%E5%86%85%E4%BD%BF%E7%94%A8Cuda%E5%8A%A0%E9%80%9F%E7%9A%84%E9%85%8D%E7%BD%AE/</loc>
+    
+    <lastmod>2018-01-24T12:02:12.048Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://coderdock.com/2016/08/26/GPU/CUDA-0-%E5%9F%BA%E7%A1%80/</loc>
+    
+    <lastmod>2018-01-21T07:05:21.812Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://coderdock.com/2017/10/13/TensorFlow/TensorFlow-3-Numpy/</loc>
+    
+    <lastmod>2018-01-21T06:30:14.813Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://coderdock.com/2017/10/02/SLAM/SLAM-0-%E5%9F%BA%E7%A1%80/</loc>
+    
+    <lastmod>2018-01-16T11:20:52.064Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://coderdock.com/2016/01/01/Code-is-Cold-ind-is-Kind/</loc>
     
     <lastmod>2018-01-14T13:32:30.185Z</lastmod>

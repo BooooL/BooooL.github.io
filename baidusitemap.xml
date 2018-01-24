@@ -4,6 +4,125 @@
 
     
   <url>
+    <loc>http://coderdock.com/2018/01/24/YUYV%E8%BD%ACRGB-C-Cuda%E5%AE%9E%E7%8E%B0/</loc>
+    <lastmod>2018-01-24T12:03:41.564Z</lastmod>
+    <data>
+        <display>
+        <title>YUYV转RGB-C-Cuda实现</title>
+        <pubTime>2018-01-24T11:58:13.000Z</pubTime>
+        
+        <tag>Cuda</tag>
+         
+        <tag>YUYV</tag>
+         
+        <tag>RGB</tag>
+         
+         
+           
+             
+              <breadCrumb title="Cuda" url="http://coderdock.com/categories/Cuda/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2018/01/24/ROS%E5%86%85%E4%BD%BF%E7%94%A8Cuda%E5%8A%A0%E9%80%9F%E7%9A%84%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2018-01-24T12:02:12.048Z</lastmod>
+    <data>
+        <display>
+        <title>ROS内使用Cuda加速的配置</title>
+        <pubTime>2018-01-24T11:59:12.000Z</pubTime>
+        
+        <tag>ROS</tag>
+         
+        <tag>Cuda</tag>
+         
+         
+           
+             
+              <breadCrumb title="ROS" url="http://coderdock.com/categories/ROS/"/>
+          
+             
+              <breadCrumb title="Cuda" url="http://coderdock.com/categories/ROS/Cuda/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2016/08/26/GPU/CUDA-0-%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2018-01-21T07:05:21.812Z</lastmod>
+    <data>
+        <display>
+        <title>CUDA-0-基础</title>
+        <pubTime>2016-08-26T14:28:13.000Z</pubTime>
+        
+        <tag>CUDA</tag>
+         
+         
+           
+             
+              <breadCrumb title="CUDA" url="http://coderdock.com/categories/CUDA/"/>
+          
+             
+              <breadCrumb title="基础" url="http://coderdock.com/categories/CUDA/%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/10/13/TensorFlow/TensorFlow-3-Numpy/</loc>
+    <lastmod>2018-01-21T06:30:14.813Z</lastmod>
+    <data>
+        <display>
+        <title>Hello CoderDock</title>
+        <pubTime>2017-10-13T04:28:13.000Z</pubTime>
+        
+        <tag>TensorFlow</tag>
+         
+        <tag>NumPy</tag>
+         
+         
+           
+             
+              <breadCrumb title="TensorFlow" url="http://coderdock.com/categories/TensorFlow/"/>
+          
+             
+              <breadCrumb title="NumPy" url="http://coderdock.com/categories/TensorFlow/NumPy/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/10/02/SLAM/SLAM-0-%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2018-01-16T11:20:52.064Z</lastmod>
+    <data>
+        <display>
+        <title>SLAM-0-基础</title>
+        <pubTime>2017-10-02T14:28:13.000Z</pubTime>
+        
+        <tag>SLAM</tag>
+         
+        <tag>基础</tag>
+         
+         
+           
+             
+              <breadCrumb title="SLAM" url="http://coderdock.com/categories/SLAM/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://coderdock.com/2016/01/01/Code-is-Cold-ind-is-Kind/</loc>
     <lastmod>2018-01-14T13:32:30.185Z</lastmod>
     <data>
@@ -561,9 +680,9 @@
         <title>通信协议-UART</title>
         <pubTime>2017-02-27T07:57:25.000Z</pubTime>
         
-        <tag>通信协议</tag>
-         
         <tag>UART</tag>
+         
+        <tag>通信协议</tag>
          
          
            
