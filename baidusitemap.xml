@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://coderdock.com/2017/10/21/Blender/Blender-0-Basic/</loc>
+    <lastmod>2018-01-28T10:12:03.761Z</lastmod>
+    <data>
+        <display>
+        <title>Blender-0-Basic</title>
+        <pubTime>2017-10-21T14:28:13.000Z</pubTime>
+        
+        <tag>blender</tag>
+         
+         
+           
+             
+              <breadCrumb title="blender" url="http://coderdock.com/categories/blender/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://coderdock.com/2018/01/24/YUYV%E8%BD%ACRGB-C-Cuda%E5%AE%9E%E7%8E%B0/</loc>
     <lastmod>2018-01-24T12:03:41.564Z</lastmod>
     <data>
@@ -288,9 +308,9 @@
         <title>嵌入式Qt5.8移植-基础</title>
         <pubTime>2017-06-15T14:20:25.000Z</pubTime>
         
-        <tag>Linux</tag>
-         
         <tag>Qt</tag>
+         
+        <tag>Linux</tag>
          
          
            
@@ -1292,9 +1312,9 @@
         <title>嵌入式Qt5.8移植-编译-支持VNC</title>
         <pubTime>2017-06-20T14:20:25.000Z</pubTime>
         
-        <tag>Linux</tag>
-         
         <tag>Qt</tag>
+         
+        <tag>Linux</tag>
          
          
            
@@ -1317,9 +1337,9 @@
         <title>嵌入式Qt5.8移植-安装-环境配置</title>
         <pubTime>2017-06-22T14:20:25.000Z</pubTime>
         
-        <tag>Linux</tag>
-         
         <tag>Qt</tag>
+         
+        <tag>Linux</tag>
          
          
            
@@ -1342,9 +1362,9 @@
         <title>嵌入式Qt5.8移植-使用-一键调试配置</title>
         <pubTime>2017-06-23T14:20:25.000Z</pubTime>
         
-        <tag>Linux</tag>
-         
         <tag>Qt</tag>
+         
+        <tag>Linux</tag>
          
          
            
