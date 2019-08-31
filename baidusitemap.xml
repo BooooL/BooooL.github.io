@@ -3,6 +3,7 @@
 
 
     
+    
   <url>
     <loc>http://coderdock.com/2017/06/06/ARM&Linux/Linux%E9%A9%B1%E5%8A%A8/Linux%E7%BB%9F%E4%B8%80%E8%AE%BE%E5%A4%87%E6%A8%A1%E5%9E%8B%E4%B9%8B%E6%88%91%E8%A7%81/</loc>
     <lastmod>2019-08-31T10:44:39.450Z</lastmod>
@@ -760,9 +761,9 @@
         <title>ROS内使用Cuda加速的配置</title>
         <pubTime>2018-01-24T11:59:12.000Z</pubTime>
         
-        <tag>Cuda</tag>
-         
         <tag>ROS</tag>
+         
+        <tag>Cuda</tag>
          
          
            
@@ -785,9 +786,9 @@
         <title>通信协议-UART</title>
         <pubTime>2017-02-27T07:57:25.000Z</pubTime>
         
-        <tag>通信协议</tag>
-         
         <tag>UART</tag>
+         
+        <tag>通信协议</tag>
          
          
            
@@ -1348,23 +1349,6 @@
              
               <breadCrumb title="Cuda" url="http://coderdock.com/categories/GPU/Cuda/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2016/01/01/Code-is-Cold-ind-is-Kind/</loc>
-    <lastmod>2019-08-31T08:40:39.651Z</lastmod>
-    <data>
-        <display>
-        <title>Code is Cold, Mind is Kind</title>
-        <pubTime>2016-01-01T07:47:03.000Z</pubTime>
-        
-        <tag>自传</tag>
-         
-         
-           
         </display>
     </data>
     </url>
