@@ -4,19 +4,24 @@
 
     
   <url>
-    <loc>http://coderdock.com/2018/06/10/OpenGL/OpenGL-0-OpenGL%E6%98%AF%E4%BB%80%E4%B9%88/</loc>
-    <lastmod>2018-06-10T14:41:48.937Z</lastmod>
+    <loc>http://coderdock.com/2017/06/06/ARM&Linux/Linux%E9%A9%B1%E5%8A%A8/Linux%E7%BB%9F%E4%B8%80%E8%AE%BE%E5%A4%87%E6%A8%A1%E5%9E%8B%E4%B9%8B%E6%88%91%E8%A7%81/</loc>
+    <lastmod>2019-08-31T10:44:39.450Z</lastmod>
     <data>
         <display>
-        <title>OpenGL是什么</title>
-        <pubTime>2018-06-10T14:28:13.000Z</pubTime>
+        <title>Linux统一设备模型之我见</title>
+        <pubTime>2017-06-06T05:01:37.000Z</pubTime>
         
-        <tag>OpenGL</tag>
+        <tag>Linux</tag>
+         
+        <tag>统一设备模型</tag>
          
          
            
              
-              <breadCrumb title="日常记录" url="http://coderdock.com/categories/%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95/"/>
+              <breadCrumb title="ARM&amp;Linux" url="http://coderdock.com/categories/ARM-Linux/"/>
+          
+             
+              <breadCrumb title="Linux驱动" url="http://coderdock.com/categories/ARM-Linux/Linux%E9%A9%B1%E5%8A%A8/"/>
           
         </display>
     </data>
@@ -24,36 +29,24 @@
 
     
   <url>
-    <loc>http://coderdock.com/2016/01/01/Code-is-Cold-ind-is-Kind/</loc>
-    <lastmod>2018-04-21T12:25:17.683Z</lastmod>
+    <loc>http://coderdock.com/2017/09/07/%E7%BC%96%E7%A8%8B%E6%A1%86%E6%9E%B6/Yocto/Yocto-Project-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</loc>
+    <lastmod>2019-08-31T10:41:53.466Z</lastmod>
     <data>
         <display>
-        <title>Code is Cold, Mind is Kind</title>
-        <pubTime>2016-01-01T07:47:03.000Z</pubTime>
+        <title>Yocto-Project-使用技巧</title>
+        <pubTime>2017-09-07T14:20:25.000Z</pubTime>
         
-        <tag>自传</tag>
+        <tag>Linux</tag>
          
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/10/21/Blender/Blender-0-Basic/</loc>
-    <lastmod>2018-01-28T10:12:03.761Z</lastmod>
-    <data>
-        <display>
-        <title>Blender-0-Basic</title>
-        <pubTime>2017-10-21T14:28:13.000Z</pubTime>
-        
-        <tag>blender</tag>
+        <tag>yocto</tag>
          
          
            
              
-              <breadCrumb title="blender" url="http://coderdock.com/categories/blender/"/>
+              <breadCrumb title="编程框架" url="http://coderdock.com/categories/%E7%BC%96%E7%A8%8B%E6%A1%86%E6%9E%B6/"/>
+          
+             
+              <breadCrumb title="Yocto" url="http://coderdock.com/categories/%E7%BC%96%E7%A8%8B%E6%A1%86%E6%9E%B6/Yocto/"/>
           
         </display>
     </data>
@@ -61,71 +54,27 @@
 
     
   <url>
-    <loc>http://coderdock.com/2018/01/24/YUYV%E8%BD%ACRGB-C-Cuda%E5%AE%9E%E7%8E%B0/</loc>
-    <lastmod>2018-01-24T12:03:41.564Z</lastmod>
+    <loc>http://coderdock.com/2017/06/20/%E7%BC%96%E7%A8%8B%E6%A1%86%E6%9E%B6/Qt/%E5%B5%8C%E5%85%A5%E5%BC%8FQt5-8%E7%A7%BB%E6%A4%8D-%E7%BC%96%E8%AF%91-%E6%94%AF%E6%8C%81VNC/</loc>
+    <lastmod>2019-08-31T10:41:33.154Z</lastmod>
     <data>
         <display>
-        <title>YUYV转RGB-C-Cuda实现</title>
-        <pubTime>2018-01-24T11:58:13.000Z</pubTime>
+        <title>嵌入式Qt5.8移植-编译-支持VNC</title>
+        <pubTime>2017-06-20T14:20:25.000Z</pubTime>
         
-        <tag>Cuda</tag>
+        <tag>Linux</tag>
          
-        <tag>YUYV</tag>
-         
-        <tag>RGB</tag>
+        <tag>Qt</tag>
          
          
            
              
-              <breadCrumb title="Cuda" url="http://coderdock.com/categories/Cuda/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2018/01/24/ROS%E5%86%85%E4%BD%BF%E7%94%A8Cuda%E5%8A%A0%E9%80%9F%E7%9A%84%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2018-01-24T12:02:12.048Z</lastmod>
-    <data>
-        <display>
-        <title>ROS内使用Cuda加速的配置</title>
-        <pubTime>2018-01-24T11:59:12.000Z</pubTime>
-        
-        <tag>ROS</tag>
-         
-        <tag>Cuda</tag>
-         
-         
-           
-             
-              <breadCrumb title="ROS" url="http://coderdock.com/categories/ROS/"/>
+              <breadCrumb title="编程框架" url="http://coderdock.com/categories/%E7%BC%96%E7%A8%8B%E6%A1%86%E6%9E%B6/"/>
           
              
-              <breadCrumb title="Cuda" url="http://coderdock.com/categories/ROS/Cuda/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2016/08/26/GPU/CUDA-0-%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2018-01-21T07:05:21.812Z</lastmod>
-    <data>
-        <display>
-        <title>CUDA-0-基础</title>
-        <pubTime>2016-08-26T14:28:13.000Z</pubTime>
-        
-        <tag>CUDA</tag>
-         
-         
-           
-             
-              <breadCrumb title="CUDA" url="http://coderdock.com/categories/CUDA/"/>
+              <breadCrumb title="QT" url="http://coderdock.com/categories/%E7%BC%96%E7%A8%8B%E6%A1%86%E6%9E%B6/QT/"/>
           
              
-              <breadCrumb title="基础" url="http://coderdock.com/categories/CUDA/%E5%9F%BA%E7%A1%80/"/>
+              <breadCrumb title="QT移植" url="http://coderdock.com/categories/%E7%BC%96%E7%A8%8B%E6%A1%86%E6%9E%B6/QT/QT%E7%A7%BB%E6%A4%8D/"/>
           
         </display>
     </data>
@@ -134,7 +83,7 @@
     
   <url>
     <loc>http://coderdock.com/2017/10/13/TensorFlow/TensorFlow-3-Numpy/</loc>
-    <lastmod>2018-01-21T06:30:14.813Z</lastmod>
+    <lastmod>2019-08-31T10:30:10.185Z</lastmod>
     <data>
         <display>
         <title>Hello CoderDock</title>
@@ -149,9 +98,1273 @@
              
               <breadCrumb title="TensorFlow" url="http://coderdock.com/categories/TensorFlow/"/>
           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/03/08/%E6%97%A5%E5%B8%B8/Tools/%E6%88%91%E7%9A%84Makefilee%E6%A8%A1%E6%9D%BF/</loc>
+    <lastmod>2019-08-31T10:29:01.681Z</lastmod>
+    <data>
+        <display>
+        <title>我的Makefilee模板</title>
+        <pubTime>2017-03-08T07:52:42.000Z</pubTime>
+        
+        <tag>Makefile</tag>
+         
+         
+           
              
-              <breadCrumb title="NumPy" url="http://coderdock.com/categories/TensorFlow/NumPy/"/>
+              <breadCrumb title="日常" url="http://coderdock.com/categories/%E6%97%A5%E5%B8%B8/"/>
           
+             
+              <breadCrumb title="Tools" url="http://coderdock.com/categories/%E6%97%A5%E5%B8%B8/Tools/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/02/25/%E6%97%A5%E5%B8%B8/Tools/Dock%E5%B7%A5%E5%85%B7-%E6%89%93%E9%80%A0%E8%87%AA%E5%B7%B1%E7%9A%84VIM%E7%BC%96%E8%BE%91%E5%99%A8/</loc>
+    <lastmod>2019-08-31T10:28:49.586Z</lastmod>
+    <data>
+        <display>
+        <title>打造自己的VIM编辑器</title>
+        <pubTime>2017-02-25T07:25:27.000Z</pubTime>
+        
+        <tag>编程工具</tag>
+         
+         
+           
+             
+              <breadCrumb title="日常" url="http://coderdock.com/categories/%E6%97%A5%E5%B8%B8/"/>
+          
+             
+              <breadCrumb title="Tools" url="http://coderdock.com/categories/%E6%97%A5%E5%B8%B8/Tools/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/11/07/Zynq/Vivado/Vivado-HLS-%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B/</loc>
+    <lastmod>2019-08-31T10:22:16.509Z</lastmod>
+    <data>
+        <display>
+        <title>Vivado-HLS--操作流程</title>
+        <pubTime>2017-11-07T15:00:35.000Z</pubTime>
+        
+        <tag>vivado</tag>
+         
+        <tag>hls</tag>
+         
+         
+           
+             
+              <breadCrumb title="Zynq" url="http://coderdock.com/categories/Zynq/"/>
+          
+             
+              <breadCrumb title="Vivado" url="http://coderdock.com/categories/Zynq/Vivado/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/07/28/Zynq/ViVado-%E6%89%BE%E4%B8%8D%E5%88%B0%E8%AE%BE%E5%A4%87/</loc>
+    <lastmod>2019-08-31T10:21:50.196Z</lastmod>
+    <data>
+        <display>
+        <title>ViVado 找不到设备</title>
+        <pubTime>2017-07-28T02:00:45.000Z</pubTime>
+        
+        <tag>Vivado</tag>
+         
+         
+           
+             
+              <breadCrumb title="Zynq" url="http://coderdock.com/categories/Zynq/"/>
+          
+             
+              <breadCrumb title="Vivado" url="http://coderdock.com/categories/Zynq/Vivado/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/04/29/VirtualBoard/%E8%99%9A%E6%8B%9F%E5%BC%80%E5%8F%91%E6%9D%BF-uboot%E6%B7%BB%E5%8A%A0%E5%AE%9E%E7%8E%B0%E5%91%BD%E4%BB%A4/</loc>
+    <lastmod>2019-08-31T10:21:12.001Z</lastmod>
+    <data>
+        <display>
+        <title>虚拟开发板-uboot添加实现命令</title>
+        <pubTime>2017-04-29T04:00:09.000Z</pubTime>
+        
+        <tag>虚拟开发板</tag>
+         
+        <tag>uboot</tag>
+         
+        <tag>命令</tag>
+         
+         
+           
+             
+              <breadCrumb title="虚拟开发板" url="http://coderdock.com/categories/%E8%99%9A%E6%8B%9F%E5%BC%80%E5%8F%91%E6%9D%BF/"/>
+          
+             
+              <breadCrumb title="Qemu" url="http://coderdock.com/categories/%E8%99%9A%E6%8B%9F%E5%BC%80%E5%8F%91%E6%9D%BF/Qemu/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/04/27/VirtualBoard/%E8%99%9A%E6%8B%9F%E5%BC%80%E5%8F%91%E6%9D%BF-uboot%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
+    <lastmod>2019-08-31T10:21:07.195Z</lastmod>
+    <data>
+        <display>
+        <title>虚拟开发板-uboot环境搭建</title>
+        <pubTime>2017-04-27T08:30:14.000Z</pubTime>
+        
+        <tag>虚拟开发板</tag>
+         
+        <tag>uboot</tag>
+         
+        <tag>环境搭建</tag>
+         
+         
+           
+             
+              <breadCrumb title="虚拟开发板" url="http://coderdock.com/categories/%E8%99%9A%E6%8B%9F%E5%BC%80%E5%8F%91%E6%9D%BF/"/>
+          
+             
+              <breadCrumb title="Qemu" url="http://coderdock.com/categories/%E8%99%9A%E6%8B%9F%E5%BC%80%E5%8F%91%E6%9D%BF/Qemu/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/04/29/VirtualBoard/%E8%99%9A%E6%8B%9F%E5%BC%80%E5%8F%91%E6%9D%BF-Qemu%E8%B0%83%E8%AF%95uboot/</loc>
+    <lastmod>2019-08-31T10:21:02.272Z</lastmod>
+    <data>
+        <display>
+        <title>虚拟开发板-Qemu调试uboot</title>
+        <pubTime>2017-04-29T03:59:51.000Z</pubTime>
+        
+        <tag>虚拟开发板</tag>
+         
+        <tag>uboot</tag>
+         
+        <tag>qemu</tag>
+         
+        <tag>调试</tag>
+         
+         
+           
+             
+              <breadCrumb title="虚拟开发板" url="http://coderdock.com/categories/%E8%99%9A%E6%8B%9F%E5%BC%80%E5%8F%91%E6%9D%BF/"/>
+          
+             
+              <breadCrumb title="Qemu" url="http://coderdock.com/categories/%E8%99%9A%E6%8B%9F%E5%BC%80%E5%8F%91%E6%9D%BF/Qemu/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/04/28/VirtualBoard/%E8%99%9A%E6%8B%9F%E5%BC%80%E5%8F%91%E6%9D%BF-Linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
+    <lastmod>2019-08-31T10:20:57.730Z</lastmod>
+    <data>
+        <display>
+        <title>虚拟开发板-Linux环境搭建</title>
+        <pubTime>2017-04-27T22:41:31.000Z</pubTime>
+        
+        <tag>虚拟开发板</tag>
+         
+        <tag>Linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="虚拟开发板" url="http://coderdock.com/categories/%E8%99%9A%E6%8B%9F%E5%BC%80%E5%8F%91%E6%9D%BF/"/>
+          
+             
+              <breadCrumb title="Qemu" url="http://coderdock.com/categories/%E8%99%9A%E6%8B%9F%E5%BC%80%E5%8F%91%E6%9D%BF/Qemu/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/06/29/VirtualBoard/%E8%99%9A%E6%8B%9F%E5%BC%80%E5%8F%91%E6%9D%BF-%E5%AD%97%E7%AC%A6%E8%AE%BE%E5%A4%87%E9%A9%B1%E5%8A%A8/</loc>
+    <lastmod>2019-08-31T10:20:50.047Z</lastmod>
+    <data>
+        <display>
+        <title>虚拟开发板-字符设备驱动</title>
+        <pubTime>2017-06-29T04:14:12.000Z</pubTime>
+        
+        <tag>虚拟开发板</tag>
+         
+        <tag>字符设备</tag>
+         
+         
+           
+             
+              <breadCrumb title="虚拟开发板" url="http://coderdock.com/categories/%E8%99%9A%E6%8B%9F%E5%BC%80%E5%8F%91%E6%9D%BF/"/>
+          
+             
+              <breadCrumb title="Qemu" url="http://coderdock.com/categories/%E8%99%9A%E6%8B%9F%E5%BC%80%E5%8F%91%E6%9D%BF/Qemu/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/06/23/%E7%BC%96%E7%A8%8B%E6%A1%86%E6%9E%B6/Qt/%E5%B5%8C%E5%85%A5%E5%BC%8FQt5-8%E7%A7%BB%E6%A4%8D-%E4%BD%BF%E7%94%A8-%E4%B8%80%E9%94%AE%E8%B0%83%E8%AF%95%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2019-08-31T10:19:47.589Z</lastmod>
+    <data>
+        <display>
+        <title>嵌入式Qt5.8移植-使用-一键调试配置</title>
+        <pubTime>2017-06-23T14:20:25.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+        <tag>Qt</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程框架" url="http://coderdock.com/categories/%E7%BC%96%E7%A8%8B%E6%A1%86%E6%9E%B6/"/>
+          
+             
+              <breadCrumb title="QT" url="http://coderdock.com/categories/%E7%BC%96%E7%A8%8B%E6%A1%86%E6%9E%B6/QT/"/>
+          
+             
+              <breadCrumb title="QT移植" url="http://coderdock.com/categories/%E7%BC%96%E7%A8%8B%E6%A1%86%E6%9E%B6/QT/QT%E7%A7%BB%E6%A4%8D/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/06/15/%E7%BC%96%E7%A8%8B%E6%A1%86%E6%9E%B6/Qt/%E5%B5%8C%E5%85%A5%E5%BC%8FQt5-8%E7%A7%BB%E6%A4%8D-%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2019-08-31T10:19:40.963Z</lastmod>
+    <data>
+        <display>
+        <title>嵌入式Qt5.8移植-基础</title>
+        <pubTime>2017-06-15T14:20:25.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+        <tag>Qt</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程框架" url="http://coderdock.com/categories/%E7%BC%96%E7%A8%8B%E6%A1%86%E6%9E%B6/"/>
+          
+             
+              <breadCrumb title="QT" url="http://coderdock.com/categories/%E7%BC%96%E7%A8%8B%E6%A1%86%E6%9E%B6/QT/"/>
+          
+             
+              <breadCrumb title="QT移植" url="http://coderdock.com/categories/%E7%BC%96%E7%A8%8B%E6%A1%86%E6%9E%B6/QT/QT%E7%A7%BB%E6%A4%8D/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/06/22/%E7%BC%96%E7%A8%8B%E6%A1%86%E6%9E%B6/Qt/%E5%B5%8C%E5%85%A5%E5%BC%8FQt5-8%E7%A7%BB%E6%A4%8D-%E5%AE%89%E8%A3%85-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2019-08-31T10:19:21.226Z</lastmod>
+    <data>
+        <display>
+        <title>嵌入式Qt5.8移植-安装-环境配置</title>
+        <pubTime>2017-06-22T14:20:25.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+        <tag>Qt</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程框架" url="http://coderdock.com/categories/%E7%BC%96%E7%A8%8B%E6%A1%86%E6%9E%B6/"/>
+          
+             
+              <breadCrumb title="QT" url="http://coderdock.com/categories/%E7%BC%96%E7%A8%8B%E6%A1%86%E6%9E%B6/QT/"/>
+          
+             
+              <breadCrumb title="QT移植" url="http://coderdock.com/categories/%E7%BC%96%E7%A8%8B%E6%A1%86%E6%9E%B6/QT/QT%E7%A7%BB%E6%A4%8D/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/01/09/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/</loc>
+    <lastmod>2019-08-31T10:18:55.673Z</lastmod>
+    <data>
+        <display>
+        <title>Python面向对象编程</title>
+        <pubTime>2017-01-09T08:26:09.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>面向对象</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程语言" url="http://coderdock.com/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+          
+             
+              <breadCrumb title="Python" url="http://coderdock.com/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2018/06/10/GPU/OpenGL/OpenGL-0-OpenGL%E6%98%AF%E4%BB%80%E4%B9%88/</loc>
+    <lastmod>2019-08-31T10:17:47.874Z</lastmod>
+    <data>
+        <display>
+        <title>OpenGL是什么</title>
+        <pubTime>2018-06-10T14:28:13.000Z</pubTime>
+        
+        <tag>OpenGL</tag>
+         
+         
+           
+             
+              <breadCrumb title="GPU" url="http://coderdock.com/categories/GPU/"/>
+          
+             
+              <breadCrumb title="OpenGL" url="http://coderdock.com/categories/GPU/OpenGL/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/09/14/GPU/OpenCL/OpenCL-4-%E5%B0%8F%E8%AF%95%E7%89%9B%E5%88%80/</loc>
+    <lastmod>2019-08-31T10:17:04.227Z</lastmod>
+    <data>
+        <display>
+        <title>OpenCL-4-小试牛刀</title>
+        <pubTime>2017-09-14T04:18:13.000Z</pubTime>
+        
+        <tag>OpenCL</tag>
+         
+         
+           
+             
+              <breadCrumb title="GPU" url="http://coderdock.com/categories/GPU/"/>
+          
+             
+              <breadCrumb title="OpenCL" url="http://coderdock.com/categories/GPU/OpenCL/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/09/06/GPU/OpenCL/OpenCL-3-%E5%90%8C%E6%AD%A5%E6%9C%BA%E5%88%B6/</loc>
+    <lastmod>2019-08-31T10:17:00.083Z</lastmod>
+    <data>
+        <display>
+        <title>OpenCL-3-同步机制</title>
+        <pubTime>2017-09-06T05:34:33.000Z</pubTime>
+        
+        <tag>OpenCL</tag>
+         
+        <tag>同步</tag>
+         
+         
+           
+             
+              <breadCrumb title="GPU" url="http://coderdock.com/categories/GPU/"/>
+          
+             
+              <breadCrumb title="OpenCL" url="http://coderdock.com/categories/GPU/OpenCL/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/09/02/GPU/OpenCL/OpenCL-2-OpenCL%E4%BA%8B%E4%BB%B6/</loc>
+    <lastmod>2019-08-31T10:16:52.724Z</lastmod>
+    <data>
+        <display>
+        <title>OpenCL-2-OpenCL事件</title>
+        <pubTime>2017-09-01T18:38:13.000Z</pubTime>
+        
+        <tag>OpenCL</tag>
+         
+        <tag>事件</tag>
+         
+         
+           
+             
+              <breadCrumb title="GPU" url="http://coderdock.com/categories/GPU/"/>
+          
+             
+              <breadCrumb title="OpenCL" url="http://coderdock.com/categories/GPU/OpenCL/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/08/28/GPU/OpenCL/OpenCL-1-%E5%9B%9B%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BB%8B%E7%BB%8D/</loc>
+    <lastmod>2019-08-31T10:16:40.594Z</lastmod>
+    <data>
+        <display>
+        <title>OpenCL-1-编程四大模型介绍</title>
+        <pubTime>2017-08-28T04:48:13.000Z</pubTime>
+        
+        <tag>OpenCL</tag>
+         
+        <tag>模型</tag>
+         
+         
+           
+             
+              <breadCrumb title="GPU" url="http://coderdock.com/categories/GPU/"/>
+          
+             
+              <breadCrumb title="OpenCL" url="http://coderdock.com/categories/GPU/OpenCL/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/08/26/GPU/OpenCL/OpenCL-0-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/</loc>
+    <lastmod>2019-08-31T10:16:35.791Z</lastmod>
+    <data>
+        <display>
+        <title>OpenCL-0-基础概念</title>
+        <pubTime>2017-08-26T14:28:13.000Z</pubTime>
+        
+        <tag>OpenCL</tag>
+         
+         
+           
+             
+              <breadCrumb title="GPU" url="http://coderdock.com/categories/GPU/"/>
+          
+             
+              <breadCrumb title="OpenCL" url="http://coderdock.com/categories/GPU/OpenCL/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/06/17/%E7%BC%96%E7%A8%8B%E6%A1%86%E6%9E%B6/Libevent/libevent%E7%B3%BB%E5%88%97-%E5%9F%BA%E6%9C%AC%E4%BA%86%E8%A7%A3/</loc>
+    <lastmod>2019-08-31T10:15:15.085Z</lastmod>
+    <data>
+        <display>
+        <title>libevent系列-基本了解</title>
+        <pubTime>2017-06-17T12:11:38.000Z</pubTime>
+        
+        <tag>libevent</tag>
+         
+        <tag>基础了解</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程框架" url="http://coderdock.com/categories/%E7%BC%96%E7%A8%8B%E6%A1%86%E6%9E%B6/"/>
+          
+             
+              <breadCrumb title="Libevent" url="http://coderdock.com/categories/%E7%BC%96%E7%A8%8B%E6%A1%86%E6%9E%B6/Libevent/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/06/18/%E7%BC%96%E7%A8%8B%E6%A1%86%E6%9E%B6/Libevent/libevent%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2019-08-31T10:15:06.686Z</lastmod>
+    <data>
+        <display>
+        <title>libevent安装使用</title>
+        <pubTime>2017-06-18T05:14:42.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="编程框架" url="http://coderdock.com/categories/%E7%BC%96%E7%A8%8B%E6%A1%86%E6%9E%B6/"/>
+          
+             
+              <breadCrumb title="Libevent" url="http://coderdock.com/categories/%E7%BC%96%E7%A8%8B%E6%A1%86%E6%9E%B6/Libevent/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/05/24/FPGA/%E5%8D%8F%E8%AE%AE/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE-IIC/</loc>
+    <lastmod>2019-08-31T10:13:06.927Z</lastmod>
+    <data>
+        <display>
+        <title>通信协议-IIC</title>
+        <pubTime>2017-05-24T09:39:56.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="FPGA" url="http://coderdock.com/categories/FPGA/"/>
+          
+             
+              <breadCrumb title="通信协议" url="http://coderdock.com/categories/FPGA/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/06/01/ARM&Linux/Linux%E9%A9%B1%E5%8A%A8/Linux%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B%E4%B9%8B%E6%88%91%E8%A7%81/</loc>
+    <lastmod>2019-08-31T10:12:48.054Z</lastmod>
+    <data>
+        <display>
+        <title>Linux启动过程之我见</title>
+        <pubTime>2017-06-01T05:11:21.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+        <tag>Init</tag>
+         
+         
+           
+             
+              <breadCrumb title="ARM&amp;Linux" url="http://coderdock.com/categories/ARM-Linux/"/>
+          
+             
+              <breadCrumb title="Linux驱动" url="http://coderdock.com/categories/ARM-Linux/Linux%E9%A9%B1%E5%8A%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/02/03/ARM&Linux/Linux%E9%A9%B1%E5%8A%A8/%E5%B9%B3%E5%8F%B0%E8%AE%BE%E5%A4%87%E9%A9%B1%E5%8A%A8%E4%B9%8B%E6%88%91%E8%A7%81%E4%B8%80/</loc>
+    <lastmod>2019-08-31T10:12:27.037Z</lastmod>
+    <data>
+        <display>
+        <title>平台设备驱动之我见一</title>
+        <pubTime>2017-02-02T23:52:56.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+        <tag>平台设备</tag>
+         
+         
+           
+             
+              <breadCrumb title="ARM&amp;Linux" url="http://coderdock.com/categories/ARM-Linux/"/>
+          
+             
+              <breadCrumb title="Linux驱动" url="http://coderdock.com/categories/ARM-Linux/Linux%E9%A9%B1%E5%8A%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2016/10/25/ARM&Linux/Linux%E9%A9%B1%E5%8A%A8/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E4%B9%8B%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/</loc>
+    <lastmod>2019-08-31T10:12:25.088Z</lastmod>
+    <data>
+        <display>
+        <title>交叉编译之必知必会</title>
+        <pubTime>2016-10-25T04:25:39.000Z</pubTime>
+        
+        <tag>交叉编译</tag>
+         
+        <tag>arm-linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="ARM&amp;Linux" url="http://coderdock.com/categories/ARM-Linux/"/>
+          
+             
+              <breadCrumb title="Linux驱动" url="http://coderdock.com/categories/ARM-Linux/Linux%E9%A9%B1%E5%8A%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2018/01/24/GPU/Cuda/YUYV%E8%BD%ACRGB-C-Cuda%E5%AE%9E%E7%8E%B0/</loc>
+    <lastmod>2019-08-31T10:12:18.028Z</lastmod>
+    <data>
+        <display>
+        <title>YUYV转RGB-C-Cuda实现</title>
+        <pubTime>2018-01-24T11:58:13.000Z</pubTime>
+        
+        <tag>Cuda</tag>
+         
+        <tag>YUYV</tag>
+         
+        <tag>RGB</tag>
+         
+         
+           
+             
+              <breadCrumb title="GPU" url="http://coderdock.com/categories/GPU/"/>
+          
+             
+              <breadCrumb title="Cuda" url="http://coderdock.com/categories/GPU/Cuda/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2018/01/24/GPU/Cuda/ROS%E5%86%85%E4%BD%BF%E7%94%A8Cuda%E5%8A%A0%E9%80%9F%E7%9A%84%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2019-08-31T10:12:12.281Z</lastmod>
+    <data>
+        <display>
+        <title>ROS内使用Cuda加速的配置</title>
+        <pubTime>2018-01-24T11:59:12.000Z</pubTime>
+        
+        <tag>Cuda</tag>
+         
+        <tag>ROS</tag>
+         
+         
+           
+             
+              <breadCrumb title="GPU" url="http://coderdock.com/categories/GPU/"/>
+          
+             
+              <breadCrumb title="Cuda" url="http://coderdock.com/categories/GPU/Cuda/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/02/27/FPGA/%E5%8D%8F%E8%AE%AE/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE-UART/</loc>
+    <lastmod>2019-08-31T10:11:35.914Z</lastmod>
+    <data>
+        <display>
+        <title>通信协议-UART</title>
+        <pubTime>2017-02-27T07:57:25.000Z</pubTime>
+        
+        <tag>通信协议</tag>
+         
+        <tag>UART</tag>
+         
+         
+           
+             
+              <breadCrumb title="FPGA" url="http://coderdock.com/categories/FPGA/"/>
+          
+             
+              <breadCrumb title="通信协议" url="http://coderdock.com/categories/FPGA/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/02/26/FPGA/%E5%8D%8F%E8%AE%AE/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE-UART-Verilog%E5%AE%9E%E7%8E%B0/</loc>
+    <lastmod>2019-08-31T10:11:31.342Z</lastmod>
+    <data>
+        <display>
+        <title>通信协议-UART-Verilog实现</title>
+        <pubTime>2017-02-25T21:03:34.000Z</pubTime>
+        
+        <tag>UART</tag>
+         
+        <tag>Verilog实现</tag>
+         
+         
+           
+             
+              <breadCrumb title="FPGA" url="http://coderdock.com/categories/FPGA/"/>
+          
+             
+              <breadCrumb title="通信协议" url="http://coderdock.com/categories/FPGA/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/02/24/FPGA/%E5%8D%8F%E8%AE%AE/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE-SPI/</loc>
+    <lastmod>2019-08-31T10:11:26.142Z</lastmod>
+    <data>
+        <display>
+        <title>通信协议-SPI</title>
+        <pubTime>2017-02-24T07:57:46.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="FPGA" url="http://coderdock.com/categories/FPGA/"/>
+          
+             
+              <breadCrumb title="通信协议" url="http://coderdock.com/categories/FPGA/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/06/08/FPGA/%E5%8D%8F%E8%AE%AE/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE-IIC-Verilog-HDL%E5%AE%9E%E7%8E%B0/</loc>
+    <lastmod>2019-08-31T10:11:14.837Z</lastmod>
+    <data>
+        <display>
+        <title>通信协议-IIC Verilog HDL实现</title>
+        <pubTime>2017-06-08T14:00:07.000Z</pubTime>
+        
+        <tag>IIC</tag>
+         
+        <tag>Verilog HDL</tag>
+         
+        <tag>IIC实现</tag>
+         
+         
+           
+             
+              <breadCrumb title="FPGA" url="http://coderdock.com/categories/FPGA/"/>
+          
+             
+              <breadCrumb title="通信协议" url="http://coderdock.com/categories/FPGA/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/06/08/FPGA/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/FPGA%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%BC%93%E5%AD%98%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F/</loc>
+    <lastmod>2019-08-31T10:10:14.197Z</lastmod>
+    <data>
+        <display>
+        <title>FPGA图像处理缓存处理方式</title>
+        <pubTime>2017-06-08T05:35:04.000Z</pubTime>
+        
+        <tag>FPGA</tag>
+         
+        <tag>图像处理， 缓存处理</tag>
+         
+         
+           
+             
+              <breadCrumb title="FPGA" url="http://coderdock.com/categories/FPGA/"/>
+          
+             
+              <breadCrumb title="图像处理" url="http://coderdock.com/categories/FPGA/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/09/07/FPGA/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/FPGA%E7%AE%97%E6%B3%95%E6%98%A0%E5%B0%84%E8%A6%81%E7%82%B9/</loc>
+    <lastmod>2019-08-31T10:10:05.349Z</lastmod>
+    <data>
+        <display>
+        <title>FPGA算法映射思考</title>
+        <pubTime>2017-09-07T12:07:08.000Z</pubTime>
+        
+        <tag>FPGA</tag>
+         
+        <tag>算法映射</tag>
+         
+         
+           
+             
+              <breadCrumb title="FPGA" url="http://coderdock.com/categories/FPGA/"/>
+          
+             
+              <breadCrumb title="图像处理" url="http://coderdock.com/categories/FPGA/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/08/01/FPGA/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2019-08-31T10:09:53.084Z</lastmod>
+    <data>
+        <display>
+        <title>图像处理基础</title>
+        <pubTime>2017-08-01T06:27:05.000Z</pubTime>
+        
+        <tag>图像处理</tag>
+         
+        <tag>基础概念</tag>
+         
+         
+           
+             
+              <breadCrumb title="FPGA" url="http://coderdock.com/categories/FPGA/"/>
+          
+             
+              <breadCrumb title="图像处理" url="http://coderdock.com/categories/FPGA/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/08/17/ARM&Linux/Linux%E9%A9%B1%E5%8A%A8/USB/USB%E7%B3%BB%E5%88%97-2-DNW%E6%BA%90%E7%A0%81/</loc>
+    <lastmod>2019-08-31T10:08:07.826Z</lastmod>
+    <data>
+        <display>
+        <title>USB系列-2-DNW源码</title>
+        <pubTime>2017-08-17T07:42:47.000Z</pubTime>
+        
+        <tag>UBS</tag>
+         
+        <tag>DNW</tag>
+         
+         
+           
+             
+              <breadCrumb title="ARM&amp;Linux" url="http://coderdock.com/categories/ARM-Linux/"/>
+          
+             
+              <breadCrumb title="Linux驱动" url="http://coderdock.com/categories/ARM-Linux/Linux%E9%A9%B1%E5%8A%A8/"/>
+          
+             
+              <breadCrumb title="USB" url="http://coderdock.com/categories/ARM-Linux/Linux%E9%A9%B1%E5%8A%A8/USB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/08/09/ARM&Linux/Linux%E9%A9%B1%E5%8A%A8/USB/USB%E7%B3%BB%E5%88%97-1-%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84%E4%BD%93/</loc>
+    <lastmod>2019-08-31T10:07:59.103Z</lastmod>
+    <data>
+        <display>
+        <title>USB系列-1-基本结构体</title>
+        <pubTime>2017-08-09T01:09:53.000Z</pubTime>
+        
+        <tag>USB</tag>
+         
+        <tag>基本结构体</tag>
+         
+         
+           
+             
+              <breadCrumb title="ARM&amp;Linux" url="http://coderdock.com/categories/ARM-Linux/"/>
+          
+             
+              <breadCrumb title="Linux驱动" url="http://coderdock.com/categories/ARM-Linux/Linux%E9%A9%B1%E5%8A%A8/"/>
+          
+             
+              <breadCrumb title="USB" url="http://coderdock.com/categories/ARM-Linux/Linux%E9%A9%B1%E5%8A%A8/USB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/08/06/ARM&Linux/Linux%E9%A9%B1%E5%8A%A8/USB/USB%E7%B3%BB%E5%88%97-0-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/</loc>
+    <lastmod>2019-08-31T10:07:50.275Z</lastmod>
+    <data>
+        <display>
+        <title>USB系列-0-基础概念</title>
+        <pubTime>2017-08-06T01:09:14.000Z</pubTime>
+        
+        <tag>基础概念</tag>
+         
+        <tag>USB</tag>
+         
+         
+           
+             
+              <breadCrumb title="ARM&amp;Linux" url="http://coderdock.com/categories/ARM-Linux/"/>
+          
+             
+              <breadCrumb title="Linux驱动" url="http://coderdock.com/categories/ARM-Linux/Linux%E9%A9%B1%E5%8A%A8/"/>
+          
+             
+              <breadCrumb title="USB" url="http://coderdock.com/categories/ARM-Linux/Linux%E9%A9%B1%E5%8A%A8/USB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/07/04/ARM&Linux/Linux%E9%A9%B1%E5%8A%A8/Sysfs%E4%B9%8B%E6%88%91%E8%A7%81/</loc>
+    <lastmod>2019-08-31T10:07:38.746Z</lastmod>
+    <data>
+        <display>
+        <title>Sysfs之我见</title>
+        <pubTime>2017-07-04T05:00:00.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+        <tag>SysFs</tag>
+         
+         
+           
+             
+              <breadCrumb title="ARM&amp;Linux" url="http://coderdock.com/categories/ARM-Linux/"/>
+          
+             
+              <breadCrumb title="Linux驱动" url="http://coderdock.com/categories/ARM-Linux/Linux%E9%A9%B1%E5%8A%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/04/27/ARM&Linux/Linux%E9%A9%B1%E5%8A%A8/uboot%E5%B7%A5%E7%A8%8B%E9%85%8D%E7%BD%AE%E7%AE%80%E8%A6%81%E5%88%86%E6%9E%90/</loc>
+    <lastmod>2019-08-31T10:07:36.676Z</lastmod>
+    <data>
+        <display>
+        <title>uboot 配置分析</title>
+        <pubTime>2017-04-27T08:14:03.000Z</pubTime>
+        
+        <tag>uboot</tag>
+         
+        <tag>uboot配置</tag>
+         
+         
+           
+             
+              <breadCrumb title="ARM&amp;Linux" url="http://coderdock.com/categories/ARM-Linux/"/>
+          
+             
+              <breadCrumb title="Linux驱动" url="http://coderdock.com/categories/ARM-Linux/Linux%E9%A9%B1%E5%8A%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/03/01/ARM&Linux/Linux%E9%A9%B1%E5%8A%A8/Nand-Flash%E4%BD%BF%E7%94%A8%E8%A6%81%E7%82%B9/</loc>
+    <lastmod>2019-08-31T10:07:26.414Z</lastmod>
+    <data>
+        <display>
+        <title>Nand Flash使用要点</title>
+        <pubTime>2017-03-01T05:59:34.000Z</pubTime>
+        
+        <tag>基础知识</tag>
+         
+        <tag>NandFlash</tag>
+         
+         
+           
+             
+              <breadCrumb title="ARM&amp;Linux" url="http://coderdock.com/categories/ARM-Linux/"/>
+          
+             
+              <breadCrumb title="Linux驱动" url="http://coderdock.com/categories/ARM-Linux/Linux%E9%A9%B1%E5%8A%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/06/13/ARM&Linux/Linux%E9%A9%B1%E5%8A%A8/list-head%E4%B9%8B%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/</loc>
+    <lastmod>2019-08-31T10:07:19.387Z</lastmod>
+    <data>
+        <display>
+        <title>list_head之必知必会</title>
+        <pubTime>2017-06-12T23:54:05.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+        <tag>list_head</tag>
+         
+         
+           
+             
+              <breadCrumb title="ARM&amp;Linux" url="http://coderdock.com/categories/ARM-Linux/"/>
+          
+             
+              <breadCrumb title="Linux驱动" url="http://coderdock.com/categories/ARM-Linux/Linux%E9%A9%B1%E5%8A%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/02/27/ARM&Linux/Linux%E9%A9%B1%E5%8A%A8/MMU%E7%90%86%E8%A7%A3%E8%A6%81%E7%82%B9/</loc>
+    <lastmod>2019-08-31T10:07:16.769Z</lastmod>
+    <data>
+        <display>
+        <title>MMU理解要点</title>
+        <pubTime>2017-02-27T04:54:09.000Z</pubTime>
+        
+        <tag>基础知识</tag>
+         
+        <tag>MMU</tag>
+         
+         
+           
+             
+              <breadCrumb title="ARM&amp;Linux" url="http://coderdock.com/categories/ARM-Linux/"/>
+          
+             
+              <breadCrumb title="Linux驱动" url="http://coderdock.com/categories/ARM-Linux/Linux%E9%A9%B1%E5%8A%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/06/14/ARM&Linux/Linux%E9%A9%B1%E5%8A%A8/Linux%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6%E4%B9%8B%E6%88%91%E8%A7%81/</loc>
+    <lastmod>2019-08-31T10:06:56.359Z</lastmod>
+    <data>
+        <display>
+        <title>Linux中断处理机制之我见</title>
+        <pubTime>2017-06-14T05:00:45.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="ARM&amp;Linux" url="http://coderdock.com/categories/ARM-Linux/"/>
+          
+             
+              <breadCrumb title="Linux驱动" url="http://coderdock.com/categories/ARM-Linux/Linux%E9%A9%B1%E5%8A%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/06/03/ARM&Linux/Linux%E9%A9%B1%E5%8A%A8/Linux%E8%BE%93%E5%85%A5%E5%AD%90%E7%B3%BB%E7%BB%9FCore%E6%BA%90%E7%A0%81%E7%AE%80%E8%A6%81%E5%88%86%E6%9E%90/</loc>
+    <lastmod>2019-08-31T10:06:46.089Z</lastmod>
+    <data>
+        <display>
+        <title>Linux输入子系统Core源码简要分析</title>
+        <pubTime>2017-06-02T23:53:48.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+        <tag>输入子系统</tag>
+         
+        <tag>InputCore</tag>
+         
+         
+           
+             
+              <breadCrumb title="ARM&amp;Linux" url="http://coderdock.com/categories/ARM-Linux/"/>
+          
+             
+              <breadCrumb title="Linux驱动" url="http://coderdock.com/categories/ARM-Linux/Linux%E9%A9%B1%E5%8A%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/06/02/ARM&Linux/Linux%E9%A9%B1%E5%8A%A8/Linux%E8%BE%93%E5%85%A5%E5%AD%90%E7%B3%BB%E7%BB%9F%E4%B9%8B%E6%88%91%E8%A7%81-%E4%B8%80/</loc>
+    <lastmod>2019-08-31T10:06:37.346Z</lastmod>
+    <data>
+        <display>
+        <title>Linux输入子系统之我见(一)</title>
+        <pubTime>2017-06-01T23:12:04.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+        <tag>我的见解</tag>
+         
+         
+           
+             
+              <breadCrumb title="ARM&amp;Linux" url="http://coderdock.com/categories/ARM-Linux/"/>
+          
+             
+              <breadCrumb title="Linux驱动" url="http://coderdock.com/categories/ARM-Linux/Linux%E9%A9%B1%E5%8A%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2017/08/27/ARM&Linux/Linux%E9%A9%B1%E5%8A%A8/Linux-MTD%E6%9E%B6%E6%9E%84%E5%88%86%E6%9E%90/</loc>
+    <lastmod>2019-08-31T10:06:25.926Z</lastmod>
+    <data>
+        <display>
+        <title>Linux MTD架构分析</title>
+        <pubTime>2017-08-27T07:51:06.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+        <tag>MTD</tag>
+         
+         
+           
+             
+              <breadCrumb title="ARM&amp;Linux" url="http://coderdock.com/categories/ARM-Linux/"/>
+          
+             
+              <breadCrumb title="Linux驱动" url="http://coderdock.com/categories/ARM-Linux/Linux%E9%A9%B1%E5%8A%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2016/12/27/ARM&Linux/ARM%E5%9F%BA%E7%A1%80/ARM%E6%8C%87%E4%BB%A4%E4%B9%8B%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/</loc>
+    <lastmod>2019-08-31T10:04:59.214Z</lastmod>
+    <data>
+        <display>
+        <title>ARM指令之必知必会</title>
+        <pubTime>2016-12-27T07:53:33.000Z</pubTime>
+        
+        <tag>ARM指令</tag>
+         
+         
+           
+             
+              <breadCrumb title="ARM&amp;Linux" url="http://coderdock.com/categories/ARM-Linux/"/>
+          
+             
+              <breadCrumb title="ARM基础" url="http://coderdock.com/categories/ARM-Linux/ARM%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2016/12/24/ARM&Linux/ARM%E5%9F%BA%E7%A1%80/ARM%E8%A6%81%E5%88%86%E6%B8%85/</loc>
+    <lastmod>2019-08-31T10:04:47.960Z</lastmod>
+    <data>
+        <display>
+        <title>ARM要分清</title>
+        <pubTime>2016-12-24T03:06:52.000Z</pubTime>
+        
+        <tag>ARM</tag>
+         
+        <tag>ARM架构</tag>
+         
+        <tag>ARM系列</tag>
+         
+         
+           
+             
+              <breadCrumb title="ARM&amp;Linux" url="http://coderdock.com/categories/ARM-Linux/"/>
+          
+             
+              <breadCrumb title="ARM基础" url="http://coderdock.com/categories/ARM-Linux/ARM%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2016/08/26/%E6%97%A5%E5%B8%B8/%E6%97%A5%E5%B8%B8%E5%90%90%E6%A7%BD/Hello-CoderDock/</loc>
+    <lastmod>2019-08-31T10:04:18.047Z</lastmod>
+    <data>
+        <display>
+        <title>Hello CoderDock</title>
+        <pubTime>2016-08-26T14:28:13.000Z</pubTime>
+        
+        <tag>日常</tag>
+         
+         
+           
+             
+              <breadCrumb title="日常" url="http://coderdock.com/categories/%E6%97%A5%E5%B8%B8/"/>
+          
+             
+              <breadCrumb title="日常吐槽" url="http://coderdock.com/categories/%E6%97%A5%E5%B8%B8/%E6%97%A5%E5%B8%B8%E5%90%90%E6%A7%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2016/08/26/GPU/Cuda/CUDA-0-%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2019-08-31T09:53:54.698Z</lastmod>
+    <data>
+        <display>
+        <title>CUDA-0-基础</title>
+        <pubTime>2016-08-26T14:28:13.000Z</pubTime>
+        
+        <tag>Cuda</tag>
+         
+         
+           
+             
+              <breadCrumb title="GPU" url="http://coderdock.com/categories/GPU/"/>
+          
+             
+              <breadCrumb title="Cuda" url="http://coderdock.com/categories/GPU/Cuda/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderdock.com/2016/01/01/Code-is-Cold-ind-is-Kind/</loc>
+    <lastmod>2019-08-31T08:40:39.651Z</lastmod>
+    <data>
+        <display>
+        <title>Code is Cold, Mind is Kind</title>
+        <pubTime>2016-01-01T07:47:03.000Z</pubTime>
+        
+        <tag>自传</tag>
+         
+         
+           
         </display>
     </data>
     </url>
@@ -220,43 +1433,6 @@
 
     
   <url>
-    <loc>http://coderdock.com/2012/01/13/Blog-Build-Recordd/</loc>
-    <lastmod>2018-01-13T14:39:38.498Z</lastmod>
-    <data>
-        <display>
-        <title>Blog Build Record</title>
-        <pubTime>2012-01-13T14:38:23.000Z</pubTime>
-        
-        <tag>Blog</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/09/14/OpenCL/OpenCL-4-%E5%B0%8F%E8%AF%95%E7%89%9B%E5%88%80/</loc>
-    <lastmod>2018-01-13T03:15:03.973Z</lastmod>
-    <data>
-        <display>
-        <title>OpenCL-4-小试牛刀</title>
-        <pubTime>2017-09-14T04:18:13.000Z</pubTime>
-        
-        <tag>OpenCL</tag>
-         
-         
-           
-             
-              <breadCrumb title="OpenCL" url="http://coderdock.com/categories/OpenCL/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://coderdock.com/2017/09/26/TensorFlow/TensorFlow-0-%E5%85%A5%E9%97%A8/</loc>
     <lastmod>2018-01-12T14:55:08.230Z</lastmod>
     <data>
@@ -270,1129 +1446,6 @@
            
              
               <breadCrumb title="TensorFlow" url="http://coderdock.com/categories/TensorFlow/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/09/06/OpenCL/OpenCL-3-%E5%90%8C%E6%AD%A5%E6%9C%BA%E5%88%B6/</loc>
-    <lastmod>2018-01-11T13:35:34.577Z</lastmod>
-    <data>
-        <display>
-        <title>OpenCL-3-同步机制</title>
-        <pubTime>2017-09-06T05:34:33.000Z</pubTime>
-        
-        <tag>OpenCL</tag>
-         
-        <tag>同步</tag>
-         
-         
-           
-             
-              <breadCrumb title="OpenCL" url="http://coderdock.com/categories/OpenCL/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/09/02/OpenCL/OpenCL-2-OpenCL%E4%BA%8B%E4%BB%B6/</loc>
-    <lastmod>2018-01-11T09:19:12.775Z</lastmod>
-    <data>
-        <display>
-        <title>OpenCL-2-OpenCL事件</title>
-        <pubTime>2017-09-01T18:38:13.000Z</pubTime>
-        
-        <tag>OpenCL</tag>
-         
-        <tag>事件</tag>
-         
-         
-           
-             
-              <breadCrumb title="OpenCL" url="http://coderdock.com/categories/OpenCL/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/06/15/Qt/%E5%B5%8C%E5%85%A5%E5%BC%8FQt5-8%E7%A7%BB%E6%A4%8D-%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2018-01-11T06:35:02.036Z</lastmod>
-    <data>
-        <display>
-        <title>嵌入式Qt5.8移植-基础</title>
-        <pubTime>2017-06-15T14:20:25.000Z</pubTime>
-        
-        <tag>Linux</tag>
-         
-        <tag>Qt</tag>
-         
-         
-           
-             
-              <breadCrumb title="Qt" url="http://coderdock.com/categories/Qt/"/>
-          
-             
-              <breadCrumb title="QT移植" url="http://coderdock.com/categories/Qt/QT%E7%A7%BB%E6%A4%8D/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/09/07/Yocto/Yocto-Project-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</loc>
-    <lastmod>2018-01-11T06:30:26.120Z</lastmod>
-    <data>
-        <display>
-        <title>Yocto-Project-使用技巧</title>
-        <pubTime>2017-09-07T14:20:25.000Z</pubTime>
-        
-        <tag>Linux</tag>
-         
-        <tag>yocto</tag>
-         
-         
-           
-             
-              <breadCrumb title="yocto" url="http://coderdock.com/categories/yocto/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/08/28/OpenCL/OpenCL-1-%E5%9B%9B%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BB%8B%E7%BB%8D/</loc>
-    <lastmod>2018-01-11T06:09:46.247Z</lastmod>
-    <data>
-        <display>
-        <title>OpenCL-1-编程四大模型介绍</title>
-        <pubTime>2017-08-28T04:48:13.000Z</pubTime>
-        
-        <tag>OpenCL</tag>
-         
-        <tag>模型</tag>
-         
-         
-           
-             
-              <breadCrumb title="OpenCL" url="http://coderdock.com/categories/OpenCL/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/06/18/libevent/libevent%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</loc>
-    <lastmod>2018-01-11T06:08:31.088Z</lastmod>
-    <data>
-        <display>
-        <title>libevent安装使用</title>
-        <pubTime>2017-06-18T05:14:42.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/06/08/ImagePro/FPGA%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%BC%93%E5%AD%98%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F/</loc>
-    <lastmod>2018-01-11T06:07:56.197Z</lastmod>
-    <data>
-        <display>
-        <title>FPGA图像处理缓存处理方式</title>
-        <pubTime>2017-06-08T05:35:04.000Z</pubTime>
-        
-        <tag>FPGA</tag>
-         
-        <tag>图像处理， 缓存处理</tag>
-         
-         
-           
-             
-              <breadCrumb title="FPGA" url="http://coderdock.com/categories/FPGA/"/>
-          
-             
-              <breadCrumb title="图像处理" url="http://coderdock.com/categories/FPGA/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/01/09/Python/Python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/</loc>
-    <lastmod>2018-01-11T06:07:25.269Z</lastmod>
-    <data>
-        <display>
-        <title>Python面向对象编程</title>
-        <pubTime>2017-01-09T08:26:09.000Z</pubTime>
-        
-        <tag>Python</tag>
-         
-        <tag>面向对象</tag>
-         
-         
-           
-             
-              <breadCrumb title="Python" url="http://coderdock.com/categories/Python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/08/27/Basic/Linux-MTD%E6%9E%B6%E6%9E%84%E5%88%86%E6%9E%90/</loc>
-    <lastmod>2018-01-11T06:07:06.097Z</lastmod>
-    <data>
-        <display>
-        <title>Linux MTD架构分析</title>
-        <pubTime>2017-08-27T07:51:06.000Z</pubTime>
-        
-        <tag>Linux</tag>
-         
-        <tag>MTD</tag>
-         
-         
-           
-             
-              <breadCrumb title="Linux" url="http://coderdock.com/categories/Linux/"/>
-          
-             
-              <breadCrumb title="MTD" url="http://coderdock.com/categories/Linux/MTD/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/08/26/OpenCL/OpenCL-0-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/</loc>
-    <lastmod>2018-01-11T04:53:43.696Z</lastmod>
-    <data>
-        <display>
-        <title>OpenCL-0-基础概念</title>
-        <pubTime>2017-08-26T14:28:13.000Z</pubTime>
-        
-        <tag>OpenCL</tag>
-         
-         
-           
-             
-              <breadCrumb title="OpenCL" url="http://coderdock.com/categories/OpenCL/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2016/08/26/Hello-CoderDock/</loc>
-    <lastmod>2018-01-10T09:42:18.364Z</lastmod>
-    <data>
-        <display>
-        <title>Hello CoderDock</title>
-        <pubTime>2016-08-26T14:28:13.000Z</pubTime>
-        
-        <tag>日常</tag>
-         
-         
-           
-             
-              <breadCrumb title="日常记录" url="http://coderdock.com/categories/%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/08/09/USB/USB%E7%B3%BB%E5%88%97-1-%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84%E4%BD%93/</loc>
-    <lastmod>2018-01-10T04:03:36.385Z</lastmod>
-    <data>
-        <display>
-        <title>USB系列-1-基本结构体</title>
-        <pubTime>2017-08-09T01:09:53.000Z</pubTime>
-        
-        <tag>USB</tag>
-         
-        <tag>基本结构体</tag>
-         
-         
-           
-             
-              <breadCrumb title="USB系列" url="http://coderdock.com/categories/USB%E7%B3%BB%E5%88%97/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/11/07/Vivado/Vivado-HLS-%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B/</loc>
-    <lastmod>2018-01-10T04:03:36.356Z</lastmod>
-    <data>
-        <display>
-        <title>Vivado-HLS--操作流程</title>
-        <pubTime>2017-11-07T15:00:35.000Z</pubTime>
-        
-        <tag>vivado</tag>
-         
-        <tag>hls</tag>
-         
-         
-           
-             
-              <breadCrumb title="vivado" url="http://coderdock.com/categories/vivado/"/>
-          
-             
-              <breadCrumb title="hls" url="http://coderdock.com/categories/vivado/hls/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/04/29/VirtualBoard/%E8%99%9A%E6%8B%9F%E5%BC%80%E5%8F%91%E6%9D%BF-uboot%E6%B7%BB%E5%8A%A0%E5%AE%9E%E7%8E%B0%E5%91%BD%E4%BB%A4/</loc>
-    <lastmod>2018-01-10T04:03:36.348Z</lastmod>
-    <data>
-        <display>
-        <title>虚拟开发板-uboot添加实现命令</title>
-        <pubTime>2017-04-29T04:00:09.000Z</pubTime>
-        
-        <tag>uboot</tag>
-         
-        <tag>虚拟开发板</tag>
-         
-        <tag>命令</tag>
-         
-         
-           
-             
-              <breadCrumb title="虚拟开发板" url="http://coderdock.com/categories/%E8%99%9A%E6%8B%9F%E5%BC%80%E5%8F%91%E6%9D%BF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/04/27/VirtualBoard/%E8%99%9A%E6%8B%9F%E5%BC%80%E5%8F%91%E6%9D%BF-uboot%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
-    <lastmod>2018-01-10T04:03:36.342Z</lastmod>
-    <data>
-        <display>
-        <title>虚拟开发板-uboot环境搭建</title>
-        <pubTime>2017-04-27T08:30:14.000Z</pubTime>
-        
-        <tag>uboot</tag>
-         
-        <tag>虚拟开发板</tag>
-         
-        <tag>环境搭建</tag>
-         
-         
-           
-             
-              <breadCrumb title="uboot" url="http://coderdock.com/categories/uboot/"/>
-          
-             
-              <breadCrumb title="环境搭建" url="http://coderdock.com/categories/uboot/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/04/29/VirtualBoard/%E8%99%9A%E6%8B%9F%E5%BC%80%E5%8F%91%E6%9D%BF-Qemu%E8%B0%83%E8%AF%95uboot/</loc>
-    <lastmod>2018-01-10T04:03:36.334Z</lastmod>
-    <data>
-        <display>
-        <title>虚拟开发板-Qemu调试uboot</title>
-        <pubTime>2017-04-29T03:59:51.000Z</pubTime>
-        
-        <tag>uboot</tag>
-         
-        <tag>虚拟开发板</tag>
-         
-        <tag>qemu</tag>
-         
-        <tag>调试</tag>
-         
-         
-           
-             
-              <breadCrumb title="虚拟开发板" url="http://coderdock.com/categories/%E8%99%9A%E6%8B%9F%E5%BC%80%E5%8F%91%E6%9D%BF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/04/28/VirtualBoard/%E8%99%9A%E6%8B%9F%E5%BC%80%E5%8F%91%E6%9D%BF-Linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
-    <lastmod>2018-01-10T04:03:36.325Z</lastmod>
-    <data>
-        <display>
-        <title>虚拟开发板-Linux环境搭建</title>
-        <pubTime>2017-04-27T22:41:31.000Z</pubTime>
-        
-        <tag>Linux</tag>
-         
-        <tag>虚拟开发板</tag>
-         
-         
-           
-             
-              <breadCrumb title="虚拟开发板" url="http://coderdock.com/categories/%E8%99%9A%E6%8B%9F%E5%BC%80%E5%8F%91%E6%9D%BF/"/>
-          
-             
-              <breadCrumb title="Linux" url="http://coderdock.com/categories/%E8%99%9A%E6%8B%9F%E5%BC%80%E5%8F%91%E6%9D%BF/Linux/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/06/29/VirtualBoard/%E8%99%9A%E6%8B%9F%E5%BC%80%E5%8F%91%E6%9D%BF-%E5%AD%97%E7%AC%A6%E8%AE%BE%E5%A4%87%E9%A9%B1%E5%8A%A8/</loc>
-    <lastmod>2018-01-10T04:03:36.320Z</lastmod>
-    <data>
-        <display>
-        <title>虚拟开发板-字符设备驱动</title>
-        <pubTime>2017-06-29T04:14:12.000Z</pubTime>
-        
-        <tag>虚拟开发板</tag>
-         
-        <tag>字符设备</tag>
-         
-         
-           
-             
-              <breadCrumb title="虚拟开发板" url="http://coderdock.com/categories/%E8%99%9A%E6%8B%9F%E5%BC%80%E5%8F%91%E6%9D%BF/"/>
-          
-             
-              <breadCrumb title="字符设备" url="http://coderdock.com/categories/%E8%99%9A%E6%8B%9F%E5%BC%80%E5%8F%91%E6%9D%BF/%E5%AD%97%E7%AC%A6%E8%AE%BE%E5%A4%87/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/08/17/USB/USB%E7%B3%BB%E5%88%97-2-DNW%E6%BA%90%E7%A0%81/</loc>
-    <lastmod>2018-01-10T04:03:36.314Z</lastmod>
-    <data>
-        <display>
-        <title>USB系列-2-DNW源码</title>
-        <pubTime>2017-08-17T07:42:47.000Z</pubTime>
-        
-        <tag>UBS</tag>
-         
-        <tag>DNW</tag>
-         
-         
-           
-             
-              <breadCrumb title="USB系列" url="http://coderdock.com/categories/USB%E7%B3%BB%E5%88%97/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/02/27/Protocal/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE-UART/</loc>
-    <lastmod>2018-01-10T04:03:36.304Z</lastmod>
-    <data>
-        <display>
-        <title>通信协议-UART</title>
-        <pubTime>2017-02-27T07:57:25.000Z</pubTime>
-        
-        <tag>UART</tag>
-         
-        <tag>通信协议</tag>
-         
-         
-           
-             
-              <breadCrumb title="基础知识" url="http://coderdock.com/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-          
-             
-              <breadCrumb title="UART" url="http://coderdock.com/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/UART/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/08/06/USB/USB%E7%B3%BB%E5%88%97-0-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/</loc>
-    <lastmod>2018-01-10T04:03:36.296Z</lastmod>
-    <data>
-        <display>
-        <title>USB系列-0-基础概念</title>
-        <pubTime>2017-08-06T01:09:14.000Z</pubTime>
-        
-        <tag>基础概念</tag>
-         
-        <tag>USB</tag>
-         
-         
-           
-             
-              <breadCrumb title="USB系列" url="http://coderdock.com/categories/USB%E7%B3%BB%E5%88%97/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/02/26/Protocal/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE-UART-Verilog%E5%AE%9E%E7%8E%B0/</loc>
-    <lastmod>2018-01-10T04:03:36.291Z</lastmod>
-    <data>
-        <display>
-        <title>通信协议-UART-Verilog实现</title>
-        <pubTime>2017-02-25T21:03:34.000Z</pubTime>
-        
-        <tag>UART</tag>
-         
-        <tag>Verilog实现</tag>
-         
-         
-           
-             
-              <breadCrumb title="基础知识" url="http://coderdock.com/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-          
-             
-              <breadCrumb title="UART" url="http://coderdock.com/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/UART/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/02/24/Protocal/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE-SPI/</loc>
-    <lastmod>2018-01-10T04:03:36.285Z</lastmod>
-    <data>
-        <display>
-        <title>通信协议-SPI</title>
-        <pubTime>2017-02-24T07:57:46.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/05/24/Protocal/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE-IIC/</loc>
-    <lastmod>2018-01-10T04:03:36.277Z</lastmod>
-    <data>
-        <display>
-        <title>通信协议-IIC</title>
-        <pubTime>2017-05-24T09:39:56.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="基础知识" url="http://coderdock.com/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-          
-             
-              <breadCrumb title="IIC" url="http://coderdock.com/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/IIC/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/06/08/Protocal/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE-IIC-Verilog-HDL%E5%AE%9E%E7%8E%B0/</loc>
-    <lastmod>2018-01-10T04:03:36.272Z</lastmod>
-    <data>
-        <display>
-        <title>通信协议-IIC Verilog HDL实现</title>
-        <pubTime>2017-06-08T14:00:07.000Z</pubTime>
-        
-        <tag>IIC</tag>
-         
-        <tag>Verilog HDL</tag>
-         
-        <tag>IIC实现</tag>
-         
-         
-           
-             
-              <breadCrumb title="基础知识" url="http://coderdock.com/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/07/28/Zynq/ViVado-%E6%89%BE%E4%B8%8D%E5%88%B0%E8%AE%BE%E5%A4%87/</loc>
-    <lastmod>2018-01-10T04:03:32.371Z</lastmod>
-    <data>
-        <display>
-        <title>ViVado 找不到设备</title>
-        <pubTime>2017-07-28T02:00:45.000Z</pubTime>
-        
-        <tag>Vivado</tag>
-         
-         
-           
-             
-              <breadCrumb title="日常记录" url="http://coderdock.com/categories/%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95/"/>
-          
-             
-              <breadCrumb title="工具" url="http://coderdock.com/categories/%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95/%E5%B7%A5%E5%85%B7/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/06/13/LinuxSource/list-head%E4%B9%8B%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/</loc>
-    <lastmod>2018-01-10T04:01:41.750Z</lastmod>
-    <data>
-        <display>
-        <title>list_head之必知必会</title>
-        <pubTime>2017-06-12T23:54:05.000Z</pubTime>
-        
-        <tag>Linux</tag>
-         
-        <tag>list_head</tag>
-         
-         
-           
-             
-              <breadCrumb title="Linux" url="http://coderdock.com/categories/Linux/"/>
-          
-             
-              <breadCrumb title="输入子系统" url="http://coderdock.com/categories/Linux/%E8%BE%93%E5%85%A5%E5%AD%90%E7%B3%BB%E7%BB%9F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/06/14/LinuxSource/Linux%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6%E4%B9%8B%E6%88%91%E8%A7%81/</loc>
-    <lastmod>2018-01-10T04:01:41.742Z</lastmod>
-    <data>
-        <display>
-        <title>Linux中断处理机制之我见</title>
-        <pubTime>2017-06-14T05:00:45.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/06/06/LinuxSource/Linux%E7%BB%9F%E4%B8%80%E8%AE%BE%E5%A4%87%E6%A8%A1%E5%9E%8B%E4%B9%8B%E6%88%91%E8%A7%81/</loc>
-    <lastmod>2018-01-10T04:01:41.732Z</lastmod>
-    <data>
-        <display>
-        <title>Linux统一设备模型之我见</title>
-        <pubTime>2017-06-06T05:01:37.000Z</pubTime>
-        
-        <tag>Linux</tag>
-         
-        <tag>统一设备模型</tag>
-         
-         
-           
-             
-              <breadCrumb title="Linux" url="http://coderdock.com/categories/Linux/"/>
-          
-             
-              <breadCrumb title="统一设备模型" url="http://coderdock.com/categories/Linux/%E7%BB%9F%E4%B8%80%E8%AE%BE%E5%A4%87%E6%A8%A1%E5%9E%8B/"/>
-          
-             
-              <breadCrumb title="我的见解" url="http://coderdock.com/categories/Linux/%E7%BB%9F%E4%B8%80%E8%AE%BE%E5%A4%87%E6%A8%A1%E5%9E%8B/%E6%88%91%E7%9A%84%E8%A7%81%E8%A7%A3/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/02/03/LinuxSource/%E5%B9%B3%E5%8F%B0%E8%AE%BE%E5%A4%87%E9%A9%B1%E5%8A%A8%E4%B9%8B%E6%88%91%E8%A7%81%E4%B8%80/</loc>
-    <lastmod>2018-01-10T04:01:41.724Z</lastmod>
-    <data>
-        <display>
-        <title>平台设备驱动之我见一</title>
-        <pubTime>2017-02-02T23:52:56.000Z</pubTime>
-        
-        <tag>Linux</tag>
-         
-        <tag>平台设备</tag>
-         
-         
-           
-             
-              <breadCrumb title="Linux" url="http://coderdock.com/categories/Linux/"/>
-          
-             
-              <breadCrumb title="基础知识" url="http://coderdock.com/categories/Linux/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/06/01/LinuxSource/Linux%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B%E4%B9%8B%E6%88%91%E8%A7%81/</loc>
-    <lastmod>2018-01-10T04:01:41.715Z</lastmod>
-    <data>
-        <display>
-        <title>Linux启动过程之我见</title>
-        <pubTime>2017-06-01T05:11:21.000Z</pubTime>
-        
-        <tag>Linux</tag>
-         
-        <tag>Init</tag>
-         
-         
-           
-             
-              <breadCrumb title="Linux" url="http://coderdock.com/categories/Linux/"/>
-          
-             
-              <breadCrumb title="启动过程" url="http://coderdock.com/categories/Linux/%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B/"/>
-          
-             
-              <breadCrumb title="Init" url="http://coderdock.com/categories/Linux/%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B/Init/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/06/03/LinuxSource/Linux%E8%BE%93%E5%85%A5%E5%AD%90%E7%B3%BB%E7%BB%9FCore%E6%BA%90%E7%A0%81%E7%AE%80%E8%A6%81%E5%88%86%E6%9E%90/</loc>
-    <lastmod>2018-01-10T04:01:41.707Z</lastmod>
-    <data>
-        <display>
-        <title>Linux输入子系统Core源码简要分析</title>
-        <pubTime>2017-06-02T23:53:48.000Z</pubTime>
-        
-        <tag>Linux</tag>
-         
-        <tag>输入子系统</tag>
-         
-        <tag>InputCore</tag>
-         
-         
-           
-             
-              <breadCrumb title="Linux" url="http://coderdock.com/categories/Linux/"/>
-          
-             
-              <breadCrumb title="输入子系统" url="http://coderdock.com/categories/Linux/%E8%BE%93%E5%85%A5%E5%AD%90%E7%B3%BB%E7%BB%9F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/06/02/LinuxSource/Linux%E8%BE%93%E5%85%A5%E5%AD%90%E7%B3%BB%E7%BB%9F%E4%B9%8B%E6%88%91%E8%A7%81-%E4%B8%80/</loc>
-    <lastmod>2018-01-10T04:01:41.699Z</lastmod>
-    <data>
-        <display>
-        <title>Linux输入子系统之我见(一)</title>
-        <pubTime>2017-06-01T23:12:04.000Z</pubTime>
-        
-        <tag>Linux</tag>
-         
-        <tag>我的见解</tag>
-         
-         
-           
-             
-              <breadCrumb title="Linux" url="http://coderdock.com/categories/Linux/"/>
-          
-             
-              <breadCrumb title="输入子系统" url="http://coderdock.com/categories/Linux/%E8%BE%93%E5%85%A5%E5%AD%90%E7%B3%BB%E7%BB%9F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/07/04/LinuxSource/Sysfs%E4%B9%8B%E6%88%91%E8%A7%81/</loc>
-    <lastmod>2018-01-10T04:01:38.887Z</lastmod>
-    <data>
-        <display>
-        <title>Sysfs之我见</title>
-        <pubTime>2017-07-04T05:00:00.000Z</pubTime>
-        
-        <tag>Linux</tag>
-         
-        <tag>SysFs</tag>
-         
-         
-           
-             
-              <breadCrumb title="Linux" url="http://coderdock.com/categories/Linux/"/>
-          
-             
-              <breadCrumb title="我的见解" url="http://coderdock.com/categories/Linux/%E6%88%91%E7%9A%84%E8%A7%81%E8%A7%A3/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/09/07/ImagePro/FPGA%E7%AE%97%E6%B3%95%E6%98%A0%E5%B0%84%E8%A6%81%E7%82%B9/</loc>
-    <lastmod>2018-01-10T04:00:29.093Z</lastmod>
-    <data>
-        <display>
-        <title>FPGA算法映射思考</title>
-        <pubTime>2017-09-07T12:07:08.000Z</pubTime>
-        
-        <tag>FPGA</tag>
-         
-        <tag>算法映射</tag>
-         
-         
-           
-             
-              <breadCrumb title="FPGA" url="http://coderdock.com/categories/FPGA/"/>
-          
-             
-              <breadCrumb title="算法" url="http://coderdock.com/categories/FPGA/%E7%AE%97%E6%B3%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/06/17/libevent/libevent%E7%B3%BB%E5%88%97-%E5%9F%BA%E6%9C%AC%E4%BA%86%E8%A7%A3/</loc>
-    <lastmod>2018-01-10T04:00:26.867Z</lastmod>
-    <data>
-        <display>
-        <title>libevent系列-基本了解</title>
-        <pubTime>2017-06-17T12:11:38.000Z</pubTime>
-        
-        <tag>libevent</tag>
-         
-        <tag>基础了解</tag>
-         
-         
-           
-             
-              <breadCrumb title="libevent系列" url="http://coderdock.com/categories/libevent%E7%B3%BB%E5%88%97/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/08/01/ImagePro/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2018-01-10T04:00:01.218Z</lastmod>
-    <data>
-        <display>
-        <title>图像处理基础</title>
-        <pubTime>2017-08-01T06:27:05.000Z</pubTime>
-        
-        <tag>图像处理</tag>
-         
-        <tag>基础概念</tag>
-         
-         
-           
-             
-              <breadCrumb title="图像处理" url="http://coderdock.com/categories/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/03/01/Basic/Nand-Flash%E4%BD%BF%E7%94%A8%E8%A6%81%E7%82%B9/</loc>
-    <lastmod>2018-01-10T03:59:53.567Z</lastmod>
-    <data>
-        <display>
-        <title>Nand Flash使用要点</title>
-        <pubTime>2017-03-01T05:59:34.000Z</pubTime>
-        
-        <tag>基础知识</tag>
-         
-        <tag>NandFlash</tag>
-         
-         
-           
-             
-              <breadCrumb title="基础知识" url="http://coderdock.com/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-          
-             
-              <breadCrumb title="NandFlash" url="http://coderdock.com/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/NandFlash/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/02/27/Basic/MMU%E7%90%86%E8%A7%A3%E8%A6%81%E7%82%B9/</loc>
-    <lastmod>2018-01-10T03:59:53.559Z</lastmod>
-    <data>
-        <display>
-        <title>MMU理解要点</title>
-        <pubTime>2017-02-27T04:54:09.000Z</pubTime>
-        
-        <tag>基础知识</tag>
-         
-        <tag>MMU</tag>
-         
-         
-           
-             
-              <breadCrumb title="基础知识" url="http://coderdock.com/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/04/27/Basic/uboot%E5%B7%A5%E7%A8%8B%E9%85%8D%E7%BD%AE%E7%AE%80%E8%A6%81%E5%88%86%E6%9E%90/</loc>
-    <lastmod>2018-01-10T03:59:48.156Z</lastmod>
-    <data>
-        <display>
-        <title>uboot 配置分析</title>
-        <pubTime>2017-04-27T08:14:03.000Z</pubTime>
-        
-        <tag>uboot</tag>
-         
-        <tag>uboot配置</tag>
-         
-         
-           
-             
-              <breadCrumb title="基础知识" url="http://coderdock.com/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-          
-             
-              <breadCrumb title="uboot" url="http://coderdock.com/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/uboot/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/02/25/Basic/Dock%E5%B7%A5%E5%85%B7-%E6%89%93%E9%80%A0%E8%87%AA%E5%B7%B1%E7%9A%84VIM%E7%BC%96%E8%BE%91%E5%99%A8/</loc>
-    <lastmod>2018-01-10T03:59:03.805Z</lastmod>
-    <data>
-        <display>
-        <title>打造自己的VIM编辑器</title>
-        <pubTime>2017-02-25T07:25:27.000Z</pubTime>
-        
-        <tag>编程工具</tag>
-         
-         
-           
-             
-              <breadCrumb title="编程工具" url="http://coderdock.com/categories/%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2016/12/27/Basic/ARM%E6%8C%87%E4%BB%A4%E4%B9%8B%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/</loc>
-    <lastmod>2018-01-10T03:58:59.768Z</lastmod>
-    <data>
-        <display>
-        <title>ARM指令之必知必会</title>
-        <pubTime>2016-12-27T07:53:33.000Z</pubTime>
-        
-        <tag>ARM指令</tag>
-         
-         
-           
-             
-              <breadCrumb title="基础知识" url="http://coderdock.com/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-          
-             
-              <breadCrumb title="ARM指令" url="http://coderdock.com/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/ARM%E6%8C%87%E4%BB%A4/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2016/12/24/Basic/ARM%E8%A6%81%E5%88%86%E6%B8%85/</loc>
-    <lastmod>2018-01-10T03:58:25.633Z</lastmod>
-    <data>
-        <display>
-        <title>ARM要分清</title>
-        <pubTime>2016-12-24T03:06:52.000Z</pubTime>
-        
-        <tag>ARM</tag>
-         
-        <tag>ARM架构</tag>
-         
-        <tag>ARM系列</tag>
-         
-         
-           
-             
-              <breadCrumb title="日常知识" url="http://coderdock.com/categories/%E6%97%A5%E5%B8%B8%E7%9F%A5%E8%AF%86/"/>
-          
-             
-              <breadCrumb title="ARM" url="http://coderdock.com/categories/%E6%97%A5%E5%B8%B8%E7%9F%A5%E8%AF%86/ARM/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/03/08/Basic/%E6%88%91%E7%9A%84Makefilee%E6%A8%A1%E6%9D%BF/</loc>
-    <lastmod>2018-01-10T03:58:18.900Z</lastmod>
-    <data>
-        <display>
-        <title>我的Makefilee模板</title>
-        <pubTime>2017-03-08T07:52:42.000Z</pubTime>
-        
-        <tag>Makefile</tag>
-         
-         
-           
-             
-              <breadCrumb title="基础知识" url="http://coderdock.com/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-          
-             
-              <breadCrumb title="Makefile" url="http://coderdock.com/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Makefile/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2016/10/25/Basic/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E4%B9%8B%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/</loc>
-    <lastmod>2018-01-10T03:58:06.948Z</lastmod>
-    <data>
-        <display>
-        <title>交叉编译之必知必会</title>
-        <pubTime>2016-10-25T04:25:39.000Z</pubTime>
-        
-        <tag>交叉编译</tag>
-         
-        <tag>arm-linux</tag>
-         
-         
-           
-             
-              <breadCrumb title="日常知识" url="http://coderdock.com/categories/%E6%97%A5%E5%B8%B8%E7%9F%A5%E8%AF%86/"/>
-          
-             
-              <breadCrumb title="工具" url="http://coderdock.com/categories/%E6%97%A5%E5%B8%B8%E7%9F%A5%E8%AF%86/%E5%B7%A5%E5%85%B7/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/06/20/Qt/%E5%B5%8C%E5%85%A5%E5%BC%8FQt5-8%E7%A7%BB%E6%A4%8D-%E7%BC%96%E8%AF%91-%E6%94%AF%E6%8C%81VNC/</loc>
-    <lastmod>2018-01-10T03:57:12.214Z</lastmod>
-    <data>
-        <display>
-        <title>嵌入式Qt5.8移植-编译-支持VNC</title>
-        <pubTime>2017-06-20T14:20:25.000Z</pubTime>
-        
-        <tag>Linux</tag>
-         
-        <tag>Qt</tag>
-         
-         
-           
-             
-              <breadCrumb title="Qt" url="http://coderdock.com/categories/Qt/"/>
-          
-             
-              <breadCrumb title="QT移植" url="http://coderdock.com/categories/Qt/QT%E7%A7%BB%E6%A4%8D/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/06/22/Qt/%E5%B5%8C%E5%85%A5%E5%BC%8FQt5-8%E7%A7%BB%E6%A4%8D-%E5%AE%89%E8%A3%85-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2018-01-10T03:56:58.289Z</lastmod>
-    <data>
-        <display>
-        <title>嵌入式Qt5.8移植-安装-环境配置</title>
-        <pubTime>2017-06-22T14:20:25.000Z</pubTime>
-        
-        <tag>Linux</tag>
-         
-        <tag>Qt</tag>
-         
-         
-           
-             
-              <breadCrumb title="Qt" url="http://coderdock.com/categories/Qt/"/>
-          
-             
-              <breadCrumb title="QT移植" url="http://coderdock.com/categories/Qt/QT%E7%A7%BB%E6%A4%8D/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderdock.com/2017/06/23/Qt/%E5%B5%8C%E5%85%A5%E5%BC%8FQt5-8%E7%A7%BB%E6%A4%8D-%E4%BD%BF%E7%94%A8-%E4%B8%80%E9%94%AE%E8%B0%83%E8%AF%95%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2018-01-10T03:56:51.259Z</lastmod>
-    <data>
-        <display>
-        <title>嵌入式Qt5.8移植-使用-一键调试配置</title>
-        <pubTime>2017-06-23T14:20:25.000Z</pubTime>
-        
-        <tag>Linux</tag>
-         
-        <tag>Qt</tag>
-         
-         
-           
-             
-              <breadCrumb title="Qt" url="http://coderdock.com/categories/Qt/"/>
-          
-             
-              <breadCrumb title="QT移植" url="http://coderdock.com/categories/Qt/QT%E7%A7%BB%E6%A4%8D/"/>
           
         </display>
     </data>

@@ -252,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2017/08/09/USB/USB系列-1-基本结构体/">
+    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2017/08/06/ARM&Linux/Linux驱动/USB/USB系列-0-基础概念/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dock">
@@ -271,153 +271,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/09/USB/USB系列-1-基本结构体/" itemprop="url">USB系列-1-基本结构体</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-09T09:09:53+08:00">
-                2017-08-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/USB系列/" itemprop="url" rel="index">
-                    <span itemprop="name">USB系列</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>介绍USB设备结构体和设备描述符结构体。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/08/09/USB/USB系列-1-基本结构体/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2017/08/06/USB/USB系列-0-基础概念/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Dock">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/MyPaper.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CoderDock">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/06/USB/USB系列-0-基础概念/" itemprop="url">USB系列-0-基础概念</a></h1>
+                <a class="post-title-link" href="/2017/08/06/ARM&Linux/Linux驱动/USB/USB系列-0-基础概念/" itemprop="url">USB系列-0-基础概念</a></h1>
         
 
         <div class="post-meta">
@@ -452,8 +306,30 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/USB系列/" itemprop="url" rel="index">
-                    <span itemprop="name">USB系列</span>
+                  <a href="/categories/ARM-Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">ARM&Linux</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ARM-Linux/Linux驱动/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux驱动</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ARM-Linux/Linux驱动/USB/" itemprop="url" rel="index">
+                    <span itemprop="name">USB</span>
                   </a>
                 </span>
 
@@ -493,7 +369,7 @@
           <figure class="highlight gherkin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">_______  ______</div><div class="line">|<span class="string">\     /</span>|<span class="string">(  ____ \(  ___ \</span></div><div class="line">|<span class="string"> )   ( </span>||<span class="string"> (    \/</span>|<span class="string"> (   ) )</span></div><div class="line">|<span class="string"> </span>|<span class="string">   </span>|<span class="string"> </span>||<span class="string"> (_____ </span>|<span class="string"> (__/ /</span></div><div class="line">|<span class="string"> </span>|<span class="string">   </span>|<span class="string"> </span>|<span class="string">(_____  )</span>|<span class="string">  __ (</span></div><div class="line">|<span class="string"> </span>|<span class="string">   </span>|<span class="string"> </span>|<span class="string">      ) </span>||<span class="string"> (  \ \</span></div><div class="line">|<span class="string"> (___) </span>|<span class="string">/\____) </span>||<span class="string"> )___) )</span></div><div class="line"><span class="string">(_______)\_______)</span>|<span class="string">/ \___/</span></div></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/08/06/USB/USB系列-0-基础概念/#more" rel="contents">
+            <a class="btn" href="/2017/08/06/ARM&Linux/Linux驱动/USB/USB系列-0-基础概念/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -544,7 +420,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2017/08/01/ImagePro/图像处理基础/">
+    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2017/08/01/FPGA/图像处理/图像处理基础/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dock">
@@ -563,7 +439,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/01/ImagePro/图像处理基础/" itemprop="url">图像处理基础</a></h1>
+                <a class="post-title-link" href="/2017/08/01/FPGA/图像处理/图像处理基础/" itemprop="url">图像处理基础</a></h1>
         
 
         <div class="post-meta">
@@ -598,7 +474,18 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/图像处理/" itemprop="url" rel="index">
+                  <a href="/categories/FPGA/" itemprop="url" rel="index">
+                    <span itemprop="name">FPGA</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/FPGA/图像处理/" itemprop="url" rel="index">
                     <span itemprop="name">图像处理</span>
                   </a>
                 </span>
@@ -639,7 +526,7 @@
           <p>图像处理的一些基础知识。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/08/01/ImagePro/图像处理基础/#more" rel="contents">
+            <a class="btn" href="/2017/08/01/FPGA/图像处理/图像处理基础/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -744,8 +631,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/日常记录/" itemprop="url" rel="index">
-                    <span itemprop="name">日常记录</span>
+                  <a href="/categories/Zynq/" itemprop="url" rel="index">
+                    <span itemprop="name">Zynq</span>
                   </a>
                 </span>
 
@@ -755,8 +642,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/日常记录/工具/" itemprop="url" rel="index">
-                    <span itemprop="name">工具</span>
+                  <a href="/categories/Zynq/Vivado/" itemprop="url" rel="index">
+                    <span itemprop="name">Vivado</span>
                   </a>
                 </span>
 
@@ -848,7 +735,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2017/07/04/LinuxSource/Sysfs之我见/">
+    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2017/07/04/ARM&Linux/Linux驱动/Sysfs之我见/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dock">
@@ -867,7 +754,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/04/LinuxSource/Sysfs之我见/" itemprop="url">Sysfs之我见</a></h1>
+                <a class="post-title-link" href="/2017/07/04/ARM&Linux/Linux驱动/Sysfs之我见/" itemprop="url">Sysfs之我见</a></h1>
         
 
         <div class="post-meta">
@@ -902,8 +789,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
+                  <a href="/categories/ARM-Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">ARM&Linux</span>
                   </a>
                 </span>
 
@@ -913,8 +800,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/我的见解/" itemprop="url" rel="index">
-                    <span itemprop="name">我的见解</span>
+                  <a href="/categories/ARM-Linux/Linux驱动/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux驱动</span>
                   </a>
                 </span>
 
@@ -954,7 +841,7 @@
           <p>sysfs虚拟文件系统提供了一种比proc更理想的访问内核数据的途径。<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">_______           _______  _______  _______</div><div class="line">(  <span class="name">____</span> \|\     /|(  <span class="name">____</span> \(  <span class="name">____</span> \(  <span class="name">____</span> \</div><div class="line">| (    \/( \   / )| (    \/| (    \/| (    \/</div><div class="line">| (_____  \ (_) / | (<span class="name">_____</span> | (__    | (<span class="name">_____</span></div><div class="line">(<span class="name">_____</span>  )  \   /  (<span class="name">_____</span>  )|  __)   (<span class="name">_____</span>  )</div><div class="line">     ) |   ) (         ) || (            ) |</div><div class="line">/\____) |   | |   /\____) || )      /\____) |</div><div class="line">\_______)   \_/   \_______)|/       \_______)</div></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/07/04/LinuxSource/Sysfs之我见/#more" rel="contents">
+            <a class="btn" href="/2017/07/04/ARM&Linux/Linux驱动/Sysfs之我见/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1070,8 +957,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/虚拟开发板/字符设备/" itemprop="url" rel="index">
-                    <span itemprop="name">字符设备</span>
+                  <a href="/categories/虚拟开发板/Qemu/" itemprop="url" rel="index">
+                    <span itemprop="name">Qemu</span>
                   </a>
                 </span>
 
@@ -1162,7 +1049,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2017/06/23/Qt/嵌入式Qt5-8移植-使用-一键调试配置/">
+    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2017/06/23/编程框架/Qt/嵌入式Qt5-8移植-使用-一键调试配置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dock">
@@ -1181,7 +1068,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/23/Qt/嵌入式Qt5-8移植-使用-一键调试配置/" itemprop="url">嵌入式Qt5.8移植-使用-一键调试配置</a></h1>
+                <a class="post-title-link" href="/2017/06/23/编程框架/Qt/嵌入式Qt5-8移植-使用-一键调试配置/" itemprop="url">嵌入式Qt5.8移植-使用-一键调试配置</a></h1>
         
 
         <div class="post-meta">
@@ -1216,8 +1103,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Qt/" itemprop="url" rel="index">
-                    <span itemprop="name">Qt</span>
+                  <a href="/categories/编程框架/" itemprop="url" rel="index">
+                    <span itemprop="name">编程框架</span>
                   </a>
                 </span>
 
@@ -1227,7 +1114,18 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Qt/QT移植/" itemprop="url" rel="index">
+                  <a href="/categories/编程框架/QT/" itemprop="url" rel="index">
+                    <span itemprop="name">QT</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程框架/QT/QT移植/" itemprop="url" rel="index">
                     <span itemprop="name">QT移植</span>
                   </a>
                 </span>
@@ -1268,7 +1166,7 @@
           <p>本节介绍片一键上传并配置程序。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/06/23/Qt/嵌入式Qt5-8移植-使用-一键调试配置/#more" rel="contents">
+            <a class="btn" href="/2017/06/23/编程框架/Qt/嵌入式Qt5-8移植-使用-一键调试配置/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1319,7 +1217,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2017/06/22/Qt/嵌入式Qt5-8移植-安装-环境配置/">
+    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2017/06/22/编程框架/Qt/嵌入式Qt5-8移植-安装-环境配置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dock">
@@ -1338,7 +1236,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/22/Qt/嵌入式Qt5-8移植-安装-环境配置/" itemprop="url">嵌入式Qt5.8移植-安装-环境配置</a></h1>
+                <a class="post-title-link" href="/2017/06/22/编程框架/Qt/嵌入式Qt5-8移植-安装-环境配置/" itemprop="url">嵌入式Qt5.8移植-安装-环境配置</a></h1>
         
 
         <div class="post-meta">
@@ -1373,8 +1271,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Qt/" itemprop="url" rel="index">
-                    <span itemprop="name">Qt</span>
+                  <a href="/categories/编程框架/" itemprop="url" rel="index">
+                    <span itemprop="name">编程框架</span>
                   </a>
                 </span>
 
@@ -1384,7 +1282,18 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Qt/QT移植/" itemprop="url" rel="index">
+                  <a href="/categories/编程框架/QT/" itemprop="url" rel="index">
+                    <span itemprop="name">QT</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程框架/QT/QT移植/" itemprop="url" rel="index">
                     <span itemprop="name">QT移植</span>
                   </a>
                 </span>
@@ -1425,7 +1334,7 @@
           <p>本节介绍配置交叉编译套件的安装配置。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/06/22/Qt/嵌入式Qt5-8移植-安装-环境配置/#more" rel="contents">
+            <a class="btn" href="/2017/06/22/编程框架/Qt/嵌入式Qt5-8移植-安装-环境配置/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1476,7 +1385,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2017/06/20/Qt/嵌入式Qt5-8移植-编译-支持VNC/">
+    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2017/06/20/编程框架/Qt/嵌入式Qt5-8移植-编译-支持VNC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dock">
@@ -1495,7 +1404,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/20/Qt/嵌入式Qt5-8移植-编译-支持VNC/" itemprop="url">嵌入式Qt5.8移植-编译-支持VNC</a></h1>
+                <a class="post-title-link" href="/2017/06/20/编程框架/Qt/嵌入式Qt5-8移植-编译-支持VNC/" itemprop="url">嵌入式Qt5.8移植-编译-支持VNC</a></h1>
         
 
         <div class="post-meta">
@@ -1530,8 +1439,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Qt/" itemprop="url" rel="index">
-                    <span itemprop="name">Qt</span>
+                  <a href="/categories/编程框架/" itemprop="url" rel="index">
+                    <span itemprop="name">编程框架</span>
                   </a>
                 </span>
 
@@ -1541,7 +1450,18 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Qt/QT移植/" itemprop="url" rel="index">
+                  <a href="/categories/编程框架/QT/" itemprop="url" rel="index">
+                    <span itemprop="name">QT</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程框架/QT/QT移植/" itemprop="url" rel="index">
                     <span itemprop="name">QT移植</span>
                   </a>
                 </span>
@@ -1582,7 +1502,7 @@
           <p>本章介绍Qt交叉编译的过程<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/06/20/Qt/嵌入式Qt5-8移植-编译-支持VNC/#more" rel="contents">
+            <a class="btn" href="/2017/06/20/编程框架/Qt/嵌入式Qt5-8移植-编译-支持VNC/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1633,7 +1553,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2017/06/18/libevent/libevent安装使用/">
+    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2017/06/18/编程框架/Libevent/libevent安装使用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dock">
@@ -1652,7 +1572,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/18/libevent/libevent安装使用/" itemprop="url">libevent安装使用</a></h1>
+                <a class="post-title-link" href="/2017/06/18/编程框架/Libevent/libevent安装使用/" itemprop="url">libevent安装使用</a></h1>
         
 
         <div class="post-meta">
@@ -1674,6 +1594,39 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程框架/" itemprop="url" rel="index">
+                    <span itemprop="name">编程框架</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程框架/Libevent/" itemprop="url" rel="index">
+                    <span itemprop="name">Libevent</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -1741,11 +1694,168 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2017/06/17/编程框架/Libevent/libevent系列-基本了解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dock">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/MyPaper.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CoderDock">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/17/编程框架/Libevent/libevent系列-基本了解/" itemprop="url">libevent系列-基本了解</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-17T20:11:38+08:00">
+                2017-06-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程框架/" itemprop="url" rel="index">
+                    <span itemprop="name">编程框架</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程框架/Libevent/" itemprop="url" rel="index">
+                    <span itemprop="name">Libevent</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>Libevent 是一个用C语言编写的、轻量级的开源高性能事件通知库。<br><img src="http://coderdock-1251264493.picsh.myqcloud.com/libevent.png" alt="libevent"></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/17/编程框架/Libevent/libevent系列-基本了解/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1795,7 +1905,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">61</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1806,7 +1916,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1817,7 +1927,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">71</span>
+                  <span class="site-state-item-count">68</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1847,9 +1957,9 @@
       
 
     </div>
-	<div id="music163player">
+	<!-- <div id="music163player">
    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=507795470&auto=0&height=66"></iframe>
-	</div>
+	</div> -->
   </aside>
 
 
@@ -1859,7 +1969,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
