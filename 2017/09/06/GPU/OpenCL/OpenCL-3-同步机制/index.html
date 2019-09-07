@@ -88,7 +88,7 @@
 <meta property="og:description" content="由于OpenCL在异构系统上进行计算，需要管理并调度多个设备，就需要在设备之间内部或外部进行数据交互以及同步。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://coderdock-1251264493.cos.ap-shanghai.myqcloud.com/sync.png">
-<meta property="og:updated_time" content="2019-08-31T10:17:00.083Z">
+<meta property="og:updated_time" content="2019-09-07T07:47:15.814Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OpenCL-3-同步机制">
 <meta name="twitter:description" content="由于OpenCL在异构系统上进行计算，需要管理并调度多个设备，就需要在设备之间内部或外部进行数据交互以及同步。">
@@ -439,7 +439,7 @@
 <p>上面这个示例的第二个参数就是指定这个函数是否是同步操作，如果为TRUE，那么就会阻塞直至拷贝完成，如果为FALSE，在设置完后不等拷贝完成，就会返回。</p>
 <h2 id="3-2多设备同步"><a href="#3-2多设备同步" class="headerlink" title="3.2多设备同步"></a>3.2多设备同步</h2><p>&emsp;&emsp;在之前我们已经了解到，使用事件只能在同一个上下文中实现同步。那么在不同的设备不同的上下文中如何实现同步呢，只剩下了一种方法，cFinish,等待另一个命令队列执行完成，之后的命令才能继续执行。如一个CPU一个GPU，两者需要互相访问彼此的数据，那么如何实现同步呢，如果CPU要访问CPU的数据，必须等待CPU当前的命令队列执行完成，不再占用内存，GPU才能进行访问。<br><img src="https://coderdock-1251264493.cos.ap-shanghai.myqcloud.com/sync.png" alt="同步"></p>
 <p>版权声明：本文为博主原创文章，转载需声明为转载内容并添加原文地址。</p>
-<p>原文地址：<a href="http://coderdock.com">http://coderdock.com</a></p>
+<p>原文地址：<a href="https://coderdock.com">https://coderdock.com</a></p>
 
       
     </div>

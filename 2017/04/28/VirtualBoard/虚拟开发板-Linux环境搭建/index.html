@@ -87,13 +87,13 @@
 <meta property="og:site_name" content="CoderDock">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;本章介绍使用qemu搭建Linux开发环境">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://img.blog.csdn.net/20171228133356110?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzk4OTI4NA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20171228133356110?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzk4OTI4NA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2019-08-31T10:20:57.730Z">
+<meta property="og:image" content="https://img.blog.csdn.net/20171228133356110?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzk4OTI4NA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="https://img.blog.csdn.net/20171228133356110?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzk4OTI4NA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2019-09-07T07:47:16.025Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="虚拟开发板-Linux环境搭建">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;本章介绍使用qemu搭建Linux开发环境">
-<meta name="twitter:image" content="http://img.blog.csdn.net/20171228133356110?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzk4OTI4NA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta name="twitter:image" content="https://img.blog.csdn.net/20171228133356110?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzk4OTI4NA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 
 
 
@@ -417,7 +417,7 @@
       
 
       
-        <p>&emsp;&emsp;本章介绍使用qemu搭建Linux开发环境<br><img src="http://img.blog.csdn.net/20171228133356110?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzk4OTI4NA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="Linux"><br><a id="more"></a></p>
+        <p>&emsp;&emsp;本章介绍使用qemu搭建Linux开发环境<br><img src="https://img.blog.csdn.net/20171228133356110?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzk4OTI4NA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="Linux"><br><a id="more"></a></p>
 <h1 id="1-Linux源码下载"><a href="#1-Linux源码下载" class="headerlink" title="1.Linux源码下载"></a>1.Linux源码下载</h1><p>Linux Source: <a href="https://www.kernel.org/" target="_blank" rel="noopener">https://www.kernel.org/</a></p>
 <h1 id="2-编译过程"><a href="#2-编译过程" class="headerlink" title="2.编译过程"></a>2.编译过程</h1><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="builtin-name">export</span> <span class="attribute">ARCH</span>=arm</div><div class="line"><span class="builtin-name">export</span> <span class="attribute">CROSS_COMPILE</span>=arm-linux-gnueabihf-</div><div class="line">make vexpress_defconfig</div><div class="line"><span class="comment">#生成zImage</span></div><div class="line">make -j4</div><div class="line"><span class="comment">#下面这条会生成uImage供uboot使用</span></div><div class="line">make uImage <span class="attribute">LOADADDR</span>=0x60003000</div><div class="line">make modules</div><div class="line">make dtbs</div></pre></td></tr></table></figure>
 <h1 id="3-各种镜像格式介绍"><a href="#3-各种镜像格式介绍" class="headerlink" title="3.各种镜像格式介绍"></a>3.各种镜像格式介绍</h1><ul>
@@ -439,13 +439,13 @@
 <p>添加配置文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">参考linux启动过程章节</div></pre></td></tr></table></figure></p>
 <h1 id="6-启动命令"><a href="#6-启动命令" class="headerlink" title="6.启动命令"></a>6.启动命令</h1><figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">qemu-system-arm -nographic  -sd vexpress.img -<span class="keyword">M</span> vexpress-a9   -<span class="keyword">m</span> 512M -kernel ./<span class="keyword">arch</span>/arm/<span class="keyword">boot</span>/zImage -dtb ./<span class="keyword">arch</span>/arm/<span class="keyword">boot</span>/dts/vexpress-v2p-ca9.dtb -smp 4 -<span class="keyword">append</span> <span class="string">"noinitrd root=/dev/mmcblk0p1 rw rootwait earlyprintk console=ttyAMA0"</span> -<span class="keyword">net</span> nic,vlan=0 -<span class="keyword">net</span> tap,vlan=0,ifname=tap30,script=<span class="keyword">no</span>,downscript=<span class="keyword">no</span></div></pre></td></tr></table></figure>
 <h1 id="7-关闭qemu"><a href="#7-关闭qemu" class="headerlink" title="7.关闭qemu"></a>7.关闭qemu</h1><figure class="highlight perl"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ps -A | <span class="keyword">grep</span> qemu-<span class="keyword">system</span>-arm | awk <span class="string">'&#123;print $1&#125;'</span> | xargs sudo <span class="keyword">kill</span> -<span class="number">9</span></div></pre></td></tr></table></figure>
-<p><img src="http://img.blog.csdn.net/20171228133356110?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzk4OTI4NA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="Linux"></p>
+<p><img src="https://img.blog.csdn.net/20171228133356110?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzk4OTI4NA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="Linux"></p>
 <h1 id="8-网络配置"><a href="#8-网络配置" class="headerlink" title="8.网络配置"></a>8.网络配置</h1><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo apt-get <span class="keyword">install </span>uml-utilities</div><div class="line">sudo apt-get <span class="keyword">install </span><span class="keyword">bridge-utils</span></div><div class="line"><span class="keyword">sudo </span>tunctl -u root -t tap30   <span class="comment">#在主机上创建tap30设备</span></div><div class="line">ifconfig tap30 <span class="number">192</span>.<span class="number">168</span>.<span class="number">111</span>.<span class="number">1</span> promisc up   <span class="comment">#启用设备，并设置为混杂模式</span></div></pre></td></tr></table></figure>
 <p>再启动脚本中添加如下几行，以使用网络<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">-net nic,<span class="attribute">vlan</span>=0 -net tap,<span class="attribute">vlan</span>=0,ifname=tap30,script=no,downscript=no</div></pre></td></tr></table></figure></p>
 <p>进入虚拟机后使用</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">ifconfig</span> <span class="selector-tag">eth0</span> 192<span class="selector-class">.168</span><span class="selector-class">.111</span><span class="selector-class">.2</span> <span class="selector-tag">promisc</span> <span class="selector-tag">up</span> #启用设备</div></pre></td></tr></table></figure>
 <p>版权声明：本文为博主原创文章，转载需声明为转载内容并添加原文地址。</p>
-<p>原文地址：<a href="http://coderdock.com">http://coderdock.com</a></p>
+<p>原文地址：<a href="https://coderdock.com">https://coderdock.com</a></p>
 
       
     </div>

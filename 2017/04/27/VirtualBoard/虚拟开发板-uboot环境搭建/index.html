@@ -87,13 +87,13 @@
 <meta property="og:site_name" content="CoderDock">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;在本节会介绍如何从头搭建使用qemu + uboot的虚拟开发环境。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://img.blog.csdn.net/20171227173636412?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzk4OTI4NA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20171227173636412?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzk4OTI4NA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2019-08-31T10:21:07.195Z">
+<meta property="og:image" content="https://img.blog.csdn.net/20171227173636412?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzk4OTI4NA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="https://img.blog.csdn.net/20171227173636412?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzk4OTI4NA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2019-09-07T07:47:16.083Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="虚拟开发板-uboot环境搭建">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;在本节会介绍如何从头搭建使用qemu + uboot的虚拟开发环境。">
-<meta name="twitter:image" content="http://img.blog.csdn.net/20171227173636412?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzk4OTI4NA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta name="twitter:image" content="https://img.blog.csdn.net/20171227173636412?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzk4OTI4NA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 
 
 
@@ -417,18 +417,18 @@
       
 
       
-        <p>&emsp;&emsp;在本节会介绍如何从头搭建使用qemu + uboot的虚拟开发环境。<br><img src="http://img.blog.csdn.net/20171227173636412?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzk4OTI4NA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="uboot"></p>
+        <p>&emsp;&emsp;在本节会介绍如何从头搭建使用qemu + uboot的虚拟开发环境。<br><img src="https://img.blog.csdn.net/20171227173636412?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzk4OTI4NA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="uboot"></p>
 <a id="more"></a>
 <h1 id="1-下载安装-uboot-qemu-arm-linux-gnu"><a href="#1-下载安装-uboot-qemu-arm-linux-gnu" class="headerlink" title="1.下载安装 uboot qemu arm-linux-gnu"></a>1.下载安装 uboot qemu arm-linux-gnu</h1><ul>
-<li>uboot : <a href="http://www.denx.de/wiki/U-Boot/" target="_blank" rel="noopener">http://www.denx.de/wiki/U-Boot/</a></li>
+<li>uboot : <a href="https://www.denx.de/wiki/U-Boot/" target="_blank" rel="noopener">https://www.denx.de/wiki/U-Boot/</a></li>
 <li>qemu : sudo apt-get install qemu</li>
 <li>arm-linux-gcc : sudo apt-get install gcc-arm-linux-gnueabi 或 <a href="https://www.linaro.org/" target="_blank" rel="noopener">https://www.linaro.org/</a></li>
 </ul>
 <h1 id="2-编译uboot"><a href="#2-编译uboot" class="headerlink" title="2. 编译uboot"></a>2. 编译uboot</h1><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="builtin-name">export</span> <span class="attribute">ARCH</span>=arm</div><div class="line"><span class="builtin-name">export</span> <span class="attribute">CROSS_COMPILE</span>=arm-linux-gnueabi-</div><div class="line">make vexpress_ca9x4_config</div><div class="line">make -j4</div></pre></td></tr></table></figure>
 <h1 id="3-qemu启动uboot"><a href="#3-qemu启动uboot" class="headerlink" title="3. qemu启动uboot"></a>3. qemu启动uboot</h1><figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">qemu</span>-system-<span class="meta">arm</span> -M vexpress-a9 -m <span class="number">256</span>M -nographic -kernel u-<span class="keyword">boot</span></div></pre></td></tr></table></figure>
-<p><img src="http://img.blog.csdn.net/20171227173636412?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzk4OTI4NA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="uboot"></p>
+<p><img src="https://img.blog.csdn.net/20171227173636412?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzk4OTI4NA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="uboot"></p>
 <p>版权声明：本文为博主原创文章，转载需声明为转载内容并添加原文地址。</p>
-<p>原文地址：<a href="http://coderdock.com">http://coderdock.com</a></p>
+<p>原文地址：<a href="https://coderdock.com">https://coderdock.com</a></p>
 
       
     </div>

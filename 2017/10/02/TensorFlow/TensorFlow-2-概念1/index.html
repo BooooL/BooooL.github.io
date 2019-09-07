@@ -87,13 +87,13 @@
 <meta property="og:site_name" content="CoderDock">
 <meta property="og:description" content="机器学习分类的基础概念。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://coderdock-1251264493.picsh.myqcloud.com/方差.png">
-<meta property="og:image" content="http://img.my.csdn.net/uploads/201407/16/1405496972_1821.png">
-<meta property="og:updated_time" content="2018-01-14T13:23:19.029Z">
+<meta property="og:image" content="https://coderdock-1251264493.picsh.myqcloud.com/方差.png">
+<meta property="og:image" content="https://img.my.csdn.net/uploads/201407/16/1405496972_1821.png">
+<meta property="og:updated_time" content="2019-09-07T07:47:15.972Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TensorFlow-2-概念1">
 <meta name="twitter:description" content="机器学习分类的基础概念。">
-<meta name="twitter:image" content="http://coderdock-1251264493.picsh.myqcloud.com/方差.png">
+<meta name="twitter:image" content="https://coderdock-1251264493.picsh.myqcloud.com/方差.png">
 
 
 
@@ -410,7 +410,7 @@
 <a id="more"></a>
 <h1 id="1-特征缩放"><a href="#1-特征缩放" class="headerlink" title="1.特征缩放"></a>1.特征缩放</h1><h2 id="1-1-调节比例（Rescaling）"><a href="#1-1-调节比例（Rescaling）" class="headerlink" title="1.1 调节比例（Rescaling）"></a>1.1 调节比例（Rescaling）</h2><p>这种方法是将数据的特征缩放到[0,1]或[-1,1]之间。缩放到什么范围取决于数据的性质。对于这种方法的公式如下：</p>
 <script type="math/tex; mode=display">x' = \frac{x - min(x)}{max(x) - min(x)}</script><h2 id="1-2-标准化-Standardization"><a href="#1-2-标准化-Standardization" class="headerlink" title="1.2 标准化(Standardization)"></a>1.2 标准化(Standardization)</h2><script type="math/tex; mode=display">
-x' = \frac{x - \bar x}{\sigma}</script><p><img src="http://coderdock-1251264493.picsh.myqcloud.com/方差.png" alt="方差"></p>
+x' = \frac{x - \bar x}{\sigma}</script><p><img src="https://coderdock-1251264493.picsh.myqcloud.com/方差.png" alt="方差"></p>
 <h1 id="2-正规方程求解"><a href="#2-正规方程求解" class="headerlink" title="2.正规方程求解"></a>2.正规方程求解</h1><p>有时使用正规方程求解会是更好地方案:</p>
 <script type="math/tex; mode=display">
 \theta=(X^TX)^{-1}X^Ty</script><h1 id="3-逻辑回归"><a href="#3-逻辑回归" class="headerlink" title="3.逻辑回归"></a>3.逻辑回归</h1><h2 id="3-1模型"><a href="#3-1模型" class="headerlink" title="3.1模型"></a>3.1模型</h2><script type="math/tex; mode=display">
@@ -436,7 +436,7 @@ J(\theta)=-\frac{1}{m}\sum_{i=1}^my^{(i)}*log(h_\theta(x^{(i)})+(1-y^{(i)})log(1
 <script type="math/tex; mode=display">
 \theta_j:=\theta_j-\alpha\frac{\partial}{\partial\theta_j}J(\theta)</script><p>}<br>同样在此处也需要注意同时更新的问题。</p>
 <h1 id="4-简化代价函数"><a href="#4-简化代价函数" class="headerlink" title="4.简化代价函数"></a>4.简化代价函数</h1><script type="math/tex; mode=display">
-\theta_j:=\theta_j-\alpha\frac{\partial}{\partial\theta_j}J(\theta)</script><p>$\theta$更新过程：<br><img src="http://img.my.csdn.net/uploads/201407/16/1405496972_1821.png" alt="推导过程"><br>所以最后$\theta$为：</p>
+\theta_j:=\theta_j-\alpha\frac{\partial}{\partial\theta_j}J(\theta)</script><p>$\theta$更新过程：<br><img src="https://img.my.csdn.net/uploads/201407/16/1405496972_1821.png" alt="推导过程"><br>所以最后$\theta$为：</p>
 <script type="math/tex; mode=display">
 \theta_j:=\theta_j-\alpha\frac{1}{m}\sum_{i=1}^m(h_\theta(x^{(i)})-y^{(i)})x^{(i)}_j</script><p>梯度下降并不是唯一的算法，还存在：</p>
 <ul>
@@ -445,7 +445,7 @@ J(\theta)=-\frac{1}{m}\sum_{i=1}^my^{(i)}*log(h_\theta(x^{(i)})+(1-y^{(i)})log(1
 <li>L-BFGS（限制变尺度法）</li>
 </ul>
 <h1 id="5-分类1-VS-N"><a href="#5-分类1-VS-N" class="headerlink" title="5.分类1 VS N"></a>5.分类1 VS N</h1><p>版权声明：本文为博主原创文章，转载需声明为转载内容并添加原文地址。</p>
-<p>原文地址：<a href="http://coderdock.com">http://coderdock.com</a></p>
+<p>原文地址：<a href="https://coderdock.com">https://coderdock.com</a></p>
 
       
     </div>

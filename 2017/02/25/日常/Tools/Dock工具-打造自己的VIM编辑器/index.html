@@ -87,13 +87,13 @@
 <meta property="og:site_name" content="CoderDock">
 <meta property="og:description" content="作为一个经常在Linux下开发的程序员，怎么能没有自己高逼格的VIM编辑器呢？在这片教程中会一步步的搭建起自己的高逼格VIM！">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7774609-8bcbc88a48fcc65e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7774609-9b58618ebfbb8067.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-08-31T10:28:49.586Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7774609-8bcbc88a48fcc65e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7774609-9b58618ebfbb8067.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-09-07T07:47:16.169Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="打造自己的VIM编辑器">
 <meta name="twitter:description" content="作为一个经常在Linux下开发的程序员，怎么能没有自己高逼格的VIM编辑器呢？在这片教程中会一步步的搭建起自己的高逼格VIM！">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/7774609-8bcbc88a48fcc65e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/7774609-8bcbc88a48fcc65e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -432,7 +432,7 @@
 </blockquote>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">colorscheme  molokai</div><div class="line"><span class="builtin-name">set</span> <span class="attribute">t_Co</span>=256</div><div class="line"><span class="builtin-name">set</span> <span class="attribute">background</span>=dark</div></pre></td></tr></table></figure>
 <p>噔噔噔噔！打开vim编辑器是不是变得很炫酷了？</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/7774609-8bcbc88a48fcc65e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="tool-molokai.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/7774609-8bcbc88a48fcc65e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="tool-molokai.png"></p>
 <h3 id="1-2-Solarized"><a href="#1-2-Solarized" class="headerlink" title="1.2 Solarized"></a>1.2 Solarized</h3><p>&emsp;&emsp;Solarized主题是使用最广泛的vim主题。但刀客还是更喜欢molokai一点。</p>
 <blockquote>
 <ul>
@@ -460,7 +460,7 @@
 <h3 id="3-3-编译安装"><a href="#3-3-编译安装" class="headerlink" title="3.3 编译安装"></a>3.3 编译安装</h3><p>在家目录下新建一个安装目录，然后进行执行一下命令：<br><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">mkdir ~<span class="string">/.ycm_build</span></div><div class="line"><span class="keyword">cd</span> ~<span class="string">/.ycm_build</span></div><div class="line">cmake -G <span class="string">"Unix Makefiles"</span> -DUSE_SYSTEM_BOOST=ON -DUSE_SYSTEM_LIBCLANG=ON . ~<span class="string">/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp</span></div><div class="line">cmake -G <span class="string">"Unix Makefiles"</span> -DUSE_SYSTEM_BOOST=ON -DEXTERNAL_LIBCLANG_PATH=<span class="string">/usr/lib/x86_64-linux-gnu/libclang-5.0.so</span> . ~<span class="string">/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp</span></div><div class="line">cmake <span class="params">--build</span> . <span class="params">--target</span> ycm_core <span class="params">--config</span> Release</div></pre></td></tr></table></figure></p>
 <p>将配置文件拷贝到 <code>~/.vim</code><br><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cp ~<span class="regexp">/.vim/</span>bundle<span class="regexp">/YouCompleteMe/</span>third_party<span class="regexp">/ycmd/</span>examples<span class="regexp">/.ycm_extra_conf.py ~/</span>.vim<span class="regexp">/</span></div></pre></td></tr></table></figure></p>
 <p>最后在 <code>~/.vimrc</code>中添加以下语句：<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> <span class="variable">g:ycm_server_python_interpreter</span>=<span class="string">'/usr/bin/python'</span></div><div class="line"><span class="keyword">let</span> <span class="variable">g:ycm_global_ycm_extra_conf</span>=<span class="string">'~/.vim/.ycm_extra_conf.py'</span></div></pre></td></tr></table></figure></p>
-<p>打开你的编辑器看一下吧！<br><img src="http://upload-images.jianshu.io/upload_images/7774609-9b58618ebfbb8067.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="tool-YCM.png"></p>
+<p>打开你的编辑器看一下吧！<br><img src="https://upload-images.jianshu.io/upload_images/7774609-9b58618ebfbb8067.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="tool-YCM.png"></p>
 <h2 id="4-安装ctags和taglist"><a href="#4-安装ctags和taglist" class="headerlink" title="4.安装ctags和taglist"></a>4.安装ctags和taglist</h2><p>&emsp;&emsp;众所周知，在Linux阅读大型源码是一件比较困难的事情，我们可以使用SourceInsigh或者UnderStand，但是总有一种被强奸的感觉，因为这样做不Linux啊。</p>
 <p>&emsp;&emsp;总的来说，ctags负责将源码中的各个变量生成各个标签，我们可以随时查看调用位置。而taglist基于ctags提供了结构化浏览的功能，我们可以查看一个结构体中有哪些变量等等。</p>
 <h3 id="4-1-安装ctags"><a href="#4-1-安装ctags" class="headerlink" title="4.1 安装ctags"></a>4.1 安装ctags</h3><p>使用命令行：<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-<span class="builtin-name">get</span> install ctags</div></pre></td></tr></table></figure></p>
@@ -475,7 +475,7 @@
 <p>然后将目录中的文件放置到对应的文件夹即可。进入 vims使用命令 <code>NERDTreeToggle</code>看看目录结构出来了没有。我们也可以在<code>.vimrc</code>中设置快捷键<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">map &lt;F6&gt; <span class="symbol">:NERDTreeToggle&lt;CR&gt;</span></div></pre></td></tr></table></figure></p>
 <p>这样就可以使用 <code>F6</code>打开或者关闭目录结构了。</p>
 <p>版权声明：本文为博主原创文章，转载需声明为转载内容并添加原文地址。</p>
-<p>原文地址：<a href="http://coderdock.com">http://coderdock.com</a></p>
+<p>原文地址：<a href="https://coderdock.com">https://coderdock.com</a></p>
 
       
     </div>

@@ -86,15 +86,15 @@
 <meta property="og:site_name" content="CoderDock">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;IIC协议在Dock看来是最简单易懂的协议之一。本文介绍IIC协议的基础要点。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7774609-ae4c15be153e6ff7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7774609-f3d3629cfadc6e03.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7774609-3fc256a36fb3a6cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7774609-a950c9e5c99dbd82.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-08-31T10:13:06.927Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7774609-ae4c15be153e6ff7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7774609-f3d3629cfadc6e03.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7774609-3fc256a36fb3a6cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7774609-a950c9e5c99dbd82.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-09-07T07:47:15.495Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="通信协议-IIC">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;IIC协议在Dock看来是最简单易懂的协议之一。本文介绍IIC协议的基础要点。">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/7774609-ae4c15be153e6ff7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/7774609-ae4c15be153e6ff7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -419,20 +419,20 @@
 
       
         <p>&emsp;&emsp;IIC协议在Dock看来是最简单易懂的协议之一。本文介绍IIC协议的基础要点。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/7774609-ae4c15be153e6ff7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><a id="more"></a></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/7774609-ae4c15be153e6ff7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><a id="more"></a></p>
 <h2 id="1-IIC基础要点"><a href="#1-IIC基础要点" class="headerlink" title="1.IIC基础要点"></a>1.IIC基础要点</h2><ul>
 <li>在时钟的高电平周期内，SDA线上的数据必须保持稳定，数据线仅可以在时钟SCL为低电平时改变。</li>
 </ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/7774609-f3d3629cfadc6e03.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/7774609-f3d3629cfadc6e03.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <ul>
 <li>起始条件：当SCL为高电平的时候，SDA线上由高到低的跳变被定义为起始条件</li>
 <li>结束条件：当SCL为高电平的时候，SDA线上由低到高的跳变被定义为停止条件</li>
 </ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/7774609-3fc256a36fb3a6cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/7774609-3fc256a36fb3a6cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <ul>
 <li>每当主机向从机发送完一个字节的数据，主机总是需要等待从机给出一个应答信号，以确认从机是否成功接收到了数据，从机应答主机所需要的时钟仍是主机提供的，应答出现在每一次主机完成8个数据位传输后紧跟着的时钟周期，低电平0表示应答，1表示非应答。</li>
 </ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/7774609-a950c9e5c99dbd82.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/7774609-a950c9e5c99dbd82.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <h2 id="2-IIC的C实现"><a href="#2-IIC的C实现" class="headerlink" title="2 IIC的C实现"></a>2 IIC的C实现</h2><ul>
 <li><p>初始时SDA、SCL都处于高电平</p>
 <figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">void Init()</div><div class="line">&#123;</div><div class="line">    <span class="keyword">SCL </span>= <span class="number">1</span><span class="comment">;</span></div><div class="line">    delay()<span class="comment">;</span></div><div class="line">    SDA = <span class="number">1</span><span class="comment">;</span></div><div class="line">    delay()<span class="comment">;</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -451,7 +451,7 @@
 </li>
 </ul>
 <p>版权声明：本文为博主原创文章，转载需声明为转载内容并添加原文地址。</p>
-<p>原文地址：<a href="http://coderdock.com">http://coderdock.com</a></p>
+<p>原文地址：<a href="https://coderdock.com">https://coderdock.com</a></p>
 
       
     </div>
