@@ -544,8 +544,8 @@ z_{k,j}=h(y_j,x_k,v_{k,j})</script><p>在$x_k$位置看到路标点$y_j$,产生�
 
   
     <div class="comments" id="comments">
-      <div id="vcomments"></div>
     </div>
+
   
 
 
@@ -869,22 +869,26 @@ z_{k,j}=h(y_j,x_k,v_{k,j})</script><p>在$x_k$位置看到路标点$y_j$,产生�
 
 
 
+
   
   <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//cdn.jsdelivr.net/gh/xcss/valine@v1.1.7-rc3/dist/Valine.min.js"></script>
+  <script src="/js/src/Valine.min.js"></script>
+  
   <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = '';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
     new Valine({
-        av: AV,
+        av: AV, 
         el: '#comments' ,
-        verify: false,
-        notify: false,
-        app_id: 'iXqx5vV5epqoJffqvgWcOeao-gzGzoHsz',
-        app_key: 'Oa4xDOcBjwUQA40OJ6vb0pnd',
-        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!'
+        appId: 'iXqx5vV5epqoJffqvgWcOeao-gzGzoHsz',
+        appKey: 'Oa4xDOcBjwUQA40OJ6vb0pnd',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
     });
   </script>
-
-
+ 
 
   
 

@@ -750,6 +750,25 @@
 
 
 
+  
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="/js/src/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = '';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        av: AV, 
+        el: '#comments' ,
+        appId: 'iXqx5vV5epqoJffqvgWcOeao-gzGzoHsz',
+        appKey: 'Oa4xDOcBjwUQA40OJ6vb0pnd',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+    });
+  </script>
+ 
 
   
 
