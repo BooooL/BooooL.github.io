@@ -305,35 +305,6 @@
     
     
     <entry>
-      <title>FPGA算法映射思考</title>
-      <link href="/2017/09/07/FPGA/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/FPGA%E7%AE%97%E6%B3%95%E6%98%A0%E5%B0%84%E8%A6%81%E7%82%B9/"/>
-      <url>/2017/09/07/FPGA/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/FPGA%E7%AE%97%E6%B3%95%E6%98%A0%E5%B0%84%E8%A6%81%E7%82%B9/</url>
-      
-        <content type="html"><![CDATA[<p>将图像处理的算法转换为FPGA系统设计的过程称为算法映射，CPU并行算法的实现与FPGA并行算法的实现是有一定区别的。<br><img src="https://coderdock-1251264493.picsh.myqcloud.com/FPGA算法映射.png" alt="FPGA"><br><a id="more"></a></p><h1 id="1-算法系统结构"><a href="#1-算法系统结构" class="headerlink" title="1.算法系统结构"></a>1.算法系统结构</h1><p>图像处理算法主要有两种设计结构：流水线结构和并行阵列结构。</p><h2 id="1-1-流水线结构"><a href="#1-1-流水线结构" class="headerlink" title="1.1 流水线结构"></a>1.1 流水线结构</h2><p>在我看来，流水线结构和我们之前所理解的CPU的串行结构还是有一定区别的。相反，它与处理器的流水线结构很相似，都是依照时钟来进行流水层级的同步。</p><p><img src="https://coderdock-1251264493.picsh.myqcloud.com/流水线.jpg" alt="流水线"></p><h2 id="1-2并行阵列结构"><a href="#1-2并行阵列结构" class="headerlink" title="1.2并行阵列结构"></a>1.2并行阵列结构</h2><figure class="highlight xl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">|--D<span class="function"><span class="title">ata1</span>---&gt;</span>D<span class="function"><span class="title">ata1</span>--&gt;</span>Data1</div><div class="line">|</div><div class="line">I<span class="function"><span class="title">nputData</span>------Data2---&gt;</span>D<span class="function"><span class="title">ata2</span>--&gt;</span>Data2</div><div class="line">|</div><div class="line">|--D<span class="function"><span class="title">ata3</span>---&gt;</span>D<span class="function"><span class="title">ata3</span>--&gt;</span>Data3</div></pre></td></tr></table></figure><h1 id="2-算法转换"><a href="#2-算法转换" class="headerlink" title="2.算法转换"></a>2.算法转换</h1><h2 id="2-1-定常数转换"><a href="#2-1-定常数转换" class="headerlink" title="2.1 定常数转换"></a>2.1 定常数转换</h2><p>对于FPGA而言，做加法与移位较为简单，而涉及到乘法与除法时需要调用到乘法器或除法器，这在FPGA中是较为宝贵的资源，所以作为定常数，我们尽量转换为移位和加法运算，如：<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">ex1:</span></div><div class="line">dout = <span class="keyword">din </span>* <span class="number">255</span></div><div class="line">转换后</div><div class="line">dout = ( <span class="keyword">din </span>&lt;&lt; <span class="number">8</span> ) - <span class="keyword">din</span></div><div class="line"><span class="keyword"></span></div><div class="line"><span class="keyword">ex2:</span></div><div class="line"><span class="keyword"></span>dout = <span class="keyword">din </span>* <span class="number">11</span></div><div class="line">转换后：</div><div class="line">dout = <span class="keyword">din </span>* <span class="number">2</span>^<span class="number">2</span> + <span class="keyword">din </span>* <span class="number">2</span>^<span class="number">3</span> - <span class="keyword">din </span>* <span class="number">2</span>^<span class="number">0</span></div><div class="line"> = <span class="keyword">din </span>* (<span class="number">2</span>^<span class="number">2</span> + <span class="number">2</span>^<span class="number">3</span> - <span class="number">2</span>^<span class="number">0</span>)</div></pre></td></tr></table></figure></p><p>上式中的255 和 11就是定常数</p><h2 id="2-2-不等式等效转换"><a href="#2-2-不等式等效转换" class="headerlink" title="2.2 不等式等效转换"></a>2.2 不等式等效转换</h2><p>进行转换的目的也是为了在FPGA实现后能够更加节省资源。如：<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">ex1</span>:</div><div class="line">√a￣  &lt; <span class="keyword">b, </span>a &gt; <span class="number">0</span></div><div class="line">转换后：</div><div class="line"><span class="keyword">b^2 </span>&gt; a</div><div class="line"></div><div class="line"><span class="symbol">ex2</span>:</div><div class="line">a/<span class="keyword">b </span>&gt; c/<span class="keyword">b </span>(<span class="keyword">b </span>&gt; <span class="number">0</span>, d &gt; <span class="number">0</span>)</div><div class="line">转换后</div><div class="line">a * d &gt; <span class="keyword">b </span>* c</div></pre></td></tr></table></figure></p><h2 id="2-3-取近似值"><a href="#2-3-取近似值" class="headerlink" title="2.3 取近似值"></a>2.3 取近似值</h2><p>最简单的近似值莫过于四舍五入，假如某数据D[-1~4]为整数部分，D[3~0]为小数部分，那么四舍五入可为:<br><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">assign dout = din<span class="string">[3]</span>?(dout<span class="string">[-1~4]</span> + <span class="number">1</span>) : (dout<span class="string">[-1~4]</span>)</div></pre></td></tr></table></figure></p><p>泰勒公式定义<br><img src="https://coderdock-1251264493.picsh.myqcloud.com/泰勒公式.jpg" alt="泰勒公式"><br>那么就可以有如下近似转换：<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>/<span class="number">3</span> = <span class="number">1</span>/<span class="number">4</span> * (<span class="number">1</span> + <span class="number">1</span>/<span class="number">4</span> + <span class="number">1</span>/<span class="number">16</span> + <span class="number">1</span>/<span class="number">64</span> + <span class="number">1</span>/<span class="number">256</span>)</div></pre></td></tr></table></figure></p><h1 id="3-构造查找表"><a href="#3-构造查找表" class="headerlink" title="3.构造查找表"></a>3.构造查找表</h1><p>查找表是使用简单的查询操作代替运行时的实时计算，使用查找表代替那些运行时经常需要用到的运算能够极大的减少时间复杂度，如我们经常用到的三角函数就应该使用查找表替换实时计算。</p><p>版权声明：本文为博主原创文章，转载需声明为转载内容并添加原文地址。</p><p>原文地址：<a href="https://coderdock.com">https://coderdock.com</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> FPGA </category>
-          
-          <category> 图像处理 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> FPGA </tag>
-            
-            <tag> 算法映射 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>OpenCL-3-同步机制</title>
       <link href="/2017/09/06/GPU/OpenCL/OpenCL-3-%E5%90%8C%E6%AD%A5%E6%9C%BA%E5%88%B6/"/>
       <url>/2017/09/06/GPU/OpenCL/OpenCL-3-%E5%90%8C%E6%AD%A5%E6%9C%BA%E5%88%B6/</url>
@@ -562,35 +533,6 @@
             <tag> 基础概念 </tag>
             
             <tag> USB </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>图像处理基础</title>
-      <link href="/2017/08/01/FPGA/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80/"/>
-      <url>/2017/08/01/FPGA/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80/</url>
-      
-        <content type="html"><![CDATA[<p>图像处理的一些基础知识。</p><a id="more"></a><h1 id="1-图像处理流程"><a href="#1-图像处理流程" class="headerlink" title="1.图像处理流程"></a>1.图像处理流程</h1><ul><li>图像采集，这是进行图像处理的第一步。其中<code>采样频率</code>直接影响到采集图像的质量。</li><li>图像量化，是将采集到的数据进行量化处理，如一个像素点是使用MONO还是RGB进行表征。</li><li>图像处理, 得到图像后，需要尽快的进行处理，现在进行的图像处理主要有以下几点：<ul><li>图像变换，有时进行较大图像处理时，会耗费很大的资源，那么往往采取将空间域的图像转换到转换域进行处理，不仅可以减少计算量，而且能够得到更有效的处理。（傅里叶变换、沃尔什变换、离散余弦变换）</li><li>图像编码压缩，目的是在尽量不失真的情况下减少图像的体积。常用的压缩</li><li>图像增强和复原，其目的是为了提高图像的质量，例如去除噪声、提高清晰度</li><li>图像分割，图像分割是将图像中有意义的部分提取出来，如提取边缘、区域等，这是进一步进行图像识别、分析和理解的基础。<h1 id="2-图像处理算法"><a href="#2-图像处理算法" class="headerlink" title="2.图像处理算法"></a>2.图像处理算法</h1><h2 id="2-1傅里叶转换"><a href="#2-1傅里叶转换" class="headerlink" title="2.1傅里叶转换"></a>2.1傅里叶转换</h2>任何周期函数，都可以看作是不同振幅，不同相位正弦波的叠加。</li></ul></li></ul><p><iframe height="260" width="300" src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Fourier_series_and_transform.gif"></></iframe></p><ul><li>连续傅里叶转换</li></ul><p><img src="https://coderdock-1251264493.picsh.myqcloud.com/FFT_Convert.jpg" alt="img"></p><ul><li>连续傅里叶逆转换</li></ul><p><img src="https://coderdock-1251264493.picsh.myqcloud.com/FFT_Anti_Convert.jpg" alt="img"></p><h2 id="2-2卷积"><a href="#2-2卷积" class="headerlink" title="2.2卷积"></a>2.2卷积</h2><p>卷积（Convolution）是一个常用的图像处理技术，可以改变像素强度，从而影响周围其他像素的强度。卷积的常用技术是创建滤镜，使用卷积技术，你可以获取一些流行的图像效果，比如模糊（blur）、锐化（sharpen）及边缘检测（edge detection），这些效果在Photo Booth、iPhoto和Aperture都有广泛使用。</p><p><img src="https://img.blog.csdn.net/20151012211045222?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="卷积"></p><p>版权声明：本文为博主原创文章，转载需声明为转载内容并添加原文地址。</p><p>原文地址：<a href="https://coderdock.com">https://coderdock.com</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> FPGA </category>
-          
-          <category> 图像处理 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 图像处理 </tag>
-            
-            <tag> 基础概念 </tag>
             
         </tags>
       
@@ -931,35 +873,6 @@
             <tag> Verilog HDL </tag>
             
             <tag> IIC实现 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>FPGA图像处理缓存处理方式</title>
-      <link href="/2017/06/08/FPGA/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/FPGA%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%BC%93%E5%AD%98%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F/"/>
-      <url>/2017/06/08/FPGA/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/FPGA%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%BC%93%E5%AD%98%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F/</url>
-      
-        <content type="html"><![CDATA[<p>在FPGA进行图像处理的过程中，存储单元往往是比较宝贵的，如果使用外部存储，又会存在读取速度较慢的掣肘。<br><img src="https://coderdock-1251264493.picsh.myqcloud.com/图形缓存.png" alt="图像缓存"></p><a id="more"></a><h1 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h1><p>一般情况下，在FPGA中进行处理图像时，我们总是希望能够处理更大的图像，但是FPGFA中的存储单元往往是较为宝贵的资源，尤其是图像尺寸很大的时候，就变得更加不现实，那么此时，对于整幅图像的处理根据其大小就分为两种方式， 帧缓存或者行缓存。</p><h1 id="2-帧缓存"><a href="#2-帧缓存" class="headerlink" title="2.帧缓存"></a>2.帧缓存</h1><p>假如我们在图像处理过程中，我们需要对 <code>n-2 、n-1、 n</code>s三帧图像进行求平均值处理，那么我们就需要至少缓存三帧图像以供处理。<br>如下所示：<br><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">din-----------&gt;FB1 -----------&gt; FB2 ---------&gt;|<span class="string"> </span>|</div><div class="line">|<span class="string"></span>|<span class="string"></span>|<span class="string">  </span>|<span class="string"> </span>|</div><div class="line">|<span class="string"></span>|<span class="string">-----&gt;</span>|<span class="string">+ </span>|<span class="string">-----&gt;dout</span></div><div class="line"><span class="string"></span>|<span class="string">---------------------&gt;</span>|<span class="string"> </span>|</div><div class="line">-------------------------------------&gt;|<span class="string"> </span>|</div></pre></td></tr></table></figure></p><p>在此种处理方式下，如果图像尺寸较大，就需要将图像存储在外部存储器中 :SRAM或DDR:</p><ul><li>SRAM，如果对成本不太敏感，那么最好使用SRAM，相比于DDR来说，接口较为简单、速度较快、功耗比较低。</li><li>DDR，如果使用DDR作为外部存储的话，那么我们需要设计读地址发生器，写地址发生器以及读写时序控制，使用DDR适用于对读取速度没有太高要求的情景。</li></ul><h1 id="3-行缓存"><a href="#3-行缓存" class="headerlink" title="3.行缓存"></a>3.行缓存</h1><p>如果对读取速度很敏感并且图片较大的情况下，那我们只能转换策略，用<code>时间换空间</code>,换言之，我们在读取图像的时候以行为单位进行处理。比如进行二维 3*3图像卷积处理，那么依据卷积的处理方法，我们需要使用三行帧缓存进行处理进行处理，如下所示：<br><img src="https://coderdock-1251264493.picsh.myqcloud.com/行缓存.png" alt="行缓存"><br>正如前面所示，行缓存会放在片内，每一个行缓存有效地将输入延迟了一行，那么在我们我们在进行卷积计算时就可以使用蓝色区域内的寄存器进行卷积计算。下面使用一个FIFO实现一个行缓存实例：<br><figure class="highlight verilog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">module</span> line_buffer&#123;</div><div class="line">rst,</div><div class="line">clk,</div><div class="line">din,</div><div class="line">dout,</div><div class="line">wr_en,</div><div class="line">rd_en,</div><div class="line">empty,</div><div class="line">full,</div><div class="line">count</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">parameter</span> DW = <span class="number">14</span>;<span class="comment">//数据位宽为14</span></div><div class="line">paremeter IW = <span class="number">640</span>;<span class="comment">//</span></div><div class="line"><span class="keyword">parameter</span> DEPTH = <span class="number">1024</span>;<span class="comment">//宽度为1024</span></div><div class="line"><span class="keyword">parameter</span> DW_DEPTH = <span class="number">10</span>;<span class="comment">//需要Depth = 10 , 2^10 = 1024，即是下方count的计数</span></div><div class="line"><span class="keyword">localparam</span> DW_PER_FIFO = <span class="number">8</span>;<span class="comment">//假设FIFO的位宽为8，那么对于位宽大于8的数据，我们需要"并联"数据使用</span></div><div class="line"><span class="keyword">localparam</span> DW_PER_FIFO_LOG2 =<span class="number">3</span>;<span class="comment">//log为3，2^3=8,下面使用移位进行，而不是除法运算</span></div><div class="line"><span class="keyword">localparam</span> FIFO_NUM = ((DW + DW_PER_FIFO -<span class="number">1</span>) &gt;&gt; DW_PER_FIFO_LOG2 );</div><div class="line"><span class="comment">//计算FIFO的数目(数据位宽为14，所以FIFO数目为 (14+8-1)/8 = 2)</span></div><div class="line"></div><div class="line"><span class="keyword">input</span> rst;</div><div class="line"><span class="keyword">input</span> clk;</div><div class="line"><span class="keyword">input</span> [DW-<span class="number">1</span>:<span class="number">0</span>] din;</div><div class="line"><span class="keyword">output</span> [DW-<span class="number">1</span>:<span class="number">0</span>] dout;</div><div class="line"><span class="keyword">input</span> wr_en;</div><div class="line"><span class="keyword">input</span> rd_en;</div><div class="line"><span class="keyword">output</span> empty;</div><div class="line"><span class="keyword">output</span> full;</div><div class="line"><span class="keyword">output</span> [DW_DEPTH-<span class="number">1</span>:<span class="number">0</span>] count;<span class="comment">//2^10 = 1024</span></div><div class="line"></div><div class="line"><span class="keyword">wire</span> [DW_PER_FIFO-<span class="number">1</span>:<span class="number">0</span>] din_tmp[<span class="number">0</span>:FIFO_NUM-<span class="number">1</span>];<span class="comment">//定义输入暂存</span></div><div class="line"><span class="keyword">wire</span> [DW_PER_FIFO*FIFO_NUM-<span class="number">1</span>:<span class="number">0</span>] dout_tmp;<span class="comment">//输出暂存</span></div><div class="line"></div><div class="line"><span class="keyword">assign</span> din_tmp[<span class="number">0</span>] = din[DW_PER_FIFO-<span class="number">1</span>-:DW_PER_FIFO];</div><div class="line"></div><div class="line">altera_fifo_640 <span class="variable">#(DW_PER_FIFO, DEPTH, DW_DEPTH)</span></div><div class="line">buf_lsb(</div><div class="line"><span class="variable">.aclr</span>(rst),</div><div class="line"><span class="variable">.clock</span>(clk),</div><div class="line"><span class="variable">.data</span>(din_tmp[<span class="number">0</span>]),</div><div class="line"><span class="variable">.rdreg</span>(rd_en),</div><div class="line"><span class="variable">.wrreg</span>(wr_en),</div><div class="line"><span class="variable">.q</span>(dout_temp[DW_PER_FIFO-<span class="number">1</span>:<span class="number">0</span>]),</div><div class="line"><span class="variable">.usedev</span>(count),</div><div class="line"><span class="variable">.empty</span>(empty),</div><div class="line"><span class="variable">.full</span>(full)</div><div class="line">);</div><div class="line"></div><div class="line"><span class="keyword">assign</span> dout = dout_tmp[DW-<span class="number">1</span>:<span class="number">0</span>];</div><div class="line"></div><div class="line"><span class="keyword">generate</span></div><div class="line"><span class="keyword">begin</span>: fifo_generate</div><div class="line"><span class="keyword">genvar</span> i;</div><div class="line"><span class="keyword">genvar</span> j;</div><div class="line"></div><div class="line"><span class="keyword">for</span>(j=<span class="number">1</span>; j&lt;FIFO_NUM-<span class="number">2</span>; j= j+<span class="number">1</span>)</div><div class="line"><span class="keyword">begin</span> :xhdll</div><div class="line"><span class="keyword">assign</span> din_temp[j] = din[DW_PER_FIFO*(j+<span class="number">1</span>)-<span class="number">1</span>-:DW_PER_FIFO];</div><div class="line"><span class="keyword">end</span></div><div class="line"></div><div class="line"><span class="keyword">if</span>(FIFO_NUM &gt; <span class="number">1</span>)</div><div class="line"><span class="keyword">assign</span> din_temp[FIFO_NUM-<span class="number">1</span>] = &#123;&#123;DW_PER_FIFO*FIFO_NUM-DW&#123;<span class="number">1'b0</span>&#125;&#125;, din[DW_PER_FIFO*(FIFO_NUM-<span class="number">1</span>)]&#125;;</div><div class="line"></div><div class="line"><span class="keyword">for</span>(i = <span class="number">1</span>; i&lt;= FIFO_NUM - <span class="number">1</span>; i = i + <span class="number">1</span>)</div><div class="line"><span class="keyword">begin</span> :xhd12</div><div class="line">altera_fifo_640 <span class="variable">#(DW_PER_FIFO,DEPTH, DW_DEPTH)</span></div><div class="line">buf_others(</div><div class="line"><span class="variable">.aclr</span>(rst),</div><div class="line"><span class="variable">.clock</span>(clk),</div><div class="line"><span class="variable">.data</span>(din_temp[i]),</div><div class="line"><span class="variable">.rdreg</span>(rd_en),</div><div class="line"><span class="variable">.wrreg</span>(wr_en),</div><div class="line"><span class="variable">.q</span>(dout_tmp[DW_PER_FIFO*(i+<span class="number">1</span>) -<span class="number">1</span>-:DW_PER_FIFO])</div><div class="line">);</div><div class="line"></div><div class="line"><span class="keyword">end</span></div><div class="line">emd</div><div class="line"><span class="keyword">endgenerate</span></div><div class="line"></div><div class="line"><span class="keyword">endmodule</span></div></pre></td></tr></table></figure></p><p>版权声明：本文为博主原创文章，转载需声明为转载内容并添加原文地址。</p><p>原文地址：<a href="https://coderdock.com">https://coderdock.com</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> FPGA </category>
-          
-          <category> 图像处理 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> FPGA </tag>
-            
-            <tag> 图像处理， 缓存处理 </tag>
             
         </tags>
       
