@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>常用命令</title>
+      <link href="/2019/10/02/%E6%97%A5%E5%B8%B8/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+      <url>/2019/10/02/%E6%97%A5%E5%B8%B8/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+      
+        <content type="html"><![CDATA[<p>日常用到的命令记录。<br><a id="more"></a></p><ul><li>使用命令查看当前目录下目录的大小<code>du -h --max-depth=1</code></li><li>挂载移动硬盘、Upan无法卸载，使用fuser命令查看占用进程，然后使用kill命令杀死占用进程即可<code>sudo fuser -m -v Ext4</code></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 日常 </category>
+          
+          <category> 常用命令 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 日常 </tag>
+            
+            <tag> 常用命令 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>OpenGL是什么</title>
       <link href="/2018/06/10/GPU/OpenGL/OpenGL-0-OpenGL%E6%98%AF%E4%BB%80%E4%B9%88/"/>
       <url>/2018/06/10/GPU/OpenGL/OpenGL-0-OpenGL%E6%98%AF%E4%BB%80%E4%B9%88/</url>
@@ -530,9 +559,9 @@
       
         <tags>
             
-            <tag> 基础概念 </tag>
-            
             <tag> USB </tag>
+            
+            <tag> 基础概念 </tag>
             
         </tags>
       
