@@ -7,7 +7,7 @@
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+  <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
@@ -80,17 +80,16 @@
 
 
 <meta name="description" content="对OpenGL有一个大概的认识！">
-<meta name="keywords" content="OpenGL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OpenGL是什么">
-<meta property="og:url" content="http://coderdock.com/2018/06/10/GPU/OpenGL/OpenGL-0-OpenGL是什么/index.html">
+<meta property="og:url" content="http://coderdock.com/2018/06/10/GPU/OpenGL/OpenGL-0-OpenGL%E6%98%AF%E4%BB%80%E4%B9%88/index.html">
 <meta property="og:site_name" content="CoderDock">
 <meta property="og:description" content="对OpenGL有一个大概的认识！">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-07T07:47:15.857Z">
+<meta property="article:published_time" content="2018-06-10T14:28:13.000Z">
+<meta property="article:modified_time" content="2020-05-24T09:10:00.842Z">
+<meta property="article:author" content="Dock">
+<meta property="article:tag" content="OpenGL">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="OpenGL是什么">
-<meta name="twitter:description" content="对OpenGL有一个大概的认识！">
 
 
 
@@ -141,12 +140,12 @@
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
-  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </script>
 
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -155,7 +154,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -192,7 +191,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -202,7 +201,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -212,7 +211,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -222,7 +221,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -232,7 +231,7 @@
       
         
         <li class="menu-item menu-item-friendlink">
-          <a href="/friendlink" rel="section">
+          <a href="/friendlink%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-group"></i> <br />
             
@@ -242,7 +241,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -317,7 +316,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2018/06/10/GPU/OpenGL/OpenGL-0-OpenGL是什么/">
+    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2018/06/10/GPU/OpenGL/OpenGL-0-OpenGL%E6%98%AF%E4%BB%80%E4%B9%88/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dock">
@@ -411,7 +410,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.2k
+                  
                 </span>
               
 
@@ -427,7 +426,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  
                 </span>
               
             </div>
@@ -450,6 +449,8 @@
       
         <p>对OpenGL有一个大概的认识！</p>
 <a id="more"></a>
+
+
 <p>今天是我们OpenGL 系列教程的第零讲。在后面的教程我们中会讲述OPenGL工作的详细流程以及原理，以及怎么使用OpenGL，这一听起来很牛叉的东西。 现在我们先来大概认识一下openGL到底是个什么东东。OpenGL的全称是 Open Graphic Library, 即 开放的图像库。图形库嘛，就是用来显示图形的程序。我们都知道，再复杂的图形都是由点 线 面 三种元素构成的，而OpenGL就是使用GPU、显卡来绘制这些基础元素的，从而组成我们看到的的各种图形。话说在很久以前，老王在他们软件公司是负责开发软件图形界面的，总是调用 Nvidia、Intel、AMD提供的GPU驱动进行软件图形的编程，但是三家的实现思路不一致，老李家的驱动画一个矩形要传入 X 、Y、宽度、 高度这四个参数、 但是呢、老赵家却要传入传入左上角的 X、Y以及右下角的 X、Y。 这让老王那个烦啊，搞得他那个生活都不和谐了。于是他就去了老赵，老李家，打算跟他们商量一下统一调用的问题、恰巧老赵老李不在家，只有他俩媳妇儿在家，于是。。 老王就走了。。。。改天再来。后来呢，老王就根据自己丰富的图形编程经验，给老赵老李出了一个参考标准，其实呢、就是一个头文件，这里边规定了一个函数实现什么功能，传入什么样的参数，并且对他们说，你们谁实现的好，我就多买谁家的GPU。于是呢 ，老王从此以后，只要写一套程序就可以运行在所有的GPU上了。老王呢就是 KHRONOS,这里我们不多做介绍，只需要知道从此我们使用GPU进行图形编程，只需要调用openGL就可以实现同样的效果就可以了。</p>
 <p>一套API,就是说，包含同一个头文件，调用各个显卡厂商提供的驱动函数，就可以实现同样的功能，。</p>
 <p>一套标准，就是说，这个标准对大多数的硬件都是适用的，正如这张图里所展示的，所有的接口都是规定好的,无论我们买哪一家的内存，都是可以直接插上去使用的。对于软件也是如此。大多数的显卡厂商都实现了这个API，业内进行GPU图形编程的时候、首先想到的应该是opengl。 等等，为什么是应该，因为在Windows上还有DirectX 以及最近的新标准 ValKan,不过这是后话，我们这里不多说。</p>
@@ -457,7 +458,7 @@
 <p>假如你的面前有一条河，固定管线就相当于由一个老伯乘着船将你们渡过去， 来了牛，度过去，来了车， 度过去， 来了老王、度过去、来了老王媳妇儿、。。。 渡过出去。可以看出，功能比较单一。但是呢，非固定管线就不一样了，我们可以从桥上边开车过去，可以骑车过去。可以跑过去，甚至呢，滚过去都可以、非固定管线不再提供固定功能-这里就是指撑船的老伯，而是建好一个通道，让你自己决定 怎么过去。那么我们怎么过去的方式就是Shader,我们自己编写的运行在GPU上的程序。关于Shader怎么写，我们会在后续的章节中详细介绍。</p>
 <p>使用 OpenGL 我们可以在几乎你能想到的所有操作系统上写出绚丽多彩，运行高效的程序！</p>
 <p>版权声明：本文为博主原创文章，转载需声明为转载内容并添加原文地址。</p>
-<p>原文地址：<a href="https://coderdock.com">https://coderdock.com</a></p>
+<p>原文地址：<a href="https://coderdock.com" target="_blank" rel="noopener">https://coderdock.com</a></p>
 
       
     </div>
@@ -496,7 +497,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/24/GPU/Cuda/ROS内使用Cuda加速的配置/" rel="next" title="ROS内使用Cuda加速的配置">
+              <a href="/2018/01/24/GPU/Cuda/ROS%E5%86%85%E4%BD%BF%E7%94%A8Cuda%E5%8A%A0%E9%80%9F%E7%9A%84%E9%85%8D%E7%BD%AE/" rel="next" title="ROS内使用Cuda加速的配置">
                 <i class="fa fa-chevron-left"></i> ROS内使用Cuda加速的配置
               </a>
             
@@ -506,7 +507,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/10/02/日常/常用命令/" rel="prev" title="常用命令">
+              <a href="/2019/10/02/%E6%97%A5%E5%B8%B8/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" rel="prev" title="常用命令">
                 常用命令 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -582,7 +583,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">日志</span>
@@ -594,10 +595,10 @@
               
               
               <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
+                
                   <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">分类</span>
-                </a>
+                
               </div>
             
 
@@ -605,10 +606,10 @@
               
               
               <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
+                
                   <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">标签</span>
-                </a>
+                
               </div>
             
 
@@ -662,7 +663,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">49.9k</span>
+    <span title="Site words total count"></span>
   
 </div>
 
@@ -1221,7 +1222,7 @@
   
  
 <script type="text/javascript"
-color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
 
 
 

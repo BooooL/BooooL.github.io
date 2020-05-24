@@ -7,7 +7,7 @@
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+  <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
@@ -80,19 +80,20 @@
 
 
 <meta name="description" content="&amp;emsp;&amp;emsp;在本节会介绍如何从头搭建使用qemu + uboot的虚拟开发环境。">
-<meta name="keywords" content="虚拟开发板,uboot,环境搭建">
 <meta property="og:type" content="article">
 <meta property="og:title" content="虚拟开发板-uboot环境搭建">
-<meta property="og:url" content="http://coderdock.com/2017/04/27/VirtualBoard/虚拟开发板-uboot环境搭建/index.html">
+<meta property="og:url" content="http://coderdock.com/2017/04/27/VirtualBoard/%E8%99%9A%E6%8B%9F%E5%BC%80%E5%8F%91%E6%9D%BF-uboot%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.html">
 <meta property="og:site_name" content="CoderDock">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;在本节会介绍如何从头搭建使用qemu + uboot的虚拟开发环境。">
-<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://img.blog.csdn.net/20171227173636412?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzk4OTI4NA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 <meta property="og:image" content="https://img.blog.csdn.net/20171227173636412?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzk4OTI4NA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2019-09-07T07:47:16.083Z">
+<meta property="article:published_time" content="2017-04-27T08:30:14.000Z">
+<meta property="article:modified_time" content="2020-05-24T09:10:00.858Z">
+<meta property="article:author" content="Dock">
+<meta property="article:tag" content="虚拟开发板">
+<meta property="article:tag" content="uboot">
+<meta property="article:tag" content="环境搭建">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="虚拟开发板-uboot环境搭建">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;在本节会介绍如何从头搭建使用qemu + uboot的虚拟开发环境。">
 <meta name="twitter:image" content="https://img.blog.csdn.net/20171227173636412?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzk4OTI4NA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 
 
@@ -144,12 +145,12 @@
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
-  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </script>
 
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -158,7 +159,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -195,7 +196,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -205,7 +206,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -215,7 +216,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -225,7 +226,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -235,7 +236,7 @@
       
         
         <li class="menu-item menu-item-friendlink">
-          <a href="/friendlink" rel="section">
+          <a href="/friendlink%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-group"></i> <br />
             
@@ -245,7 +246,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -320,7 +321,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2017/04/27/VirtualBoard/虚拟开发板-uboot环境搭建/">
+    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2017/04/27/VirtualBoard/%E8%99%9A%E6%8B%9F%E5%BC%80%E5%8F%91%E6%9D%BF-uboot%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dock">
@@ -372,7 +373,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/虚拟开发板/" itemprop="url" rel="index">
+                  <a href="/categories/%E8%99%9A%E6%8B%9F%E5%BC%80%E5%8F%91%E6%9D%BF/" itemprop="url" rel="index">
                     <span itemprop="name">虚拟开发板</span>
                   </a>
                 </span>
@@ -383,7 +384,7 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/虚拟开发板/Qemu/" itemprop="url" rel="index">
+                  <a href="/categories/%E8%99%9A%E6%8B%9F%E5%BC%80%E5%8F%91%E6%9D%BF/Qemu/" itemprop="url" rel="index">
                     <span itemprop="name">Qemu</span>
                   </a>
                 </span>
@@ -414,7 +415,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  130
+                  
                 </span>
               
 
@@ -430,7 +431,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  
                 </span>
               
             </div>
@@ -453,16 +454,17 @@
       
         <p>&emsp;&emsp;在本节会介绍如何从头搭建使用qemu + uboot的虚拟开发环境。<br><img src="https://img.blog.csdn.net/20171227173636412?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzk4OTI4NA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="uboot"></p>
 <a id="more"></a>
+
 <h1 id="1-下载安装-uboot-qemu-arm-linux-gnu"><a href="#1-下载安装-uboot-qemu-arm-linux-gnu" class="headerlink" title="1.下载安装 uboot qemu arm-linux-gnu"></a>1.下载安装 uboot qemu arm-linux-gnu</h1><ul>
 <li>uboot : <a href="https://www.denx.de/wiki/U-Boot/" target="_blank" rel="noopener">https://www.denx.de/wiki/U-Boot/</a></li>
 <li>qemu : sudo apt-get install qemu</li>
 <li>arm-linux-gcc : sudo apt-get install gcc-arm-linux-gnueabi 或 <a href="https://www.linaro.org/" target="_blank" rel="noopener">https://www.linaro.org/</a></li>
 </ul>
-<h1 id="2-编译uboot"><a href="#2-编译uboot" class="headerlink" title="2. 编译uboot"></a>2. 编译uboot</h1><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="builtin-name">export</span> <span class="attribute">ARCH</span>=arm</div><div class="line"><span class="builtin-name">export</span> <span class="attribute">CROSS_COMPILE</span>=arm-linux-gnueabi-</div><div class="line">make vexpress_ca9x4_config</div><div class="line">make -j4</div></pre></td></tr></table></figure>
-<h1 id="3-qemu启动uboot"><a href="#3-qemu启动uboot" class="headerlink" title="3. qemu启动uboot"></a>3. qemu启动uboot</h1><figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">qemu</span>-system-<span class="meta">arm</span> -M vexpress-a9 -m <span class="number">256</span>M -nographic -kernel u-<span class="keyword">boot</span></div></pre></td></tr></table></figure>
+<h1 id="2-编译uboot"><a href="#2-编译uboot" class="headerlink" title="2. 编译uboot"></a>2. 编译uboot</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export ARCH&#x3D;arm</span><br><span class="line">export CROSS_COMPILE&#x3D;arm-linux-gnueabi-</span><br><span class="line">make vexpress_ca9x4_config</span><br><span class="line">make -j4</span><br></pre></td></tr></table></figure>
+<h1 id="3-qemu启动uboot"><a href="#3-qemu启动uboot" class="headerlink" title="3. qemu启动uboot"></a>3. qemu启动uboot</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">qemu-system-arm -M vexpress-a9 -m 256M -nographic -kernel u-boot</span><br></pre></td></tr></table></figure>
 <p><img src="https://img.blog.csdn.net/20171227173636412?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzk4OTI4NA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="uboot"></p>
 <p>版权声明：本文为博主原创文章，转载需声明为转载内容并添加原文地址。</p>
-<p>原文地址：<a href="https://coderdock.com">https://coderdock.com</a></p>
+<p>原文地址：<a href="https://coderdock.com" target="_blank" rel="noopener">https://coderdock.com</a></p>
 
       
     </div>
@@ -488,11 +490,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/虚拟开发板/" rel="tag"># 虚拟开发板</a>
+            <a href="/tags/%E8%99%9A%E6%8B%9F%E5%BC%80%E5%8F%91%E6%9D%BF/" rel="tag"># 虚拟开发板</a>
           
             <a href="/tags/uboot/" rel="tag"># uboot</a>
           
-            <a href="/tags/环境搭建/" rel="tag"># 环境搭建</a>
+            <a href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" rel="tag"># 环境搭建</a>
           
         </div>
       
@@ -505,7 +507,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/27/ARM&Linux/Linux驱动/uboot工程配置简要分析/" rel="next" title="uboot 配置分析">
+              <a href="/2017/04/27/ARM&Linux/Linux%E9%A9%B1%E5%8A%A8/uboot%E5%B7%A5%E7%A8%8B%E9%85%8D%E7%BD%AE%E7%AE%80%E8%A6%81%E5%88%86%E6%9E%90/" rel="next" title="uboot 配置分析">
                 <i class="fa fa-chevron-left"></i> uboot 配置分析
               </a>
             
@@ -515,7 +517,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/28/VirtualBoard/虚拟开发板-Linux环境搭建/" rel="prev" title="虚拟开发板-Linux环境搭建">
+              <a href="/2017/04/28/VirtualBoard/%E8%99%9A%E6%8B%9F%E5%BC%80%E5%8F%91%E6%9D%BF-Linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" rel="prev" title="虚拟开发板-Linux环境搭建">
                 虚拟开发板-Linux环境搭建 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -600,7 +602,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">日志</span>
@@ -612,10 +614,10 @@
               
               
               <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
+                
                   <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">分类</span>
-                </a>
+                
               </div>
             
 
@@ -623,10 +625,10 @@
               
               
               <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
+                
                   <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">标签</span>
-                </a>
+                
               </div>
             
 
@@ -696,7 +698,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">49.9k</span>
+    <span title="Site words total count"></span>
   
 </div>
 
@@ -1255,7 +1257,7 @@
   
  
 <script type="text/javascript"
-color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
 
 
 

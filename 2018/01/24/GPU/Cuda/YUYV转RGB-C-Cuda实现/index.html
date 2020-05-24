@@ -7,7 +7,7 @@
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+  <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
@@ -80,17 +80,18 @@
 
 
 <meta name="description" content="介绍Cuda实现YUYV转RGB算法。">
-<meta name="keywords" content="Cuda,YUYV,RGB">
 <meta property="og:type" content="article">
 <meta property="og:title" content="YUYV转RGB-C-Cuda实现">
-<meta property="og:url" content="http://coderdock.com/2018/01/24/GPU/Cuda/YUYV转RGB-C-Cuda实现/index.html">
+<meta property="og:url" content="http://coderdock.com/2018/01/24/GPU/Cuda/YUYV%E8%BD%ACRGB-C-Cuda%E5%AE%9E%E7%8E%B0/index.html">
 <meta property="og:site_name" content="CoderDock">
 <meta property="og:description" content="介绍Cuda实现YUYV转RGB算法。">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-31T10:12:18.028Z">
+<meta property="article:published_time" content="2018-01-24T11:58:13.000Z">
+<meta property="article:modified_time" content="2020-05-24T09:10:00.842Z">
+<meta property="article:author" content="Dock">
+<meta property="article:tag" content="Cuda">
+<meta property="article:tag" content="YUYV">
+<meta property="article:tag" content="RGB">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="YUYV转RGB-C-Cuda实现">
-<meta name="twitter:description" content="介绍Cuda实现YUYV转RGB算法。">
 
 
 
@@ -141,12 +142,12 @@
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
-  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </script>
 
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -155,7 +156,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -192,7 +193,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -202,7 +203,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -212,7 +213,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -222,7 +223,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -232,7 +233,7 @@
       
         
         <li class="menu-item menu-item-friendlink">
-          <a href="/friendlink" rel="section">
+          <a href="/friendlink%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-group"></i> <br />
             
@@ -242,7 +243,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -317,7 +318,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2018/01/24/GPU/Cuda/YUYV转RGB-C-Cuda实现/">
+    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2018/01/24/GPU/Cuda/YUYV%E8%BD%ACRGB-C-Cuda%E5%AE%9E%E7%8E%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dock">
@@ -411,7 +412,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  709
+                  
                 </span>
               
 
@@ -427,7 +428,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  
                 </span>
               
             </div>
@@ -448,15 +449,19 @@
       
 
       
-        <p>介绍Cuda实现YUYV转RGB算法。<br><a id="more"></a></p>
+        <p>介绍Cuda实现YUYV转RGB算法。</p>
+<a id="more"></a>
+
 <h1 id="1-YUV介绍"><a href="#1-YUV介绍" class="headerlink" title="1.YUV介绍"></a>1.YUV介绍</h1><p>  YUV是被欧洲电视系统所采用的一种颜色编码方法(属于PAL，Phase Alternation Line)，是PAL和SECAM模拟彩色电视制式采用的颜色空间。其中的Y、U、V几个字母不是英文单词的组合词，Y代表亮度，其实Y就是图像的灰度值；UV代表色差，U和V是构成彩色的两个分量。</p>
 <h1 id="1-1-YUV转RGB公式"><a href="#1-1-YUV转RGB公式" class="headerlink" title="1.1 YUV转RGB公式"></a><a href="#11-yuv转rgb公式"></a>1.1 YUV转RGB公式</h1><p>YUV到RGB的转换有如下公式：</p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">R = <span class="number">1.164</span>*(Y<span class="number">-16</span>) + <span class="number">1.159</span>*(V<span class="number">-128</span>); </div><div class="line">G = <span class="number">1.164</span>*(Y<span class="number">-16</span>) - <span class="number">0.380</span>*(U<span class="number">-128</span>)+ <span class="number">0.813</span>*(V<span class="number">-128</span>); </div><div class="line">B = <span class="number">1.164</span>*(Y<span class="number">-16</span>) + <span class="number">2.018</span>*(U<span class="number">-128</span>));</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">R &#x3D; 1.164*(Y-16) + 1.159*(V-128); </span><br><span class="line">G &#x3D; 1.164*(Y-16) - 0.380*(U-128)+ 0.813*(V-128); </span><br><span class="line">B &#x3D; 1.164*(Y-16) + 2.018*(U-128));</span><br></pre></td></tr></table></figure>
+
 <p>那么YUYV(Y0UY1V)的实现就是使用<code>Y0UV</code>转换出一个RGB像素，使用<code>Y1UV</code>转换出第二个像素，那么就实现了四个字节转换出6个字节（2个RGB像素）。</p>
 <h1 id="2-代码实现"><a href="#2-代码实现" class="headerlink" title="2.代码实现"></a><a href="#2代码实现"></a>2.代码实现</h1><p>C语言实现：</p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">void CPU_YUYV2RGB(char* arrOut, char* arrIn)</div><div class="line">&#123;</div><div class="line">	unsigned char y0, y1, u, v;</div><div class="line">	int r, g, b;</div><div class="line">	int nIndex = <span class="number">0</span>;</div><div class="line">	for(nIndex = <span class="number">0</span>; nIndex &lt; N/<span class="number">2</span>; nIndex++)</div><div class="line">	&#123;</div><div class="line">		y0 = *(arrIn + nIndex*<span class="number">4</span>);</div><div class="line">		u = *(arrIn + nIndex*<span class="number">4</span> + <span class="number">1</span>);</div><div class="line">		y1 = *(arrIn + nIndex*<span class="number">4</span> + <span class="number">2</span>);</div><div class="line">		v = *(arrIn + nIndex*<span class="number">4</span> + <span class="number">3</span>);</div><div class="line"></div><div class="line">		r = <span class="number">1.164</span>*(y0<span class="number">-16</span>) + <span class="number">1.159</span>*(v<span class="number">-128</span>);</div><div class="line">		g = <span class="number">1.164</span>*(y0<span class="number">-16</span>) - <span class="number">0.380</span>*(u<span class="number">-128</span>) + <span class="number">0.813</span>*(v<span class="number">-128</span>);</div><div class="line">		b = <span class="number">1.164</span>*(y0<span class="number">-16</span>) + <span class="number">2.018</span>*(u<span class="number">-128</span>);</div><div class="line"></div><div class="line">		if (r &gt; <span class="number">255</span>) r = <span class="number">255</span>;</div><div class="line">		if (g &gt; <span class="number">255</span>) g = <span class="number">255</span>;</div><div class="line">		if (b &gt; <span class="number">255</span>) b = <span class="number">255</span>;</div><div class="line">		if (r &lt; <span class="number">0</span>) r = <span class="number">0</span>;</div><div class="line">		if (g &lt; <span class="number">0</span>) g = <span class="number">0</span>;</div><div class="line">		if (b &lt; <span class="number">0</span>) b = <span class="number">0</span>;</div><div class="line"></div><div class="line">		*(arrOut + nIndex*<span class="number">6</span>) = r;</div><div class="line">		*(arrOut + nIndex*<span class="number">6</span>+<span class="number">1</span>) = g;</div><div class="line">		*(arrOut + nIndex*<span class="number">6</span>+<span class="number">2</span>) = b;</div><div class="line"></div><div class="line">		r = <span class="number">1.164</span>*(y1<span class="number">-16</span>) + <span class="number">1.159</span>*(v<span class="number">-128</span>);</div><div class="line">		g = <span class="number">1.164</span>*(y1<span class="number">-16</span>) - <span class="number">0.380</span>*(u<span class="number">-128</span>) + <span class="number">0.813</span>*(v<span class="number">-128</span>);</div><div class="line">		b = <span class="number">1.164</span>*(y1<span class="number">-16</span>) + <span class="number">2.018</span>*(u<span class="number">-128</span>);</div><div class="line"></div><div class="line">		if (r &gt; <span class="number">255</span>) r = <span class="number">255</span>;</div><div class="line">		if (g &gt; <span class="number">255</span>) g = <span class="number">255</span>;</div><div class="line">		if (b &gt; <span class="number">255</span>) b = <span class="number">255</span>;</div><div class="line">		if (r &lt; <span class="number">0</span>) r = <span class="number">0</span>;</div><div class="line">		if (g &lt; <span class="number">0</span>) g = <span class="number">0</span>;</div><div class="line">		if (b &lt; <span class="number">0</span>) b = <span class="number">0</span>;</div><div class="line"></div><div class="line">		*(arrOut + nIndex*<span class="number">6</span>+<span class="number">3</span>) = r;</div><div class="line">		*(arrOut + nIndex*<span class="number">6</span>+<span class="number">4</span>) = g;</div><div class="line">		*(arrOut + nIndex*<span class="number">6</span>+<span class="number">5</span>) = b;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">void CPU_YUYV2RGB(char* arrOut, char* arrIn)</span><br><span class="line">&#123;</span><br><span class="line">	unsigned char y0, y1, u, v;</span><br><span class="line">	int r, g, b;</span><br><span class="line">	int nIndex &#x3D; 0;</span><br><span class="line">	for(nIndex &#x3D; 0; nIndex &lt; N&#x2F;2; nIndex++)</span><br><span class="line">	&#123;</span><br><span class="line">		y0 &#x3D; *(arrIn + nIndex*4);</span><br><span class="line">		u &#x3D; *(arrIn + nIndex*4 + 1);</span><br><span class="line">		y1 &#x3D; *(arrIn + nIndex*4 + 2);</span><br><span class="line">		v &#x3D; *(arrIn + nIndex*4 + 3);</span><br><span class="line"></span><br><span class="line">		r &#x3D; 1.164*(y0-16) + 1.159*(v-128);</span><br><span class="line">		g &#x3D; 1.164*(y0-16) - 0.380*(u-128) + 0.813*(v-128);</span><br><span class="line">		b &#x3D; 1.164*(y0-16) + 2.018*(u-128);</span><br><span class="line"></span><br><span class="line">		if (r &gt; 255) r &#x3D; 255;</span><br><span class="line">		if (g &gt; 255) g &#x3D; 255;</span><br><span class="line">		if (b &gt; 255) b &#x3D; 255;</span><br><span class="line">		if (r &lt; 0) r &#x3D; 0;</span><br><span class="line">		if (g &lt; 0) g &#x3D; 0;</span><br><span class="line">		if (b &lt; 0) b &#x3D; 0;</span><br><span class="line"></span><br><span class="line">		*(arrOut + nIndex*6) &#x3D; r;</span><br><span class="line">		*(arrOut + nIndex*6+1) &#x3D; g;</span><br><span class="line">		*(arrOut + nIndex*6+2) &#x3D; b;</span><br><span class="line"></span><br><span class="line">		r &#x3D; 1.164*(y1-16) + 1.159*(v-128);</span><br><span class="line">		g &#x3D; 1.164*(y1-16) - 0.380*(u-128) + 0.813*(v-128);</span><br><span class="line">		b &#x3D; 1.164*(y1-16) + 2.018*(u-128);</span><br><span class="line"></span><br><span class="line">		if (r &gt; 255) r &#x3D; 255;</span><br><span class="line">		if (g &gt; 255) g &#x3D; 255;</span><br><span class="line">		if (b &gt; 255) b &#x3D; 255;</span><br><span class="line">		if (r &lt; 0) r &#x3D; 0;</span><br><span class="line">		if (g &lt; 0) g &#x3D; 0;</span><br><span class="line">		if (b &lt; 0) b &#x3D; 0;</span><br><span class="line"></span><br><span class="line">		*(arrOut + nIndex*6+3) &#x3D; r;</span><br><span class="line">		*(arrOut + nIndex*6+4) &#x3D; g;</span><br><span class="line">		*(arrOut + nIndex*6+5) &#x3D; b;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>Cuda代码实现：</p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line">__global__ void YUYV2RGB(char *g_out, char *g_in, int N)</div><div class="line">&#123;</div><div class="line">	unsigned int i = <span class="number">0</span>, j = <span class="number">0</span>;</div><div class="line">	unsigned char y0, y1, u, v;</div><div class="line">	int r, g, b;</div><div class="line"></div><div class="line">    int nStart = blockIdx.x * <span class="number">320</span> * <span class="number">4</span> + threadIdx.x * <span class="number">4</span> ;</div><div class="line">    int nOut = blockIdx.x * <span class="number">320</span> * <span class="number">6</span> + threadIdx.x * <span class="number">6</span> ;</div><div class="line"></div><div class="line">    char *YUV = (char*)g_in + nStart;</div><div class="line">    char* RGB = (char*)g_out + nOut;</div><div class="line"></div><div class="line">    <span class="comment">//for (i = 0, j = 0; i &lt; (N &lt;&lt; 1); i += 4, j += 6)</span></div><div class="line">     <span class="comment">//&#123;</span></div><div class="line">       y0 = (unsigned char)YUV[i + <span class="number">0</span>];</div><div class="line">       u = (unsigned char)YUV[i + <span class="number">1</span>];</div><div class="line">       y1 = (unsigned char)YUV[i + <span class="number">2</span>];</div><div class="line">       v = (unsigned char)YUV[i + <span class="number">3</span>];</div><div class="line"></div><div class="line">       r = <span class="number">1.164</span>*(y0<span class="number">-16</span>) + <span class="number">1.159</span>*(v<span class="number">-128</span>);</div><div class="line">       g = <span class="number">1.164</span>*(y0<span class="number">-16</span>) - <span class="number">0.380</span>*(u<span class="number">-128</span>) + <span class="number">0.813</span>*(v<span class="number">-128</span>);</div><div class="line">       b = <span class="number">1.164</span>*(y0<span class="number">-16</span>) + <span class="number">2.018</span>*(u<span class="number">-128</span>);</div><div class="line"></div><div class="line">       if (r &gt; <span class="number">255</span>) r = <span class="number">255</span>;</div><div class="line">       if (g &gt; <span class="number">255</span>) g = <span class="number">255</span>;</div><div class="line">       if (b &gt; <span class="number">255</span>) b = <span class="number">255</span>;</div><div class="line">       if (r &lt; <span class="number">0</span>) r = <span class="number">0</span>;</div><div class="line">       if (g &lt; <span class="number">0</span>) g = <span class="number">0</span>;</div><div class="line">       if (b &lt; <span class="number">0</span>) b = <span class="number">0</span>;</div><div class="line"></div><div class="line">       <span class="comment">//YUV2RGB(y0, u, v, &amp;r, &amp;g, &amp;b);</span></div><div class="line">       RGB[j + <span class="number">0</span>] = r;</div><div class="line">       RGB[j + <span class="number">1</span>] = g;</div><div class="line">       RGB[j + <span class="number">2</span>] = b;</div><div class="line">       <span class="comment">//YUV2RGB(y1, u, v, &amp;r, &amp;g, &amp;b);</span></div><div class="line"></div><div class="line">       r = <span class="number">1.164</span>*(y1<span class="number">-16</span>) + <span class="number">1.159</span>*(v<span class="number">-128</span>);</div><div class="line">       g = <span class="number">1.164</span>*(y1<span class="number">-16</span>) - <span class="number">0.380</span>*(u<span class="number">-128</span>) + <span class="number">0.813</span>*(v<span class="number">-128</span>);</div><div class="line">       b = <span class="number">1.164</span>*(y1<span class="number">-16</span>) + <span class="number">2.018</span>*(u<span class="number">-128</span>);</div><div class="line"></div><div class="line">       if (r &gt; <span class="number">255</span>) r = <span class="number">255</span>;</div><div class="line">       if (g &gt; <span class="number">255</span>) g = <span class="number">255</span>;</div><div class="line">       if (b &gt; <span class="number">255</span>) b = <span class="number">255</span>;</div><div class="line">       if (r &lt; <span class="number">0</span>) r = <span class="number">0</span>;</div><div class="line">       if (g &lt; <span class="number">0</span>) g = <span class="number">0</span>;</div><div class="line">       if (b &lt; <span class="number">0</span>) b = <span class="number">0</span>;</div><div class="line"></div><div class="line">       RGB[j + <span class="number">3</span>] = r;</div><div class="line">       RGB[j + <span class="number">4</span>] = g;</div><div class="line">       RGB[j + <span class="number">5</span>] = b;</div><div class="line">     <span class="comment">//&#125;</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">__global__ void YUYV2RGB(char *g_out, char *g_in, int N)</span><br><span class="line">&#123;</span><br><span class="line">	unsigned int i &#x3D; 0, j &#x3D; 0;</span><br><span class="line">	unsigned char y0, y1, u, v;</span><br><span class="line">	int r, g, b;</span><br><span class="line"></span><br><span class="line">    int nStart &#x3D; blockIdx.x * 320 * 4 + threadIdx.x * 4 ;</span><br><span class="line">    int nOut &#x3D; blockIdx.x * 320 * 6 + threadIdx.x * 6 ;</span><br><span class="line"></span><br><span class="line">    char *YUV &#x3D; (char*)g_in + nStart;</span><br><span class="line">    char* RGB &#x3D; (char*)g_out + nOut;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;for (i &#x3D; 0, j &#x3D; 0; i &lt; (N &lt;&lt; 1); i +&#x3D; 4, j +&#x3D; 6)</span><br><span class="line">     &#x2F;&#x2F;&#123;</span><br><span class="line">       y0 &#x3D; (unsigned char)YUV[i + 0];</span><br><span class="line">       u &#x3D; (unsigned char)YUV[i + 1];</span><br><span class="line">       y1 &#x3D; (unsigned char)YUV[i + 2];</span><br><span class="line">       v &#x3D; (unsigned char)YUV[i + 3];</span><br><span class="line"></span><br><span class="line">       r &#x3D; 1.164*(y0-16) + 1.159*(v-128);</span><br><span class="line">       g &#x3D; 1.164*(y0-16) - 0.380*(u-128) + 0.813*(v-128);</span><br><span class="line">       b &#x3D; 1.164*(y0-16) + 2.018*(u-128);</span><br><span class="line"></span><br><span class="line">       if (r &gt; 255) r &#x3D; 255;</span><br><span class="line">       if (g &gt; 255) g &#x3D; 255;</span><br><span class="line">       if (b &gt; 255) b &#x3D; 255;</span><br><span class="line">       if (r &lt; 0) r &#x3D; 0;</span><br><span class="line">       if (g &lt; 0) g &#x3D; 0;</span><br><span class="line">       if (b &lt; 0) b &#x3D; 0;</span><br><span class="line"></span><br><span class="line">       &#x2F;&#x2F;YUV2RGB(y0, u, v, &amp;r, &amp;g, &amp;b);</span><br><span class="line">       RGB[j + 0] &#x3D; r;</span><br><span class="line">       RGB[j + 1] &#x3D; g;</span><br><span class="line">       RGB[j + 2] &#x3D; b;</span><br><span class="line">       &#x2F;&#x2F;YUV2RGB(y1, u, v, &amp;r, &amp;g, &amp;b);</span><br><span class="line"></span><br><span class="line">       r &#x3D; 1.164*(y1-16) + 1.159*(v-128);</span><br><span class="line">       g &#x3D; 1.164*(y1-16) - 0.380*(u-128) + 0.813*(v-128);</span><br><span class="line">       b &#x3D; 1.164*(y1-16) + 2.018*(u-128);</span><br><span class="line"></span><br><span class="line">       if (r &gt; 255) r &#x3D; 255;</span><br><span class="line">       if (g &gt; 255) g &#x3D; 255;</span><br><span class="line">       if (b &gt; 255) b &#x3D; 255;</span><br><span class="line">       if (r &lt; 0) r &#x3D; 0;</span><br><span class="line">       if (g &lt; 0) g &#x3D; 0;</span><br><span class="line">       if (b &lt; 0) b &#x3D; 0;</span><br><span class="line"></span><br><span class="line">       RGB[j + 3] &#x3D; r;</span><br><span class="line">       RGB[j + 4] &#x3D; g;</span><br><span class="line">       RGB[j + 5] &#x3D; b;</span><br><span class="line">     &#x2F;&#x2F;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -499,7 +504,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/07/Zynq/Vivado/Vivado-HLS-操作流程/" rel="next" title="Vivado-HLS--操作流程">
+              <a href="/2017/11/07/Zynq/Vivado/Vivado-HLS-%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B/" rel="next" title="Vivado-HLS--操作流程">
                 <i class="fa fa-chevron-left"></i> Vivado-HLS--操作流程
               </a>
             
@@ -509,7 +514,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/01/24/GPU/Cuda/ROS内使用Cuda加速的配置/" rel="prev" title="ROS内使用Cuda加速的配置">
+              <a href="/2018/01/24/GPU/Cuda/ROS%E5%86%85%E4%BD%BF%E7%94%A8Cuda%E5%8A%A0%E9%80%9F%E7%9A%84%E9%85%8D%E7%BD%AE/" rel="prev" title="ROS内使用Cuda加速的配置">
                 ROS内使用Cuda加速的配置 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -594,7 +599,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">日志</span>
@@ -606,10 +611,10 @@
               
               
               <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
+                
                   <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">分类</span>
-                </a>
+                
               </div>
             
 
@@ -617,10 +622,10 @@
               
               
               <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
+                
                   <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">标签</span>
-                </a>
+                
               </div>
             
 
@@ -690,7 +695,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">49.9k</span>
+    <span title="Site words total count"></span>
   
 </div>
 
@@ -1249,7 +1254,7 @@
   
  
 <script type="text/javascript"
-color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
 
 
 

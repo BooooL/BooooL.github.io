@@ -7,7 +7,7 @@
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+  <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="本章介绍Linux启动过程和涉及的各个文件的作用。12345678_________ _       __________________\__   __/( (    /|\__   __/\__   __/   ) (   |  \  ( |   ) (      ) (   | |   |   \ | |   | |      | |   | |   | (\ \) |   | |">
-<meta name="keywords" content="Linux,Init">
+<meta name="description" content="本章介绍Linux启动过程和涉及的各个文件的作用。 12345678_________ _       __________________\__   __&#x2F;( (    &#x2F;|\__   __&#x2F;\__   __&#x2F;   ) (   |  \  ( |   ) (      ) (   | |   |   \ | |   | |      | |   | |">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux启动过程之我见">
-<meta property="og:url" content="http://coderdock.com/2017/06/01/ARM&Linux/Linux驱动/Linux启动过程之我见/index.html">
+<meta property="og:url" content="http://coderdock.com/2017/06/01/ARM&Linux/Linux%E9%A9%B1%E5%8A%A8/Linux%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B%E4%B9%8B%E6%88%91%E8%A7%81/index.html">
 <meta property="og:site_name" content="CoderDock">
-<meta property="og:description" content="本章介绍Linux启动过程和涉及的各个文件的作用。12345678_________ _       __________________\__   __/( (    /|\__   __/\__   __/   ) (   |  \  ( |   ) (      ) (   | |   |   \ | |   | |      | |   | |   | (\ \) |   | |">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-07T07:47:14.804Z">
+<meta property="og:description" content="本章介绍Linux启动过程和涉及的各个文件的作用。 12345678_________ _       __________________\__   __&#x2F;( (    &#x2F;|\__   __&#x2F;\__   __&#x2F;   ) (   |  \  ( |   ) (      ) (   | |   |   \ | |   | |      | |   | |">
+<meta property="article:published_time" content="2017-06-01T05:11:21.000Z">
+<meta property="article:modified_time" content="2020-05-24T09:10:00.811Z">
+<meta property="article:author" content="Dock">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Init">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux启动过程之我见">
-<meta name="twitter:description" content="本章介绍Linux启动过程和涉及的各个文件的作用。12345678_________ _       __________________\__   __/( (    /|\__   __/\__   __/   ) (   |  \  ( |   ) (      ) (   | |   |   \ | |   | |      | |   | |   | (\ \) |   | |">
 
 
 
@@ -141,12 +141,12 @@
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
-  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </script>
 
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -155,7 +155,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -192,7 +192,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -202,7 +202,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -212,7 +212,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -222,7 +222,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -232,7 +232,7 @@
       
         
         <li class="menu-item menu-item-friendlink">
-          <a href="/friendlink" rel="section">
+          <a href="/friendlink%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-group"></i> <br />
             
@@ -242,7 +242,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -317,7 +317,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2017/06/01/ARM&Linux/Linux驱动/Linux启动过程之我见/">
+    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2017/06/01/ARM&Linux/Linux%E9%A9%B1%E5%8A%A8/Linux%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B%E4%B9%8B%E6%88%91%E8%A7%81/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dock">
@@ -380,7 +380,7 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ARM-Linux/Linux驱动/" itemprop="url" rel="index">
+                  <a href="/categories/ARM-Linux/Linux%E9%A9%B1%E5%8A%A8/" itemprop="url" rel="index">
                     <span itemprop="name">Linux驱动</span>
                   </a>
                 </span>
@@ -411,7 +411,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.3k
+                  
                 </span>
               
 
@@ -427,7 +427,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  
                 </span>
               
             </div>
@@ -448,70 +448,70 @@
       
 
       
-        <p>本章介绍Linux启动过程和涉及的各个文件的作用。<br><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">_________ _       __________________</div><div class="line">\__   __/( (    /|<span class="string">\__   __/\__   __/</span></div><div class="line"><span class="string">   ) (   </span>|<span class="string">  \  ( </span>|<span class="string">   ) (      ) (</span></div><div class="line"><span class="string">   </span>|<span class="string"> </span>|<span class="string">   </span>|<span class="string">   \ </span>|<span class="string"> </span>|<span class="string">   </span>|<span class="string"> </span>|<span class="string">      </span>|<span class="string"> </span>|</div><div class="line">   |<span class="string"> </span>|<span class="string">   </span>|<span class="string"> (\ \) </span>|<span class="string">   </span>|<span class="string"> </span>|<span class="string">      </span>|<span class="string"> </span>|</div><div class="line">   |<span class="string"> </span>|<span class="string">   </span>|<span class="string"> </span>|<span class="string"> \   </span>|<span class="string">   </span>|<span class="string"> </span>|<span class="string">      </span>|<span class="string"> </span>|</div><div class="line">___) (___|<span class="string"> )  \  </span>|<span class="string">___) (___   </span>|<span class="string"> </span>|</div><div class="line">\_______/|<span class="string">/    )_)\_______/   )_(</span></div></pre></td></tr></table></figure></p>
+        <p>本章介绍Linux启动过程和涉及的各个文件的作用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">_________ _       __________________</span><br><span class="line">\__   __&#x2F;( (    &#x2F;|\__   __&#x2F;\__   __&#x2F;</span><br><span class="line">   ) (   |  \  ( |   ) (      ) (</span><br><span class="line">   | |   |   \ | |   | |      | |</span><br><span class="line">   | |   | (\ \) |   | |      | |</span><br><span class="line">   | |   | | \   |   | |      | |</span><br><span class="line">___) (___| )  \  |___) (___   | |</span><br><span class="line">\_______&#x2F;|&#x2F;    )_)\_______&#x2F;   )_(</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <h1 id="Init进程"><a href="#Init进程" class="headerlink" title="Init进程"></a>Init进程</h1><p>&emsp;&emsp;Init进程是第一个启动的进程，ID号为1，这个程序通常位于<code>/sbin.init</code>，改程序的源码位于<code>init/main.c</code>。当然我们也可以指定自己编写的初始化启动程序，传入启动参数的时候传入<code>init=xxx</code>即可。</p>
 <p>&emsp;&emsp;<code>/sbin/init</code>、<code>/etc/init</code>、<code>/bin/init</code>、<code>/bin/sh</code>都是作为Init程序的备选者，有一个存在就会进入不再返回。</p>
 <p>&emsp;&emsp;busybox的Init会先<code>设置信号处理函数</code>、<code>初始化控制台</code>、<code>解析inittab</code>等三项工作。</p>
-<h1 id="解析Inittab"><a href="#解析Inittab" class="headerlink" title="解析Inittab"></a>解析Inittab</h1><p><code>inittab</code>中每一个条目定义了一个子进程。其条目格式如下:<br><figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">id : <span class="type">runlevels</span> : <span class="type">action</span> : <span class="type">process</span></div></pre></td></tr></table></figure></p>
+<h1 id="解析Inittab"><a href="#解析Inittab" class="headerlink" title="解析Inittab"></a>解析Inittab</h1><p><code>inittab</code>中每一个条目定义了一个子进程。其条目格式如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id : runlevels : action : process</span><br></pre></td></tr></table></figure>
 <ul>
 <li>id 表示这个进程要使用的控制台,(标准输入、标准输出、标准错误输出)</li>
 <li>runlevels 列出来运行的级别 为空则代表所有级别</li>
 <li>action 要执行的动作</li>
 <li>process 要执行的程序</li>
 </ul>
-<h2 id="Action详解"><a href="#Action详解" class="headerlink" title="Action详解"></a>Action详解</h2><div class="table-container">
-<table>
+<h2 id="Action详解"><a href="#Action详解" class="headerlink" title="Action详解"></a>Action详解</h2><table>
 <thead>
 <tr>
-<th style="text-align:center">action名称</th>
-<th style="text-align:center">执行条件</th>
-<th style="text-align:center">说明</th>
+<th align="center">action名称</th>
+<th align="center">执行条件</th>
+<th align="center">说明</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">sysinit</td>
-<td style="text-align:center">系统启动后最先执行</td>
-<td style="text-align:center">只执行一次，init执行完成后才能执行其他操作</td>
+<tbody><tr>
+<td align="center">sysinit</td>
+<td align="center">系统启动后最先执行</td>
+<td align="center">只执行一次，init执行完成后才能执行其他操作</td>
 </tr>
 <tr>
-<td style="text-align:center">wait</td>
-<td style="text-align:center">系统执行完sysinit后</td>
-<td style="text-align:center">只执行一次，init进程等待它执行完成后才执行其他操作</td>
+<td align="center">wait</td>
+<td align="center">系统执行完sysinit后</td>
+<td align="center">只执行一次，init进程等待它执行完成后才执行其他操作</td>
 </tr>
 <tr>
-<td style="text-align:center">once</td>
-<td style="text-align:center">系统执行完wait进程后</td>
-<td style="text-align:center">只执行一次， init不等它执行完成</td>
+<td align="center">once</td>
+<td align="center">系统执行完wait进程后</td>
+<td align="center">只执行一次， init不等它执行完成</td>
 </tr>
 <tr>
-<td style="text-align:center">respwan</td>
-<td style="text-align:center">启动完once进程后</td>
-<td style="text-align:center">init进程发现子进程退出时，重新启动它</td>
+<td align="center">respwan</td>
+<td align="center">启动完once进程后</td>
+<td align="center">init进程发现子进程退出时，重新启动它</td>
 </tr>
 <tr>
-<td style="text-align:center">askfirst</td>
-<td style="text-align:center">启动完respwan进程后</td>
-<td style="text-align:center">输出“Please Press Enter to activcate this console”等用户输入回车键后才启动子进程</td>
+<td align="center">askfirst</td>
+<td align="center">启动完respwan进程后</td>
+<td align="center">输出“Please Press Enter to activcate this console”等用户输入回车键后才启动子进程</td>
 </tr>
 <tr>
-<td style="text-align:center">shutdown</td>
-<td style="text-align:center">系统关机时启动</td>
-<td style="text-align:center">重启 关闭系统命令时</td>
+<td align="center">shutdown</td>
+<td align="center">系统关机时启动</td>
+<td align="center">重启 关闭系统命令时</td>
 </tr>
 <tr>
-<td style="text-align:center">ctrlaltdel</td>
-<td style="text-align:center">按下 Ctrl + Alt +Del 时</td>
-<td style="text-align:center">-</td>
+<td align="center">ctrlaltdel</td>
+<td align="center">按下 Ctrl + Alt +Del 时</td>
+<td align="center">-</td>
 </tr>
-</tbody>
-</table>
-</div>
-<h3 id="inittab文件实例"><a href="#inittab文件实例" class="headerlink" title="inittab文件实例"></a>inittab文件实例</h3><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># /etc/inittab</div><div class="line"><span class="meta">::sysinit:/etc/init.d/rcS</span></div><div class="line"><span class="meta">ttySAC0:askfirst:~/bin/sh</span></div><div class="line"><span class="meta">::shutdown:/bin/umount</span> -a</div></pre></td></tr></table></figure>
-<p>同样在<code>rcS</code>一般只有两行<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#/bin/sh</div><div class="line">ifconfig eth0 <span class="number">192.168</span><span class="number">.100</span><span class="number">.100</span></div><div class="line">mount -a</div></pre></td></tr></table></figure></p>
+</tbody></table>
+<h3 id="inittab文件实例"><a href="#inittab文件实例" class="headerlink" title="inittab文件实例"></a>inittab文件实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># &#x2F;etc&#x2F;inittab</span><br><span class="line">::sysinit:&#x2F;etc&#x2F;init.d&#x2F;rcS</span><br><span class="line">ttySAC0:askfirst:~&#x2F;bin&#x2F;sh</span><br><span class="line">::shutdown:&#x2F;bin&#x2F;umount -a</span><br></pre></td></tr></table></figure>
+<p>同样在<code>rcS</code>一般只有两行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#&#x2F;bin&#x2F;sh</span><br><span class="line">ifconfig eth0 192.168.100.100</span><br><span class="line">mount -a</span><br></pre></td></tr></table></figure>
 <p>那么 <code>mount -a</code>依据那个文件呢？</p>
-<h2 id="fastab文件"><a href="#fastab文件" class="headerlink" title="fastab文件"></a>fastab文件</h2><p>一个典型的fstab文件如下：<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"># &lt;file system&gt;&lt;dir&gt;&lt;type&gt;&lt;options&gt;&lt;dump&gt;&lt;pass&gt;</div><div class="line">none                   /dev/pts      devpts    defaults                <span class="number">0</span>      <span class="number">0</span></div><div class="line">none                   /dev/shm      tmpfs     defaults                <span class="number">0</span>      <span class="number">0</span></div><div class="line"></div><div class="line">/dev/cdrom             /media/cd     iso9660   ro,user,noauto,unhide   <span class="number">0</span>      <span class="number">0</span></div><div class="line">/dev/dvd               /media/dvd    udf       ro,user,noauto,unhide   <span class="number">0</span>      <span class="number">0</span></div><div class="line">/dev/fd0               /media/fl     auto      user,noauto             <span class="number">0</span>      <span class="number">0</span></div><div class="line"></div><div class="line">/dev/hda1              swap          swap      defaults                <span class="number">0</span>      <span class="number">0</span></div><div class="line">/dev/hda4              /             ext3      defaults                <span class="number">0</span>      <span class="number">1</span></div><div class="line">/dev/hda3              /home         xfs       rw,suid,exec,auto,nouser,async <span class="number">0</span>      <span class="number">2</span></div></pre></td></tr></table></figure></p>
+<h2 id="fastab文件"><a href="#fastab文件" class="headerlink" title="fastab文件"></a>fastab文件</h2><p>一个典型的fstab文件如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># &lt;file system&gt;&lt;dir&gt;&lt;type&gt;&lt;options&gt;&lt;dump&gt;&lt;pass&gt;</span><br><span class="line">none                   &#x2F;dev&#x2F;pts      devpts    defaults                0      0</span><br><span class="line">none                   &#x2F;dev&#x2F;shm      tmpfs     defaults                0      0</span><br><span class="line"></span><br><span class="line">&#x2F;dev&#x2F;cdrom             &#x2F;media&#x2F;cd     iso9660   ro,user,noauto,unhide   0      0</span><br><span class="line">&#x2F;dev&#x2F;dvd               &#x2F;media&#x2F;dvd    udf       ro,user,noauto,unhide   0      0</span><br><span class="line">&#x2F;dev&#x2F;fd0               &#x2F;media&#x2F;fl     auto      user,noauto             0      0</span><br><span class="line"></span><br><span class="line">&#x2F;dev&#x2F;hda1              swap          swap      defaults                0      0</span><br><span class="line">&#x2F;dev&#x2F;hda4              &#x2F;             ext3      defaults                0      1</span><br><span class="line">&#x2F;dev&#x2F;hda3              &#x2F;home         xfs       rw,suid,exec,auto,nouser,async 0      2</span><br></pre></td></tr></table></figure>
 <ul>
 <li>file systems 不是我们通常理解的文件系统，而是指设备（硬盘及其分区，DVD光驱等）。它告知我们设备（分区）的名字，这是你在命令行中挂载（mount）、卸载（umount）设备时要用到的。so one should substitute for this entry the device name, remote partition, or similar.</li>
 <li>挂载目录</li>
@@ -531,10 +531,10 @@
 </ul>
 </li>
 <li>dump 备份相关</li>
-<li>pass sck会检查这个头目下的数字来决定检查文件系统的顺序（looks at the number substituted for <pass> and determines in which order the file systems should be checked）。允许的数字是0, 1, 和2。 文件系统的<pass>选项是0将不会被fsck utility检查。root文件系统应该拥有最高的优先权， 1，而所有其它的文件系统，如果你想让它被check的话，应该写成2。</pass></pass></li>
+<li>pass sck会检查这个头目下的数字来决定检查文件系统的顺序（looks at the number substituted for <pass> and determines in which order the file systems should be checked）。允许的数字是0, 1, 和2。 文件系统的<pass>选项是0将不会被fsck utility检查。root文件系统应该拥有最高的优先权， 1，而所有其它的文件系统，如果你想让它被check的话，应该写成2。</li>
 </ul>
 <p>版权声明：本文为博主原创文章，转载需声明为转载内容并添加原文地址。</p>
-<p>原文地址：<a href="https://coderdock.com">https://coderdock.com</a></p>
+<p>原文地址：<a href="https://coderdock.com" target="_blank" rel="noopener">https://coderdock.com</a></p>
 
       
     </div>
@@ -575,7 +575,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/24/FPGA/协议/通信协议-IIC/" rel="next" title="通信协议-IIC">
+              <a href="/2017/05/24/FPGA/%E5%8D%8F%E8%AE%AE/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE-IIC/" rel="next" title="通信协议-IIC">
                 <i class="fa fa-chevron-left"></i> 通信协议-IIC
               </a>
             
@@ -585,7 +585,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/06/02/ARM&Linux/Linux驱动/Linux输入子系统之我见-一/" rel="prev" title="Linux输入子系统之我见(一)">
+              <a href="/2017/06/02/ARM&Linux/Linux%E9%A9%B1%E5%8A%A8/Linux%E8%BE%93%E5%85%A5%E5%AD%90%E7%B3%BB%E7%BB%9F%E4%B9%8B%E6%88%91%E8%A7%81-%E4%B8%80/" rel="prev" title="Linux输入子系统之我见(一)">
                 Linux输入子系统之我见(一) <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -670,7 +670,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">日志</span>
@@ -682,10 +682,10 @@
               
               
               <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
+                
                   <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">分类</span>
-                </a>
+                
               </div>
             
 
@@ -693,10 +693,10 @@
               
               
               <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
+                
                   <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">标签</span>
-                </a>
+                
               </div>
             
 
@@ -766,7 +766,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">49.9k</span>
+    <span title="Site words total count"></span>
   
 </div>
 
@@ -1325,7 +1325,7 @@
   
  
 <script type="text/javascript"
-color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
 
 
 

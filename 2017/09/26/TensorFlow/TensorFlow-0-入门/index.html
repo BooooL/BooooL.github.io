@@ -7,7 +7,7 @@
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+  <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
@@ -80,18 +80,17 @@
 
 
 <meta name="description" content="本节介绍TensorFlow最最最基本的东西。">
-<meta name="keywords" content="TensorFlow">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TensorFlow-0-入门">
-<meta property="og:url" content="http://coderdock.com/2017/09/26/TensorFlow/TensorFlow-0-入门/index.html">
+<meta property="og:url" content="http://coderdock.com/2017/09/26/TensorFlow/TensorFlow-0-%E5%85%A5%E9%97%A8/index.html">
 <meta property="og:site_name" content="CoderDock">
 <meta property="og:description" content="本节介绍TensorFlow最最最基本的东西。">
-<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://coderdock-1251264493.picsh.myqcloud.com/tensorflow.png">
-<meta property="og:updated_time" content="2019-09-07T07:47:15.930Z">
+<meta property="article:published_time" content="2017-09-26T14:28:13.000Z">
+<meta property="article:modified_time" content="2020-05-24T09:10:00.842Z">
+<meta property="article:author" content="Dock">
+<meta property="article:tag" content="TensorFlow">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TensorFlow-0-入门">
-<meta name="twitter:description" content="本节介绍TensorFlow最最最基本的东西。">
 <meta name="twitter:image" content="https://coderdock-1251264493.picsh.myqcloud.com/tensorflow.png">
 
 
@@ -143,12 +142,12 @@
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
-  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </script>
 
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -157,7 +156,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -194,7 +193,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -204,7 +203,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -214,7 +213,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -224,7 +223,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -234,7 +233,7 @@
       
         
         <li class="menu-item menu-item-friendlink">
-          <a href="/friendlink" rel="section">
+          <a href="/friendlink%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-group"></i> <br />
             
@@ -244,7 +243,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -319,7 +318,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2017/09/26/TensorFlow/TensorFlow-0-入门/">
+    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2017/09/26/TensorFlow/TensorFlow-0-%E5%85%A5%E9%97%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dock">
@@ -402,7 +401,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  626
+                  
                 </span>
               
 
@@ -418,7 +417,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  
                 </span>
               
             </div>
@@ -439,19 +438,26 @@
       
 
       
-        <p>本节介绍TensorFlow最最最基本的东西。<br><img src="https://coderdock-1251264493.picsh.myqcloud.com/tensorflow.png" alt="TensorFlow"><br><a id="more"></a><br>&emsp;&emsp;对于TensorFlow的使用，网上已经有很多的教程，包括TensorFlow的中文社区有很好的翻译教程，只要安装好TensorFlow后，有着Python编程基础和基础的机器学习及神经网络所要求的基础数学知识，都是很好上手的。所以在这个系列的文章中，我不会着眼于环境搭建，以及详细的原理讲解，而更多的是源码级别的讲解，即对自己<code>玩过的</code>代码添加注释，表达感慨。</p>
+        <p>本节介绍TensorFlow最最最基本的东西。<br><img src="https://coderdock-1251264493.picsh.myqcloud.com/tensorflow.png" alt="TensorFlow"></p>
+<a id="more"></a>
+<p>&emsp;&emsp;对于TensorFlow的使用，网上已经有很多的教程，包括TensorFlow的中文社区有很好的翻译教程，只要安装好TensorFlow后，有着Python编程基础和基础的机器学习及神经网络所要求的基础数学知识，都是很好上手的。所以在这个系列的文章中，我不会着眼于环境搭建，以及详细的原理讲解，而更多的是源码级别的讲解，即对自己<code>玩过的</code>代码添加注释，表达感慨。</p>
 <h1 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h1><p>我使用的平台是Ubuntu 16.04，安装方式是Anaconda,参照网址是：<a href="https://www.tensorfly.cn/tfdoc/get_started/os_setup.html" target="_blank" rel="noopener">https://www.tensorfly.cn/tfdoc/get_started/os_setup.html</a></p>
-<h1 id="2-第一个测试程序"><a href="#2-第一个测试程序" class="headerlink" title="2.第一个测试程序"></a>2.第一个测试程序</h1><p>到此处认为你已经安装好了你的TensorFlow环境，我们来看官方推荐的第一个例子：<br><figure class="highlight makefile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">import tensorflow as tf</div><div class="line">import numpy as np</div><div class="line"></div><div class="line"><span class="comment"># 使用 NumPy 生成假数据(phony data), 总共 100 个点.</span></div><div class="line">x_data = np.float32(np.random.rand(2, 100)) <span class="comment"># 生成 2*100的矩阵</span></div><div class="line">y_data = np.dot([0.100, 0.200], x_data) + 0.300 //以 [0.1, 0.2]和 偏置生成虚拟的数据</div><div class="line"></div><div class="line"><span class="comment"># 构造一个线性模型</span></div><div class="line">b = tf.Variable(tf.zeros([1]))          <span class="comment">#构建一个参数未知的线性模型 y= W*x_data + b</span></div><div class="line">W = tf.Variable(tf.random_uniform([1, 2], -1.0, 1.0))   <span class="comment">#由均匀分布得到初始化的W值</span></div><div class="line">y = tf.matmul(W, x_data) + b            <span class="comment">#构建线性模型</span></div><div class="line"></div><div class="line"><span class="comment"># 最小化方差</span></div><div class="line">loss = tf.reduce_mean(tf.square(y - y_data))</div><div class="line">optimizer = tf.train.GradientDescentOptimizer(0.5)   <span class="comment">#下降步伐为0.5</span></div><div class="line">train = optimizer.minimize(loss)</div><div class="line"></div><div class="line"><span class="comment"># 初始化变量</span></div><div class="line">init = tf.initialize_all_variables()</div><div class="line"></div><div class="line"><span class="comment"># 启动图 (graph)</span></div><div class="line">sess = tf.Session()</div><div class="line">sess.run(init)</div><div class="line"></div><div class="line"><span class="comment"># 拟合平面</span></div><div class="line">for step in range(0, 201):</div><div class="line">    sess.run(train)</div><div class="line">    if step % 20 == 0:</div><div class="line">        print(step, sess.run(W), sess.run(b))</div><div class="line"></div><div class="line"><span class="comment"># 得到最佳拟合结果 W: [[0.100  0.200]], b: [0.300]</span></div></pre></td></tr></table></figure></p>
+<h1 id="2-第一个测试程序"><a href="#2-第一个测试程序" class="headerlink" title="2.第一个测试程序"></a>2.第一个测试程序</h1><p>到此处认为你已经安装好了你的TensorFlow环境，我们来看官方推荐的第一个例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">import tensorflow as tf</span><br><span class="line">import numpy as np</span><br><span class="line"></span><br><span class="line"># 使用 NumPy 生成假数据(phony data), 总共 100 个点.</span><br><span class="line">x_data &#x3D; np.float32(np.random.rand(2, 100)) # 生成 2*100的矩阵</span><br><span class="line">y_data &#x3D; np.dot([0.100, 0.200], x_data) + 0.300 &#x2F;&#x2F;以 [0.1, 0.2]和 偏置生成虚拟的数据</span><br><span class="line"></span><br><span class="line"># 构造一个线性模型</span><br><span class="line">b &#x3D; tf.Variable(tf.zeros([1]))          #构建一个参数未知的线性模型 y&#x3D; W*x_data + b</span><br><span class="line">W &#x3D; tf.Variable(tf.random_uniform([1, 2], -1.0, 1.0))   #由均匀分布得到初始化的W值</span><br><span class="line">y &#x3D; tf.matmul(W, x_data) + b            #构建线性模型</span><br><span class="line"></span><br><span class="line"># 最小化方差</span><br><span class="line">loss &#x3D; tf.reduce_mean(tf.square(y - y_data))</span><br><span class="line">optimizer &#x3D; tf.train.GradientDescentOptimizer(0.5)   #下降步伐为0.5</span><br><span class="line">train &#x3D; optimizer.minimize(loss)</span><br><span class="line"></span><br><span class="line"># 初始化变量</span><br><span class="line">init &#x3D; tf.initialize_all_variables()</span><br><span class="line"></span><br><span class="line"># 启动图 (graph)</span><br><span class="line">sess &#x3D; tf.Session()</span><br><span class="line">sess.run(init)</span><br><span class="line"></span><br><span class="line"># 拟合平面</span><br><span class="line">for step in range(0, 201):</span><br><span class="line">    sess.run(train)</span><br><span class="line">    if step % 20 &#x3D;&#x3D; 0:</span><br><span class="line">        print(step, sess.run(W), sess.run(b))</span><br><span class="line"></span><br><span class="line"># 得到最佳拟合结果 W: [[0.100  0.200]], b: [0.300]</span><br></pre></td></tr></table></figure>
 <p>上面这个程序虽然很简单，但是TenSorflow的基本元素基本都涉及到了，</p>
 <ul>
 <li>先创建虚拟的x_data,然后设定要预测的参数值。</li>
 <li>构建线性模型</li>
 <li>构建一个TensorFlow会话</li>
-<li>执行会话<br>经过200次梯度下降后，我们的预测值如下：<figure class="highlight basic"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">0 </span>[[-<span class="number">0.32990205</span>  <span class="number">0.94440365</span>]] [ <span class="number">0.27961046</span>]</div><div class="line"><span class="symbol">20 </span>[[ <span class="number">0.04070586</span>  <span class="number">0.33752358</span>]] [ <span class="number">0.2542021</span>]</div><div class="line"><span class="symbol">40 </span>[[ <span class="number">0.09684953</span>  <span class="number">0.23069493</span>]] [ <span class="number">0.28419915</span>]</div><div class="line"><span class="symbol">60 </span>[[ <span class="number">0.10159973</span>  <span class="number">0.20767325</span>]] [ <span class="number">0.29472959</span>]</div><div class="line"><span class="symbol">80 </span>[[ <span class="number">0.10094509</span>  <span class="number">0.20211281</span>]] [ <span class="number">0.29826969</span>]</div><div class="line"><span class="symbol">100 </span>[[ <span class="number">0.10037546</span>  <span class="number">0.20062292</span>]] [ <span class="number">0.2994363</span>]</div><div class="line"><span class="symbol">120 </span>[[ <span class="number">0.10013281</span>  <span class="number">0.20019153</span>]] [ <span class="number">0.29981709</span>]</div><div class="line"><span class="symbol">140 </span>[[ <span class="number">0.10004479</span>  <span class="number">0.20006029</span>]] [ <span class="number">0.29994076</span>]</div><div class="line"><span class="symbol">160 </span>[[ <span class="number">0.10001478</span>  <span class="number">0.20001923</span>]] [ <span class="number">0.29998085</span>]</div><div class="line"><span class="symbol">180 </span>[[ <span class="number">0.10000481</span>  <span class="number">0.20000617</span>]] [ <span class="number">0.29999381</span>]</div><div class="line"><span class="symbol">200 </span>[[ <span class="number">0.10000155</span>  <span class="number">0.20000197</span>]] [ <span class="number">0.29999802</span>]</div></pre></td></tr></table></figure>
+<li>执行会话<br>经过200次梯度下降后，我们的预测值如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">0 [[-0.32990205  0.94440365]] [ 0.27961046]</span><br><span class="line">20 [[ 0.04070586  0.33752358]] [ 0.2542021]</span><br><span class="line">40 [[ 0.09684953  0.23069493]] [ 0.28419915]</span><br><span class="line">60 [[ 0.10159973  0.20767325]] [ 0.29472959]</span><br><span class="line">80 [[ 0.10094509  0.20211281]] [ 0.29826969]</span><br><span class="line">100 [[ 0.10037546  0.20062292]] [ 0.2994363]</span><br><span class="line">120 [[ 0.10013281  0.20019153]] [ 0.29981709]</span><br><span class="line">140 [[ 0.10004479  0.20006029]] [ 0.29994076]</span><br><span class="line">160 [[ 0.10001478  0.20001923]] [ 0.29998085]</span><br><span class="line">180 [[ 0.10000481  0.20000617]] [ 0.29999381]</span><br><span class="line">200 [[ 0.10000155  0.20000197]] [ 0.29999802]</span><br></pre></td></tr></table></figure>
+
+
+
+
 </li>
 </ul>
 <p>版权声明：本文为博主原创文章，转载需声明为转载内容并添加原文地址。</p>
-<p>原文地址：<a href="https://coderdock.com">https://coderdock.com</a></p>
+<p>原文地址：<a href="https://coderdock.com" target="_blank" rel="noopener">https://coderdock.com</a></p>
 
       
     </div>
@@ -490,7 +496,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/14/GPU/OpenCL/OpenCL-4-小试牛刀/" rel="next" title="OpenCL-4-小试牛刀">
+              <a href="/2017/09/14/GPU/OpenCL/OpenCL-4-%E5%B0%8F%E8%AF%95%E7%89%9B%E5%88%80/" rel="next" title="OpenCL-4-小试牛刀">
                 <i class="fa fa-chevron-left"></i> OpenCL-4-小试牛刀
               </a>
             
@@ -500,7 +506,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/29/TensorFlow/TensorFlow-1-概念/" rel="prev" title="TensorFlow-1-概念0">
+              <a href="/2017/09/29/TensorFlow/TensorFlow-1-%E6%A6%82%E5%BF%B5/" rel="prev" title="TensorFlow-1-概念0">
                 TensorFlow-1-概念0 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -585,7 +591,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">日志</span>
@@ -597,10 +603,10 @@
               
               
               <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
+                
                   <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">分类</span>
-                </a>
+                
               </div>
             
 
@@ -608,10 +614,10 @@
               
               
               <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
+                
                   <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">标签</span>
-                </a>
+                
               </div>
             
 
@@ -681,7 +687,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">49.9k</span>
+    <span title="Site words total count"></span>
   
 </div>
 
@@ -1240,7 +1246,7 @@
   
  
 <script type="text/javascript"
-color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
 
 
 

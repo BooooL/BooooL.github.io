@@ -7,7 +7,7 @@
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+  <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Linux设备模型为内核建立起一个统一的设备模型，从而有一个对系统结构的一般性抽象描述。1234567891011121314151617______   _______          _________ _______  _______(  __  \ (  ____ \|\     /|\__   __/(  ____ \(  ____ \| (  \  )| (    \/| )   (">
-<meta name="keywords" content="Linux,统一设备模型">
+<meta name="description" content="Linux设备模型为内核建立起一个统一的设备模型，从而有一个对系统结构的一般性抽象描述。 1234567891011121314151617______   _______          _________ _______  _______(  __  \ (  ____ \|\     &#x2F;|\__   __&#x2F;(  ____ \(  ____ \| (  \  )| (">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux统一设备模型之我见">
-<meta property="og:url" content="http://coderdock.com/2017/06/06/ARM&Linux/Linux驱动/Linux统一设备模型之我见/index.html">
+<meta property="og:url" content="http://coderdock.com/2017/06/06/ARM&Linux/Linux%E9%A9%B1%E5%8A%A8/Linux%E7%BB%9F%E4%B8%80%E8%AE%BE%E5%A4%87%E6%A8%A1%E5%9E%8B%E4%B9%8B%E6%88%91%E8%A7%81/index.html">
 <meta property="og:site_name" content="CoderDock">
-<meta property="og:description" content="Linux设备模型为内核建立起一个统一的设备模型，从而有一个对系统结构的一般性抽象描述。1234567891011121314151617______   _______          _________ _______  _______(  __  \ (  ____ \|\     /|\__   __/(  ____ \(  ____ \| (  \  )| (    \/| )   (">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-07T07:47:14.831Z">
+<meta property="og:description" content="Linux设备模型为内核建立起一个统一的设备模型，从而有一个对系统结构的一般性抽象描述。 1234567891011121314151617______   _______          _________ _______  _______(  __  \ (  ____ \|\     &#x2F;|\__   __&#x2F;(  ____ \(  ____ \| (  \  )| (">
+<meta property="article:published_time" content="2017-06-06T05:01:37.000Z">
+<meta property="article:modified_time" content="2020-05-24T09:10:00.827Z">
+<meta property="article:author" content="Dock">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="统一设备模型">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux统一设备模型之我见">
-<meta name="twitter:description" content="Linux设备模型为内核建立起一个统一的设备模型，从而有一个对系统结构的一般性抽象描述。1234567891011121314151617______   _______          _________ _______  _______(  __  \ (  ____ \|\     /|\__   __/(  ____ \(  ____ \| (  \  )| (    \/| )   (">
 
 
 
@@ -141,12 +141,12 @@
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
-  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </script>
 
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -155,7 +155,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -192,7 +192,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -202,7 +202,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -212,7 +212,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -222,7 +222,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -232,7 +232,7 @@
       
         
         <li class="menu-item menu-item-friendlink">
-          <a href="/friendlink" rel="section">
+          <a href="/friendlink%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-group"></i> <br />
             
@@ -242,7 +242,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -317,7 +317,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2017/06/06/ARM&Linux/Linux驱动/Linux统一设备模型之我见/">
+    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2017/06/06/ARM&Linux/Linux%E9%A9%B1%E5%8A%A8/Linux%E7%BB%9F%E4%B8%80%E8%AE%BE%E5%A4%87%E6%A8%A1%E5%9E%8B%E4%B9%8B%E6%88%91%E8%A7%81/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dock">
@@ -380,7 +380,7 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ARM-Linux/Linux驱动/" itemprop="url" rel="index">
+                  <a href="/categories/ARM-Linux/Linux%E9%A9%B1%E5%8A%A8/" itemprop="url" rel="index">
                     <span itemprop="name">Linux驱动</span>
                   </a>
                 </span>
@@ -411,7 +411,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1k
+                  
                 </span>
               
 
@@ -427,7 +427,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  
                 </span>
               
             </div>
@@ -448,12 +448,12 @@
       
 
       
-        <p>Linux设备模型为内核建立起一个统一的设备模型，从而有一个对系统结构的一般性抽象描述。<br><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">______   _______          _________ _______  _______</div><div class="line">(  __  \ (  ____ \|<span class="string">\     /</span>|<span class="string">\__   __/(  ____ \(  ____ \</span></div><div class="line">|<span class="string"> (  \  )</span>|<span class="string"> (    \/</span>|<span class="string"> )   ( </span>|<span class="string">   ) (   </span>|<span class="string"> (    \/</span>|<span class="string"> (    \/</span></div><div class="line">|<span class="string"> </span>|<span class="string">   ) </span>||<span class="string"> (__    </span>|<span class="string"> </span>|<span class="string">   </span>|<span class="string"> </span>|<span class="string">   </span>|<span class="string"> </span>|<span class="string">   </span>|<span class="string"> </span>|<span class="string">      </span>|<span class="string"> (__</span></div><div class="line">|<span class="string"> </span>|<span class="string">   </span>|<span class="string"> </span>||<span class="string">  __)   ( (   ) )   </span>|<span class="string"> </span>|<span class="string">   </span>|<span class="string"> </span>|<span class="string">      </span>|<span class="string">  __)</span></div><div class="line">|<span class="string"> </span>|<span class="string">   ) </span>||<span class="string"> (       \ \_/ /    </span>|<span class="string"> </span>|<span class="string">   </span>|<span class="string"> </span>|<span class="string">      </span>|<span class="string"> (</span></div><div class="line">|<span class="string"> (__/  )</span>|<span class="string"> (____/\  \   /  ___) (___</span>|<span class="string"> (____/\</span>|<span class="string"> (____/\</span></div><div class="line"><span class="string">(______/ (_______/   \_/   \_______/(_______/(_______/</span></div><div class="line"></div><div class="line"><span class="string">_______  _______  ______   _______  _</span></div><div class="line"><span class="string">(       )(  ___  )(  __  \ (  ____ \( \</span></div><div class="line">|<span class="string"> () () </span>||<span class="string"> (   ) </span>||<span class="string"> (  \  )</span>|<span class="string"> (    \/</span>|<span class="string"> (</span></div><div class="line">|<span class="string"> </span>||<span class="string"> </span>||<span class="string"> </span>||<span class="string"> </span>|<span class="string">   </span>|<span class="string"> </span>||<span class="string"> </span>|<span class="string">   ) </span>||<span class="string"> (__    </span>|<span class="string"> </span>|</div><div class="line">|<span class="string"> </span>|<span class="string">(_)</span>|<span class="string"> </span>||<span class="string"> </span>|<span class="string">   </span>|<span class="string"> </span>||<span class="string"> </span>|<span class="string">   </span>|<span class="string"> </span>||<span class="string">  __)   </span>|<span class="string"> </span>|</div><div class="line">|<span class="string"> </span>|<span class="string">   </span>|<span class="string"> </span>||<span class="string"> </span>|<span class="string">   </span>|<span class="string"> </span>||<span class="string"> </span>|<span class="string">   ) </span>||<span class="string"> (      </span>|<span class="string"> </span>|</div><div class="line">|<span class="string"> )   ( </span>||<span class="string"> (___) </span>||<span class="string"> (__/  )</span>|<span class="string"> (____/\</span>|<span class="string"> (____/\</span></div><div class="line">|<span class="string">/     \</span>|<span class="string">(_______)(______/ (_______/(_______/</span></div></pre></td></tr></table></figure></p>
+        <p>Linux设备模型为内核建立起一个统一的设备模型，从而有一个对系统结构的一般性抽象描述。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">______   _______          _________ _______  _______</span><br><span class="line">(  __  \ (  ____ \|\     &#x2F;|\__   __&#x2F;(  ____ \(  ____ \</span><br><span class="line">| (  \  )| (    \&#x2F;| )   ( |   ) (   | (    \&#x2F;| (    \&#x2F;</span><br><span class="line">| |   ) || (__    | |   | |   | |   | |      | (__</span><br><span class="line">| |   | ||  __)   ( (   ) )   | |   | |      |  __)</span><br><span class="line">| |   ) || (       \ \_&#x2F; &#x2F;    | |   | |      | (</span><br><span class="line">| (__&#x2F;  )| (____&#x2F;\  \   &#x2F;  ___) (___| (____&#x2F;\| (____&#x2F;\</span><br><span class="line">(______&#x2F; (_______&#x2F;   \_&#x2F;   \_______&#x2F;(_______&#x2F;(_______&#x2F;</span><br><span class="line"></span><br><span class="line">_______  _______  ______   _______  _</span><br><span class="line">(       )(  ___  )(  __  \ (  ____ \( \</span><br><span class="line">| () () || (   ) || (  \  )| (    \&#x2F;| (</span><br><span class="line">| || || || |   | || |   ) || (__    | |</span><br><span class="line">| |(_)| || |   | || |   | ||  __)   | |</span><br><span class="line">| |   | || |   | || |   ) || (      | |</span><br><span class="line">| )   ( || (___) || (__&#x2F;  )| (____&#x2F;\| (____&#x2F;\</span><br><span class="line">|&#x2F;     \|(_______)(______&#x2F; (_______&#x2F;(_______&#x2F;</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <h1 id="1-背景"><a href="#1-背景" class="headerlink" title="1.背景"></a>1.背景</h1><p>在 Linux 2.5 内核的开发过程中，人们设计了一套新的设备模型，目的是为了对计算机上的所有设备进行统一地表示和操作，包括设备本身和设备之间的连接关系。这个模型是在分析了 PCI 和 USB 的总线驱动过程中得到的，这两个总线类型能代表当前系统中的大多数设备类型，它们都有完善的热挺拔机制和电源管理的支持，也都有级连机制的支持，以桥接的 PCI/USB 总线控制器的方式可以支持更多的 PCI/USB 设备。为了给所有设备添加统一的电源管理的支持，而不是让每个设备中去独立实现电源管理的支持，人们考虑的是如何尽可能地重用代码；而且在有层次模型的 PCI/USB 总线中，必须以合理形式展示出这个层次关系，这也是电源管理等所要求的必须有层次结构。</p>
 <p>如在一个典型的 PC 系统中，中央处理器(CPU)能直接控制的是 PCI 总线设备，而 USB 总线设备是以一个 PCI 设备(PCI-USB桥)的形式接入在 PCI 总线设备上，外部 USB 设备再接入在 USB 总线设备上；当计算机执行挂起(suspend)操作时， Linux 内核应该以 “外部USB设备-&gt;USB总线设备-&gt;PCI总线设备” 的顺序通知每一个设备将电源挂起；执行恢复(resume)时则以相反的顺序通知；反之如果不按此顺序则将有设备得不到正确的电源状态变迁的通知，将无法正常工作。</p>
-<h1 id="2-Linux统一设备模型"><a href="#2-Linux统一设备模型" class="headerlink" title="2.Linux统一设备模型"></a>2.Linux统一设备模型</h1><h2 id="2-1-基本结构"><a href="#2-1-基本结构" class="headerlink" title="2.1 基本结构"></a>2.1 基本结构</h2><div class="table-container">
-<table>
+<h1 id="2-Linux统一设备模型"><a href="#2-Linux统一设备模型" class="headerlink" title="2.Linux统一设备模型"></a>2.Linux统一设备模型</h1><h2 id="2-1-基本结构"><a href="#2-1-基本结构" class="headerlink" title="2.1 基本结构"></a>2.1 基本结构</h2><table>
 <thead>
 <tr>
 <th>类型</th>
@@ -461,8 +461,7 @@
 <th>对应的内核数据结构</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>设备（Device）</td>
 <td>设备是此模型中最基本的类型，以设备本身的连接按层次组织</td>
 <td>struct device</td>
@@ -482,22 +481,16 @@
 <td>按照功能进行分类组织的设备层次树,如键盘在输入类下</td>
 <td>struct class</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <h2 id="2-1-基本连接"><a href="#2-1-基本连接" class="headerlink" title="2.1 基本连接"></a>2.1 基本连接</h2><p>从内核在实现它们时所使用的数据结构来说， Linux 统一设备模型又是以两种基本数据结构进行树型和链表型结构组织的：</p>
 <ul>
-<li>kobject: 在 Linux 设备模型中最基本的对象，它的功能是提供引用计数和维持父子(parent)结构、平级(sibling)目录关系，上面的 device, device_driver 等各对象都是以 kobject 基础功能之上实现的。<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">kobject</span> &#123;</span></div><div class="line">        <span class="keyword">const</span> <span class="keyword">char</span>              *name;</div><div class="line">        <span class="class"><span class="keyword">struct</span> <span class="title">list_head</span>        <span class="title">entry</span>;</span></div><div class="line">        <span class="class"><span class="keyword">struct</span> <span class="title">kobject</span>          *<span class="title">parent</span>;</span></div><div class="line">        <span class="class"><span class="keyword">struct</span> <span class="title">kset</span>             *<span class="title">kset</span>;</span></div><div class="line">        <span class="class"><span class="keyword">struct</span> <span class="title">kobj_type</span>        *<span class="title">ktype</span>;</span></div><div class="line">        <span class="class"><span class="keyword">struct</span> <span class="title">sysfs_dirent</span>     *<span class="title">sd</span>;</span></div><div class="line">        <span class="class"><span class="keyword">struct</span> <span class="title">kref</span>             <span class="title">kref</span>;</span></div><div class="line">        <span class="keyword">unsigned</span> <span class="keyword">int</span> state_initialized:<span class="number">1</span>;</div><div class="line">        <span class="keyword">unsigned</span> <span class="keyword">int</span> state_in_sysfs:<span class="number">1</span>;</div><div class="line">        <span class="keyword">unsigned</span> <span class="keyword">int</span> state_add_uevent_sent:<span class="number">1</span>;</div><div class="line">        <span class="keyword">unsigned</span> <span class="keyword">int</span> state_remove_uevent_sent:<span class="number">1</span>;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-</li>
+<li>kobject: 在 Linux 设备模型中最基本的对象，它的功能是提供引用计数和维持父子(parent)结构、平级(sibling)目录关系，上面的 device, device_driver 等各对象都是以 kobject 基础功能之上实现的。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">struct kobject &#123;</span><br><span class="line">        const char              *name;</span><br><span class="line">        struct list_head        entry;</span><br><span class="line">        struct kobject          *parent;</span><br><span class="line">        struct kset             *kset;</span><br><span class="line">        struct kobj_type        *ktype;</span><br><span class="line">        struct sysfs_dirent     *sd;</span><br><span class="line">        struct kref             kref;</span><br><span class="line">        unsigned int state_initialized:1;</span><br><span class="line">        unsigned int state_in_sysfs:1;</span><br><span class="line">        unsigned int state_add_uevent_sent:1;</span><br><span class="line">        unsigned int state_remove_uevent_sent:1;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+其中 struct kref 内含一个 atomic_t 类型用于引用计数， parent 是单个指向父节点的指针， entry 用于父 kset 以链表头结构将 kobject 结构维护成双向链表；</li>
+<li>kset: 它用来对同类型对象提供一个包装集合，在内核数据结构上它也是由内嵌一个 kboject 实现，因而它同时也是一个 kobject (面向对象 OOP 概念中的继承关系) ，具有 kobject 的全部功能。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">truct kset &#123;</span><br><span class="line">        struct list_head list;</span><br><span class="line">        spinlock_t list_lock;</span><br><span class="line">        struct kobject kobj;</span><br><span class="line">        struct kset_uevent_ops *uevent_ops;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+其中的 struct list_head list 用于将集合中的 kobject 按 struct list_head entry 维护成双向链表。</li>
 </ul>
-<p>其中 struct kref 内含一个 atomic_t 类型用于引用计数， parent 是单个指向父节点的指针， entry 用于父 kset 以链表头结构将 kobject 结构维护成双向链表；</p>
-<ul>
-<li>kset: 它用来对同类型对象提供一个包装集合，在内核数据结构上它也是由内嵌一个 kboject 实现，因而它同时也是一个 kobject (面向对象 OOP 概念中的继承关系) ，具有 kobject 的全部功能。<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">truct kset &#123;</div><div class="line">        <span class="class"><span class="keyword">struct</span> <span class="title">list_head</span> <span class="title">list</span>;</span></div><div class="line">        <span class="keyword">spinlock_t</span> list_lock;</div><div class="line">        <span class="class"><span class="keyword">struct</span> <span class="title">kobject</span> <span class="title">kobj</span>;</span></div><div class="line">        <span class="class"><span class="keyword">struct</span> <span class="title">kset_uevent_ops</span> *<span class="title">uevent_ops</span>;</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>其中的 struct list_head list 用于将集合中的 kobject 按 struct list_head entry 维护成双向链表。</p>
 <p>版权声明：本文为博主原创文章，转载需声明为转载内容并添加原文地址。</p>
-<p>原文地址：<a href="https://coderdock.com">https://coderdock.com</a></p>
+<p>原文地址：<a href="https://coderdock.com" target="_blank" rel="noopener">https://coderdock.com</a></p>
 
       
     </div>
@@ -525,7 +518,7 @@
           
             <a href="/tags/Linux/" rel="tag"># Linux</a>
           
-            <a href="/tags/统一设备模型/" rel="tag"># 统一设备模型</a>
+            <a href="/tags/%E7%BB%9F%E4%B8%80%E8%AE%BE%E5%A4%87%E6%A8%A1%E5%9E%8B/" rel="tag"># 统一设备模型</a>
           
         </div>
       
@@ -538,7 +531,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/03/ARM&Linux/Linux驱动/Linux输入子系统Core源码简要分析/" rel="next" title="Linux输入子系统Core源码简要分析">
+              <a href="/2017/06/03/ARM&Linux/Linux%E9%A9%B1%E5%8A%A8/Linux%E8%BE%93%E5%85%A5%E5%AD%90%E7%B3%BB%E7%BB%9FCore%E6%BA%90%E7%A0%81%E7%AE%80%E8%A6%81%E5%88%86%E6%9E%90/" rel="next" title="Linux输入子系统Core源码简要分析">
                 <i class="fa fa-chevron-left"></i> Linux输入子系统Core源码简要分析
               </a>
             
@@ -548,7 +541,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/06/08/FPGA/协议/通信协议-IIC-Verilog-HDL实现/" rel="prev" title="通信协议-IIC Verilog HDL实现">
+              <a href="/2017/06/08/FPGA/%E5%8D%8F%E8%AE%AE/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE-IIC-Verilog-HDL%E5%AE%9E%E7%8E%B0/" rel="prev" title="通信协议-IIC Verilog HDL实现">
                 通信协议-IIC Verilog HDL实现 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -633,7 +626,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">日志</span>
@@ -645,10 +638,10 @@
               
               
               <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
+                
                   <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">分类</span>
-                </a>
+                
               </div>
             
 
@@ -656,10 +649,10 @@
               
               
               <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
+                
                   <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">标签</span>
-                </a>
+                
               </div>
             
 
@@ -729,7 +722,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">49.9k</span>
+    <span title="Site words total count"></span>
   
 </div>
 
@@ -1288,7 +1281,7 @@
   
  
 <script type="text/javascript"
-color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
 
 
 

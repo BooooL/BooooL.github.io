@@ -7,7 +7,7 @@
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+  <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
@@ -79,19 +79,20 @@
 
 
 
-<meta name="description" content="在本章会介绍uboot命令的相关结构体并添加自定义命令。12345678______   _______  _______ _________   _______  _______  ______|\     /|(  ___ \ (  ___  )(  ___  )\__   __/  (  ____ \(       )(  __  \| )   ( || (   ) )| (   ) ||">
-<meta name="keywords" content="虚拟开发板,uboot,命令">
+<meta name="description" content="在本章会介绍uboot命令的相关结构体并添加自定义命令。 12345678______   _______  _______ _________   _______  _______  ______|\     &#x2F;|(  ___ \ (  ___  )(  ___  )\__   __&#x2F;  (  ____ \(       )(  __  \| )   ( || (   ) )">
 <meta property="og:type" content="article">
 <meta property="og:title" content="虚拟开发板-uboot添加实现命令">
-<meta property="og:url" content="http://coderdock.com/2017/04/29/VirtualBoard/虚拟开发板-uboot添加实现命令/index.html">
+<meta property="og:url" content="http://coderdock.com/2017/04/29/VirtualBoard/%E8%99%9A%E6%8B%9F%E5%BC%80%E5%8F%91%E6%9D%BF-uboot%E6%B7%BB%E5%8A%A0%E5%AE%9E%E7%8E%B0%E5%91%BD%E4%BB%A4/index.html">
 <meta property="og:site_name" content="CoderDock">
-<meta property="og:description" content="在本章会介绍uboot命令的相关结构体并添加自定义命令。12345678______   _______  _______ _________   _______  _______  ______|\     /|(  ___ \ (  ___  )(  ___  )\__   __/  (  ____ \(       )(  __  \| )   ( || (   ) )| (   ) ||">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:description" content="在本章会介绍uboot命令的相关结构体并添加自定义命令。 12345678______   _______  _______ _________   _______  _______  ______|\     &#x2F;|(  ___ \ (  ___  )(  ___  )\__   __&#x2F;  (  ____ \(       )(  __  \| )   ( || (   ) )">
 <meta property="og:image" content="https://img.blog.csdn.net/20171229103157977?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzk4OTI4NA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2019-09-07T07:47:16.068Z">
+<meta property="article:published_time" content="2017-04-29T04:00:09.000Z">
+<meta property="article:modified_time" content="2020-05-24T09:10:00.858Z">
+<meta property="article:author" content="Dock">
+<meta property="article:tag" content="虚拟开发板">
+<meta property="article:tag" content="uboot">
+<meta property="article:tag" content="命令">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="虚拟开发板-uboot添加实现命令">
-<meta name="twitter:description" content="在本章会介绍uboot命令的相关结构体并添加自定义命令。12345678______   _______  _______ _________   _______  _______  ______|\     /|(  ___ \ (  ___  )(  ___  )\__   __/  (  ____ \(       )(  __  \| )   ( || (   ) )| (   ) ||">
 <meta name="twitter:image" content="https://img.blog.csdn.net/20171229103157977?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzk4OTI4NA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 
 
@@ -143,12 +144,12 @@
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
-  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </script>
 
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -157,7 +158,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -194,7 +195,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -204,7 +205,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -214,7 +215,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -224,7 +225,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -234,7 +235,7 @@
       
         
         <li class="menu-item menu-item-friendlink">
-          <a href="/friendlink" rel="section">
+          <a href="/friendlink%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-group"></i> <br />
             
@@ -244,7 +245,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -319,7 +320,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2017/04/29/VirtualBoard/虚拟开发板-uboot添加实现命令/">
+    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2017/04/29/VirtualBoard/%E8%99%9A%E6%8B%9F%E5%BC%80%E5%8F%91%E6%9D%BF-uboot%E6%B7%BB%E5%8A%A0%E5%AE%9E%E7%8E%B0%E5%91%BD%E4%BB%A4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dock">
@@ -371,7 +372,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/虚拟开发板/" itemprop="url" rel="index">
+                  <a href="/categories/%E8%99%9A%E6%8B%9F%E5%BC%80%E5%8F%91%E6%9D%BF/" itemprop="url" rel="index">
                     <span itemprop="name">虚拟开发板</span>
                   </a>
                 </span>
@@ -382,7 +383,7 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/虚拟开发板/Qemu/" itemprop="url" rel="index">
+                  <a href="/categories/%E8%99%9A%E6%8B%9F%E5%BC%80%E5%8F%91%E6%9D%BF/Qemu/" itemprop="url" rel="index">
                     <span itemprop="name">Qemu</span>
                   </a>
                 </span>
@@ -413,7 +414,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  400
+                  
                 </span>
               
 
@@ -429,7 +430,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  
                 </span>
               
             </div>
@@ -450,17 +451,24 @@
       
 
       
-        <p>在本章会介绍uboot命令的相关结构体并添加自定义命令。<br><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">______   _______  _______ _________   _______  _______  ______</div><div class="line">|<span class="string">\     /</span>|<span class="string">(  ___ \ (  ___  )(  ___  )\__   __/  (  ____ \(       )(  __  \</span></div><div class="line">|<span class="string"> )   ( </span>||<span class="string"> (   ) )</span>|<span class="string"> (   ) </span>||<span class="string"> (   ) </span>|<span class="string">   ) (     </span>|<span class="string"> (    \/</span>|<span class="string"> () () </span>||<span class="string"> (  \  )</span></div><div class="line">|<span class="string"> </span>|<span class="string">   </span>|<span class="string"> </span>||<span class="string"> (__/ / </span>|<span class="string"> </span>|<span class="string">   </span>|<span class="string"> </span>||<span class="string"> </span>|<span class="string">   </span>|<span class="string"> </span>|<span class="string">   </span>|<span class="string"> </span>|<span class="string">     </span>|<span class="string"> </span>|<span class="string">      </span>|<span class="string"> </span>||<span class="string"> </span>||<span class="string"> </span>||<span class="string"> </span>|<span class="string">   ) </span>|</div><div class="line">|<span class="string"> </span>|<span class="string">   </span>|<span class="string"> </span>||<span class="string">  __ (  </span>|<span class="string"> </span>|<span class="string">   </span>|<span class="string"> </span>||<span class="string"> </span>|<span class="string">   </span>|<span class="string"> </span>|<span class="string">   </span>|<span class="string"> </span>|<span class="string">     </span>|<span class="string"> </span>|<span class="string">      </span>|<span class="string"> </span>|<span class="string">(_)</span>|<span class="string"> </span>||<span class="string"> </span>|<span class="string">   </span>|<span class="string"> </span>|</div><div class="line">|<span class="string"> </span>|<span class="string">   </span>|<span class="string"> </span>||<span class="string"> (  \ \ </span>|<span class="string"> </span>|<span class="string">   </span>|<span class="string"> </span>||<span class="string"> </span>|<span class="string">   </span>|<span class="string"> </span>|<span class="string">   </span>|<span class="string"> </span>|<span class="string">     </span>|<span class="string"> </span>|<span class="string">      </span>|<span class="string"> </span>|<span class="string">   </span>|<span class="string"> </span>||<span class="string"> </span>|<span class="string">   ) </span>|</div><div class="line">|<span class="string"> (___) </span>||<span class="string"> )___) )</span>|<span class="string"> (___) </span>||<span class="string"> (___) </span>|<span class="string">   </span>|<span class="string"> </span>|<span class="string">     </span>|<span class="string"> (____/\</span>|<span class="string"> )   ( </span>||<span class="string"> (__/  )</span></div><div class="line"><span class="string">(_______)</span>|<span class="string">/ \___/ (_______)(_______)   )_(     (_______/</span>|<span class="string">/     \</span>|<span class="string">(______/</span></div></pre></td></tr></table></figure></p>
+        <p>在本章会介绍uboot命令的相关结构体并添加自定义命令。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">______   _______  _______ _________   _______  _______  ______</span><br><span class="line">|\     &#x2F;|(  ___ \ (  ___  )(  ___  )\__   __&#x2F;  (  ____ \(       )(  __  \</span><br><span class="line">| )   ( || (   ) )| (   ) || (   ) |   ) (     | (    \&#x2F;| () () || (  \  )</span><br><span class="line">| |   | || (__&#x2F; &#x2F; | |   | || |   | |   | |     | |      | || || || |   ) |</span><br><span class="line">| |   | ||  __ (  | |   | || |   | |   | |     | |      | |(_)| || |   | |</span><br><span class="line">| |   | || (  \ \ | |   | || |   | |   | |     | |      | |   | || |   ) |</span><br><span class="line">| (___) || )___) )| (___) || (___) |   | |     | (____&#x2F;\| )   ( || (__&#x2F;  )</span><br><span class="line">(_______)|&#x2F; \___&#x2F; (_______)(_______)   )_(     (_______&#x2F;|&#x2F;     \|(______&#x2F;</span><br></pre></td></tr></table></figure>
+
 <a id="more"></a>
-<h1 id="1-相关结构体分析"><a href="#1-相关结构体分析" class="headerlink" title="1.相关结构体分析"></a>1.相关结构体分析</h1><p>在uboot中与命令相关的一个结构体如下，该结构体的内容会被保存在二进制<code>u_boot_cmd</code>段，每当输入一个命令，就会依次在该段内寻找命令，然后执行相应的函数。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">cmd_tbl_s</span> &#123;</span></div><div class="line">	<span class="keyword">char</span>		*name;		<span class="comment">/* Command Name			*/</span></div><div class="line">	<span class="keyword">int</span>		maxargs;	<span class="comment">/* maximum number of arguments	*/</span></div><div class="line">	<span class="keyword">int</span>		repeatable;	<span class="comment">/* autorepeat allowed?		*/</span></div><div class="line">					<span class="comment">/* Implementation function	*/</span></div><div class="line">	<span class="keyword">int</span>		(*cmd)(struct cmd_tbl_s *, <span class="keyword">int</span>, <span class="keyword">int</span>, <span class="keyword">char</span> * <span class="keyword">const</span> []);</div><div class="line">	<span class="keyword">char</span>		*usage;		<span class="comment">/* Usage message	(short)	*/</span></div><div class="line"><span class="meta">#<span class="meta-keyword">ifdef</span>	CONFIG_SYS_LONGHELP</span></div><div class="line">	<span class="keyword">char</span>		*help;		<span class="comment">/* Help  message	(long)	*/</span></div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> CONFIG_AUTO_COMPLETE</span></div><div class="line">	<span class="comment">/* do auto completion on the arguments */</span></div><div class="line">	<span class="keyword">int</span>		(*complete)(<span class="keyword">int</span> argc, <span class="keyword">char</span> * <span class="keyword">const</span> argv[], <span class="keyword">char</span> last_char, <span class="keyword">int</span> maxv, <span class="keyword">char</span> *cmdv[]);</div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<p>如下：就定义了一个imls命令，参数最多为1，可重复执行，实现函数为<code>do_imls</code>,之后是帮助文档。<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">U_BOOT_CMD(</div><div class="line">	imls,	<span class="number">1</span>,		<span class="number">1</span>,	do_imls,</div><div class="line">	<span class="string">"list all images found in flash"</span>,</div><div class="line">	<span class="string">"<span class="subst">\n</span>"</span></div><div class="line">	<span class="string">"    - Prints information about all images found at sector/block<span class="subst">\n</span>"</span></div><div class="line">	<span class="string">"      boundaries in nor/nand flash."</span></div><div class="line">);</div><div class="line">#endif</div></pre></td></tr></table></figure></p>
-<h1 id="2-增加自定义命令"><a href="#2-增加自定义命令" class="headerlink" title="2.增加自定义命令"></a>2.增加自定义命令</h1><p>在common目录下新建<code>hello_cmd.c</code>文件,输入一下内容：<br><figure class="highlight autoit"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;common.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bootretry.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cli.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;console.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;linux/ctype.h&gt;</span></span></div><div class="line"><span class="keyword">static</span> <span class="built_in">int</span> do_hello(cmd_tbl_t *cmdtp, <span class="built_in">int</span> flag, <span class="built_in">int</span> argc, char * <span class="keyword">const</span> argv[])</div><div class="line">&#123;</div><div class="line">	printf(<span class="string">"Hello World\n"</span>)<span class="comment">;</span></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span><span class="comment">;</span></div><div class="line">&#125;</div><div class="line">U_BOOT_CMD(</div><div class="line">	hello, CONFIG_SYS_MAXARGS, <span class="number">1</span>,	do_hello,</div><div class="line">	<span class="string">"print Hello"</span>,</div><div class="line">	<span class="string">"print hello"</span></div><div class="line">	<span class="string">"      passing 'arg' as arguments"</span></div><div class="line">)<span class="comment">;</span></div></pre></td></tr></table></figure></p>
-<p>在Makefile中输入：<br><figure class="highlight fix"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attr">obj-y +</span>=<span class="string"> hello_cmd.o</span></div></pre></td></tr></table></figure></p>
-<p>重新使用命令：<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">make <span class="attribute">ARCH</span>=arm <span class="attribute">CROSS_COMPILE</span>=arm-linux-gnueabihf-</div></pre></td></tr></table></figure></p>
+<h1 id="1-相关结构体分析"><a href="#1-相关结构体分析" class="headerlink" title="1.相关结构体分析"></a>1.相关结构体分析</h1><p>在uboot中与命令相关的一个结构体如下，该结构体的内容会被保存在二进制<code>u_boot_cmd</code>段，每当输入一个命令，就会依次在该段内寻找命令，然后执行相应的函数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">struct cmd_tbl_s &#123;</span><br><span class="line">	char		*name;		&#x2F;* Command Name			*&#x2F;</span><br><span class="line">	int		maxargs;	&#x2F;* maximum number of arguments	*&#x2F;</span><br><span class="line">	int		repeatable;	&#x2F;* autorepeat allowed?		*&#x2F;</span><br><span class="line">					&#x2F;* Implementation function	*&#x2F;</span><br><span class="line">	int		(*cmd)(struct cmd_tbl_s *, int, int, char * const []);</span><br><span class="line">	char		*usage;		&#x2F;* Usage message	(short)	*&#x2F;</span><br><span class="line">#ifdef	CONFIG_SYS_LONGHELP</span><br><span class="line">	char		*help;		&#x2F;* Help  message	(long)	*&#x2F;</span><br><span class="line">#endif</span><br><span class="line">#ifdef CONFIG_AUTO_COMPLETE</span><br><span class="line">	&#x2F;* do auto completion on the arguments *&#x2F;</span><br><span class="line">	int		(*complete)(int argc, char * const argv[], char last_char, int maxv, char *cmdv[]);</span><br><span class="line">#endif</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>如下：就定义了一个imls命令，参数最多为1，可重复执行，实现函数为<code>do_imls</code>,之后是帮助文档。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">U_BOOT_CMD(</span><br><span class="line">	imls,	1,		1,	do_imls,</span><br><span class="line">	&quot;list all images found in flash&quot;,</span><br><span class="line">	&quot;\n&quot;</span><br><span class="line">	&quot;    - Prints information about all images found at sector&#x2F;block\n&quot;</span><br><span class="line">	&quot;      boundaries in nor&#x2F;nand flash.&quot;</span><br><span class="line">);</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+<h1 id="2-增加自定义命令"><a href="#2-增加自定义命令" class="headerlink" title="2.增加自定义命令"></a>2.增加自定义命令</h1><p>在common目录下新建<code>hello_cmd.c</code>文件,输入一下内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;common.h&gt;</span><br><span class="line">#include &lt;bootretry.h&gt;</span><br><span class="line">#include &lt;cli.h&gt;</span><br><span class="line">#include &lt;console.h&gt;</span><br><span class="line">#include &lt;linux&#x2F;ctype.h&gt;</span><br><span class="line">static int do_hello(cmd_tbl_t *cmdtp, int flag, int argc, char * const argv[])</span><br><span class="line">&#123;</span><br><span class="line">	printf(&quot;Hello World\n&quot;);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br><span class="line">U_BOOT_CMD(</span><br><span class="line">	hello, CONFIG_SYS_MAXARGS, 1,	do_hello,</span><br><span class="line">	&quot;print Hello&quot;,</span><br><span class="line">	&quot;print hello&quot;</span><br><span class="line">	&quot;      passing &#39;arg&#39; as arguments&quot;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>在Makefile中输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">obj-y +&#x3D; hello_cmd.o</span><br></pre></td></tr></table></figure>
+<p>重新使用命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make ARCH&#x3D;arm CROSS_COMPILE&#x3D;arm-linux-gnueabihf-</span><br></pre></td></tr></table></figure>
 <p>重新编译后，进入uboot:</p>
 <p><img src="https://img.blog.csdn.net/20171229103157977?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzk4OTI4NA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="hello_cmd"></p>
 <p>版权声明：本文为博主原创文章，转载需声明为转载内容并添加原文地址。</p>
-<p>原文地址：<a href="https://coderdock.com">https://coderdock.com</a></p>
+<p>原文地址：<a href="https://coderdock.com" target="_blank" rel="noopener">https://coderdock.com</a></p>
 
       
     </div>
@@ -486,11 +494,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/虚拟开发板/" rel="tag"># 虚拟开发板</a>
+            <a href="/tags/%E8%99%9A%E6%8B%9F%E5%BC%80%E5%8F%91%E6%9D%BF/" rel="tag"># 虚拟开发板</a>
           
             <a href="/tags/uboot/" rel="tag"># uboot</a>
           
-            <a href="/tags/命令/" rel="tag"># 命令</a>
+            <a href="/tags/%E5%91%BD%E4%BB%A4/" rel="tag"># 命令</a>
           
         </div>
       
@@ -503,7 +511,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/29/VirtualBoard/虚拟开发板-Qemu调试uboot/" rel="next" title="虚拟开发板-Qemu调试uboot">
+              <a href="/2017/04/29/VirtualBoard/%E8%99%9A%E6%8B%9F%E5%BC%80%E5%8F%91%E6%9D%BF-Qemu%E8%B0%83%E8%AF%95uboot/" rel="next" title="虚拟开发板-Qemu调试uboot">
                 <i class="fa fa-chevron-left"></i> 虚拟开发板-Qemu调试uboot
               </a>
             
@@ -513,7 +521,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/24/FPGA/协议/通信协议-IIC/" rel="prev" title="通信协议-IIC">
+              <a href="/2017/05/24/FPGA/%E5%8D%8F%E8%AE%AE/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE-IIC/" rel="prev" title="通信协议-IIC">
                 通信协议-IIC <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -598,7 +606,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">日志</span>
@@ -610,10 +618,10 @@
               
               
               <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
+                
                   <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">分类</span>
-                </a>
+                
               </div>
             
 
@@ -621,10 +629,10 @@
               
               
               <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
+                
                   <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">标签</span>
-                </a>
+                
               </div>
             
 
@@ -694,7 +702,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">49.9k</span>
+    <span title="Site words total count"></span>
   
 </div>
 
@@ -1253,7 +1261,7 @@
   
  
 <script type="text/javascript"
-color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
 
 
 

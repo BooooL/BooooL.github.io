@@ -7,7 +7,7 @@
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+  <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
@@ -80,18 +80,18 @@
 
 
 <meta name="description" content="SLAM的基础概念。">
-<meta name="keywords" content="SLAM,基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SLAM-0-基础">
-<meta property="og:url" content="http://coderdock.com/2017/10/02/SLAM/SLAM-0-基础/index.html">
+<meta property="og:url" content="http://coderdock.com/2017/10/02/SLAM/SLAM-0-%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="CoderDock">
 <meta property="og:description" content="SLAM的基础概念。">
-<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://download.broadview.com.cn/Original/17055494d435efcc231f">
-<meta property="og:updated_time" content="2019-09-07T07:47:15.894Z">
+<meta property="article:published_time" content="2017-10-02T14:28:13.000Z">
+<meta property="article:modified_time" content="2020-05-24T09:10:00.842Z">
+<meta property="article:author" content="Dock">
+<meta property="article:tag" content="SLAM">
+<meta property="article:tag" content="基础">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SLAM-0-基础">
-<meta name="twitter:description" content="SLAM的基础概念。">
 <meta name="twitter:image" content="https://download.broadview.com.cn/Original/17055494d435efcc231f">
 
 
@@ -143,12 +143,12 @@
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
-  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </script>
 
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -157,7 +157,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -194,7 +194,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -204,7 +204,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -214,7 +214,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -224,7 +224,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -234,7 +234,7 @@
       
         
         <li class="menu-item menu-item-friendlink">
-          <a href="/friendlink" rel="section">
+          <a href="/friendlink%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-group"></i> <br />
             
@@ -244,7 +244,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -319,7 +319,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2017/10/02/SLAM/SLAM-0-基础/">
+    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2017/10/02/SLAM/SLAM-0-%E5%9F%BA%E7%A1%80/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dock">
@@ -402,7 +402,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  749
+                  
                 </span>
               
 
@@ -418,7 +418,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  
                 </span>
               
             </div>
@@ -454,7 +454,7 @@
 <li>1.传感器信息读取：进行相机信息的读取和预处理。可能还会有码盘、惯性传感器等信息的读取和同步。</li>
 <li>2.视觉里程计(Visual Odometry)：视觉里程计的任务是估算相邻图像间相机的运动，以及局部地图的样子。</li>
 <li>3.后端优化（Optimization）:后端接受不同时刻视觉里程计测量的相机位姿，以及回环检测的信息，对它们进行优化，得到全局一致的轨迹和地图。</li>
-<li><ol>
+<li><ol start="4">
 <li>回环检测：回环检测判断机器人是否到达过先前的位置，如果检测到回环，会把信息提供给后端处理。</li>
 </ol>
 </li>
@@ -462,10 +462,8 @@
 </ul>
 <p>&emsp;&emsp;在视觉SLAM中，前端和计算机视觉研究领域更为相关。比如图像的特征提取与匹配。后端则主要是滤波与非线性优化算法。</p>
 <h1 id="3-方程"><a href="#3-方程" class="headerlink" title="3.方程"></a>3.方程</h1><p>抽象数学模型：</p>
-<script type="math/tex; mode=display">
-x_k=f(x_{k-1}, u_k, w_k)</script><p>$x_k$为位置信息，$u_k$为输入，$w_k$为噪声。<br>观测方程：</p>
-<script type="math/tex; mode=display">
-z_{k,j}=h(y_j,x_k,v_{k,j})</script><p>在$x_k$位置看到路标点$y_j$,产生一个标志$z_{k,j}$。$v_{k,j}$为噪声。</p>
+<p>$$<br>x_k=f(x_{k-1}, u_k, w_k)<br>$$<br>$x_k$为位置信息，$u_k$为输入，$w_k$为噪声。<br>观测方程：</p>
+<p>$$<br>z_{k,j}=h(y_j,x_k,v_{k,j})<br>$$<br>在$x_k$位置看到路标点$y_j$,产生一个标志$z_{k,j}$。$v_{k,j}$为噪声。</p>
 <p>这两个工程方程描述了最基本的SLAM问题，SLAM建模问题就是一个状态估计问题。</p>
 <p>分类：分为线性/非线性、高斯、非高斯系统。</p>
 <ul>
@@ -498,7 +496,7 @@ z_{k,j}=h(y_j,x_k,v_{k,j})</script><p>在$x_k$位置看到路标点$y_j$,产生�
           
             <a href="/tags/SLAM/" rel="tag"># SLAM</a>
           
-            <a href="/tags/基础/" rel="tag"># 基础</a>
+            <a href="/tags/%E5%9F%BA%E7%A1%80/" rel="tag"># 基础</a>
           
         </div>
       
@@ -511,8 +509,8 @@ z_{k,j}=h(y_j,x_k,v_{k,j})</script><p>在$x_k$位置看到路标点$y_j$,产生�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/29/TensorFlow/TensorFlow-1-概念/" rel="next" title="TensorFlow-1-概念0">
-                <i class="fa fa-chevron-left"></i> TensorFlow-1-概念0
+              <a href="/2017/10/02/TensorFlow/TensorFlow-2-%E6%A6%82%E5%BF%B51/" rel="next" title="TensorFlow-2-概念1">
+                <i class="fa fa-chevron-left"></i> TensorFlow-2-概念1
               </a>
             
           </div>
@@ -521,8 +519,8 @@ z_{k,j}=h(y_j,x_k,v_{k,j})</script><p>在$x_k$位置看到路标点$y_j$,产生�
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/02/TensorFlow/TensorFlow-2-概念1/" rel="prev" title="TensorFlow-2-概念1">
-                TensorFlow-2-概念1 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/10/13/TensorFlow/TensorFlow-3-Numpy/" rel="prev" title="Hello CoderDock">
+                Hello CoderDock <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -606,7 +604,7 @@ z_{k,j}=h(y_j,x_k,v_{k,j})</script><p>在$x_k$位置看到路标点$y_j$,产生�
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">日志</span>
@@ -618,10 +616,10 @@ z_{k,j}=h(y_j,x_k,v_{k,j})</script><p>在$x_k$位置看到路标点$y_j$,产生�
               
               
               <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
+                
                   <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">分类</span>
-                </a>
+                
               </div>
             
 
@@ -629,10 +627,10 @@ z_{k,j}=h(y_j,x_k,v_{k,j})</script><p>在$x_k$位置看到路标点$y_j$,产生�
               
               
               <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
+                
                   <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">标签</span>
-                </a>
+                
               </div>
             
 
@@ -702,7 +700,7 @@ z_{k,j}=h(y_j,x_k,v_{k,j})</script><p>在$x_k$位置看到路标点$y_j$,产生�
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">49.9k</span>
+    <span title="Site words total count"></span>
   
 </div>
 
@@ -1261,7 +1259,7 @@ z_{k,j}=h(y_j,x_k,v_{k,j})</script><p>在$x_k$位置看到路标点$y_j$,产生�
   
  
 <script type="text/javascript"
-color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
 
 
 

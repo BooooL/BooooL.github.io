@@ -7,7 +7,7 @@
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+  <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
@@ -79,17 +79,16 @@
 
 
 
-<meta name="description" content="版权声明：本文为博主原创文章，转载需声明为转载内容并添加原文地址。 原文地址：https://coderdock.com">
+<meta name="description" content="版权声明：本文为博主原创文章，转载需声明为转载内容并添加原文地址。 原文地址：https:&#x2F;&#x2F;coderdock.com">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux中断处理机制之我见">
-<meta property="og:url" content="http://coderdock.com/2017/06/14/ARM&Linux/Linux驱动/Linux中断处理机制之我见/index.html">
+<meta property="og:url" content="http://coderdock.com/2017/06/14/ARM&Linux/Linux%E9%A9%B1%E5%8A%A8/Linux%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6%E4%B9%8B%E6%88%91%E8%A7%81/index.html">
 <meta property="og:site_name" content="CoderDock">
-<meta property="og:description" content="版权声明：本文为博主原创文章，转载需声明为转载内容并添加原文地址。 原文地址：https://coderdock.com">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-07T07:47:14.750Z">
+<meta property="og:description" content="版权声明：本文为博主原创文章，转载需声明为转载内容并添加原文地址。 原文地址：https:&#x2F;&#x2F;coderdock.com">
+<meta property="article:published_time" content="2017-06-14T05:00:45.000Z">
+<meta property="article:modified_time" content="2020-05-24T09:10:00.811Z">
+<meta property="article:author" content="Dock">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux中断处理机制之我见">
-<meta name="twitter:description" content="版权声明：本文为博主原创文章，转载需声明为转载内容并添加原文地址。 原文地址：https://coderdock.com">
 
 
 
@@ -140,12 +139,12 @@
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
-  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </script>
 
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -154,7 +153,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -191,7 +190,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -201,7 +200,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -211,7 +210,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -221,7 +220,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -231,7 +230,7 @@
       
         
         <li class="menu-item menu-item-friendlink">
-          <a href="/friendlink" rel="section">
+          <a href="/friendlink%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-group"></i> <br />
             
@@ -241,7 +240,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -316,7 +315,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2017/06/14/ARM&Linux/Linux驱动/Linux中断处理机制之我见/">
+    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2017/06/14/ARM&Linux/Linux%E9%A9%B1%E5%8A%A8/Linux%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6%E4%B9%8B%E6%88%91%E8%A7%81/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dock">
@@ -379,7 +378,7 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ARM-Linux/Linux驱动/" itemprop="url" rel="index">
+                  <a href="/categories/ARM-Linux/Linux%E9%A9%B1%E5%8A%A8/" itemprop="url" rel="index">
                     <span itemprop="name">Linux驱动</span>
                   </a>
                 </span>
@@ -410,7 +409,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  37
+                  
                 </span>
               
 
@@ -426,7 +425,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  
                 </span>
               
             </div>
@@ -448,7 +447,7 @@
 
       
         <p>版权声明：本文为博主原创文章，转载需声明为转载内容并添加原文地址。</p>
-<p>原文地址：<a href="https://coderdock.com">https://coderdock.com</a></p>
+<p>原文地址：<a href="https://coderdock.com" target="_blank" rel="noopener">https://coderdock.com</a></p>
 
       
     </div>
@@ -481,7 +480,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/13/ARM&Linux/Linux驱动/list-head之必知必会/" rel="next" title="list_head之必知必会">
+              <a href="/2017/06/13/ARM&Linux/Linux%E9%A9%B1%E5%8A%A8/list-head%E4%B9%8B%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/" rel="next" title="list_head之必知必会">
                 <i class="fa fa-chevron-left"></i> list_head之必知必会
               </a>
             
@@ -491,7 +490,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/06/15/编程框架/Qt/嵌入式Qt5-8移植-基础/" rel="prev" title="嵌入式Qt5.8移植-基础">
+              <a href="/2017/06/15/%E7%BC%96%E7%A8%8B%E6%A1%86%E6%9E%B6/Qt/%E5%B5%8C%E5%85%A5%E5%BC%8FQt5-8%E7%A7%BB%E6%A4%8D-%E5%9F%BA%E7%A1%80/" rel="prev" title="嵌入式Qt5.8移植-基础">
                 嵌入式Qt5.8移植-基础 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -567,7 +566,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">日志</span>
@@ -579,10 +578,10 @@
               
               
               <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
+                
                   <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">分类</span>
-                </a>
+                
               </div>
             
 
@@ -590,10 +589,10 @@
               
               
               <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
+                
                   <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">标签</span>
-                </a>
+                
               </div>
             
 
@@ -647,7 +646,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">49.9k</span>
+    <span title="Site words total count"></span>
   
 </div>
 
@@ -1206,7 +1205,7 @@
   
  
 <script type="text/javascript"
-color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
 
 
 

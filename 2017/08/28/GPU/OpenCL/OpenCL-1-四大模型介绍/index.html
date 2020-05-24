@@ -7,7 +7,7 @@
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+  <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
@@ -80,20 +80,20 @@
 
 
 <meta name="description" content="本节介绍OpenCL的四个编程模型。">
-<meta name="keywords" content="OpenCL,模型">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OpenCL-1-编程四大模型介绍">
-<meta property="og:url" content="http://coderdock.com/2017/08/28/GPU/OpenCL/OpenCL-1-四大模型介绍/index.html">
+<meta property="og:url" content="http://coderdock.com/2017/08/28/GPU/OpenCL/OpenCL-1-%E5%9B%9B%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BB%8B%E7%BB%8D/index.html">
 <meta property="og:site_name" content="CoderDock">
 <meta property="og:description" content="本节介绍OpenCL的四个编程模型。">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1516282831&di=e1a3b4daaf2435f61183fba516d8b739&imgtype=jpg&er=1&src=http%3A%2F%2Fpic.baike.soso.com%2Fp%2F20140514%2F20140514111325-626930652.jpg">
+<meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1516282831&di=e1a3b4daaf2435f61183fba516d8b739&imgtype=jpg&er=1&src=http%253A%252F%252Fpic.baike.soso.com%252Fp%252F20140514%252F20140514111325-626930652.jpg">
 <meta property="og:image" content="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3991552943,3638402409&fm=27&gp=0.jpg">
-<meta property="og:updated_time" content="2019-09-07T07:47:15.761Z">
+<meta property="article:published_time" content="2017-08-28T04:48:13.000Z">
+<meta property="article:modified_time" content="2020-05-24T09:10:00.842Z">
+<meta property="article:author" content="Dock">
+<meta property="article:tag" content="OpenCL">
+<meta property="article:tag" content="模型">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="OpenCL-1-编程四大模型介绍">
-<meta name="twitter:description" content="本节介绍OpenCL的四个编程模型。">
-<meta name="twitter:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1516282831&di=e1a3b4daaf2435f61183fba516d8b739&imgtype=jpg&er=1&src=http%3A%2F%2Fpic.baike.soso.com%2Fp%2F20140514%2F20140514111325-626930652.jpg">
+<meta name="twitter:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1516282831&di=e1a3b4daaf2435f61183fba516d8b739&imgtype=jpg&er=1&src=http%253A%252F%252Fpic.baike.soso.com%252Fp%252F20140514%252F20140514111325-626930652.jpg">
 
 
 
@@ -144,12 +144,12 @@
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
-  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </script>
 
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -158,7 +158,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -195,7 +195,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -205,7 +205,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -215,7 +215,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -225,7 +225,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -235,7 +235,7 @@
       
         
         <li class="menu-item menu-item-friendlink">
-          <a href="/friendlink" rel="section">
+          <a href="/friendlink%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-group"></i> <br />
             
@@ -245,7 +245,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -320,7 +320,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2017/08/28/GPU/OpenCL/OpenCL-1-四大模型介绍/">
+    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2017/08/28/GPU/OpenCL/OpenCL-1-%E5%9B%9B%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BB%8B%E7%BB%8D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dock">
@@ -414,7 +414,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.8k
+                  
                 </span>
               
 
@@ -430,7 +430,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6
+                  
                 </span>
               
             </div>
@@ -453,7 +453,7 @@
       
         <p>本节介绍OpenCL的四个编程模型。</p>
 <a id="more"></a>
-<h1 id="0-前言"><a href="#0-前言" class="headerlink" title="0.前言"></a>0.前言</h1><p>&emsp;&emsp;OPenCL作为开放性的异构计算的标准，支持的平台有CPU、GPU、DSP、FPGA。支持的设备如此不同，那么需要对它们有一个统一的分层、模型划分，才能让各家更好的实现—平台模型、执行模型、内存模型、编程模型。</p>
+<h1 id="0-前言"><a href="#0-前言" class="headerlink" title="0.前言"></a>0.前言</h1><p>&emsp;&emsp;OPenCL作为开放性的异构计算的标准，支持的平台有CPU、GPU、DSP、FPGA。支持的设备如此不同，那么需要对它们有一个统一的分层、模型划分，才能让各家更好的实现–平台模型、执行模型、内存模型、编程模型。</p>
 <h1 id="1-平台模型"><a href="#1-平台模型" class="headerlink" title="1.平台模型"></a>1.平台模型</h1><ul>
 <li>OpenCL设备有两部分组成，宿主机和OpenCL设备<ul>
 <li>宿主机负责整体流程控制，一般为CPU。</li>
@@ -473,7 +473,7 @@
 </ul>
 </li>
 </ul>
-<p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1516282831&amp;di=e1a3b4daaf2435f61183fba516d8b739&amp;imgtype=jpg&amp;er=1&amp;src=http%3A%2F%2Fpic.baike.soso.com%2Fp%2F20140514%2F20140514111325-626930652.jpg" alt="魔方"></p>
+<p><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1516282831&di=e1a3b4daaf2435f61183fba516d8b739&imgtype=jpg&er=1&src=http%3A%2F%2Fpic.baike.soso.com%2Fp%2F20140514%2F20140514111325-626930652.jpg" alt="魔方"></p>
 <h2 id="2-2上下文"><a href="#2-2上下文" class="headerlink" title="2.2上下文"></a>2.2上下文</h2><p>&emsp;&emsp;计算工作主要在OpenCL设备上进行，但宿主机也扮演着非常重要的角色。宿主机主要通过上下文(Context)管理OpenCL设备。上下文指的是所管理硬件和软件资源，如下所示：</p>
 <ul>
 <li>设备：OpenCL程序调用的计算设备</li>
@@ -492,7 +492,7 @@
 </ul>
 </li>
 </ul>
-<p>&emsp;&emsp;宿主机程序可以为一个计算设备创建多个命令队列—<strong>一个计算设备可以有多个命令队列</strong>。这些命令队列没有关联。这也就意味着一个计算设备可以执行多个种类的任务，如小明可以在等待游戏加载的事件背几个英语单词 ~_~。</p>
+<p>&emsp;&emsp;宿主机程序可以为一个计算设备创建多个命令队列–<strong>一个计算设备可以有多个命令队列</strong>。这些命令队列没有关联。这也就意味着一个计算设备可以执行多个种类的任务，如小明可以在等待游戏加载的事件背几个英语单词 <del>_</del>。</p>
 <h1 id="3-存储模型"><a href="#3-存储模型" class="headerlink" title="3.存储模型"></a>3.存储模型</h1><p>&emsp;&emsp;与通用计算程序的内存对象相似，OpenCL将设备中的存储器抽象成四层结构的存储模型：</p>
 <ul>
 <li>全局内存：工作空间中的所有节点都可以读写。（全局变量）</li>
@@ -500,7 +500,7 @@
 <li>本地内存：同一个工作组中的工作节点可以进行读写，对其他工作组不可见。不能通过宿主机进行初始化。（当前文件的全局变量）</li>
 <li>私有内存：只属于工作节点。（函数中的局部变量）</li>
 </ul>
-<p><img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3991552943,3638402409&amp;fm=27&amp;gp=0.jpg" alt="内存模型"></p>
+<p><img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3991552943,3638402409&fm=27&gp=0.jpg" alt="内存模型"></p>
 <p>在程序运行期间，需要宿主机和计算设备进行数据交换，存在两种方式：</p>
 <ul>
 <li>数据拷贝进行:将需要的数据拷贝到工作组空间，计算完成后再拷贝出去（传形参）</li>
@@ -519,7 +519,7 @@
 </ul>
 <p>版权声明：本文为博主原创文章，转载需声明为转载内容并添加原文地址。</p>
 <p>更多博主原创文章，请移步：</p>
-<p>原文地址：<a href="https://coderdock.com">https://coderdock.com</a></p>
+<p>原文地址：<a href="https://coderdock.com" target="_blank" rel="noopener">https://coderdock.com</a></p>
 
       
     </div>
@@ -547,7 +547,7 @@
           
             <a href="/tags/OpenCL/" rel="tag"># OpenCL</a>
           
-            <a href="/tags/模型/" rel="tag"># 模型</a>
+            <a href="/tags/%E6%A8%A1%E5%9E%8B/" rel="tag"># 模型</a>
           
         </div>
       
@@ -560,7 +560,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/27/ARM&Linux/Linux驱动/Linux-MTD架构分析/" rel="next" title="Linux MTD架构分析">
+              <a href="/2017/08/27/ARM&Linux/Linux%E9%A9%B1%E5%8A%A8/Linux-MTD%E6%9E%B6%E6%9E%84%E5%88%86%E6%9E%90/" rel="next" title="Linux MTD架构分析">
                 <i class="fa fa-chevron-left"></i> Linux MTD架构分析
               </a>
             
@@ -570,7 +570,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/02/GPU/OpenCL/OpenCL-2-OpenCL事件/" rel="prev" title="OpenCL-2-OpenCL事件">
+              <a href="/2017/09/02/GPU/OpenCL/OpenCL-2-OpenCL%E4%BA%8B%E4%BB%B6/" rel="prev" title="OpenCL-2-OpenCL事件">
                 OpenCL-2-OpenCL事件 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -655,7 +655,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">日志</span>
@@ -667,10 +667,10 @@
               
               
               <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
+                
                   <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">分类</span>
-                </a>
+                
               </div>
             
 
@@ -678,10 +678,10 @@
               
               
               <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
+                
                   <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">标签</span>
-                </a>
+                
               </div>
             
 
@@ -751,7 +751,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">49.9k</span>
+    <span title="Site words total count"></span>
   
 </div>
 
@@ -1310,7 +1310,7 @@
   
  
 <script type="text/javascript"
-color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
 
 
 

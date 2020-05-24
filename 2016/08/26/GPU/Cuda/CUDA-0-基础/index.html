@@ -7,7 +7,7 @@
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+  <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
@@ -80,18 +80,17 @@
 
 
 <meta name="description" content="本节介绍CUDA的基础概念。">
-<meta name="keywords" content="Cuda">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CUDA-0-基础">
-<meta property="og:url" content="http://coderdock.com/2016/08/26/GPU/Cuda/CUDA-0-基础/index.html">
+<meta property="og:url" content="http://coderdock.com/2016/08/26/GPU/Cuda/CUDA-0-%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="CoderDock">
 <meta property="og:description" content="本节介绍CUDA的基础概念。">
-<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://www.nvidia.cn/docs/IO/112626/header-cuda-parallel-programming-cn.jpg">
-<meta property="og:updated_time" content="2019-09-07T07:47:15.707Z">
+<meta property="article:published_time" content="2016-08-26T14:28:13.000Z">
+<meta property="article:modified_time" content="2020-05-24T09:10:00.842Z">
+<meta property="article:author" content="Dock">
+<meta property="article:tag" content="Cuda">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CUDA-0-基础">
-<meta name="twitter:description" content="本节介绍CUDA的基础概念。">
 <meta name="twitter:image" content="https://www.nvidia.cn/docs/IO/112626/header-cuda-parallel-programming-cn.jpg">
 
 
@@ -143,12 +142,12 @@
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
-  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </script>
 
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -157,7 +156,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -194,7 +193,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -204,7 +203,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -214,7 +213,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -224,7 +223,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -234,7 +233,7 @@
       
         
         <li class="menu-item menu-item-friendlink">
-          <a href="/friendlink" rel="section">
+          <a href="/friendlink%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-group"></i> <br />
             
@@ -244,7 +243,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -319,7 +318,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2016/08/26/GPU/Cuda/CUDA-0-基础/">
+    <link itemprop="mainEntityOfPage" href="http://coderdock.com/2016/08/26/GPU/Cuda/CUDA-0-%E5%9F%BA%E7%A1%80/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dock">
@@ -413,7 +412,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  361
+                  
                 </span>
               
 
@@ -429,7 +428,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  
                 </span>
               
             </div>
@@ -450,7 +449,9 @@
       
 
       
-        <p>本节介绍CUDA的基础概念。<br><img src="https://www.nvidia.cn/docs/IO/112626/header-cuda-parallel-programming-cn.jpg" alt="CUDA"><br><a id="more"></a></p>
+        <p>本节介绍CUDA的基础概念。<br><img src="https://www.nvidia.cn/docs/IO/112626/header-cuda-parallel-programming-cn.jpg" alt="CUDA"></p>
+<a id="more"></a>
+
 <h1 id="NVCC编译"><a href="#NVCC编译" class="headerlink" title="NVCC编译"></a>NVCC编译</h1><p>NVCC是一个编译器，简化编译C和PTX代码的流程。提供和GCC类似的命令行模式。在不同的阶段调用不同的工具集。</p>
 <h2 id="离线编译"><a href="#离线编译" class="headerlink" title="离线编译"></a>离线编译</h2><p>NVCC编译编译混有主机和设备代码。NVCC的工作流程主要在于分离主机和设备代码。编译设备代码成装配形式(PTX代码)或者二进制形式(cubin形式)。</p>
 <ul>
@@ -459,7 +460,7 @@
 <h2 id="二进制兼容性"><a href="#二进制兼容性" class="headerlink" title="二进制兼容性"></a>二进制兼容性</h2><p>二进制代码是有架构的，也就是说每种架构下运行的二进制是有差异的。就行汇编一样，使用code选项指定目标架构产生相应的cubin对象。 <code>-code=sm_13</code>编译生成计算能力1.3的设备上运行的二进制代码。</p>
 <h2 id="PTX兼容性"><a href="#PTX兼容性" class="headerlink" title="PTX兼容性"></a>PTX兼容性</h2><p>一些PTX指令只能支持高计算能力的设备。如全局的原子操作只能支持计算能力为1.1或更高的设备。将C编译成PTX。可以使用<code>-arch</code>指定编译选项指定的计算能力。</p>
 <p>版权声明：本文为博主原创文章，转载需声明为转载内容并添加原文地址。</p>
-<p>原文地址：<a href="https://coderdock.com">https://coderdock.com</a></p>
+<p>原文地址：<a href="https://coderdock.com" target="_blank" rel="noopener">https://coderdock.com</a></p>
 
       
     </div>
@@ -498,7 +499,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/26/日常/日常吐槽/Hello-CoderDock/" rel="next" title="Hello CoderDock">
+              <a href="/2016/08/26/%E6%97%A5%E5%B8%B8/%E6%97%A5%E5%B8%B8%E5%90%90%E6%A7%BD/Hello-CoderDock/" rel="next" title="Hello CoderDock">
                 <i class="fa fa-chevron-left"></i> Hello CoderDock
               </a>
             
@@ -508,7 +509,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/10/25/ARM&Linux/Linux驱动/交叉编译之必知必会/" rel="prev" title="交叉编译之必知必会">
+              <a href="/2016/10/25/ARM&Linux/Linux%E9%A9%B1%E5%8A%A8/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E4%B9%8B%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/" rel="prev" title="交叉编译之必知必会">
                 交叉编译之必知必会 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -593,7 +594,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">日志</span>
@@ -605,10 +606,10 @@
               
               
               <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
+                
                   <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">分类</span>
-                </a>
+                
               </div>
             
 
@@ -616,10 +617,10 @@
               
               
               <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
+                
                   <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">标签</span>
-                </a>
+                
               </div>
             
 
@@ -689,7 +690,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">49.9k</span>
+    <span title="Site words total count"></span>
   
 </div>
 
@@ -1248,7 +1249,7 @@
   
  
 <script type="text/javascript"
-color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
 
 
 
